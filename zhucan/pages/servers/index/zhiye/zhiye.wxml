@@ -1,0 +1,47 @@
+<!-- 头部导航 -->
+<view class="zhiye">
+	<!-- 头部导航栏 -->
+	<header text="职业康复" isNew="{{isNew}}"></header>
+	<!-- 导航部分 -->
+	<view class="top">
+		<view class="top_box" wx:for="{{top_arr}}">
+			<view class="top_box_img">
+				<image src="{{item.src}}"></image>
+			</view>
+			<view class="top_box_txt">{{item.txt}}</view>
+		</view>
+	</view>
+	<!-- 康复资料部分 -->
+	<view class="ziliao">
+		<!-- 左面图标部分 -->
+		<view class="ziliao_icon">
+			<view class="ziliao_icon_img">
+				<image src="../../../../image/u299.png"></image>
+			</view>
+			<view class="ziliao_icon_txt">康复资料</view>
+		</view>
+		<!-- 右边加载更多部分 -->
+		<view class="ziliao_icon">
+			<view class="ziliao_icon_txt jiazai_more">加载更多</view>
+			<view class="ziliao_icon_img">
+				<image src="../../../../image/right.png"></image>
+			</view>
+
+		</view>
+	</view>
+	<!-- 视频部分 -->
+	<view>
+		<view class="video" wx:for="{{video_list}}">
+			<view class="video_txt">{{item.text}}</view>
+		<view class="playback_box">
+    	<video id="myVideo" src="{{item.src}}" binderror="videoErrorCallback" title="{{item.text}}" enable-auto-rotation page-gesture direction="90" bindfullscreenchange="change" controls>
+			</video>
+      <view class="playback" >看回放</view>
+    </view>
+		</view>
+	</view>
+
+	<!--  -->
+
+
+</view>

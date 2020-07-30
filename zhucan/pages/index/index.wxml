@@ -1,0 +1,24 @@
+<view class="login_index">
+
+<view class="login_top">
+<image src="./img/banner1.png"></image>
+  <view class="header">
+    <image src="{{img}}"></image>
+    <text>头像</text>
+  </view>
+</view>
+<view class="check_box">
+<view class="check_txt">
+<view class="check_txt_box">
+  <label>
+    <checkbox  value="yes" class="checked"></checkbox>
+    勾选代表同意 <text>《用户服务协议》</text>、<text>《隐私政策》</text>
+  </label>
+</view>
+  <view>
+  <button class="login_btn">登录</button>
+  <button class="login_tui">退出</button>
+</view>
+</view>
+</view>
+</view>

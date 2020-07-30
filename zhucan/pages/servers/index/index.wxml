@@ -1,0 +1,41 @@
+<view class="service_box">
+	<!-- 头部导航栏部分 -->
+	<view class="service_navibar">
+		<view class="left_icon">
+			<image src="../../../image/lingdang.png">
+			</image>
+			<view class="lingdang_tixing"></view>
+
+		</view>
+		<view class="navi_txt">
+			互联网+实体服务平台</view>
+	</view>
+	<!-- 轮播图部分 -->
+  <view class="banner_img">
+    <swiper indicator-dots="true" indicator-color="#ccc" indicator-active-color="#000"
+      autoplay
+      interval="3500"
+      circular
+    >
+      <swiper-item >
+        <image src="../../../image/banner22.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="../../../image/banner22.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="../../../image/banner22.jpg"></image>
+      </swiper-item>
+    </swiper>
+  
+  </view>
+  <!-- 导航模块部分 -->
+  <view class="daohang">
+    <view class="daohang_box"  wx:for="{{daohang}}">
+      <view class="daohang_img">
+      <image src="{{item.url}}"></image>
+      </view>
+      <view class="daohang_msg">{{item.msg}}</view>
+    </view>
+  </view> 
+</view>
