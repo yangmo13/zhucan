@@ -1,0 +1,108 @@
+/* pages/component/zhidao/ziliao/ziliao.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.zhidao{
+padding: 20rpx;
+color: #333;
+border-bottom: 1px solid #ccc;
+}
+.zhidao_box{
+ 
+  height: 262rpx;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 4rpx solid #f3f3f3;
+  padding: 10rpx 20rpx;
+}
+.dao_left{
+  width: 187rpx;
+  height: 300rpx;
+  
+  display: flex;
+
+  align-items: center;
+}
+.dao_left_img{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+.dao_left_img image{
+  width: 100%;
+  height: 100%;
+}
+.dao_right{
+  flex: 1;
+  
+  height: 100%;
+}
+.dao_right_top{
+  width: 100%;
+  height: 80rpx;
+  
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+}
+.dao_right_center{
+  width: 100%;
+height: 121rpx;
+
+overflow: hidden;
+font-size: 30rpx;
+line-height: 56rpx;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+
+}
+.dao_right_bottom{
+  width: 100%;
+  height: 60rpx;
+  
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.dao_roght_img{
+  width: 36rpx;
+  height: 36rpx;
+  display: inline-block;
+  
+}
+.dao_roght_img image{
+width: 100%;
+height: 100%;
+}
+.right_bottom_label{
+  width: 110rpx;
+  height: 50rpx;
+  border-radius: 10rpx;
+ 
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  margin-right: 10rpx;
+  background-color: #c3c3c3;
+  color: white;
+}
+
+.dao_right_top text:last-child{
+  font-size: 28rpx;
+  line-height: 30rpx;
+  display: inline-block;
+  color: #c0c0c0;
+  height: 100%;
+  flex: 1;
+  text-indent: 30rpx;
+}
+.dao_roght_img{
+  margin-right: 6rpx;
+}

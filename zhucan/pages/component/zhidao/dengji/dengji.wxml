@@ -1,0 +1,96 @@
+<view>
+	<!-- 输入框 -->
+
+	<!-- 姓名 -->
+
+	<view class="weui-cell weui-cell_input">
+		<label>
+			<text class="form_must"> *</text>
+			<text class="form_txt">姓名 : </text>
+			<input class="weui-input" auto-focus value="{{form.name}}" bindblur="change" data-msg="form.name" />
+		</label>
+
+	</view>
+	<!-- 身份证号 -->
+	<view class="weui-cell weui-cell_input">
+		<label>
+			<text class="form_must"> *</text>
+			<text class="form_txt">身份证号 : </text>
+			<input class="weui-input" auto-focus value="{{form.name}}" bindblur="change" data-msg="form.idcard" />
+		</label>
+
+	</view>
+	<!-- 手机号 -->
+	<view class="weui-cell weui-cell_input">
+		<label>
+			<text class="form_must"> *</text>
+			<text class="form_txt">手机 : </text>
+			<input class="weui-input" auto-focus value="{{form.name}}" bindblur="change" data-msg="form.phone" />
+		</label>
+
+	</view>
+	<!-- 残疾类型 -->
+	<view class="canjileixing	weui-cell_input">
+		<label>
+			<text class="form_must canjileixing2"> *</text>
+			<text class="form_txt canjileixing">残疾类型 : </text>
+			<checkbox-group bindchange="leixingChange" data-name="form.disabled.type">
+				<view wx:for="{{canjizheng}}">
+					<checkbox value="{{item.value}}"></checkbox>
+					<text>{{item.txt}}</text>
+				</view>
+			</checkbox-group>
+		</label>
+	</view>
+	<!-- 残疾等级 -->
+	<view class="hukou	weui-cell_input">
+		<label>
+			<text class="form_must ">*</text>
+			<text class="form_txt ">残疾等级 : </text>
+			<radio-group bindchange="item_change" data-name="form.disabled.level">
+				<view wx:for="{{level}}">
+					<radio class="the_radio" value="{{item.value}}"></radio>
+					<text>{{item.txt}}</text>
+				</view>
+			</radio-group>
+		</label>
+	</view>
+	<!-- 学历 -->
+	<view class="weui-cell weui-cell_input">
+		<label>
+			<text class="form_must jiguan"> *</text>
+			<text class="form_txt jiguan">学历 : </text>
+			<view class="select" bindtap="xueliShow">
+				<image src="../../../../image/down.png"></image>
+				<text>{{xueli_txt}}</text>
+			</view>
+			<view class="select_box" wx:if="{{xueli_show}}">
+				<view class="select_box_li" wx:for="{{xueli}}" hover-class="select_box_li_hover" bindtap="checkedSelect" data-txt="{{item}}" data-name="form.education" data-msg="xueli">
+					{{item}}</view>
+			</view>
+		</label>
+	</view>
+	<!-- 需求类型 -->
+	<view class="weui-cell weui-cell_input">
+		<label>
+			<text class="form_must"> *</text>
+			<text class="form_txt">需求类型 : </text>
+			<input class="weui-input" auto-focus value="{{form.name}}" bindblur="change" data-msg="form.need" />
+		</label>
+
+	</view>
+	<!-- 需求说明 -->
+	<view>
+		<view class="hujidi">
+			<text class="form_must"> *</text>
+			<text class="form_txt">需求说明 : </text>
+		</view>
+		<view class="jigunabox">
+			<textarea class="xuqiushuoming" placeholder="需求说明" 
+			bindblur="change" 
+			data-msg="form.needTxt"
+			auto-focus></textarea>
+
+		</view>
+	</view>
+</view>

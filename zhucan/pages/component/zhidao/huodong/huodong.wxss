@@ -1,0 +1,54 @@
+/* pages/component/zhidao/活动/huodong.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.huodong{
+ padding: 20rpx;
+  padding-top: 30rpx;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0;
+}
+.huodong_box{
+
+  background-color: white;
+  border-bottom: 4px solid #f3f3f3;
+  padding: 20rpx;
+}
+.dong_img{
+  width: 100%;
+  height: 350rpx;
+  
+  margin-top: 25rpx;
+}
+.dong_img image{
+  width: 100%;
+  height: 100%;
+}
+.dong_time{
+  color: #333;
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+}
+.isNow{
+  color: #169bd5;
+ 
+  text-decoration: underline #169bd5;
+}
+.dong_name_top{
+  font-size: 30rpx;
+}
+.dong_name_bottom{
+  font-size: 28rpx;
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+color: #ccc;
+margin-top: 10rpx;
+
+}

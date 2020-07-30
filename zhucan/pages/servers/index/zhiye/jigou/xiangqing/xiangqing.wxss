@@ -1,0 +1,94 @@
+/* pages/servers/index/zhiye/jigou/xiangqing/xiangqing.wxss */
+page{
+  width: 100%;
+  height: 100%;
+
+}
+.xiangqing{
+  padding: 20rpx;
+  padding-top: 130rpx;
+  
+}
+.header_topic{
+  width: 100%;
+  height: 120rpx;
+  text-align: center;
+  font-size: 52rpx;
+  line-height: 120rpx;
+  
+  
+}
+.label{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 40rpx;
+  
+}
+.label_box{
+  width: 120rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  background-color: #80ffff;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: #333;
+  margin-left: 20rpx;
+
+}
+.label_box:first-child{
+  margin-left: 0;
+}
+.local{
+  margin-top: 20rpx;
+  color: #333;
+}
+.local_top{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  
+  font-size: 28rpx;
+}
+.click_dingwei{
+ 
+  height: 70rpx;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}.dizhi{
+
+}
+.click_dingwei_img{
+  width: 40rpx;
+  height: 40rpx;
+
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+}
+.click_dingwei_img image{
+  width: 100%;
+  height: 100%;
+}
+.local_bottom{
+
+
+font-size: 28rpx;
+
+}
+.local_name{
+  display: flex;
+justify-content: start;
+align-items: center;
+}
+.local_name text{
+  margin-left: 20rpx;
+}
+.bottom_box{
+  width: 100%;
+
+
+  margin-top: 20rpx;
+
+}

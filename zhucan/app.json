@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/servers/index/zhiye/zhidao/zhidao",
+    "pages/servers/index/zhiye/jigou/xiangqing/xiangqing",
+
     "pages/servers/index/zhiye/jigou/jigou",
     "pages/servers/index/zhiye/zhiye",
     "pages/servers/index/index",

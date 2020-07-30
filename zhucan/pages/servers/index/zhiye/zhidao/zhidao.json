@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "header":"../../../../component/header/header",
+    "huodong":"../../../../component/zhidao/huodong/huodong",
+    "ziliao":"../../../../component/zhidao/ziliao/ziliao",
+    "dengji":"../../../../component/zhidao/dengji/dengji"
+  }
+}

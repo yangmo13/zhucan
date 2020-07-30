@@ -167,9 +167,7 @@ Page({
     })
     console.log(this.data.form)
   },
-  change(e){
-
-    
+  change(e){  
     if(e.currentTarget.dataset.msg=="form.name"){
       //验证中文名字
       let reg = new RegExp(/^[\u4E00-\u9FA5]{2,4}$/)

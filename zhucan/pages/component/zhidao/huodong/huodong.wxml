@@ -1,0 +1,32 @@
+<!-- 指导活动 -->
+<view class="huodong">
+	<view class="huodong_box" wx:for="{{arr}}">
+		<!-- 头部名字 -->
+		<view class="dong_name">
+
+			<view class="dong_name_top">
+				<text>{{item.name}}</text>
+				(<text wx:for="{{item.label}}">{{item}}</text>)
+			</view>
+			<!-- 简介 -->
+			<view class="dong_name_bottom">
+				{{item.msg}}
+			</view>
+		</view>
+		<!-- 图片部分 -->
+		<view class="dong_img">
+			<image src="{{item.src==''?'../../../../image/banner2.jpg':item.src}}"></image>
+		</view>
+		<!-- 直播时间 -->
+		<view class="dong_time">
+			<view>
+				<text class="isNow">{{item.isZhibo}}</text>
+			</view>
+			<view>
+				<text> 直播时间 ：{{item.date}}</text>
+				<text>{{item.time}}~{{item.endTime}}</text>
+			</view>
+
+		</view>
+	</view>
+</view>
