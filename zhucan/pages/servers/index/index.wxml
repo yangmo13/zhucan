@@ -1,6 +1,6 @@
 <view class="service_box" style="padding-top:{{height}}px">
 
-  <header text="互联网+实体服务平台" isNew="{{isNew}}"></header>
+  <header text="互联网+实体服务平台" isNew="{{isNew}}" back_age="{{false}}" back="{{false}}"></header>
 	<!-- 轮播图部分 -->
   <view class="banner_img">
     <swiper indicator-dots="true" indicator-color="#ccc" indicator-active-color="#000"

@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "header":"/pages/component/header/header"
+    "header":"/pages/component/header_txt/header"
 
   },
   "navigationStyle": "custom",

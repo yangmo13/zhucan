@@ -43,7 +43,7 @@ Component({
           delta:1
         })
       }else{
-        console.log(this.properties.text)
+        console.log(this.properties.back,"444444")
         this.triggerEvent('backNow',this.data.isBack)
       }
       

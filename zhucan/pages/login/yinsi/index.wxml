@@ -1,4 +1,4 @@
-<view class="fuwu_box" style="padding-top:{{height}}px">
+<view class="fuwu_box" style="padding:{{height}}px 0s">
 	<!-- 顶部导航 -->
 	<!-- <view class="navi_box">
 		<view class="left_icon">
