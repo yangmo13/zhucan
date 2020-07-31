@@ -6,7 +6,7 @@ page{
 
 .box{
   width: 100%;
-  height: 100%;
+  padding-top: 178rpx;
 }
 .upload_idcard_head,.upload_idcard_back,.camera_face{
   width: 700rpx;
@@ -27,6 +27,12 @@ page{
   background: #f5f5ff;
   border-radius: 14rpx;
   border: 1px solid #ccc;
+  
+}
+.isTran_img{
+ 
+  width: 100%;
+  height: 100%;
   
 }
 .head_box image{
@@ -75,30 +81,41 @@ align-items: center;
   line-height: 83rpx;
   margin-left: 45rpx;
 }
+.camera_box{
+  width:100%;
+  height: 1100rpx;
+  
+}
+camera_box image{
+  width: 100%;
+  height: 100%;
+}
 .shibie_btn{
   width: 100%;
   height: 100rpx;
  position: fixed;
  bottom: 80rpx;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
   /* border: 1rpx solid black;margin-bottom: 0; */
 }
 .upload_idcard_head{
   margin-top: 60rpx;
 }
 .shibie_btn button{
-  width: 90% !important;
+  
   height: 100rpx;
   background: #2f6eef;
   color: white;
   text-align: center;
   line-height: 66rpx;
   font-size: 38rpx;
-  
 }
 .box_camera{
 
   width: 700rpx;
-  height: 460rpx;
+  height: 1000rpx;
   
   margin:100rpx auto;
 }
@@ -116,13 +133,26 @@ align-items: center;
 .isback  image{
   width:100%;
   height: 100%;
+
 }
 .img1_img{
-  width: 350rpx;
+  width: 400rpx;
   height: 230rpx;
-  border: 1px solid black;
+position: relative;
+  
 }
 .img1_img image{
-  width: 100%;
-  height: 100%;
+transform: rotate(270deg);
+width: 230rpx;
+height: 400rpx;
+position: absolute;
+right: 87rpx;
+top: -84rpx;
+}
+#xiangce,#paizhao{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 200rpx;
+  line-height: 170rpx;
+  background-color: var(--blue);
 }

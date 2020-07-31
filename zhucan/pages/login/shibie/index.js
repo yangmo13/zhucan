@@ -6,11 +6,17 @@ Page({
    */
   data: {
     form: {
-      "name": "",
+      "name": "111",
       //身份证号
       "idcard": "",
+      //性别
+      "sex":"man",
       //籍贯
       "nativePlace": "",
+      //年龄
+      'age':22,
+      //职业
+      "job":"电焊工",
       //民族
       "nation": "",
       //婚否
@@ -23,6 +29,7 @@ Page({
       "address": "",
       //手机号
       "phone": "",
+     
       //户口类型,
       "registered": "",
       //联系人信息，
@@ -56,6 +63,10 @@ Page({
         "date": ""
       }
     },
+    form2: [],
+
+    //新消息
+    isNew: false,
     // 籍贯
     jiguan: [
       "汉族", "满族", "回族"
@@ -75,17 +86,16 @@ Page({
       }
     ],
     // 关系
-    guanxi:[
-      "夫妻","父子","母子","父女","母女","其他"
+    guanxi: [
+      "夫妻", "父子", "母子", "父女", "母女", "其他"
     ],
-    fuli:[
-      {
-        value:"福利企业",
-        txt:"是"
+    fuli: [{
+        value: "福利企业",
+        txt: "是"
       },
       {
-        value:"非福利企业",
-        txt:"否"
+        value: "非福利企业",
+        txt: "否"
       }
     ],
     // 学历
@@ -102,45 +112,47 @@ Page({
       "博士"
     ],
     // 残疾证
-    canjizheng:[
-        {
-          value:"视力残疾",
-          txt:"视力残疾"
-        }, {
-          value:"听力残疾",
-          txt:"听力残疾"
-        }, {
-          value:"言语残疾",
-          txt:"言语残疾"
-        }, {
-          value:"肢体残疾",
-          txt:"肢体残疾"
-        }, {
-          value:"智力残疾",
-          txt:"智力残疾"
-        }, {
-          value:"精神残疾",
-          txt:"精神残疾"
-        }, {
-          value:"其他",
-          txt:"其他"
-        },
-    ],
+    canjizheng: [{
+      value: "视力残疾",
+      txt: "视力残疾"
+    }, {
+      value: "听力残疾",
+      txt: "听力残疾"
+    }, {
+      value: "言语残疾",
+      txt: "言语残疾"
+    }, {
+      value: "肢体残疾",
+      txt: "肢体残疾"
+    }, {
+      value: "智力残疾",
+      txt: "智力残疾"
+    }, {
+      value: "精神残疾",
+      txt: "精神残疾"
+    }, {
+      value: "其他",
+      txt: "其他"
+    }, ],
     //单位性质
-   danwei: ["国企","外商投资","合资","民营","股份制企业","上市公司","上市公司","国家机关","事业单位","银行","医院","学校/下级学院","律师事务所","社会团体","其他"],
-   //残疾等级
-   level:[
-   
-     {
-       value:"一级",txt:"一级"
-     },{
-      value:"二级",txt:"二级"
-    },{
-      value:"三级",txt:"三级"
-    },{
-      value:"其他",txt:"其他"
-    },
-   ],
+    danwei: ["国企", "外商投资", "合资", "民营", "股份制企业", "上市公司", "上市公司", "国家机关", "事业单位", "银行", "医院", "学校/下级学院", "律师事务所", "社会团体", "其他"],
+    //残疾等级
+    level: [
+
+      {
+        value: "一级",
+        txt: "一级"
+      }, {
+        value: "二级",
+        txt: "二级"
+      }, {
+        value: "三级",
+        txt: "三级"
+      }, {
+        value: "其他",
+        txt: "其他"
+      },
+    ],
 
     jiguan_show: false,
     minzu_txt: "",
@@ -150,8 +162,8 @@ Page({
     xueli_txt: "",
     guanxi_show: false,
     guanxi_txt: "",
-    danwei_show:false,
-    danwei_txt:""
+    danwei_show: false,
+    danwei_txt: ""
   },
 
   /**
@@ -159,216 +171,226 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    console.log()
+    let data =JSON.parse(options.data)
+    this.setData({
+      form2:data
+    })
+    console.log(this.data.form2.name,151551)
   },
-  item_change(e){
+  item_change(e) {
     console.log(e.detail.value)
     this.setData({
-      [e.currentTarget.dataset.name]:e.detail.value
+      [e.currentTarget.dataset.name]: e.detail.value
     })
     console.log(this.data.form)
   },
-  change(e){  
-    if(e.currentTarget.dataset.msg=="form.name"){
+  change(e) {
+    if (e.currentTarget.dataset.msg == "form.name") {
       //验证中文名字
       let reg = new RegExp(/^[\u4E00-\u9FA5]{2,4}$/)
-      if(reg.test(e.detail.value)==false){
+      if (reg.test(e.detail.value) == false) {
         wx.showToast({
-            title: '请输入正确的中文名字',
-            icon: 'none',
-            duration: 1500
-          })
-          this.setData({
-            ['form.name']:''
-          })
-      }else{
-        this.setData({
-          [e.currentTarget.dataset.msg]:e.detail.value
+          title: '请输入正确的中文名字',
+          icon: 'none',
+          duration: 1500
         })
+        this.setData({
+          ['form.name']: ''
+        })
+      } else {
+        this.setData({
+          [e.currentTarget.dataset.msg]: e.detail.value
+        })
+        console.log(this.data.form,555555)
       }
-    }else if(e.currentTarget.dataset.msg=="form.disabled.num"){
+    } else if (e.currentTarget.dataset.msg == "form.disabled.num") {
       //残疾证验证
       let reg = new RegExp(/[\d]{17}[\dX][1-7][1-4]/)
-      if(reg.test(e.detail.value)==false){
+      if (reg.test(e.detail.value) == false) {
         wx.showToast({
-            title: '请输入正确的残疾证号码',
-            icon: 'none',
-            duration: 1500
-          })
-          this.setData({
-            ['form.disabled.num']:''
-          })
-      }else{
+          title: '请输入正确的残疾证号码',
+          icon: 'none',
+          duration: 1500
+        })
         this.setData({
-          [e.currentTarget.dataset.msg]:e.detail.value
+          ['form.disabled.num']: ''
+        })
+       
+      } else {
+        this.setData({
+          [e.currentTarget.dataset.msg]: e.detail.value
+        })
+       
+      }
+
+    } else if (e.currentTarget.dataset.msg == "form.idcard") {
+      //身份证验证
+      let reg = new RegExp(/^[1-9]\d{5}(18|19|20|(3\d))\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/)
+      if (reg.test(e.detail.value) == false) {
+        wx.showToast({
+          title: '请输入正确的身份证号码号码',
+          icon: 'none',
+          duration: 1500
+        })
+        this.setData({
+          ['form.idcard']: ''
+        })
+      } else {
+        this.setData({
+          [e.currentTarget.dataset.msg]: e.detail.value
         })
       }
 
-    }else if(e.currentTarget.dataset.msg=="form.idcard"){
-      //身份证验证
-      let reg = new RegExp(/^[1-9]\d{5}(18|19|20|(3\d))\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/)
-      if(reg.test(e.detail.value)==false){
-        wx.showToast({
-            title: '请输入正确的身份证号码号码',
-            icon: 'none',
-            duration: 1500
-          })
-          this.setData({
-            ['form.idcard']:''
-          })
-      }else{
-        this.setData({
-          [e.currentTarget.dataset.msg]:e.detail.value
-        })
-      }
-      
-    }else if(e.currentTarget.dataset.msg=="form.nativePlace"){
+    } else if (e.currentTarget.dataset.msg == "form.nativePlace") {
       //籍贯验证
       let reg = new RegExp(/^[0-9\u4e00-\u9fa5]+$/)
-      if(reg.test(e.detail.value)==false){
+      if (reg.test(e.detail.value) == false) {
         wx.showToast({
-            title: '请输入正确的地址',
-            icon: 'none',
-            duration: 1500
-          })
-          this.setData({
-            ['form.nativePlace']:''
-          })
-      }else{
+          title: '请输入正确的地址',
+          icon: 'none',
+          duration: 1500
+        })
         this.setData({
-          [e.currentTarget.dataset.msg]:e.detail.value
+          ['form.nativePlace']: ''
+        })
+      } else {
+        this.setData({
+          [e.currentTarget.dataset.msg]: e.detail.value
         })
       }
-      
-    }else if(e.currentTarget.dataset.msg=="form.localtion"){
+
+    } else if (e.currentTarget.dataset.msg == "form.localtion") {
       //身份证户籍地验证
       let reg = new RegExp(/^[0-9\u4e00-\u9fa5]+$/)
-      if(reg.test(e.detail.value)==false){
+      if (reg.test(e.detail.value) == false) {
         wx.showToast({
-            title: '请输入正确的地址',
-            icon: 'none',
-            duration: 1500
-          })
-          this.setData({
-            ['form.localtion']:''
-          })
-      }else{
+          title: '请输入正确的地址',
+          icon: 'none',
+          duration: 1500
+        })
         this.setData({
-          [e.currentTarget.dataset.msg]:e.detail.value
+          ['form.localtion']: ''
+        })
+      } else {
+        this.setData({
+          [e.currentTarget.dataset.msg]: e.detail.value
         })
       }
-      
-    }else if(e.currentTarget.dataset.msg=="form.address"){
+
+    } else if (e.currentTarget.dataset.msg == "form.address") {
       //现居住地址验证
       let reg = new RegExp(/^[0-9\u4e00-\u9fa5]+$/)
-      if(reg.test(e.detail.value)==false){
+      if (reg.test(e.detail.value) == false) {
         wx.showToast({
-            title: '请输入正确的地址',
-            icon: 'none',
-            duration: 1500
-          })
-          this.setData({
-            ['form.address']:''
-          })
-      }else{
+          title: '请输入正确的地址',
+          icon: 'none',
+          duration: 1500
+        })
         this.setData({
-          [e.currentTarget.dataset.msg]:e.detail.value
+          ['form.address']: ''
+        })
+      } else {
+        this.setData({
+          [e.currentTarget.dataset.msg]: e.detail.value
         })
       }
-      
-    }else if(e.currentTarget.dataset.msg=="form.phone"){
+
+    } else if (e.currentTarget.dataset.msg == "form.phone") {
       //手机号验证
       let reg = new RegExp(/^1[3456789]\d{9}$/)
-      if(reg.test(e.detail.value)==false){
+      if (reg.test(e.detail.value) == false) {
         wx.showToast({
-            title: '请输入正确的手机号',
-            icon: 'none',
-            duration: 1500
-          })
-          this.setData({
-            ['form.phone']:''
-          })
-      }else{
+          title: '请输入正确的手机号',
+          icon: 'none',
+          duration: 1500
+        })
         this.setData({
-          [e.currentTarget.dataset.msg]:e.detail.value
+          ['form.phone']: ''
+        })
+      } else {
+        this.setData({
+          [e.currentTarget.dataset.msg]: e.detail.value
         })
       }
-      
-    }else if(e.currentTarget.dataset.msg=="form.linkman.name"){
+
+    } else if (e.currentTarget.dataset.msg == "form.linkman.name") {
       //联系人姓名验证
       let reg = new RegExp(/^[\u4E00-\u9FA5]{2,4}$/)
-      if(reg.test(e.detail.value)==false){
+      if (reg.test(e.detail.value) == false) {
         wx.showToast({
-            title: '请输入正确的中文名字',
-            icon: 'none',
-            duration: 1500
-          })
-          this.setData({
-            ['form.linkman.name']:''
-          })
-      }else{
+          title: '请输入正确的中文名字',
+          icon: 'none',
+          duration: 1500
+        })
         this.setData({
-          [e.currentTarget.dataset.msg]:e.detail.value
+          ['form.linkman.name']: ''
+        })
+      } else {
+        this.setData({
+          [e.currentTarget.dataset.msg]: e.detail.value
         })
       }
-      
-    }else if(e.currentTarget.dataset.msg=="form.linkman.phone"){
+
+    } else if (e.currentTarget.dataset.msg == "form.linkman.phone") {
       //联系人手机验证
       let reg = new RegExp(/^1[3456789]\d{9}$/)
-      if(reg.test(e.detail.value)==false){
+      if (reg.test(e.detail.value) == false) {
         wx.showToast({
-            title: '请输入正确的手机号码',
-            icon: 'none',
-            duration: 1500
-          })
-          this.setData({
-            ['form.linkman.phone']:''
-          })
-      }else{
+          title: '请输入正确的手机号码',
+          icon: 'none',
+          duration: 1500
+        })
         this.setData({
-          [e.currentTarget.dataset.msg]:e.detail.value
+          ['form.linkman.phone']: ''
+        })
+      } else {
+        this.setData({
+          [e.currentTarget.dataset.msg]: e.detail.value
         })
       }
-    }else if(e.currentTarget.dataset.msg=="form.work.company"){
+    } else if (e.currentTarget.dataset.msg == "form.work.company") {
       //工作单位验证
       let reg = new RegExp(/^[0-9\u4e00-\u9fa5]+$/)
-      if(reg.test(e.detail.value)==false){
+      if (reg.test(e.detail.value) == false) {
         wx.showToast({
-            title: '请输入正确的工作单位',
-            icon: 'none',
-            duration: 1500
-          })
-          this.setData({
-            ['form..work.company']:''
-          })
-      }else{
+          title: '请输入正确的工作单位',
+          icon: 'none',
+          duration: 1500
+        })
         this.setData({
-          [e.currentTarget.dataset.msg]:e.detail.value
+          ['form..work.company']: ''
+        })
+      } else {
+        this.setData({
+          [e.currentTarget.dataset.msg]: e.detail.value
         })
       }
-    }else if(e.currentTarget.dataset.msg=="form.work.profession"){
+    } else if (e.currentTarget.dataset.msg == "form.work.profession") {
       //职业工种验证
       let reg = new RegExp(/^[0-9\u4e00-\u9fa5]+$/)
-      if(reg.test(e.detail.value)==false){
+      if (reg.test(e.detail.value) == false) {
         wx.showToast({
-            title: '请输入正确职业工种',
-            icon: 'none',
-            duration: 1500
-          })
-          this.setData({
-            ['form.work.profession']:''
-          })
-      }else{
-        this.setData({
-          [e.currentTarget.dataset.msg]:e.detail.value
+          title: '请输入正确职业工种',
+          icon: 'none',
+          duration: 1500
         })
-      }}
-   
+        this.setData({
+          ['form.work.profession']: ''
+        })
+      } else {
+        this.setData({
+          [e.currentTarget.dataset.msg]: e.detail.value
+        })
+      }
+    }
+
   },
   //残疾类型改变
-  leixingChange(e){
+  leixingChange(e) {
     console.log(e.detail.value)
     this.setData({
-      [e.currentTarget.dataset.name]:e.detail.value
+      [e.currentTarget.dataset.name]: e.detail.value
     })
     console.log(this.data.form)
   },
@@ -403,38 +425,38 @@ Page({
   checkedSelect(e) {
     console.log(e.currentTarget.dataset.name)
     if (e.currentTarget.dataset.msg == "xueli") {
-      
+
       this.setData({
         xueli_txt: e.currentTarget.dataset.txt,
         xueli_show: false,
-        [e.currentTarget.dataset.name]:e.currentTarget.dataset.txt
+        [e.currentTarget.dataset.name]: e.currentTarget.dataset.txt
       })
     } else if (e.currentTarget.dataset.msg == "hunfou") {
       this.setData({
         hunfou_txt: e.currentTarget.dataset.txt,
         hunfou_show: false,
-        [e.currentTarget.dataset.name]:e.currentTarget.dataset.txt
+        [e.currentTarget.dataset.name]: e.currentTarget.dataset.txt
       })
     } else if (e.currentTarget.dataset.msg == "minzu") {
       this.setData({
         minzu_txt: e.currentTarget.dataset.txt,
         jiguan_show: false,
-        [e.currentTarget.dataset.name]:e.currentTarget.dataset.txt
+        [e.currentTarget.dataset.name]: e.currentTarget.dataset.txt
       })
     } else if (e.currentTarget.dataset.msg == "guanxi") {
       this.setData({
         guanxi_txt: e.currentTarget.dataset.txt,
         guanxi_show: false,
-        [e.currentTarget.dataset.name]:e.currentTarget.dataset.txt
+        [e.currentTarget.dataset.name]: e.currentTarget.dataset.txt
       })
     } else if (e.currentTarget.dataset.msg == "danwei") {
       this.setData({
         danwei_txt: e.currentTarget.dataset.txt,
         danwei_show: false,
-        [e.currentTarget.dataset.name]:e.currentTarget.dataset.txt
+        [e.currentTarget.dataset.name]: e.currentTarget.dataset.txt
       })
     }
-console.log(this.data.form)
+    console.log(this.data.form)
 
   },
   //与其关系选项
@@ -456,17 +478,17 @@ console.log(this.data.form)
     console.log(yes)
   },
   //点击选择
-  clickChnage(e){
+  clickChnage(e) {
     console.log(e.currentTarget.dataset.msg)
   },
   //点击下一步
-    next(){
-      let form = JSON.stringify(this.data.form)
-      console.log(form)
-     wx.navigateTo({
-       url: `../wanshan/index?form=${form}`,
-     })
-    },
+  next() {
+    let form = JSON.stringify(this.data.form)
+    console.log(form)
+    wx.navigateTo({
+      url: `../wanshan/index?form=${form}`,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

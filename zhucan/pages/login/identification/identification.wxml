@@ -1,4 +1,7 @@
 <view class="box">
+<header text="识别身份" color="#2f6eef" back="{{isback}}" 
+
+bind:backNow="getAdd"></header>
 	<view wx:if="{{ishow}}">
 		<view class="upload_idcard_head" wx:if="{{img1==''}}">
 
@@ -11,21 +14,22 @@
 		</view>
 		<view class="upload_idcard_head" wx:else="{{img1!=''}}" data-camera="1" bindtap="go_camera">
 			<view class="img1_img">
-				<image src="{{img1}}"></image>
+				<image mode="aspectFill" 
+				
+				 src="{{img1}}"></image>
 			</view>
 			<view class="img1_txt">重新上传/拍摄</view>
 		</view>
 		<view class="upload_idcard_back" wx:if="{{img2==''}}">
 			<view class="head_box1">
 				<image src="../../../image/u65.png"></image>
-
 			</view>
 			<view class="id_txt">拍摄/上传身份证(国徽面)</view>
 			<view class="idcard_btn" bindtap="go_camera" data-camera="2">+</view>
 		</view>
 		<view class="upload_idcard_back" wx:else="{{img2==''}}" data-camera="2" bindtap="go_camera">
 			<view class="img1_img">
-				<image src="{{img2}}"></image>
+				<image src="{{img2}}" mode="scaleToFill"></image>
 			</view>
 			<view class="img1_txt">重新上传/拍摄</view>
 		</view>
@@ -46,13 +50,23 @@
 
 	</view>
 	<view class="box_camera" wx:else="{{ishow}}">
-		<camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 100%;"></camera>
+		<view class="camera_box" wx:if="{{xiangce_img==''}}">
+			<camera device-position="{{isTran}}" flash="off" binderror="error" style="width: 100%; height: 100%;">
+			</camera>
+		</view>
+		<view class="camera_box" wx:else="{{xiangce_img==''}}">
+			<image src="{{xiangce_img}}"></image>
+		</view>
+
 	</view>
 	<view class="shibie_btn">
-		<button wx:if="{{ishow}}" disabled="{{isbtn}}"
-			bindtap="shibie"
-		>开始识别</button>
-		<button wx:else="{{ishow}}" bindtap="takePhoto">拍照</button>
+		<button wx:if="{{ishow}}" disabled="{{isbtn}}" bindtap="shibie">开始识别</button>
+	
+
+		<button id="xiangce" bindtap="takexiangce" wx:if="{{!ishow}}">相册</button>
+		<button id="paizhao" bindtap="takePhoto" wx:if="{{!ishow}}">拍照</button>
+		<button id="paizhao" bindtap="fanzhun"wx:if="{{!ishow}}">翻转</button>
+
 	</view>
 	<view class="isback" wx:if="{{!ishow}}" bindtap="goback">
 		<image src="../../image/back.png"></image>

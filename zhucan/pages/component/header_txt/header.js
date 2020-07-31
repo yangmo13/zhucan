@@ -6,7 +6,10 @@ Component({
    */
   properties: {
       text:String,
-      isNew:Boolean
+      isNew:Boolean,
+      color:String,
+      back:Boolean,
+      back_age:Boolean
   },
 
   /**
@@ -14,7 +17,9 @@ Component({
    */
   data: {
     navHeight:0,
-    text:''
+    text:'',
+    isBack:true,
+    back:false
   },
   lifetimes:{
     attached:function(){
@@ -31,9 +36,17 @@ Component({
    */
   methods: {
     back(){
-      wx.navigateBack({
-        delta: 1,
-      })
+      console.log(this.properties.back,"dssasdsad")
+     
+      if(this.properties.back_age==true){
+        wx.navigateBack({
+          delta:1
+        })
+      }else{
+        console.log(this.properties.text)
+        this.triggerEvent('backNow',this.data.isBack)
+      }
+      
     }
   }
 })

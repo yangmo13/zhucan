@@ -1,5 +1,8 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "header":"../../component/header_txt/header"
+
+  },
   "navigationStyle":"custom",
   "navigationBarTextStyle": "white"
 }

@@ -1,5 +1,8 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "header":"../../component/header/header"
+
+  },
   "navigationBarBackgroundColor": "#25b2b7",
   "navigationBarTitleText": "身份识别"
 }

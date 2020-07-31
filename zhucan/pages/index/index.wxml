@@ -10,13 +10,15 @@
 <view class="check_box">
 <view class="check_txt">
 <view class="check_txt_box">
+<checkbox-group bindchange="change">
   <label>
-    <checkbox  value="yes" class="checked"></checkbox>
+    <checkbox  value="yes" class="checked" checked="{{isConfirm}}"></checkbox>
     勾选代表同意 <text>《用户服务协议》</text>、<text>《隐私政策》</text>
   </label>
+  </checkbox-group>
 </view>
   <view>
-  <button class="login_btn">登录</button>
+  <button class="login_btn" bindtap="islogin">登录</button>
   <button class="login_tui">退出</button>
 </view>
 </view>

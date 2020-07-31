@@ -88,7 +88,7 @@
 					<text class="form_must jiguan"> *</text>
 					<text class="form_txt jiguan">学历 : </text>
 					<view class="select" bindtap="xueliShow">
-						<image src="../../../../image/down.png"></image>
+						<image src="../../../../../image/down.png"></image>
 						<text>{{xueli_txt}}</text>
 					</view>
 					<view class="select_box" wx:if="{{xueli_show}}">

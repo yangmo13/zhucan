@@ -11,8 +11,22 @@ Page({
     img2: "",
     img3: "",
     isbtn: false,
+    xiangce_img: "",
+    // 是否翻转
+    isTran: "back",
+    isback:false
 
 
+  },
+  fanzhun(){
+    let tran = this.data.isTran
+    tran=='back'?tran="front":tran="back"
+    this.setData({
+      isTran:tran
+    })
+  },
+  onResize:function(){
+    console.log("屏幕发生转动")
   },
 
   /**
@@ -21,6 +35,24 @@ Page({
   onLoad: function (options) {
 
     this.ctx = wx.createCameraContext()
+  },
+  takexiangce() {
+    let num = this.data.id_num
+    let img_num = 'img'+num
+
+    console.log(img_num,5454)
+       wx.chooseImage({
+         count: 1,
+         sizeType: ['original', 'compressed'],
+         sourceType: ['album', 'camera'],
+         success: (res) => {
+           this.setData({
+             [img_num]: res.tempFilePaths[0],
+             ishow:true   
+           })
+        
+      }
+    })
   },
   takePhoto() {
     var that = this
@@ -38,12 +70,12 @@ Page({
             img1: src,
             ishow: true
           })
-          if(that.data.img1!=''&&that.data.img2!=''&&that.data.img3!=''){
+          if (that.data.img1 != '' && that.data.img2 != '' && that.data.img3 != '') {
             this.setData({
-              isbtn:false
+              isbtn: false
             })
           }
-       
+
 
         }
       })
@@ -56,9 +88,9 @@ Page({
             img2: src,
             ishow: true
           })
-          if(that.data.img1!=''&&that.data.img2!=''&&that.data.img3!=''){
+          if (that.data.img1 != '' && that.data.img2 != '' && that.data.img3 != '') {
             this.setData({
-              isbtn:false
+              isbtn: false
             })
           }
 
@@ -73,9 +105,9 @@ Page({
             img3: src,
             ishow: true
           })
-          if(that.data.img1!=''&&that.data.img2!=''&&that.data.img3!=''){
+          if (that.data.img1 != '' && that.data.img2 != '' && that.data.img3 != '') {
             this.setData({
-              isbtn:false
+              isbtn: false
             })
           }
 
@@ -83,30 +115,37 @@ Page({
       })
     }
   },
+  getAdd(e){
+    console.log(e.detail)
+    this.setData({
+      ishow:e.detail
+    })
+  },
   go_camera(e) {
     let num = e.currentTarget.dataset.camera;
     console.log(num)
     this.setData({
       ishow: false,
-      id_num: num
+      id_num: num,
+      isback:true
     })
 
 
   },
-  shibie(){
+  shibie() {
     let img1 = JSON.stringify(this.data.img1)
     let img2 = JSON.stringify(this.data.img2)
     let img3 = JSON.stringify(this.data.img3)
-    let data ={
-      "姓名":"刘铁柱",
-      '身份证号':"1100251212121545142415412",
-      "籍贯":"黑龙江",
-      "年龄":"66",
-      "民族":"汗",
-      "婚否":"已婚",
-      "学历":"小学",
-      "身份证户籍地":"楼下",
-      "现居住地址":"不搞牛"
+    let data = {
+      "name": "刘铁柱",
+      'idcard': "1100251212121545142415412",
+      "navtivePlace": "黑龙江",
+      "age": "66",
+      "nation": "汉族",
+      "marital": "已婚",
+      "education": "小学",
+      "localtion": "楼下",
+      "address": "不搞牛"
     }
     let data1 = JSON.stringify(data)
     wx.navigateTo({

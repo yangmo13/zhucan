@@ -4,13 +4,53 @@ const app = getApp()
 
 Page({
   data: {
-    img:"./img/header.png"
+    img:"./img/header.png",
+    isComfirm:""
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
+  },
+  islogin(){
+    if(this.data.isComfirm=='yes'){
+      wx.showModal({     
+        title:"登录确定 ",
+        confirmText:"确定登陆",
+        
+        content:"登陆成功后，需要您绑定身份证，请提前准备好身份证",
+        success:(res)=>{
+          console.log(res)
+          wx.navigateTo({
+            url: '/pages/login/identification/identification',
+          })
+        },
+        fail:(res)=>{
+          console.log(res)
+        }
+      })
+    }else{
+      wx.showModal({     
+        title:"登录确定 ",
+        confirmText:"确定",       
+        content:"请勾选《用户服务协议》和《隐私协议》然后再登录",
+        success:(res)=>{
+          
+        },
+        fail:(res)=>{
+          console.log(res)
+        }
+      })
+    }
+  },
+  change(e){
+    console.log(e.detail.value[0])
+    this.setData({
+      isComfirm:e.detail.value[0]
+    })
+    console.log(this.data.isComfirm)
+
   },
   onLoad: function () {
     if (app.globalData.userInfo) {

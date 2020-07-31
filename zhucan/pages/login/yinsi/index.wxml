@@ -1,13 +1,14 @@
 <view class="fuwu_box">
 	<!-- 顶部导航 -->
-	<view class="navi_box">
+	<!-- <view class="navi_box">
 		<view class="left_icon">
 			<image src="../../../image/back.png">
 			</image>
 		</view>
 		<view class="navi_txt">
 隐私政策</view>
-	</view>
+	</view> -->
+	<header text="隐私政策" back_age="true"></header>
 	<!-- 文字显示 -->
 	<view class="text_box">
 		<!-- 标题 -->
@@ -51,6 +52,6 @@
 	</view>
 
   <view class="btn_box2">
-    <button id="btn">返回</button>
+    <button id="btn" bindtap="next">下一步</button>
   </view>
 </view>

@@ -86,3 +86,21 @@ checkbox .wx-checkbox-input{
 justify-content: center;
 
 }
+checkbox .wx-checkbox-input{
+  width: 30rpx;
+  height: 30rpx;
+}
+/*checkbox选中后样式  */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #555;
+ 
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}

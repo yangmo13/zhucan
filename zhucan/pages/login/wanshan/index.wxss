@@ -7,7 +7,7 @@ page{
 .wanshan_box{
   width: 100%;
   height: 100%;
- 
+  padding-top: 178rpx;
 }
 .wanshan_top{
   width: 100%;

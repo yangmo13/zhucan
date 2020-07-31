@@ -8,21 +8,26 @@ Page({
       nianling:"22岁",
       zheye:"",
       dizhi:"",
-      phone:"180****4549"
+      phone:"180****4549",
+      form:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let str = options.form
-    console.log(str,5522)
-    // wx.setNavigationBarColor({
-      
-    //   backgroundColor: '#25b2b7',
-    // })
+  
+    let data = JSON.parse(options.form)
+     console.log(data.phone,55555)
+     this.setData({
+       form:data
+     })
   },
-
+  next(){
+    wx.navigateTo({
+      url: '../fuwu/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

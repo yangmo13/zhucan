@@ -1,8 +1,9 @@
 {
   "pages":[
+ 
+    "pages/index/index",
     "pages/servers/index/zhiye/zhidao/zhidao",
     "pages/servers/index/zhiye/jigou/xiangqing/xiangqing",
-
     "pages/servers/index/zhiye/jigou/jigou",
     "pages/servers/index/zhiye/zhiye",
     "pages/servers/index/index",
@@ -11,9 +12,7 @@
     "pages/login/wanshan/index",
     "pages/login/shibie/index",
     "pages/login/identification/identification",
-    "pages/index/index",
     "pages/logs/logs"
-   
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -37,13 +36,13 @@
     {
       "selectedIconPath": "./image/add.png",
       "iconPath": "./image/back.png",
-      "pagePath": "pages/login/yinsi/index",
+      "pagePath": "pages/servers/index/zhiye/zhidao/zhidao",
       "text": "首页"
     },
     {
       "selectedIconPath": "./image/add.png",
       "iconPath": "./image/back.png",
-      "pagePath": "pages/login/shibie/index",
+      "pagePath": "pages/servers/index/zhiye/jigou/xiangqing/xiangqing",
       "text": "首页"
     }
   ]
