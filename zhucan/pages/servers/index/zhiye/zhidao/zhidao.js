@@ -1,4 +1,5 @@
 // pages/servers/index/zhiye/zhidao/zhidao.js
+const App = getApp()
 Page({
 
   /**
@@ -6,6 +7,7 @@ Page({
    */
   data: {
     isNew:true,
+    height:"",
     selectBox:3,canjizheng: [{
       value: "视力残疾",
       txt: "视力残疾"
@@ -102,7 +104,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      height:App.globalData.navHeight
+    })
   },
   xueliShow() {
     let yes = this.data.xueli_show

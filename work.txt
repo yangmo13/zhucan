@@ -9,5 +9,7 @@
 	解决问题：主要修改完了几个页面的逻辑，
 	照片的位置问题，
 	
-	遗留问题：header的padding-top不对
+（解决了）遗留问题：header的padding-top不对
 		ipone6的显示就变的很丑
+	提示：以后每个自定义头部的页面都需要
+		getApp（）里面的navHeight

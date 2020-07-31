@@ -1,18 +1,27 @@
 {
   "pages":[
- 
-    "pages/index/index",
-    "pages/servers/index/zhiye/zhidao/zhidao",
-    "pages/servers/index/zhiye/jigou/xiangqing/xiangqing",
-    "pages/servers/index/zhiye/jigou/jigou",
     "pages/servers/index/zhiye/zhiye",
+    "pages/servers/index/zhiye/jigou/jigou",
+    "pages/servers/index/zhiye/jigou/xiangqing/xiangqing",
+    "pages/servers/index/zhiye/zhidao/zhidao",
     "pages/servers/index/index",
+   
+    
+    
+   
+   
+
+
     "pages/login/yinsi/index",
     "pages/login/fuwu/index",
     "pages/login/wanshan/index",
     "pages/login/shibie/index",
     "pages/login/identification/identification",
-    "pages/logs/logs"
+    "pages/logs/logs",
+
+    "pages/index/index"
+
+
   ],
   "window":{
     "backgroundTextStyle":"light",

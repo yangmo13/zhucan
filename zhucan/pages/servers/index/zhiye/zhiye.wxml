@@ -1,5 +1,5 @@
 <!-- 头部导航 -->
-<view class="zhiye">
+<view class="zhiye" style="padding-top:{{height}}px">
 	<!-- 头部导航栏 -->
 	<header text="职业康复" isNew="{{isNew}}"></header>
 	<!-- 导航部分 -->

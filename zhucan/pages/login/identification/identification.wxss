@@ -1,12 +1,12 @@
 page{
   width: 100%;
- 
+  
 
 }
 
 .box{
   width: 100%;
-  padding-top: 178rpx;
+  
 }
 .upload_idcard_head,.upload_idcard_back,.camera_face{
   width: 700rpx;

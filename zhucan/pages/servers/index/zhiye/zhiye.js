@@ -1,11 +1,14 @@
 // pages/servers/index/zhiye/zhiye.js
+const App = getApp()
 Page({
 
   /**
    * 页面的初始数据
+   * 
    */
   data: {
       isNew:true,
+      height:"",
       top_arr:[
         {
           src:"../../../../image/u280.png",
@@ -65,6 +68,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      height:App.globalData.navHeight
+    })
       let  menu = wx.getMenuButtonBoundingClientRect()
       console.log(menu)
       wx.getSystemInfo({

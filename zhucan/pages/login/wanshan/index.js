@@ -1,4 +1,5 @@
 // pages/login/wanshan/index.js
+const App = getApp()
 Page({
 
   /**
@@ -9,14 +10,17 @@ Page({
       zheye:"",
       dizhi:"",
       phone:"180****4549",
-      form:[]
+      form:[],
+      height:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      height:App.globalData.navHeight
+    })
     let data = JSON.parse(options.form)
      console.log(data.phone,55555)
      this.setData({

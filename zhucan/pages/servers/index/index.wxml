@@ -1,15 +1,6 @@
-<view class="service_box">
-	<!-- 头部导航栏部分 -->
-	<view class="service_navibar">
-		<view class="left_icon">
-			<image src="../../../image/lingdang.png">
-			</image>
-			<view class="lingdang_tixing"></view>
+<view class="service_box" style="padding-top:{{height}}px">
 
-		</view>
-		<view class="navi_txt">
-			互联网+实体服务平台</view>
-	</view>
+  <header text="互联网+实体服务平台" isNew="{{isNew}}"></header>
 	<!-- 轮播图部分 -->
   <view class="banner_img">
     <swiper indicator-dots="true" indicator-color="#ccc" indicator-active-color="#000"

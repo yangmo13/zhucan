@@ -1,4 +1,5 @@
 // pages/identification/identification.js
+const App = getApp()
 Page({
 
   /**
@@ -12,6 +13,7 @@ Page({
     img3: "",
     isbtn: false,
     xiangce_img: "",
+    height:"",
     // 是否翻转
     isTran: "back",
     isback:false
@@ -33,7 +35,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+  
+    this.setData({
+      height:App.globalData.navHeight
+    })
     this.ctx = wx.createCameraContext()
   },
   takexiangce() {

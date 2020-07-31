@@ -1,10 +1,12 @@
 // pages/login/shibie/index.js
+const App = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    height:"",
     form: {
       "name": "111",
       //身份证号
@@ -170,8 +172,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    console.log()
+  
+    this.setData({
+      height:App.globalData.navHeight
+    })
+
     let data =JSON.parse(options.data)
     this.setData({
       form2:data

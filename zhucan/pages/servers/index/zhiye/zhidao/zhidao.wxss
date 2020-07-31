@@ -16,6 +16,8 @@ page{
   position: fixed;
   top: 179rpx;
   width: 100%;
+  z-index: 999;
+  background-color: white;
 }
 .zhidao_nav{
   flex:1;
@@ -25,6 +27,10 @@ page{
   color: #333;
   border-bottom: 6rpx solid #fff;
   line-height: 120rpx;
+}
+.radio_box{
+  margin-right: 15rpx;
+  margin-left: 5rpx;
 }
 .zhidao_nav_selected{
   color: #dc142d;

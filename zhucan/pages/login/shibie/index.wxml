@@ -1,4 +1,4 @@
-<view class="form_box">
+<view class="form_box" style="padding-top:{{height}}px">
 <header text="识别身份" back="true" back_age="true"></header>
 	<view class="header"> 基本信息 :</view>
 	<view class="header_btn">

@@ -1,10 +1,10 @@
-<view class="zhidao">
+<view class="zhidao" style="padding-top:{{height+50}}px">
 	<!-- 头部 -->
 	<header text="康复指导" isNew="{{isNew}}"></header>
 
  
 	<!-- 导航部分 -->
-	<view class="zhidao_box">
+	<view class="zhidao_box" style="top:{{height}}px">
 		<view class="zhidao_nav {{selectBox==1?'zhidao_nav_selected':''}}" bindtap="change2" data-num="1">指导活动</view>
 		<view class="zhidao_nav {{selectBox==2?'zhidao_nav_selected':''}}" bindtap="change2" data-num="2">指导资料</view>
 		<view class="zhidao_nav {{selectBox==3?'zhidao_nav_selected':''}}" bindtap="change2" data-num="3">需求登记</view>
@@ -75,7 +75,7 @@
 					<text class="form_must ">*</text>
 					<text class="form_txt ">残疾等级 : </text>
 					<radio-group bindchange="item_change" data-name="form.disabled.level">
-						<view wx:for="{{level}}">
+						<view wx:for="{{level}}" class="radio_box">
 							<radio class="the_radio" value="{{item.value}}"></radio>
 							<text>{{item.txt}}</text>
 						</view>

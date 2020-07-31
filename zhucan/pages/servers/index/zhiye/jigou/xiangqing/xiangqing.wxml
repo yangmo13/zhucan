@@ -1,7 +1,7 @@
 <!-- 康复机构详情页 -->
 <!-- 头部 -->
 <header text="康复服务机构详情" isNew="{{isNew}}"></header>
-<view class="xiangqing">
+<view class="xiangqing" style="padding-top:{{height}}px">
 
 <!-- 题目 -->
 <view class="header_topic">

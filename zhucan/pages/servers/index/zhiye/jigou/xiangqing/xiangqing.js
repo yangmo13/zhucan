@@ -1,4 +1,6 @@
 // pages/servers/index/zhiye/jigou/xiangqing/xiangqing.js
+const App = getApp()
+
 Page({
 
   /**
@@ -6,6 +8,7 @@ Page({
    */
   data: {
     isNew:true,
+    height:"",
     arr:{
       topic:"金色阳光残疾人康复中心",
       label:[
@@ -27,7 +30,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      height:App.globalData.navHeight
+    })
   },
 
   /**

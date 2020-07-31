@@ -1,4 +1,4 @@
-<view class="jigou">
+<view class="jigou" style="padding-top:{{height}}px">
 	<!-- 头部 -->
 	<header text="康复服务机构" isNew="{{isNew}}"></header>
 	<!-- 搜索栏 -->

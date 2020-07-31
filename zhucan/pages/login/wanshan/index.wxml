@@ -1,4 +1,4 @@
-<view class="wanshan_box">
+<view class="wanshan_box" style="padding-top:{{height}}px">
 <!-- 头部 -->
 <header text="完善简历" back="true" back_age="true"></header>
 
