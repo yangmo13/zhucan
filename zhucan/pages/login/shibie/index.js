@@ -8,17 +8,17 @@ Page({
   data: {
     height:"",
     form: {
-      "name": "111",
+      "name": "",
       //身份证号
       "idcard": "",
       //性别
-      "sex":"man",
+      "sex":"",
       //籍贯
       "nativePlace": "",
       //年龄
-      'age':22,
-      //职业
-      "job":"电焊工",
+      'age':'',
+     
+     
       //民族
       "nation": "",
       //婚否
@@ -51,7 +51,9 @@ Page({
         //单位性质
         "unit": "",
         //是否福利企业
-        "weal": ""
+        "weal": "",
+        //工作年龄
+        'workTime':""
       },
       //残疾证信息
       "disabled": {
@@ -172,12 +174,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let data =JSON.parse(options.data)
+    let form = this.data.form
+    Object.keys(form).forEach(key=>{
+      if(data[key]){
+        form[key]=data[key]
+      }
+    })
     this.setData({
-      height:App.globalData.navHeight
+      height:App.globalData.navHeight,
+      form:form
     })
 
-    let data =JSON.parse(options.data)
+console.log(this.data.form,"obj")
+    
+
     this.setData({
       form2:data
     })
@@ -191,6 +202,7 @@ Page({
     console.log(this.data.form)
   },
   change(e) {
+    console.log(this.data.form,555555)
     if (e.currentTarget.dataset.msg == "form.name") {
       //验证中文名字
       let reg = new RegExp(/^[\u4E00-\u9FA5]{2,4}$/)
@@ -207,7 +219,7 @@ Page({
         this.setData({
           [e.currentTarget.dataset.msg]: e.detail.value
         })
-        console.log(this.data.form,555555)
+      
       }
     } else if (e.currentTarget.dataset.msg == "form.disabled.num") {
       //残疾证验证
@@ -232,6 +244,7 @@ Page({
     } else if (e.currentTarget.dataset.msg == "form.idcard") {
       //身份证验证
       let reg = new RegExp(/^[1-9]\d{5}(18|19|20|(3\d))\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/)
+      console.log(reg.test(e.detail.value),"test")
       if (reg.test(e.detail.value) == false) {
         wx.showToast({
           title: '请输入正确的身份证号码号码',
@@ -246,6 +259,7 @@ Page({
           [e.currentTarget.dataset.msg]: e.detail.value
         })
       }
+      console.log(e.currentTarget.dataset.msg)
 
     } else if (e.currentTarget.dataset.msg == "form.nativePlace") {
       //籍贯验证

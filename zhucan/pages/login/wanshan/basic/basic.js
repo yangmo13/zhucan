@@ -1,4 +1,4 @@
-// pages/login/wanshan/index.js
+// pages/login/wanshan/basic/basic.js
 const App = getApp()
 Page({
 
@@ -6,41 +6,55 @@ Page({
    * 页面的初始数据
    */
   data: {
-    age: "22岁",
-    idcard: "",
-    job: "",
-    phone: "180****4549",
-    idcard2: "",
-    form: [],
-    height: ""
-  },
-  goBasic() {
-    let form = JSON.stringify(this.data.form)
-    wx.navigateTo({
-      url: `./basic/basic?form=${form}`,
-    })
+    isNew:true,
+    height:0,
+    form:{
+      // // 姓名
+      // name:"",
+      // // 身份证
+      // idcard:"",
+      // // 参加工作时间
+      // job_times:"",
+      // // 现居住城市
+      // city:"",
+      // // 手机号码,
+      // phone:"",
+      // //年龄
+      // age:""
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let data = JSON.parse(options.form)
-    console.log(data,"shuju")
-    let idcard2=''
-    data.idcard?idcard2 = (data.idcard).slice(0, 4) + '*** ':''
-    console.log(data.phone, 55555)
+    
+   
+    let form =JSON.parse(options.form)
+      this.setData({
+        height:App.globalData.navHeight,
+        form:form
+      })
+      console.log(form,"jjjjj")
+  },
+  iptBlur(e){
+ 
+    let name= e.currentTarget.dataset.name
     this.setData({
-      height: App.globalData.navHeight,
-      idcard2: idcard2,
-      form: data
+      [name]:e.detail,
     })
+
+    
   },
-  next() {
+  next(){
+    let form = JSON.stringify(this.data.form)
+   
+
     wx.navigateTo({
-      url: '../fuwu/index',
+      url: `../index?form=${form}`,
     })
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

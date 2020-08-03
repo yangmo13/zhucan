@@ -1,0 +1,8 @@
+<view class="purpose" style="padding-top:{{height}}px">
+<!-- 头部导航 -->
+  <header text="求职意向" isNew="{{isNew}}"></header>
+  <!-- form部分 -->
+  <view class="purpose_box">
+    <xiala></xiala>
+  </view>
+</view>

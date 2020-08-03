@@ -8,23 +8,23 @@
 		<view class="jianjie_top">
 			<text class="jianjie_name">{{form.name}}</text>
 			<text></text>
-			<view class="yixiang_write">
+			<view class="yixiang_write" bindtap="goBasic">
 				<image src="../../../image/write.png"></image>
 			</view>
 
 		</view>
 		<view class="jianjie_bottom">
 			<view class="jianjie_box">
-				{{form.age==""?"未填写":form.age+'岁'}}
+				{{form.age==''?"未填写":form.age+'岁'}}
 			</view>
 			<view class="jianjie_box">
-				{{form.work.profession==""?"未填写":form.work.profession}}
+				{{idcard2==""?"未填写":idcard2}}
 			</view>
 			<view class="jianjie_box">
-				{{form.education==""?"未填写":form.education}}
+				{{form.job_time==undefined?"未填写":form.job_time}}
 			</view>
 			<view class="jianjie_box">
-				{{form.phone==""?"未填写":form.phone}}
+				{{form.phone==''?"未填写":form.phone}}
 			</view>
 		</view>
 	</view>

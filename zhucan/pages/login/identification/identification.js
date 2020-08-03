@@ -143,7 +143,7 @@ Page({
     let img3 = JSON.stringify(this.data.img3)
     let data = {
       "name": "刘铁柱",
-      'idcard': "1100251212121545142415412",
+      'idcard': "230103199708305714",
       "navtivePlace": "黑龙江",
       "age": "66",
       "nation": "汉族",

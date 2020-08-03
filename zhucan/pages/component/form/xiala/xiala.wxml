@@ -1,0 +1,17 @@
+<view class="ipt">
+<view class="ipt_box">
+  <text>{{isRed==true?'*':''}}</text>
+  <view class="ipt_text">{{text}}</view>
+  <view class="xiala_ipt" bindtap="isShow">
+  {{show_txt}}
+    <view class="xiala_box" wx:if="false">
+      <view class="xiala_li" 
+      hover-class="xiala_li_hover" 
+      wx:for="{{arr}}"
+      data-msg="{{item}}"
+      bindtap="change"
+      >{{item}}</view>
+    </view>
+  </view>
+</view>
+</view>

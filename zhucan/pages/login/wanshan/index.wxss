@@ -52,7 +52,10 @@ page{
   padding: 5rpx 15rpx;
   text-align: center;
   line-height: 22rpx;
-  
+  overflow: hidden;
+  overflow:hidden; 
+text-overflow:ellipsis;
+white-space:nowrap; 
 }
 
 .jianjie_box:last-child{

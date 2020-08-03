@@ -1,0 +1,35 @@
+/* pages/component/form/input.wxss */
+.ipt{
+  
+  margin-top: 20rpx;
+  height: 80rpx;
+}
+.ipt_box{
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:0 30rpx;
+  height: 100%;
+}
+.ipt_box text{
+  display: inline-block;
+  width: 24rpx;
+  color: #db001b;
+ 
+}
+.ipt_box input{
+  border-bottom: 4rpx solid #e7e7e7;
+  flex: 1;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  padding-left: 10rpx;
+ 
+}
+.ipt_text{
+min-width:100rpx ;
+
+height: 60rpx;
+line-height: 60rpx;
+color: #333;
+}

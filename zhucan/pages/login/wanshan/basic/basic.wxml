@@ -1,0 +1,24 @@
+<view class="basic" style="padding-top:{{height}}px">
+	<!-- 头部导航栏 -->
+	<header text="基本情况" isNew="{{isNew}}"></header>
+
+	<!-- 表单部分 -->
+	<view class="basic_box">
+		<!-- 姓名 -->
+		<ipt isRed='{{true}}' text='姓名' msg='{{form.name}}' bind:blur="iptBlur" data-name="form.name"></ipt>
+		<!-- 身份证号码 -->
+		<ipt isRed='{{true}}' text='身份证号码 :' msg='{{form.idcard}}' bind:blur="iptBlur" data-name="form.idcard"></ipt>
+		<!-- 参加工作时间 -->
+		<ipt isRed='{{true}}' text='参加工作时间 :' msg='{{form.work.workTime}}' bind:blur="iptBlur" data-name="form.work.workTime"></ipt>
+		<!-- 现居住城市 -->
+		<ipt isRed='{{true}}' text='现居住城市 :' msg='{{form.address}}' bind:blur="iptBlur" data-name="form.address"></ipt>
+		<!-- 手机号码 -->
+		<ipt isRed='{{true}}' text='手机号码 :' msg='{{form.phone}}' bind:blur="iptBlur" data-name="form.phone"></ipt>
+	
+	</view>
+  	<!-- 提交按钮 -->
+		<view class="sunmit">
+			<button id="sub_btn" bindtap="next">保存</button>
+		</view>
+
+</view>
