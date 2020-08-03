@@ -40,7 +40,7 @@
 				<image src="../../../image/zhuangtai.png">
 				</image>
 			</view>
-			<view class="job_right">离职状态，随时到岗
+			<view class="job_right">{{form.work.purpose==''?'离职状态':form.work.purpose}}
 			</view>
 		</view>
 		<view class="job_top">
@@ -48,7 +48,7 @@
 				<image src="../../../image/money.png">
 				</image>
 			</view>
-			<view class="job_right">面议
+			<view class="job_right">{{form.work.pay==''?'面议':form.work.pay}}
 			</view>
 		</view>
 		<view class="job_top">
@@ -56,7 +56,7 @@
 				<image src="../../../image/wenjian.png">
 				</image>
 			</view>
-			<view class="job_right">未填写
+			<view class="job_right">{{form.work.station==''?'未填写':form.work.station}}
 			</view>
 		</view>
 

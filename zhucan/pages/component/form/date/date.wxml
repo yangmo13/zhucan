@@ -1,0 +1,29 @@
+<view class="ipt">
+	<view class="ipt_box">
+		<text>{{isRed==true?'*':''}}</text>
+		<view class="ipt_text">{{text}} :</view>
+			<view class="pick_box">
+				<view class="pick_box_left">
+					<picker mode="date" 
+          class="picker_box"
+          data-msg="date.start"
+          start="2015-09-01"  bindchange="bindDateChange">
+						<view class="picker">
+							{{date.start}}
+						</view>
+					</picker>
+				</view>
+				<view class="pick_box_center">至</view>
+				<view class="pick_box_right">
+        <picker mode="date"
+          class="picker_box"
+          data-msg="date.end"
+          start="2015-09-01"  bindchange="bindDateChange">
+						<view class="picker">
+							{{date.end}}
+						</view>
+					</picker>
+        </view>
+			</view>
+		</view>
+	</view>

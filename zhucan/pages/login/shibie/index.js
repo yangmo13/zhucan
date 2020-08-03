@@ -6,17 +6,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    height:"",
+    height: "",
     form: {
       "name": "",
       //身份证号
       "idcard": "",
       //性别
-      "sex":"",
+      "sex": "",
       //籍贯
       "nativePlace": "",
       //年龄
-      'age':'',
+      'age': '',
       //民族
       "nation": "",
       //婚否
@@ -29,7 +29,7 @@ Page({
       "address": "",
       //手机号
       "phone": "",
-     
+
       //户口类型,
       "registered": "",
       //联系人信息，
@@ -51,15 +51,26 @@ Page({
         //是否福利企业
         "weal": "",
         //工作年龄
-        'workTime':"",
+        'workTime': "",
         //求职意向
-        'purpose':"",
+        'purpose': "",
         //薪资
-        'pay':"",
+        'pay': "",
         //期望工作地点
-        'workplace':"",
+        'workplace': "",
         //期望岗位
-        'station':""
+        'station': "",
+        //工作岗位
+        'job_station': "",
+        //入职时间
+        'date': {
+          //在职时间开始
+          'start': "",
+          //在职时间结束
+          'end': "",
+        },
+        //工作职责
+        'responsibility': ""
 
       },
       //残疾证信息
@@ -181,25 +192,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let data =JSON.parse(options.data)
+    let data = JSON.parse(options.data)
     let form = this.data.form
-    Object.keys(form).forEach(key=>{
-      if(data[key]){
-        form[key]=data[key]
+    Object.keys(form).forEach(key => {
+      if (data[key]) {
+        form[key] = data[key]
       }
     })
     this.setData({
-      height:App.globalData.navHeight,
-      form:form
+      height: App.globalData.navHeight,
+      form: form
     })
 
-console.log(this.data.form,"obj")
-    
+    console.log(this.data.form, "obj")
+
 
     this.setData({
-      form2:data
+      form2: data
     })
-    console.log(this.data.form2.name,151551)
+    console.log(this.data.form2.name, 151551)
   },
   item_change(e) {
     console.log(e.detail.value)
@@ -209,7 +220,7 @@ console.log(this.data.form,"obj")
     console.log(this.data.form)
   },
   change(e) {
-    console.log(this.data.form,555555)
+    console.log(this.data.form, 555555)
     if (e.currentTarget.dataset.msg == "form.name") {
       //验证中文名字
       let reg = new RegExp(/^[\u4E00-\u9FA5]{2,4}$/)
@@ -226,7 +237,7 @@ console.log(this.data.form,"obj")
         this.setData({
           [e.currentTarget.dataset.msg]: e.detail.value
         })
-      
+
       }
     } else if (e.currentTarget.dataset.msg == "form.disabled.num") {
       //残疾证验证
@@ -240,18 +251,18 @@ console.log(this.data.form,"obj")
         this.setData({
           ['form.disabled.num']: ''
         })
-       
+
       } else {
         this.setData({
           [e.currentTarget.dataset.msg]: e.detail.value
         })
-       
+
       }
 
     } else if (e.currentTarget.dataset.msg == "form.idcard") {
       //身份证验证
       let reg = new RegExp(/^[1-9]\d{5}(18|19|20|(3\d))\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/)
-      console.log(reg.test(e.detail.value),"test")
+      console.log(reg.test(e.detail.value), "test")
       if (reg.test(e.detail.value) == false) {
         wx.showToast({
           title: '请输入正确的身份证号码号码',

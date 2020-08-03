@@ -1,0 +1,28 @@
+<view class="jingli" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="工作经历" isNew="{{isnew}}"></header>
+	<view class="form_box">
+		<!-- form部分 -->
+    <!-- 单位名称  -->
+		<ipt text="单位名称" bind:blur="iptChnage"
+    data-msg="form.work.company"
+    ></ipt>
+    <!-- 工作岗位 -->
+	  <ipt text="工作岗位" bind:blur="iptChnage"
+    data-msg="form.work.company"
+    ></ipt>
+    <!-- 在职时间 -->
+		<date text="在职时间" bind:blur="iptChnage"
+    data-msg="form.work.company"
+    data-msg="form.work.date"
+    ></date>
+    <!-- 工作职责 -->
+    <rich_txt text="工作职责"
+      bind:blur="iptChnage"
+      data-msg="form.work.responsibility"
+      data-msg="form.work.responsibility"
+    >
+      </rich_txt>
+	</view>
+
+</view>

@@ -1,12 +1,10 @@
 {
   "pages":[
+
+    "pages/login/wanshan/jingli/jingli",
     "pages/index/index",
 
     "pages/login/wanshan/purpose/purpose",
-    
-
-
-
     "pages/login/wanshan/basic/basic",
    
 
