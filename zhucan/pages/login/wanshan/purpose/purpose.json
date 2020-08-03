@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "header":"/pages/component/header/header",
-    "xiala":"/pages/component/form/xiala/xiala"
+    "xiala":"/pages/component/form/xiala/xiala",
+    "ipt":"/pages/component/form/input"
   }
 }

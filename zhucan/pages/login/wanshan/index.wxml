@@ -31,7 +31,7 @@
 	<!-- 求职意向 -->
 	<view class="job">
 		<view class="yixiang">求职意向
-			<view class="yixiang_write">
+			<view class="yixiang_write" bindtap="goPurpose">
 				<image src="../../../image/write.png"></image>
 			</view>
 		</view>

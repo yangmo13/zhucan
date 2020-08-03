@@ -17,8 +17,6 @@ Page({
       "nativePlace": "",
       //年龄
       'age':'',
-     
-     
       //民族
       "nation": "",
       //婚否
@@ -53,7 +51,16 @@ Page({
         //是否福利企业
         "weal": "",
         //工作年龄
-        'workTime':""
+        'workTime':"",
+        //求职意向
+        'purpose':"",
+        //薪资
+        'pay':"",
+        //期望工作地点
+        'workplace':"",
+        //期望岗位
+        'station':""
+
       },
       //残疾证信息
       "disabled": {

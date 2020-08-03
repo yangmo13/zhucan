@@ -14,6 +14,12 @@ Page({
     form: [],
     height: ""
   },
+  goPurpose(){
+    let form = JSON.stringify(this.data.form)
+    wx.navigateTo({
+      url: `./purpose/purpose?form=${form}`,
+    })
+  },
   goBasic() {
     let form = JSON.stringify(this.data.form)
     wx.navigateTo({

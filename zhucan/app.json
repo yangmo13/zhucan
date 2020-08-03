@@ -1,8 +1,10 @@
 {
   "pages":[
+    "pages/index/index",
+
     "pages/login/wanshan/purpose/purpose",
     
-    "pages/index/index",
+
 
 
     "pages/login/wanshan/basic/basic",
