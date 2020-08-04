@@ -66,11 +66,18 @@ Page({
       'recruitment': "",
 
       //培训经历
-
+      //培训机构
       'organization': "",
-      'time': "",
+      //培训时间
+      //培训开始
+      'peixun_start':"",
+      //培训结束
+      'prixun_end':"",
+      //培训专业
       'major': '',
+      //证明人
       'certifier': "",
+      //证明人手机
       'certifier_phone': "",
 
       //自我评价

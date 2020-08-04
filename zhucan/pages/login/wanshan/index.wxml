@@ -116,7 +116,9 @@
 		<view class="jingli_box">
 			<view class="jingli_box_top">
 				培训经历
-				<view class="jingli_add_box">
+				<view class="jingli_add_box" 
+				bindtap="goNext" data-url="peixun"
+				>
 					<view class="jingli_add">
 						<image src="../../../image/add.png"></image>
 					</view>
@@ -132,7 +134,9 @@
 		<view class="jingli_box">
 			<view class="jingli_box_top">
 				自我评价
-				<view class="yixiang_write">
+				<view class="yixiang_write"
+				bindtap="goNext" data-url="myself"
+				>
 					<image src="../../../image/write.png"></image>
 				</view>
 

@@ -1,12 +1,16 @@
 {
   "pages":[
-  
+   
 
    
 
     "pages/login/wanshan/index",
     "pages/login/wanshan/jingli/jingli",
     "pages/login/wanshan/education/education",  
+    "pages/login/wanshan/peixun/peixun",  
+    "pages/login/wanshan/myself/myself",  
+    "pages/login/wanshan/canji/canji",  
+    
 
     "pages/login/wanshan/purpose/purpose",
     "pages/login/wanshan/basic/basic",

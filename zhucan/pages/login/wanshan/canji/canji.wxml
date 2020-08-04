@@ -1,0 +1,53 @@
+<view class="canji" style="padding-top:{{height}}px">
+	<!-- 头部 -->
+	<header text="残疾类型" isNew="{{isNew}}"></header>
+	<!-- form部分 -->
+	<view class="form">
+		<!-- 残疾类型 -->
+		<view class="canji_leixing">
+			<view class="left_name">
+				<text>*</text>
+				<text>残疾类型 :</text>
+			</view>
+			<view class="right_checkbox" >
+				<checkbox-group class="check_box"
+          bindchange="change"
+          data-msg="form.type"
+        >
+					<label wx:for="{{arr}}">
+						<checkbox
+              value="{{item}}"
+            ></checkbox>
+						{{item}}
+
+					</label>
+
+				</checkbox-group>
+			</view>
+		</view>
+		<!-- 残疾等级 -->
+	<view class="canji_leixing">
+			<view class="left_name">
+				<text>*</text>
+				<text>残疾类型 :</text>
+			</view>
+			<view class="right_checkbox" >
+          <radio-group class="radio_txt"       
+            data-msg="form.level"
+            bindchange="change">
+            <label wx:for="{{arr2}}">
+              <radio
+                value="{{item}}"
+              ></radio>
+              {{item}}
+            </label>
+          </radio-group>
+			</view>
+		</view>
+
+	</view>
+
+  <view class="bottom">
+  <button bindtap="next" id="btn">完成</button>
+  </view>
+</view>
