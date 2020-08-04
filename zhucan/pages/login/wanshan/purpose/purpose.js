@@ -8,7 +8,16 @@ Page({
   data: {
     isNew:true,
     height:0,
-    form:[],
+    form:{
+      //求职意向
+      'purpose': "",
+      //薪资
+      'pay': "",
+      //期望工作地点
+      'workplace': "",
+      //期望岗位
+      'station': ""
+    },
     arr:[
       "离职,随时到岗",
       "在职，月内到岗",
@@ -24,39 +33,61 @@ Page({
       "1万到2万",
       "2万以上"
       
-    ]
+    ],
+   ' old_form':{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let form = JSON.parse(options.form)
-    console.log(form)
-    
+    let data = JSON.parse(options.form)
+    let form =this.data.form
+    console.log(data)
+    Object.keys(form).forEach(key=>{
+      form[key]=data[key]
+    })
     this.setData({
       form:form,
+      old_form:data,
       height:App.globalData.navHeight
     })
+    console.log(this.data.form)
   },
   valueChange(e){
-    console.log(e.detail,5555)
+    
     this.setData({
       [e.currentTarget.dataset.msg]:e.detail
     })
+    console.log(this.data.form,5555)
   },
   next(){
-    let form = JSON.stringify(this.data.form)
-    wx.navigateTo({
+    let new_form = this.data.old_form
+    let data =this.data.form
+    Object.keys(new_form).forEach(key=>{
+      if(data[key]){
+        new_form[key]=data[key]
+      }
+      
+    })
+
+    this.setData({
+      old_form:new_form
+    })
+
+    let form = JSON.stringify(this.data.old_form)
+    console.log(form)
+    wx.redirectTo({
       url: `../index?form=${form}`,
     })
   },
   isBlur(e){
     console.log(e.currentTarget.dataset.msg)
-    console.log(e.detail)
+  
     this.setData({
       [e.currentTarget.dataset.msg]:e.detail
     })
+    console.log(this.data.form)
   },
 
   /**

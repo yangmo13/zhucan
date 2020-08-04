@@ -5,17 +5,22 @@
 	<view class="purpose_box">
 		<!-- 求职意向 -->
 		<xiala text="求职意向" isRed="{{false}}" arr="{{arr}}" bind:xiala="valueChange"
-    data-msg="form.work.purpose"
+    data-msg="form.purpose"
     ></xiala>
 		<!-- 期望薪资 -->
 		<xiala text="期望薪资" isRed="{{false}}" arr="{{arr2}}" bind:xiala="valueChange" 
-      data-msg="form.work.pay"
+		msg="{{form.pay}}"
+      data-msg="form.pay"
     ></xiala>
 
 		<!-- 期望工作地点 -->
-		<ipt text="期望工作地点" bind:blur="isBlur" data-msg="form.work.workplace"></ipt>
+		<ipt text="期望工作地点" bind:blur="isBlur"
+			msg="{{form.workplace}}"
+		 data-msg="form.workplace"></ipt>
 		<!-- 期望工作地点 -->
-		<ipt text="期望岗位" bind:blur="isBlur" data-msg="form.work.station"></ipt>
+		<ipt text="期望岗位" bind:blur="isBlur"
+		msg="{{form.station}}"
+		 data-msg="form.station"></ipt>
 
 	</view>
 		    <view class="sunmit">

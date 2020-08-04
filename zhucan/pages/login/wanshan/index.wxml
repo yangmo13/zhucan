@@ -1,6 +1,6 @@
 <view class="wanshan_box" style="padding-top:{{height}}px">
-<!-- 头部 -->
-<header text="完善简历" back="true" back_age="true"></header>
+	<!-- 头部 -->
+	<header text="完善简历" back="true" back_age="true"></header>
 
 	<!-- 人物简介 -->
 	<view class="wanshan_top">
@@ -8,7 +8,7 @@
 		<view class="jianjie_top">
 			<text class="jianjie_name">{{form.name}}</text>
 			<text></text>
-			<view class="yixiang_write" bindtap="goBasic">
+			<view class="yixiang_write" bindtap="goNext" data-url="basic">
 				<image src="../../../image/write.png"></image>
 			</view>
 
@@ -18,7 +18,7 @@
 				{{form.age==''?"未填写":form.age+'岁'}}
 			</view>
 			<view class="jianjie_box">
-				{{idcard2==""?"未填写":idcard2}}
+				{{form.idcard==""?"未填写":form.idcard}}
 			</view>
 			<view class="jianjie_box">
 				{{form.job_time==undefined?"未填写":form.job_time}}
@@ -28,10 +28,24 @@
 			</view>
 		</view>
 	</view>
+	<!-- 残疾情况 -->
+	<view class="job">
+		<view class="yixiang">残疾情况
+			<view class="yixiang_write" bindtap="goNext" data-url="canji">
+				<image src="../../../image/write.png"></image>
+			</view>
+		</view>
+		<view class="canji_qingkuang_box">
+			<view class="canji_qingkuang">大萨达撒撒撒撒多撒撒多所多大萨达撒撒撒撒多撒撒多所多大萨达撒撒撒撒多撒撒多所多大萨达撒撒撒撒多撒撒多所多大萨达撒撒撒撒多撒撒多所多大萨达撒撒撒撒多撒撒多所多大萨达撒撒撒撒多撒撒多所多
+			</view>
+		</view>
+
+
+	</view>
 	<!-- 求职意向 -->
 	<view class="job">
 		<view class="yixiang">求职意向
-			<view class="yixiang_write" bindtap="goPurpose">
+			<view class="yixiang_write" bindtap="goNext" data-url="purpose">
 				<image src="../../../image/write.png"></image>
 			</view>
 		</view>
@@ -40,7 +54,7 @@
 				<image src="../../../image/zhuangtai.png">
 				</image>
 			</view>
-			<view class="job_right">{{form.work.purpose==''?'离职状态':form.work.purpose}}
+			<view class="job_right">{{form.purpose==''?'离职状态':form.purpose}}
 			</view>
 		</view>
 		<view class="job_top">
@@ -48,7 +62,7 @@
 				<image src="../../../image/money.png">
 				</image>
 			</view>
-			<view class="job_right">{{form.work.pay==''?'面议':form.work.pay}}
+			<view class="job_right">{{form.pay==''?'面议':form.pay}}
 			</view>
 		</view>
 		<view class="job_top">
@@ -56,7 +70,10 @@
 				<image src="../../../image/wenjian.png">
 				</image>
 			</view>
-			<view class="job_right">{{form.work.station==''?'未填写':form.work.station}}
+			<view class="job_right  station">{{form.workplace==''?'未填写':form.workplace}}
+			</view>
+
+			<view class="job_right workplace job_right_first">{{form.station==''?'未填写':form.station}}
 			</view>
 		</view>
 
@@ -67,8 +84,8 @@
 		<view class="jingli_box">
 			<view class="jingli_box_top">
 				工作经历
-				<view class="jingli_add_box">
-					<view class="jingli_add">
+				<view class="jingli_add_box" bindtap="goNext" data-url="jingli">
+					<view class="jingli_add" >
 						<image src="../../../image/add.png"></image>
 					</view>
 					<text>添加</text>
@@ -83,7 +100,7 @@
 		<view class="jingli_box">
 			<view class="jingli_box_top">
 				教育经历
-				<view class="jingli_add_box">
+				<view class="jingli_add_box"  bindtap="goNext" data-url="education">
 					<view class="jingli_add">
 						<image src="../../../image/add.png"></image>
 					</view>
@@ -125,10 +142,10 @@
 			</view>
 		</view>
 	</view>
- <view class="next_box">
- <button class="next" bindtap="next"> 完成填写</button>
- <text>跳过</text>
- </view>
-    
- 
+	<view class="next_box">
+		<button class="next" bindtap="next"> 完成填写</button>
+		<text>跳过</text>
+	</view>
+
+
 </view>

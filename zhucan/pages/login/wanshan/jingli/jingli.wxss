@@ -10,3 +10,22 @@ page{
 .form_box{
   padding-top: 60rpx;
 }
+.bottom_btn{
+  position: fixed;
+  bottom: 100rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#btn{
+  width: 650rpx;
+height: 80rpx;
+background-color: var(--blue);
+color: white;
+font-size: 34rxp;
+line-height: 48rpx;
+text-align: center;
+font-weight: 500;
+
+}

@@ -1,0 +1,37 @@
+<view class="jingli" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="教育经历" isNew="{{isnew}}"></header>
+	<view class="form_box">
+		<!-- form部分 -->
+		<!-- 学校名称  -->
+		<ipt text="学校名称" bind:blur="iptChnage" msg="{{form.school}}" data-msg="form.school"></ipt>
+
+		<!-- 在校时间 -->
+		<date text="在校时间" bind:blur="iptChnage" data-msg="form.date" start_time="{{form.school_start}}" end_time="{{form.school_end}}"></date>
+
+		<!-- 学历 -->
+		<view class="xueli">
+			<view class="xueli_left">
+				<xiala text="学历" arr="{{arr}}" bind:xiala="valueChange"isRed="{{false}}"        data-msg="form.education_background"
+        ></xiala>
+			</view>
+			<view class="xueli_right">
+				<checkbox-group bindchange="change">
+					<label>
+						<checkbox value="统招">
+						</checkbox>
+						统招
+					</label>
+
+				</checkbox-group>
+			</view>
+
+		</view>
+
+
+	</view>
+	<view class="bottom_btn">
+		<button bindtap="next" id="btn">完成</button>
+	</view>
+
+</view>

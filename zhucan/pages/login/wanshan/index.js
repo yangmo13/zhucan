@@ -6,41 +6,121 @@ Page({
    * 页面的初始数据
    */
   data: {
-    age: "22岁",
-    idcard: "",
-    job: "",
-    phone: "180****4549",
-    idcard2: "",
-    form: [],
-    height: ""
+    form: {
+      //姓名
+      'name': 'kkkk',
+      //年龄
+      'age': "12",
+      //身份证号码
+      'idcard': '54555545',
+      //参加工作时间
+      'job_time': '2年',
+      //现居住城市
+      'city': "哈尔滨",
+      //手机号码
+      'phone': "18045478923",
+      //意向
+
+      //求职意向
+      'purpose': "离职,随时到岗",
+      //薪资
+      'pay': "1千",
+      //期望工作地点
+      'workplace': "",
+      //期望岗位
+      'station': "",
+
+      //残疾情况
+
+      //残疾证类型
+      "type": [],
+      //残疾等级
+      "level": "",
+
+      //工作经历
+
+      //单位名称
+      "company": "",
+      //工作岗位
+      'job_station': "",
+      //入职时间
+
+      //在职时间开始
+      'job_start': "",
+      //在职时间结束
+      'job_end': "",
+
+      //工作职责
+      'responsibility': "",
+
+      //教育经历
+
+      //学校名称
+      'school': '',
+      //在校时间
+      'school_start': "",
+      'school_end': '',
+      //学历
+      'education_background': '',
+      //是否统招
+      'recruitment': "",
+
+      //培训经历
+
+      'organization': "",
+      'time': "",
+      'major': '',
+      'certifier': "",
+      'certifier_phone': "",
+
+      //自我评价
+      'myself': ""
+
+
+    }
   },
-  goPurpose(){
+
+  goNext(e) {
+    let url = e.currentTarget.dataset.url
     let form = JSON.stringify(this.data.form)
     wx.navigateTo({
-      url: `./purpose/purpose?form=${form}`,
+      url: `./${url}/${url}?form=${form}`,
     })
-  },
-  goBasic() {
-    let form = JSON.stringify(this.data.form)
-    wx.navigateTo({
-      url: `./basic/basic?form=${form}`,
-    })
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let data = JSON.parse(options.form)
-    console.log(data,"shuju")
-    let idcard2=''
-    data.idcard?idcard2 = (data.idcard).slice(0, 4) + '*** ':''
-    console.log(data.phone, 55555)
-    this.setData({
-      height: App.globalData.navHeight,
-      idcard2: idcard2,
-      form: data
-    })
+    // if (options.form) {
+    //   let data = JSON.parse(options.form)
+    //   console.log(data)
+
+    //   let form = this.data.form
+
+    //   Object.keys(form).forEach(key => {
+    //     if (data[key]) {
+    //       form[key] = data[key]
+    //     }
+    //   })
+    //   this.setData({
+    //     height: App.globalData.navHeight,
+    //     form: form
+    //   })
+    //   console.log(form, "data")
+    // }
+if(options.form){
+ 
+ let data =JSON.parse(options.form)
+ console.log(data,"DATA")
+ this.setData({
+   form:data
+ })
+
+}
+ 
+
   },
   next() {
     wx.navigateTo({

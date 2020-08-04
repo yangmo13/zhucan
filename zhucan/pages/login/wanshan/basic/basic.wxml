@@ -9,9 +9,9 @@
 		<!-- 身份证号码 -->
 		<ipt isRed='{{true}}' text='身份证号码 :' msg='{{form.idcard}}' bind:blur="iptBlur" data-name="form.idcard"></ipt>
 		<!-- 参加工作时间 -->
-		<ipt isRed='{{true}}' text='参加工作时间 :' msg='{{form.work.workTime}}' bind:blur="iptBlur" data-name="form.work.workTime"></ipt>
+		<ipt isRed='{{true}}' text='参加工作时间 :' msg='{{form.job_time}}' bind:blur="iptBlur" data-name="form.job_time"></ipt>
 		<!-- 现居住城市 -->
-		<ipt isRed='{{true}}' text='现居住城市 :' msg='{{form.address}}' bind:blur="iptBlur" data-name="form.address"></ipt>
+		<ipt isRed='{{true}}' text='现居住城市 :' msg='{{form.city}}' bind:blur="iptBlur" data-name="form.city"></ipt>
 		<!-- 手机号码 -->
 		<ipt isRed='{{true}}' text='手机号码 :' msg='{{form.phone}}' bind:blur="iptBlur" data-name="form.phone"></ipt>
 	

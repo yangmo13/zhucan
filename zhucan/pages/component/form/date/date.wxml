@@ -6,10 +6,10 @@
 				<view class="pick_box_left">
 					<picker mode="date" 
           class="picker_box"
-          data-msg="date.start"
+          data-msg="start"
           start="2015-09-01"  bindchange="bindDateChange">
 						<view class="picker">
-							{{date.start}}
+							{{start}}
 						</view>
 					</picker>
 				</view>
@@ -17,10 +17,10 @@
 				<view class="pick_box_right">
         <picker mode="date"
           class="picker_box"
-          data-msg="date.end"
+          data-msg="end"
           start="2015-09-01"  bindchange="bindDateChange">
 						<view class="picker">
-							{{date.end}}
+							{{end}}
 						</view>
 					</picker>
         </view>

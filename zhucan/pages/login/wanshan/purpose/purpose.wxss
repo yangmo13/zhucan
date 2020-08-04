@@ -16,6 +16,9 @@ page{
   align-items: center;
 
 }
+/* .purpose_box{
+  padding-top: 100rpx;
+} */
 #sub_btn{
   width: 650rpx;
   height: 80rpx;

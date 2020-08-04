@@ -1,15 +1,19 @@
 {
   "pages":[
+  
 
+   
+
+    "pages/login/wanshan/index",
     "pages/login/wanshan/jingli/jingli",
-    "pages/index/index",
+    "pages/login/wanshan/education/education",  
 
     "pages/login/wanshan/purpose/purpose",
     "pages/login/wanshan/basic/basic",
    
 
-
-
+    "pages/index/index",
+    "pages/login/shibie/index",
     "pages/servers/index/index",
   
     "pages/servers/index/zhiye/zhiye",
@@ -26,9 +30,9 @@
 
     "pages/login/yinsi/index",
     "pages/login/fuwu/index",
-    "pages/login/wanshan/index",
+
   
-    "pages/login/shibie/index",
+ 
     "pages/login/identification/identification",
     "pages/logs/logs"
 

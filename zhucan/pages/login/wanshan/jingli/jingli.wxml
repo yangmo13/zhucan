@@ -5,24 +5,31 @@
 		<!-- form部分 -->
     <!-- 单位名称  -->
 		<ipt text="单位名称" bind:blur="iptChnage"
-    data-msg="form.work.company"
+    msg="{{form.company}}"
+    data-msg="form.company"
     ></ipt>
     <!-- 工作岗位 -->
 	  <ipt text="工作岗位" bind:blur="iptChnage"
-    data-msg="form.work.company"
+    data-msg="form.job_station"
+    msg="{{form.job_station}}"
     ></ipt>
     <!-- 在职时间 -->
 		<date text="在职时间" bind:blur="iptChnage"
-    data-msg="form.work.company"
-    data-msg="form.work.date"
+    
+    data-msg="form.date"
+    start_time="{{form.job_start}}"
+    end_time="{{form.job_end}}"
     ></date>
     <!-- 工作职责 -->
     <rich_txt text="工作职责"
       bind:blur="iptChnage"
-      data-msg="form.work.responsibility"
-      data-msg="form.work.responsibility"
+     msg="{{form.responsibility}}"
+      data-msg="form.responsibility"
     >
       </rich_txt>
 	</view>
+  <view class="bottom_btn">
+    <button bindtap="next" id="btn">完成</button>
+  </view>
 
 </view>

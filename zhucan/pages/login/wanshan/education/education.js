@@ -6,31 +6,59 @@ Page({
    * 页面的初始数据
    */
   data: {
-    old_form:"",
+    old_form:{},
+    arr:[
+      "初中及以下",
+      "高中",
+      "中专/中技",
+      "大专",
+      "本科",
+      "硕士",
+      "博士"
+    ],
     form:{
-      //单位名称
-      'company':'',
-       //工作岗位
-       'job_station': "",
-       //入职时间
- 
-       //在职时间开始
-       'job_start': "",
-       //在职时间结束
-       'job_end': "",
- 
-       //工作职责
-       'responsibility': "",
+      //学校名称
+      'school': '',
+      //在校时间
+      'school_start': "",
+      'school_end': '',
+      //学历
+      'education_background': '',
+      //是否统招
+      'recruitment': "",
     },
     height: 0,
     isnew:true
   },
+  valueChange(e){
+    this.setData({
+      [e.currentTarget.dataset.msg]:e.detail
+    })
+    console.log(this.data.form,5555)
+  },
+  change(e){
+
+    if(e.detail.value[0]){
+      let recruitment = 'form.recruitment'
+     this.setData({
+       [recruitment]:"统招"
+     })
+    }else{
+      let recruitment = 'form.recruitment'
+      this.setData({
+        [recruitment]:"非统招"
+      })
+    }
+    console.log(this.data.form)
+  },
+  xialaChange(e){
+    console.log(111111)
+  },
 
   iptChnage(e){
     let msg = e.currentTarget.dataset.msg
-    let start ='form.job_start'
-    let end ='form.job_end'
-
+    let start ='form.school_start'
+    let end ='form.school_end'
     if(e.detail.start){
       this.setData({
         [start]:e.detail.start,
@@ -42,7 +70,6 @@ Page({
         [msg]:e.detail
       })
     }
-   
 
     console.log(this.data.form)
     

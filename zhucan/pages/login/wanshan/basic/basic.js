@@ -9,19 +9,18 @@ Page({
     isNew:true,
     height:0,
     form:{
-      // // 姓名
-      // name:"",
-      // // 身份证
-      // idcard:"",
-      // // 参加工作时间
-      // job_times:"",
-      // // 现居住城市
-      // city:"",
-      // // 手机号码,
-      // phone:"",
-      // //年龄
-      // age:""
-    }
+      // 姓名
+     'name':'',
+      // 身份证
+      'idcard':"",
+      // 参加工作时间
+      'job_time':"",
+      // 现居住城市
+      'city':"",
+      // 手机号码,
+      'phone':"",
+    },
+    'old_form':""
   },
 
   /**
@@ -29,13 +28,17 @@ Page({
    */
   onLoad: function (options) {
     
-   
-    let form =JSON.parse(options.form)
-      this.setData({
-        height:App.globalData.navHeight,
-        form:form
-      })
-      console.log(form,"jjjjj")
+    let data = JSON.parse(options.form)
+    let form = this.data.form
+    console.log(data,"data")
+    Object.keys(form).forEach(key=>{
+      form[key]=data[key]
+    })
+    this.setData({
+      height:App.globalData.navHeight,
+      form:form,old_form:data
+    })
+    console.log(form)
   },
   iptBlur(e){
  
@@ -47,10 +50,22 @@ Page({
     
   },
   next(){
-    let form = JSON.stringify(this.data.form)
-   
+    let new_form = this.data.old_form
+    let data =this.data.form
+    Object.keys(new_form).forEach(key=>{
+      if(data[key]){
+        new_form[key]=data[key]
+      }
+      
+    })
 
-    wx.navigateTo({
+    this.setData({
+      old_form:new_form
+    })
+
+    let form = JSON.stringify(this.data.old_form)
+    console.log(form)
+    wx.redirectTo({
       url: `../index?form=${form}`,
     })
   },

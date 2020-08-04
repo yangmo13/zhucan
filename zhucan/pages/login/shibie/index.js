@@ -52,25 +52,8 @@ Page({
         "weal": "",
         //工作年龄
         'workTime': "",
-        //求职意向
-        'purpose': "",
-        //薪资
-        'pay': "",
-        //期望工作地点
-        'workplace': "",
-        //期望岗位
-        'station': "",
-        //工作岗位
-        'job_station': "",
-        //入职时间
-        'date': {
-          //在职时间开始
-          'start': "",
-          //在职时间结束
-          'end': "",
-        },
-        //工作职责
-        'responsibility': ""
+      
+        
 
       },
       //残疾证信息
@@ -523,7 +506,7 @@ Page({
     let form = JSON.stringify(this.data.form)
     console.log(form)
     wx.navigateTo({
-      url: `../wanshan/index?form=${form}`,
+      url: `../wanshan/index`,
     })
   },
 
