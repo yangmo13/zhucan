@@ -1,0 +1,191 @@
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #ededed;
+
+}
+.post_box{
+  padding: 30rpx;
+
+}
+
+.post_name_box{
+ padding: 20rpx;
+ background-color: #fff;
+ border-radius: 10rpx;
+}
+.post_name{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+}
+.post_name view{
+  font-size: 38rpx;
+}
+.post_name text{
+  color: #b8741a;
+  display: inline-block;
+  line-height: 55rpx;
+}
+.company_name{
+  font-size: 28rpx;
+  color: #7f7f7f;
+  padding:  20rpx 0;
+}
+.demand_box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.demand{
+  color: #7f7f7f;
+  font-size: 28rpx;
+  display: flex;
+  height: 32rpx;
+}
+.demand_txt{
+  color: #ccc;
+  font-size: 26rpx;
+}
+.demand text{
+  border-left: 1px solid #7f7f7f;
+  display: inline-block;
+  line-height: 32rpx;
+  padding: 0 10rpx;
+}
+.demand text:first-child{
+  border-left:none ;
+  padding-left: 0;
+}
+.position{
+  padding:20rpx ;
+  height:110rpx ;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.position_name{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+}
+.position_name_icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.position_name_icon image{
+  width: 100%;
+  height: 100%;
+}
+.position_name_msg{
+  font-size: 28rpx;
+  color: #7f7f7f;
+  margin-left: 20rpx;
+}
+.describe{
+  padding: 20rpx ;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  background-color: white;
+}
+.des_txt_box{
+  padding:  10rpx 0;
+  margin-top: 10rpx;
+}.des_txt{
+  color: #7f7f7f;
+ 
+  font-size: 27rpx;
+}
+.hint{
+  color: #d9001b;
+  font-size: 22rpx;
+  margin-top: 20rpx;
+}
+.trait{
+  padding: 5rpx 20rpx;
+  background-color: #f8f8fa;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  color: #555;
+  margin-right: 20rpx;
+}
+.navi_company{
+ 
+  border-radius: 10rpx;
+
+  margin-top: 20rpx;
+  background-color: white;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.company_img{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  overflow: hidden;
+}
+.company_img image{
+  width: 100%;
+  height: 100%;
+  
+}
+.company_msg{
+  flex: 1;
+  margin-left: 30rpx;
+  height: 100%;
+}
+.navi_btn{
+  width: 80rpx;
+  height: 80rpx;
+  
+}
+.navi_btn image{
+  width: 100%;
+  height: 100%;
+}
+.company_msg_name{
+  font-size: 30rpx;
+  color: #333;
+}
+.company_major{
+  font-size: 26rpx;
+  color: #7f7f7f;
+  padding: 10rpx 0;
+}
+.company_label text{
+  font-size: 26rpx;
+  color: #333;
+  border-left: 1px solid #7f7f7f;
+  padding:  0 10rpx;
+}
+.company_label text:first-child{
+  border-left: none;
+  padding-left: 0;
+}
+.toudi_btn{
+  margin-top: 60rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+}
+#toudi{
+  width: 600rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: white;
+  font-weight: 100;
+  padding: 0;
+  background-color: var(--blue);
+}

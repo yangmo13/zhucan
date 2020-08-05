@@ -1,0 +1,71 @@
+<view class='post' style="padding-top:{{height}}px">
+	<!-- 头部导航栏 -->
+	<header text="公司详情"></header>
+	<!-- 岗位详请 -->
+	<!-- 顶部岗位详情 -->
+	<view class="post_box">
+		<!-- 跳转至公司页面 -->
+		<view class="navi_company">
+			<view class="company_img">
+				<image src="/image/head.png"></image>
+			</view>
+			<view class="company_msg">
+				<view class="company_msg_name">{{arr.company_name}}
+				</view>
+				<view class="company_major">{{arr.company_major}}
+				</view>
+				<view class="company_label">
+					<text wx:for="{{arr.company_label}}">{{item}}</text>
+
+				</view>
+			</view>
+			<view class="navi_btn">
+
+			</view>
+		</view>
+		<!-- 工作地点 -->
+		<view class="position">
+			<view class="position_txt">工作地点</view>
+			<view class="position_name">
+				<view class="position_name_icon">
+					<image src="/image/dingwei.png"></image>
+				</view>
+				<view class="position_name_msg">{{arr.position}}</view>
+			</view>
+		</view>
+		<!-- 职位描述 -->
+		<view class="describe">
+			<rich-text nodes="{{arr.content}}">
+
+			</rich-text>
+		</view>
+		<!-- 公司其他岗位 -->
+
+		<view class="other_post">公司其他岗位</view>
+		<view class="post_name_box" wx:for="{{arr.otherPost}}">
+			<!-- 岗位名字 -->
+			<view class="post_name">
+				<view>{{item.post_name}}</view>
+				<text>{{item.salary}}</text>
+			</view>
+
+			<!-- 条件和时间 -->
+			<view class="demand_box">
+				<view class="demand">
+					<text wx:for="{{item.demand}}">{{item}}</text>
+
+				</view>
+				<text class="demand_txt">{{item.date}}</text>
+			</view>
+			<!-- 公司福利 -->
+			<view class="position_name">
+				<view class="trait" wx:for="{{item.trait}}">{{item}}</view>
+			</view>
+
+		</view>
+
+
+
+	</view>
+
+</view>
