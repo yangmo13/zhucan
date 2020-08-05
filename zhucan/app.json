@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/servers/qiye/qiye",
+    "pages/servers/index/index",
    
 
    
@@ -18,7 +20,7 @@
 
     "pages/index/index",
     "pages/login/shibie/index",
-    "pages/servers/index/index",
+    
   
     "pages/servers/index/zhiye/zhiye",
     "pages/servers/index/zhiye/jigou/jigou",

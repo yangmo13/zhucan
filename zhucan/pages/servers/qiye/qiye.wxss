@@ -1,0 +1,152 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+.qiye{
+  width: 100%;
+
+}
+.ipt_search{
+  padding: 30rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: white;
+  z-index: 999;
+  padding-bottom: 15rpx;
+}
+.ipt_box{
+  height: 80rpx;
+  
+}
+.ipt_box input{
+  border-bottom: 1px solid #ccc;
+  width: 532rpx;
+  font-size: 28rpx;
+  text-indent: 10rpx;
+  height: 60rpx;
+  padding-left: 10rpx;
+  padding-top: 10rpx;
+  color: #222;
+}
+.ipt_placeholde{
+  color: #555;
+  font-size: 28rpx;
+  text-indent: 10rpx;
+}
+.ipt_btn_box{
+  width: 150rpx;
+  height: 80rpx;
+  margin-left: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ipt_btn{
+  width: 122rpx;
+height: 52rpx;
+background-color: var(--blue);
+color: white;
+text-align: center;
+line-height: 52rpx;
+font-size: 28rpx;
+font-weight: 100;
+margin: 0;
+padding: 0;
+border-radius: 5rpx;
+
+}
+.qiye_li{
+
+  border-bottom: 1px solid #efefef;
+  position: relative;
+  padding:  35rpx 20rpx;
+  padding-bottom: 0;
+}
+.qiye_li_post{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+}
+.qiye_li_post .qiye_li_post_name{
+  font-size: 34rpx;
+  color: #555;
+}
+.qiye_li_post .qiye_li_post_money{
+  color: #b8741a;
+}
+.qiye_li_condition{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding-top: 15rpx;
+}
+.qiye_li_condition_li{
+  color: #aaa;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.qiye_li_condition_li text{
+  border-left: 1px solid #aaa;
+  height: 30rpx;
+  display: inline-block;
+  line-height: 30rpx;
+  padding:  0 10rpx;
+}
+.qiye_li_condition_li text:first-child{
+  border-left:none;
+  padding-left: 0;
+}
+.qiye_li_condition_date{
+  color: #ccc;
+  font-size: 28rpx;
+  display: inline-block;
+}
+.qiye_li_welfare{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-top: 10rpx;
+}
+.qiye_li_welfare_li{
+  padding: 0 20rpx;
+  height: 50rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 46rpx;
+  color: #555;
+  margin-right: 20rpx;
+  background-color: #f8f8fa;
+  font-size: 28rpx;
+}
+.qiye_li_name{
+  font-size: 28rpx;
+  padding:  20rpx 0;
+  color: #333;
+}
+.recommend{
+  position: absolute;
+  width: 115rpx;
+  height: 115rpx;
+  
+  
+  right: 0;
+  bottom: 0;
+}
+.recommend image{
+  width: 100%;
+  height: 100%;
+}
+.recommend text{
+  position: absolute;
+right: 12rpx;
+bottom: 13rpx;
+font-size: 38rpx;
+color: #fff;
+
+}
