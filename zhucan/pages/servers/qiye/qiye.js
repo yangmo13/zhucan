@@ -7,6 +7,9 @@ Page({
    */
   data: {
     height: 0,
+    keyword:"",
+    show:true,
+    value:"",
     arr: [
       {
         post: "爱心生产、行政后勤",
@@ -182,6 +185,34 @@ Page({
         recommend: false
       },
     ]
+  },
+  nextXiangqing(e){
+      console.log(e.currentTarget.dataset)
+      let key =e.currentTarget.dataset
+      wx.navigateTo({
+        url: `./post/post?key=${key}`,
+      })
+  },
+  search(){
+    // let keyword = this.data.keyword
+    this.setData({
+      show:false
+    })
+    setTimeout(()=>{
+      this.setData({
+          show:true,
+          value:""
+      })
+
+    },2000)
+
+  },
+  changeKyWord(e){
+    console.log(e.detail.value)
+    this.setData({
+        keyword:e.detail.value
+    })
+
   },
 
   /**

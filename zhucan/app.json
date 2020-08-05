@@ -1,9 +1,9 @@
 {
   "pages":[
+   
+    "pages/servers/qiye/qiye",
     "pages/servers/qiye/company/company",
     "pages/servers/qiye/post/post",
-    "pages/servers/qiye/qiye",
-   
     "pages/servers/index/index",
    
 

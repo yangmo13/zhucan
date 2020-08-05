@@ -7,6 +7,7 @@ Page({
    */
   data: {
     height: 0,
+    finished:"false",
     arr:{
       post_name:"爱心生产、行政后勤岗位",
       salary:"4000-8000",
@@ -33,6 +34,32 @@ Page({
         "午餐",
         '包吃' ,
       "包住"     ]
+    }
+  },
+  send(){
+
+    let finished = this.data.finished
+    if(finished==true){
+      console.log("已经完成简历")
+    }else{
+      wx.showModal({
+        cancelColor: 'cancelColor',
+        title:"简历检测",
+        content:"检测到您未完成简历，前往完善?",
+        success:(res)=>{
+
+            
+            if(res.confirm==true){
+              console.log("去完成简历")
+            wx.navigateTo({
+              url: '/pages/login/shibie/index',
+            })
+            }else{
+              console.log("不去完成简历")
+            }
+
+        }
+      })
     }
   },
 

@@ -73,7 +73,9 @@
 		</view>
   <!-- 投递简历 -->
 		<view class="toudi_btn">
-			<button id="toudi">投递简历</button>
+			<button id="toudi"
+				bindtap="send"
+			>投递简历</button>
 		</view>
 
 	</view>
