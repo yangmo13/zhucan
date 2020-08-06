@@ -13,7 +13,11 @@
 .box{
   width: 100rpx;
   height: 100rpx;
- 
+  position: absolute;
+  left:  50%;
+  top: 50%;
+  margin-left: -50rpx;
+  margin-top: -50rpx;
   animation-name: myfirst; /*动画的名称 */
   animation-duration: 500s; /*动画从开始到结束的时间*/
   animation-timing-function: linear; /*动画执行快慢的参数*/

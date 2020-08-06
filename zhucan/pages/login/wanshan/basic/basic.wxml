@@ -5,7 +5,9 @@
 	<!-- 表单部分 -->
 	<view class="basic_box">
 		<!-- 姓名 -->
-		<ipt isRed='{{true}}' text='姓名' msg='{{form.name}}' bind:blur="iptBlur" data-name="form.name"></ipt>
+		<ipt isRed='{{true}}' text='姓名' msg='{{form.name}}' bind:blur="iptBlur" 
+		data-test="name"
+		data-name="form.name"></ipt>
 		<!-- 身份证号码 -->
 		<ipt isRed='{{true}}' text='身份证号码 :' msg='{{form.idcard}}' bind:blur="iptBlur" data-name="form.idcard"></ipt>
 		<!-- 参加工作时间 -->

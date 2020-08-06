@@ -1,15 +1,16 @@
 {
   "pages":[
-   
-    "pages/servers/qiye/qiye",
-    "pages/servers/qiye/company/company",
+    "pages/login/wanshan/index",
+
     "pages/servers/qiye/post/post",
+    "pages/servers/qiye/qiye",
+    "pages/servers/qiye/company/company", 
     "pages/servers/index/index",
    
 
    
 
-    "pages/login/wanshan/index",
+    
     "pages/login/wanshan/jingli/jingli",
     "pages/login/wanshan/education/education",  
     "pages/login/wanshan/peixun/peixun",  

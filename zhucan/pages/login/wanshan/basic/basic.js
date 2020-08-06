@@ -1,5 +1,6 @@
 // pages/login/wanshan/basic/basic.js
 const App = getApp()
+import AppUtil from "../../../../utils/util.js"
 Page({
 
   /**
@@ -30,7 +31,6 @@ Page({
     
     let data = JSON.parse(options.form)
     let form = this.data.form
-    console.log(data,"data")
     Object.keys(form).forEach(key=>{
       form[key]=data[key]
     })
@@ -38,11 +38,12 @@ Page({
       height:App.globalData.navHeight,
       form:form,old_form:data
     })
-    console.log(form)
+    
   },
   iptBlur(e){
- 
+    let test = e.currentTarget.dataset.test
     let name= e.currentTarget.dataset.name
+    AppUtil.isChinese(this.data.form.name,test)
     this.setData({
       [name]:e.detail,
     })

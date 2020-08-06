@@ -3,7 +3,7 @@
 	<header text="职位详情"></header>
 	<!-- 岗位详请 -->
 	<!-- 顶部岗位详情 -->
-	<view class="post_box">
+	<view class="post_box" wx:if="{{loadingShow==false}}">
 		<view class="post_name_box">
 			<!-- 岗位名字 -->
 			<view class="post_name">
@@ -16,7 +16,7 @@
 			<view class="demand_box">
 				<view class="demand">
 					<text wx:for="{{arr.demand}}">{{item}}</text>
-			
+
 				</view>
 				<text class="demand_txt">{{arr.date}}</text>
 			</view>
@@ -36,7 +36,7 @@
 			<view class="des_title">职位描述</view>
 			<view class="des_txt_box">
 				<view class="des_txt" wx:for="{{arr.post_describe}}">{{item}}</view>
-				
+
 
 
 			</view>
@@ -49,7 +49,7 @@
 			<view class="position_txt">职位特点</view>
 			<view class="position_name">
 				<view class="trait" wx:for="{{arr.trait}}">{{item}}</view>
-				
+
 			</view>
 		</view>
 		<!-- 跳转至公司页面 -->
@@ -64,20 +64,22 @@
 				</view>
 				<view class="company_label">
 					<text wx:for="{{arr.company_label}}">{{item}}</text>
-					
+
 				</view>
 			</view>
 			<view class="navi_btn">
 				<image src="/image/right.png"></image>
 			</view>
 		</view>
-  <!-- 投递简历 -->
+		<!-- 投递简历 -->
 		<view class="toudi_btn">
-			<button id="toudi"
-				bindtap="send"
-			>投递简历</button>
+			<button id="toudi" bindtap="send">投递简历</button>
 		</view>
 
+	</view>
+	<!-- 数据未加载完loading界面 -->
+	<view class="post_box" wx:if="{{loadingShow!=false}}">
+		<loading></loading>
 	</view>
 
 </view>
