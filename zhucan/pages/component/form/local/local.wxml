@@ -1,0 +1,19 @@
+<view class="ipt">
+	<view class="ipt_box">
+		<text>{{isRed==true?'*':''}}</text>
+		<view class="ipt_text">{{text}} </view>
+			<view class="pick_box">
+				<view class="pick_box_left">
+					<picker  class="picker_box" 
+						mode="region"
+						data-msg="start" bindchange="bindDateChange">
+						<view class="picker">
+							{{start}}
+						</view>
+					</picker>
+				</view>
+
+		
+			</view>
+		</view>
+	</view>

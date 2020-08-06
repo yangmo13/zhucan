@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "header":"/pages/component/header/header",
-    "ipt":"/pages/component/form/input"
+    "ipt":"/pages/component/form/input",
+    "number":"/pages/component/form/number/number",
+    "local":"/pages/component/form/local/local"
   }
 }

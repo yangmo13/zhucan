@@ -6,14 +6,16 @@ Component({
   properties: {
     isRed: Boolean,
     text: String,
-    msg: String
+    msg: String,
+    type:String,
+    iswrong:String
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-
+   
   },
 
   /**

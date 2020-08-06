@@ -7,68 +7,140 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isNew:true,
-    height:0,
-    form:{
+    isNew: true,
+    //是否完成保存
+    allowNext: false,
+    //判断文字是否为正确
+    iswrong: '',
+    test_name: '',
+    test_idcard: '',
+    test_phone: '',
+    height: 0,
+    ok: true,
+    form: {
       // 姓名
-     'name':'',
+      'name': '',
       // 身份证
-      'idcard':"",
+      'idcard': "",
       // 参加工作时间
-      'job_time':"",
+      'job_time': "",
       // 现居住城市
-      'city':"",
+      'city': "",
       // 手机号码,
-      'phone':"",
+      'phone': "",
     },
-    'old_form':""
+    'old_form': ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
     let data = JSON.parse(options.form)
     let form = this.data.form
-    Object.keys(form).forEach(key=>{
-      form[key]=data[key]
+
+    Object.keys(form).forEach(key => {
+      form[key] = data[key]
     })
     this.setData({
-      height:App.globalData.navHeight,
-      form:form,old_form:data
+      height: App.globalData.navHeight,
+      form: form,
+      old_form: data
     })
-    
+    this.yanzheng()
+
   },
-  iptBlur(e){
+  iptBlur(e) {
+    let name = 'form.' + e.currentTarget.dataset.name
     let test = e.currentTarget.dataset.test
-    let name= e.currentTarget.dataset.name
-    AppUtil.isChinese(this.data.form.name,test)
-    this.setData({
-      [name]:e.detail,
-    })
+    let data = AppUtil.test(e.detail, test)
+    console.log(test, "data")
+    console.log(data)
 
-    
+    if (data != '') {
+      this.setData({
+        allowNext: false,
+        [test]: data
+      })
+    } else {
+      this.setData({
+        [name]: e.detail,
+        [test]: data
+      })
+    }
   },
-  next(){
-    let new_form = this.data.old_form
-    let data =this.data.form
-    Object.keys(new_form).forEach(key=>{
-      if(data[key]){
-        new_form[key]=data[key]
+  yanzheng(){
+    //找到所有必选项 将其发送到utils 进行验证
+    //找到其它选项 发送到验证
+    let name = this.data.form.name
+    let form = this.data.form
+
+    Object.keys(form).forEach(key=>{
+     
+      if(key =='name'){
+        let name = 'test_name'
+        let data = AppUtil.test(form[key], name)
+        this.setData({
+          [name]:data
+        })
+      }else if(key =='idcard'){
+        let name = 'test_idcard'
+        let data = AppUtil.test(form[key],name)
+        this.setData({
+          [name]:data
+        })
+      }else if(key =='phone'){
+        let name = 'test_phone'
+        let data = AppUtil.test(form[key],name)
+        this.setData({
+          [name]:data
+        })
+      }else if(key =='job-time'&&key =='city'){
+        let name = 'must'
+        let data = AppUtil.test(form[key], name)
+        this.setData({
+          [name]:data
+        })
       }
-      
+    })
+
+  },
+  next() {
+    let test_name = this.data.test_name
+    let test_idcard = this.data.test_idcard
+    let test_phone = this.data.test_phone
+
+    let new_form = this.data.old_form
+    let data = this.data.form
+
+    Object.keys(new_form).forEach(key => {
+      if (data[key]) {
+        new_form[key] = data[key]
+      }
+
+
+
     })
 
     this.setData({
-      old_form:new_form
+      old_form: new_form
     })
 
     let form = JSON.stringify(this.data.old_form)
-    console.log(form)
-    wx.redirectTo({
-      url: `../index?form=${form}`,
-    })
+    if (test_name == '' || test_idcard == '' || test_phone == '') {
+      wx.redirectTo({
+        url: `../index?form=${form}`,
+      })
+    } else {
+      wx.showModal({
+        cancelColor: 'cancelColor',
+        title: "错误提醒",
+        content: "信息不正确，请仔细审查"
+      })
+    }
+
+
   },
 
   /**

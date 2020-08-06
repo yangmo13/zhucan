@@ -1,0 +1,67 @@
+/* pages/component/form/input.wxss */
+.ipt{
+  
+  margin-top: 20rpx;
+  height: 80rpx;
+}
+.ipt_box{
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:0 30rpx;
+  height: 100%;
+}
+.ipt_box text{
+  display: inline-block;
+  width: 24rpx;
+  color: #db001b;
+ 
+}
+.ipt_box .pick_box{
+  
+  flex: 1;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  padding-left: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pick_box_center{
+  width: 80rpx;
+height: 80rpx;
+text-align: center;
+line-height: 126rpx;
+font-size: 34rpx;
+color: #333;
+
+}
+.pick_box_left{
+  flex: 1;
+  height: 100%;
+  border-bottom: 4rpx solid #e7e7e7;
+}
+.pick_box_right{
+  flex: 1;
+  height: 100%;
+  border-bottom: 4rpx solid #e7e7e7;
+}
+.ipt_text{
+min-width:100rpx ;
+
+height: 60rpx;
+line-height: 60rpx;
+color: #333;
+}
+.picker{
+  width: 100%;
+  height:45rpx;
+  font-size: 32rpx;
+
+
+}
+.picker_box{
+  width: 100%;
+  height: 100%;
+}
