@@ -14,7 +14,7 @@ Page({
       //身份证号码
       'idcard': '230103199708305714',
       //参加工作时间
-      'job_time': '',
+      'job_time': '0年',
       //现居住城市
       'city': "",
       //手机号码
@@ -31,14 +31,12 @@ Page({
       'station': "",
 
       //残疾情况
-
       //残疾证类型
       "type": [],
       //残疾等级
       "level": "",
 
       //工作经历
-
       //单位名称
       "company": "",
       //工作岗位
@@ -84,7 +82,9 @@ Page({
       'myself': ""
 
 
-    }
+    },
+    phone2:'',
+    height:0
   },
 
   goNext(e) {
@@ -100,11 +100,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let phone2 = this.data.form.phone.substr(0,3)+'****'+this.data.form.phone.substr(7)
+    this.setData({
+      height:App.globalData.navHeight,phone2:phone2
+    })
     if (options.form) {
       let data = JSON.parse(options.form)
+      phone2 = data.phone.substr(0,3)+'****'+data.phone.substr(7)
       console.log(data, "DATA")
       this.setData({
-        form: data
+        form: data,
+        phone2:phone2
       })
 
     }
@@ -112,9 +118,68 @@ Page({
 
   },
   next() {
-    wx.navigateTo({
+    let arr =[]
+    this.setData({
+      a:5555
+    })
+    let form = this.data.form
+    Object.keys(form).forEach(key=>{
+      if(key=='name'&&form[key]==''){
+          arr.push("姓名信息不对")
+          this.setData({
+            next_name:"red"
+          })
+      }else if(key =='idcard'&&form[key]==''){
+        arr.push("身份证信息未填写")
+        this.setData({
+          next_idcard:"red"
+        })
+      }
+      else if(key =='job_time'&&form[key]==''){
+        arr.push("工作时间信息未填写")
+        this.setData({
+          next_job_time:"red"
+        })
+      }
+      else if(key =='city'&&form[key]==''){
+        arr.push("城市信息未填写")
+        this.setData({
+          next_city:"red"
+        })
+      }
+      else if(key =='phone'&&form[key]==''){
+        arr.push("手机信息未填写")
+        this.setData({
+          next_phone:"red"
+        })
+      }
+      else if(key =='type'&&form[key]==''){
+        arr.push("残疾类型未填写")
+        this.setData({
+          next_type:"red"
+        })
+      }
+      else if(key =='level'&&form[key]==''){
+        arr.push("残疾等级未填写")
+        this.setData({
+          next_level:"red"
+        })
+      }
+    })
+    console.log(arr,'ARR')
+    if(arr.length==0){
+  wx.navigateTo({
       url: '../fuwu/index',
     })
+    }else{
+      wx.showModal({
+        cancelColor: 'cancelColor',
+        content:`${arr}`
+      })
+    }
+    
+    
+  
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

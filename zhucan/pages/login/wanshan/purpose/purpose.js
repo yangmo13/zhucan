@@ -47,6 +47,7 @@ Page({
     Object.keys(form).forEach(key=>{
       form[key]=data[key]
     })
+    console.log(form,'FORM')
     this.setData({
       form:form,
       old_form:data,

@@ -1,40 +1,46 @@
 /* pages/login/wanshan/index.wxss */
-page{
+page {
   width: 100%;
   height: 100%;
 
 }
-.wanshan_box{
+
+.wanshan_box {
   width: 100%;
   height: 100%;
   padding-top: 178rpx;
 }
-.canji_qingkuang{
-  
+
+.canji_qingkuang {
+
   padding: 10rpx 30rpx;
   color: #555;
   overflow: hidden;
-text-overflow:ellipsis;
-white-space: nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.canji_qingkuang text{
+
+.canji_qingkuang text {
   font-size: 24rpx;
   display: inline-block;
   height: 24rpx;
   line-height: 24rpx;
-  padding:  0 10rpx;
+  padding: 0 10rpx;
 }
-.canji_qingkuang text:first-child{
-  border-right:1px solid #ccc ;
-  
+
+.canji_qingkuang text:first-child {
+  border-right: 1px solid #ccc;
+
 }
-.canji_qingkuang_box{
+
+.canji_qingkuang_box {
   height: 50rpx;
-margin-bottom: 10rpx;
+  margin-bottom: 10rpx;
 
 
 }
-.wanshan_top{
+
+.wanshan_top {
   width: 100%;
   height: 168rpx;
 
@@ -44,32 +50,39 @@ margin-bottom: 10rpx;
   flex-direction: column;
 
 }
-.jianjie_top{
+
+.jianjie_top {
   position: relative;
 }
-.jianjie_top,.jianjie_bottom{
+
+.jianjie_top,
+.jianjie_bottom {
   height: 100rpx;
   width: 100%;
 
 }
-.jianjie_top text{
+
+.jianjie_top text {
   height: 100rpx;
   line-height: 100rpx;
 
 }
-.jianjie_name{
+
+.jianjie_name {
   font-weight: 600;
   font-size: 40rpx;
   margin-left: 30rpx;
   margin-right: 10rpx;
 }
-.jianjie_bottom{
+
+.jianjie_bottom {
   display: flex;
   justify-content: start;
   align-items: center;
   height: 50rpx;
 }
-.jianjie_box{
+
+.jianjie_box {
   height: 24rpx;
   border-right: 1px solid #ccc;
   width: 100rpx;
@@ -78,20 +91,22 @@ margin-bottom: 10rpx;
   text-align: center;
   line-height: 22rpx;
   overflow: hidden;
-  overflow:hidden; 
-text-overflow:ellipsis;
-white-space:nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.jianjie_box:last-child{
+.jianjie_box:last-child {
   width: auto;
   border: none;
 }
-.job{
+
+.job {
   width: 100%;
   margin-top: 40rpx;
 }
-.yixiang{
+
+.yixiang {
   font-weight: 550;
   font-size: 32rpx;
   padding-left: 30rpx;
@@ -99,82 +114,97 @@ white-space:nowrap;
   position: relative;
   color: #333;
 }
-.yixiang_write{
+
+.yixiang_write {
   width: 30rpx;
   height: 30rpx;
   padding: 30rpx;
   position: absolute;
   right: 13rpx;
-top: -33rpx;
+  top: -33rpx;
 
 
 }
-.yixiang_write image{
+
+.yixiang_write image {
   width: 100%;
   height: 100%;
 }
-.job_top{
+
+.job_top {
   height: 50rpx;
   margin-bottom: 10rpx;
   display: flex;
   justify-content: start;
   align-items: center;
 }
-.job_left{
+
+.job_left {
   width: 30rpx;
   height: 30rpx;
   margin-left: 30rpx;
-  margin-right:40rpx;
+  margin-right: 40rpx;
 }
-.job_left image{
+
+.job_left image {
   width: 100%;
   height: 100%;
 }
-.job_right{
+
+.job_right {
   font-size: 28rpx;
   line-height: 30rpx;
   margin: 6rpx 0 0 0;
 
 }
-.station,.workplace{
+
+.station,
+.workplace {
   text-align: center;
   padding-right: 20rpx;
   width: 90rpx;
   overflow: hidden;
-text-overflow:ellipsis;
-white-space: nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.job_right_first{
+
+.job_right_first {
   border-left: 1rpx solid #ccc;
   padding-left: 20rpx;
 
 }
-.jianjie_top .yixiang_write{
 
-  top:-13rpx
+.jianjie_top .yixiang_write {
+
+  top: -13rpx
 }
-.jingli{
+
+.jingli {
   width: 100%;
   height: 500rpx;
-  
+
 }
-.jingli_box{
+
+.jingli_box {
   color: #333;
   height: 125rpx;
 
 }
-.jingli_add{
+
+.jingli_add {
   width: 30rpx;
   height: 30rpx;
 }
-.jingli_add image{
+
+.jingli_add image {
   width: 100%;
   height: 100%;
 }
-.jingli_add_box{
+
+.jingli_add_box {
   width: 150rpx;
   height: 50rpx;
- 
+
   position: absolute;
   right: 1rpx;
   top: 1rpx;
@@ -182,31 +212,49 @@ white-space: nowrap;
   justify-content: center;
   align-items: center;
 }
-.jingli_add_box text{
+
+.jingli_add_box text {
   color: #25b2b7;
   font-size: 28rpx;
   display: block;
   margin-top: 7rpx;
-margin-left: 13rpx;
+  margin-left: 13rpx;
 
 }
-.jingli_box_top{
+
+.jingli_box_top {
   position: relative;
   font-size: 30rpx;
   padding-left: 30rpx;
   font-weight: 550;
 }
-.jingli_box_bottom{
+
+.jingli_box_bottom {
   margin-top: 15rpx;
   color: #545454;
   font-size: 28rpx;
   margin-left: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.jingli{
+
+.jingli_box_bottom text {
+  padding: 0 10rpx;
+  border-left: 1px solid #ccc;
+}
+
+.jingli_box_bottom text:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.jingli {
   margin-top: 60rpx;
 }
-.next{
-  
+
+.next {
+
   margin-left: 0 !important;
   margin-right: 0 !important;
   background: #25b2b7;
@@ -215,9 +263,10 @@ margin-left: 13rpx;
   font-weight: normal;
   color: white;
   display: inline-block;
-  
+
 }
-.next_box{
+
+.next_box {
   position: fixed;
   bottom: 30rpx;
   width: 100%;
@@ -225,7 +274,8 @@ margin-left: 13rpx;
   justify-content: center;
   align-items: center;
 }
-.next_box text{
+
+.next_box text {
   font-size: 32rpx;
   color: #333;
   margin-left: 20rpx;

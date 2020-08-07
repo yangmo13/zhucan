@@ -14,9 +14,12 @@
     ></xiala>
 
 		<!-- 期望工作地点 -->
-		<ipt text="期望工作地点" bind:blur="isBlur"
+		 <local
+		 text="期望工作地点"
+		 bind:blur="isBlur"
 			msg="{{form.workplace}}"
-		 data-msg="form.workplace"></ipt>
+		 data-msg="form.workplace"
+		 ></local>
 		<!-- 期望工作地点 -->
 		<ipt text="期望岗位" bind:blur="isBlur"
 		msg="{{form.station}}"

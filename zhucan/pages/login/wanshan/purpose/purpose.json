@@ -2,6 +2,7 @@
   "usingComponents": {
     "header":"/pages/component/header/header",
     "xiala":"/pages/component/form/xiala/xiala",
-    "ipt":"/pages/component/form/input"
+    "ipt":"/pages/component/form/input",
+    "local":"/pages/component/form/local/local"
   }
 }

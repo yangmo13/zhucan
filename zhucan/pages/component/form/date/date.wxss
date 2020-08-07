@@ -63,7 +63,7 @@ height: 80rpx;
 line-height: 115rpx;
 text-align: ce;
 text-align: center;
-font-size: 33rpx;
+font-size: 32rpx;
 
 }
 .picker_box{

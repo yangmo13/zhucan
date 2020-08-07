@@ -23,7 +23,7 @@
     <!-- 工作职责 -->
     <rich_txt text="工作职责"
       bind:blur="iptChnage"
-     msg="{{form.responsibility}}"
+       msg="{{form.responsibility}}"
       data-msg="form.responsibility"
     >
       </rich_txt>

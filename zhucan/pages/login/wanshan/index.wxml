@@ -14,17 +14,17 @@
 
 		</view>
 		<view class="jianjie_bottom">
-			<view class="jianjie_box">
+			<view class="jianjie_box" style="color:{{next_name}}">
 				{{form.age==''?"未填写":form.age+'岁'}}
 			</view>
-			<view class="jianjie_box">
+			<view class="jianjie_box" style="color:{{next_idcard}}">
 				{{form.idcard==""?"未填写":form.idcard}}
 			</view>
-			<view class="jianjie_box">
-				{{form.job_time==''?"0年":form.job_time}}
+			<view class="jianjie_box" style="color:{{next_city}}">
+				{{form.city==''?"未填写":form.city}}
 			</view>
-			<view class="jianjie_box">
-				{{form.phone==''?"未填写":form.phone}}
+			<view class="jianjie_box" style="color:{{next_phone}}">
+				{{phone2==''?"未填写":phone2}}
 			</view>
 		</view>
 	</view>
@@ -37,8 +37,8 @@
 		</view>
 		<view class="canji_qingkuang_box">
 			<view class="canji_qingkuang">
-			<text>{{form.level==''?"未填写残疾等级":form.level}}</text>
-			<text wx:if="{{form.type.length==0}}">未填写残疾类型</text>
+			<text style="color:{{next_level}}">{{form.level==''?"未填写残疾等级":form.level}}</text>
+			<text wx:if="{{form.type.length==0}}" style="color:{{next_type}}">未填写残疾类型</text>
 			<text wx:if="{{form.type.length!=0}}" wx:for="{{form.type}}">{{item}}</text>
 			</view>
 		</view>
@@ -96,7 +96,10 @@
 
 			</view>
 			<view class="jingli_box_bottom">
-				暂未填写
+				<text wx:if="{{form.company==''&&form.job_station==''&&form.responsibility==''}}">暂未填写</text>
+				<text wx:if="{{form.company!=''}}">{{form.company}}</text>
+				<text wx:if="{{form.job_station!=''}}">{{form.job_station}}</text>
+				<text wx:if="{{form.responsibility!=''}}">{{form.responsibility}}</text>
 			</view>
 		</view>
 		<!-- 教育经历 -->
@@ -112,7 +115,10 @@
 
 			</view>
 			<view class="jingli_box_bottom">
-				暂未填写
+				<text wx:if="{{form.school==''&&form.education_background==''&&form.recruitment==''}}">暂未填写</text>
+				<text wx:if="{{form.school!=''}}">{{form.school}}</text>
+				<text wx:if="{{form.education_background!=''}}">{{form.education_background}}</text>
+				<text wx:if="{{form.recruitment!=''}}">{{form.recruitment}}</text>
 			</view>
 		</view>
 		<!-- 培训经历 -->
@@ -130,7 +136,10 @@
 
 			</view>
 			<view class="jingli_box_bottom">
-				暂未填写
+				<text wx:if="{{form.organization==''&&form.major==''}}">暂未填写</text>
+				<text wx:if="{{form.organization!=''}}">{{form.organization}}</text>
+				<text wx:if="{{form.major!=''}}">{{form.major}}</text>
+			
 			</view>
 		</view>
 		<!-- 自我评价 -->
@@ -145,13 +154,15 @@
 
 			</view>
 			<view class="jingli_box_bottom">
-				暂未填写
+				<text wx:if="{{form.myself==''}}">暂未填写</text>
+				<text wx:if="{{form.myself!=''}}">{{form.myself}}</text>
+				
 			</view>
 		</view>
 	</view>
 	<view class="next_box">
 		<button class="next" bindtap="next"> 完成填写</button>
-		<text>跳过</text>
+		<text bindtap="jump">跳过</text>
 	</view>
 
 

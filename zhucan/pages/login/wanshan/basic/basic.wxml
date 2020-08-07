@@ -11,7 +11,7 @@
 		<!-- 参加工作时间 -->
 		<number isRed='{{true}}' text='参加工作时间' msg='{{form.job_time}}' bind:blur="iptBlur" data-test="must" data-name="job_time"></number>
 		<!-- 现居住城市 -->
-		<local isRed='{{true}}' data-test="test_local" iswrong="{{iswrong}}"  
+		<local isRed='{{true}}' data-test="test_local" 
 		iswrong="{{test_local}}"
 		text='现居住城市 :' city='{{form.city}}' bind:blur="iptBlur" data-name="city"></local>
 		<!-- 手机号码 -->

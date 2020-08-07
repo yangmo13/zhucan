@@ -3,27 +3,25 @@
 		<text>{{isRed==true?'*':''}}</text>
 		<view class="ipt_text">{{text}} :</view>
 			<view class="pick_box">
+				<!-- 开始时间 -->
 				<view class="pick_box_left">
-					<picker mode="date" 
-          class="picker_box"
-          data-msg="start"
-          start="2015-09-01"  bindchange="bindDateChange">
+					<picker mode="date" class="picker_box" data-msg="start" start="{{start_begin==''?'':start_begin}}" end="{{start_end==''?'':start_end}}" bindchange="bindDateChange">
 						<view class="picker">
 							{{start}}
 						</view>
 					</picker>
+					<!--  -->
 				</view>
 				<view class="pick_box_center">至</view>
+				<!-- 结束时间 -->
 				<view class="pick_box_right">
-        <picker mode="date"
-          class="picker_box"
-          data-msg="end"
-          start="2015-09-01"  bindchange="bindDateChange">
+					<picker mode="date" class="picker_box" data-msg="end" start="{{end_begin}}" end="{{Date}}" bindchange="bindDateChange">
 						<view class="picker">
 							{{end}}
 						</view>
 					</picker>
-        </view>
+					<!--  -->
+				</view>
 			</view>
 		</view>
 	</view>

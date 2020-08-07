@@ -11,7 +11,11 @@
 		<!-- 所学专业  -->
 		<ipt text="所学专业" bind:blur="iptChnage" msg="{{form.major}}" data-msg="form.major"></ipt>		<!-- 证明人  -->
 		<ipt text="证明人" bind:blur="iptChnage" msg="{{form.certifier}}" data-msg="form.certifier"></ipt>		<!-- 证明人手机  -->
-		<ipt text="证明人手机" bind:blur="iptChnage" msg="{{form.certifier_phone}}" data-msg="form.certifier_phone"></ipt>
+		<ipt text="证明人手机"
+		iswrong="{{test_phone}}"
+		data-test="test_phone"
+		type="number"
+		 bind:blur="iptChnage" msg="{{form.certifier_phone}}" data-msg="form.certifier_phone"></ipt>
 
 	</view>
 	<view class="bottom_btn">

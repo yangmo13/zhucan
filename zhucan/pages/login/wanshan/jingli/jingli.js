@@ -27,6 +27,7 @@ Page({
   },
 
   iptChnage(e){
+    console.log(15155)
     let msg = e.currentTarget.dataset.msg
     let start ='form.job_start'
     let end ='form.job_end'
@@ -37,8 +38,7 @@ Page({
         [end]:e.detail.end,
       })
     }else{
-      this.setData({
-     
+      this.setData({  
         [msg]:e.detail
       })
     }
@@ -69,6 +69,7 @@ Page({
   next(){
     let new_form = this.data.old_form
     let data =this.data.form
+    console.log(data,'第一个form')
     Object.keys(new_form).forEach(key=>{
       if(data[key]){
         new_form[key]=data[key]
@@ -81,7 +82,7 @@ Page({
     })
 
     let form = JSON.stringify(this.data.old_form)
-    console.log(form)
+    console.log(form,'4555454s')
     wx.redirectTo({
       url: `../index?form=${form}`,
     })
