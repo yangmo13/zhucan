@@ -6,8 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    height:"",
-    arr:[
+    height: "",
+    arr: [
       "视力残疾",
       "听力残疾",
       "言语残疾",
@@ -16,20 +16,20 @@ Page({
       "精神残疾",
       "其他",
     ],
-    arr2:[
+    arr2: [
       "一级",
       "二级",
       "三级",
       "其他"
     ],
-    form:{
-   //残疾证类型
-   "type": [],
-   //残疾等级
-   "level": "",
+    form: {
+      //残疾证类型
+      "type": [],
+      //残疾等级
+      "level": "",
 
     },
-    old_form:{}
+    old_form: {}
   },
 
   /**
@@ -38,42 +38,55 @@ Page({
   onLoad: function (options) {
     let data = JSON.parse(options.form)
     let form = this.data.form
-    console.log(data,"data")
-    Object.keys(form).forEach(key=>{
-      form[key]=data[key]
+    console.log(data, "data")
+    Object.keys(form).forEach(key => {
+      form[key] = data[key]
     })
-      this.setData({
-        height:App.globalData.navHeight,
-        form:form,old_form:data
-      })
-      console.log(form)
+    this.setData({
+      height: App.globalData.navHeight,
+      form: form,
+      old_form: data
+    })
+    console.log(form)
 
   },
-  change(e){
+  change(e) {
     console.log(e.detail.value)
     this.setData({
-      [e.currentTarget.dataset.msg]:e.detail.value
+      [e.currentTarget.dataset.msg]: e.detail.value
     })
   },
-  next(){
+  next() {
     let new_form = this.data.old_form
-    let data =this.data.form
-    Object.keys(new_form).forEach(key=>{
-      if(data[key]){
-        new_form[key]=data[key]
+    let data = this.data.form
+    Object.keys(new_form).forEach(key => {
+      if (data[key]) {
+        new_form[key] = data[key]
       }
-      
     })
 
+
     this.setData({
-      old_form:new_form
+      old_form: new_form
     })
 
     let form = JSON.stringify(this.data.old_form)
-    console.log(form)
-    wx.redirectTo({
-      url: `../index?form=${form}`,
-    })
+
+    console.log(this.data.form, "1111")
+    let type = this.data.form.type
+    let level = this.data.form.level
+    if (type != '' && level != '') {
+      wx.redirectTo({
+        url: `../index?form=${form}`,
+      })
+    }else{
+      wx.showToast({
+        title: '必选项不能为空',
+        image:"/image/servers/wrong.png",
+        icon:'none'
+      })
+    }
+
   },
 
   /**

@@ -53,8 +53,8 @@ function isChinese(msg, name) {
   }else if(name == 'test_phone'){
     let reg =/^1[3456789]\d{9}$/
     return msg==''?"必填信息不能为空":reg.test(msg) ? '' : "手机号码不正确"
-  }else if(name == 'must') {
-    msg==''?'必填选项不能为空':""
+  }else if(name == 'test_local') {
+  return   msg==''?'现居住城市不能为空':""
   }else{
     return ""
   }

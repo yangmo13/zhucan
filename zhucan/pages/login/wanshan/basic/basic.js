@@ -15,6 +15,8 @@ Page({
     test_name: '',
     test_idcard: '',
     test_phone: '',
+    test_local:'',
+    must:'',
     height: 0,
     ok: true,
     form: {
@@ -25,7 +27,7 @@ Page({
       // 参加工作时间
       'job_time': "",
       // 现居住城市
-      'city': "",
+      'city': "哈勒滨",
       // 手机号码,
       'phone': "",
     },
@@ -39,7 +41,6 @@ Page({
 
     let data = JSON.parse(options.form)
     let form = this.data.form
-
     Object.keys(form).forEach(key => {
       form[key] = data[key]
     })
@@ -49,7 +50,9 @@ Page({
       old_form: data
     })
     this.yanzheng()
-
+    console.log(
+      this.data.form
+    )
   },
   iptBlur(e) {
     let name = 'form.' + e.currentTarget.dataset.name
@@ -96,9 +99,10 @@ Page({
         this.setData({
           [name]:data
         })
-      }else if(key =='job-time'&&key =='city'){
-        let name = 'must'
+      }else if(key =='city'){
+        let name = 'test_local'
         let data = AppUtil.test(form[key], name)
+        console.log(data,"local")
         this.setData({
           [name]:data
         })
@@ -110,7 +114,7 @@ Page({
     let test_name = this.data.test_name
     let test_idcard = this.data.test_idcard
     let test_phone = this.data.test_phone
-
+    let test_local = this.data.test_local
     let new_form = this.data.old_form
     let data = this.data.form
 
@@ -128,7 +132,7 @@ Page({
     })
 
     let form = JSON.stringify(this.data.old_form)
-    if (test_name == '' || test_idcard == '' || test_phone == '') {
+    if (test_name == '' && test_idcard == '' && test_phone == ''&&test_local=='') {
       wx.redirectTo({
         url: `../index?form=${form}`,
       })
@@ -136,7 +140,7 @@ Page({
       wx.showModal({
         cancelColor: 'cancelColor',
         title: "错误提醒",
-        content: "信息不正确，请仔细审查"
+        content: "信息不正确或者为空，请仔细审查"
       })
     }
 

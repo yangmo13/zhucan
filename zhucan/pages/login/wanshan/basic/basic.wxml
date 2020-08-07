@@ -5,27 +5,17 @@
 	<!-- 表单部分 -->
 	<view class="basic_box">
 		<!-- 姓名 -->
-		<ipt isRed='{{true}}' text='姓名 :'
-		 msg='{{form.name}}' 
-		 bind:blur="iptBlur"
-	  	data-test="test_name"
-		 iswrong="{{test_name}}" 
-		 data-name="name"></ipt>
+		<ipt isRed='{{true}}' text='姓名 :' msg='{{form.name}}' bind:blur="iptBlur" data-test="test_name" iswrong="{{test_name}}" data-name="name"></ipt>
 		<!-- 身份证号码 -->
-		<ipt isRed='{{true}}' iswrong="{{test_idcard}}" 
-		type="number"
-		data-test="test_idcard" text='身份证号码 :' msg='{{form.idcard}}' bind:blur="iptBlur" data-name="idcard"></ipt>
+		<ipt isRed='{{true}}' iswrong="{{test_idcard}}" type="number" data-test="test_idcard" text='身份证号码 :' msg='{{form.idcard}}' bind:blur="iptBlur" data-name="idcard"></ipt>
 		<!-- 参加工作时间 -->
-		<number isRed='{{true}}' text='参加工作时间' msg='{{form.job_time}}' 
-		bind:blur="iptBlur" 	data-test="must" data-name="job_time"></number>
-
-		<local
-		isRed='{{true}}' 	data-test="must" iswrong="{{iswrong}}" text='现居住城市 :' msg='{{form.city}}' bind:blur="iptBlur" data-name="city"
-		></local>
+		<number isRed='{{true}}' text='参加工作时间' msg='{{form.job_time}}' bind:blur="iptBlur" data-test="must" data-name="job_time"></number>
+		<!-- 现居住城市 -->
+		<local isRed='{{true}}' data-test="test_local" iswrong="{{iswrong}}"  
+		iswrong="{{test_local}}"
+		text='现居住城市 :' city='{{form.city}}' bind:blur="iptBlur" data-name="city"></local>
 		<!-- 手机号码 -->
-		<ipt isRed='{{true}}' iswrong="{{test_phone}}" data-test="test_phone" text='手机号码 :' 
-		type="number"
-		msg='{{form.phone}}' bind:blur="iptBlur" data-name="phone"></ipt>
+		<ipt isRed='{{true}}' iswrong="{{test_phone}}" data-test="test_phone" text='手机号码 :' type="number" msg='{{form.phone}}' bind:blur="iptBlur" data-name="phone"></ipt>
 
 	</view>
 	<!-- 提交按钮 -->

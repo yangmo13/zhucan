@@ -21,7 +21,7 @@
 				{{form.idcard==""?"未填写":form.idcard}}
 			</view>
 			<view class="jianjie_box">
-				{{form.job_time==undefined?"未填写":form.job_time}}
+				{{form.job_time==''?"0年":form.job_time}}
 			</view>
 			<view class="jianjie_box">
 				{{form.phone==''?"未填写":form.phone}}
@@ -36,7 +36,10 @@
 			</view>
 		</view>
 		<view class="canji_qingkuang_box">
-			<view class="canji_qingkuang">大萨达撒撒撒撒多撒撒多所多大萨达撒撒撒撒多撒撒多所多大萨达撒撒撒撒多撒撒多所多大萨达撒撒撒撒多撒撒多所多大萨达撒撒撒撒多撒撒多所多大萨达撒撒撒撒多撒撒多所多大萨达撒撒撒撒多撒撒多所多
+			<view class="canji_qingkuang">
+			<text>{{form.level==''?"未填写残疾等级":form.level}}</text>
+			<text wx:if="{{form.type.length==0}}">未填写残疾类型</text>
+			<text wx:if="{{form.type.length!=0}}" wx:for="{{form.type}}">{{item}}</text>
 			</view>
 		</view>
 

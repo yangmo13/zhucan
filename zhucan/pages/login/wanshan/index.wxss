@@ -17,6 +17,17 @@ page{
 text-overflow:ellipsis;
 white-space: nowrap;
 }
+.canji_qingkuang text{
+  font-size: 24rpx;
+  display: inline-block;
+  height: 24rpx;
+  line-height: 24rpx;
+  padding:  0 10rpx;
+}
+.canji_qingkuang text:first-child{
+  border-right:1px solid #ccc ;
+  
+}
 .canji_qingkuang_box{
   height: 50rpx;
 margin-bottom: 10rpx;
@@ -91,9 +102,11 @@ white-space:nowrap;
 .yixiang_write{
   width: 30rpx;
   height: 30rpx;
+  padding: 30rpx;
   position: absolute;
-  right: 45rpx;
-top: 4rpx;
+  right: 13rpx;
+top: -33rpx;
+
 
 }
 .yixiang_write image{
@@ -138,7 +151,7 @@ white-space: nowrap;
 }
 .jianjie_top .yixiang_write{
 
-  top:34rpx
+  top:-13rpx
 }
 .jingli{
   width: 100%;

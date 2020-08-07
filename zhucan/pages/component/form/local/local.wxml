@@ -8,7 +8,8 @@
 						mode="region"
 						data-msg="start" bindchange="bindDateChange">
 						<view class="picker">
-							{{start}}
+							{{city!=''?city:start}}
+							<view class="remind_txt">{{iswrong}}</view>
 						</view>
 					</picker>
 				</view>

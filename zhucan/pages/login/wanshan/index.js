@@ -8,15 +8,15 @@ Page({
   data: {
     form: {
       //姓名
-      'name': 'kkkk',
+      'name': '杨墨',
       //年龄
-      'age': "12",
+      'age': "22",
       //身份证号码
-      'idcard': '54555545',
+      'idcard': '230103199708305714',
       //参加工作时间
-      'job_time': '2年',
+      'job_time': '',
       //现居住城市
-      'city': "哈尔滨",
+      'city': "",
       //手机号码
       'phone': "18045478923",
       //意向
@@ -70,9 +70,9 @@ Page({
       'organization': "",
       //培训时间
       //培训开始
-      'peixun_start':"",
+      'peixun_start': "",
       //培训结束
-      'prixun_end':"",
+      'prixun_end': "",
       //培训专业
       'major': '',
       //证明人
@@ -100,33 +100,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // if (options.form) {
-    //   let data = JSON.parse(options.form)
-    //   console.log(data)
+    if (options.form) {
+      let data = JSON.parse(options.form)
+      console.log(data, "DATA")
+      this.setData({
+        form: data
+      })
 
-    //   let form = this.data.form
+    }
 
-    //   Object.keys(form).forEach(key => {
-    //     if (data[key]) {
-    //       form[key] = data[key]
-    //     }
-    //   })
-    //   this.setData({
-    //     height: App.globalData.navHeight,
-    //     form: form
-    //   })
-    //   console.log(form, "data")
-    // }
-if(options.form){
- 
- let data =JSON.parse(options.form)
- console.log(data,"DATA")
- this.setData({
-   form:data
- })
-
-}
- 
 
   },
   next() {

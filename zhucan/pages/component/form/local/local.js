@@ -6,9 +6,10 @@ Component({
   properties: {
     isRed: Boolean,
     text: String,
-    msg: String,
+    city: String,
     start_time:String,
-    end_time:String
+    end_time:String,
+    iswrong:String
   },
 
   /**
@@ -18,12 +19,17 @@ Component({
  
         start: "",
         end: "",
-        array:[]
+        array:[],
+        city:''
     
    
     
   },
   attached(){
+   wx.nextTick(()=>{
+    console.log(this.properties.iswrong,"dsadssa")
+    
+   })
     let arr =[]
     for(var i=0;i<51;i++){
       arr.push(i)
