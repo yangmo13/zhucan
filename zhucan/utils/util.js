@@ -61,7 +61,11 @@ function isChinese(msg, name) {
 
 
 }
+function aaa(){
+  console.log("aaaaaaaa")
+}
 module.exports = {
   time: time,
-  test: isChinese
+  test: isChinese,
+  aaa:aaa
 }
