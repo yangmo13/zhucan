@@ -8,19 +8,19 @@ Page({
   data: {
     height: "",
     arr: [
-      "视力残疾",
-      "听力残疾",
-      "言语残疾",
-      "肢体残疾",
-      "智力残疾",
-      "精神残疾",
-      "其他",
+      {'name':"视力残疾",'ischeck':false},
+      {'name':"听力残疾",'ischeck':false},
+      {'name':"言语残疾",'ischeck':false},
+      {'name':"肢体残疾",'ischeck':false},
+      {'name':"智力残疾",'ischeck':false},
+      {'name':"精神残疾",'ischeck':false},
+      {'name':"其他",'ischeck':false},
     ],
     arr2: [
-      "一级",
-      "二级",
-      "三级",
-      "其他"
+      {'name':  "一级",'ischeck':false},
+      {'name':  "二级",'ischeck':false},
+      {'name':  "三级",'ischeck':false},
+      {'name':  "其他",'ischeck':false},
     ],
     form: {
       //残疾证类型
@@ -38,6 +38,39 @@ Page({
   onLoad: function (options) {
     let data = JSON.parse(options.form)
     let form = this.data.form
+    //残疾类型
+    let type = data.type
+    let arr = this.data.arr
+    //残疾等级
+    let level = data.level
+    let arr2 = this.data.arr2
+    console.log(arr,type,'sssss')
+    for(var i=0;i<type.length;i++){
+      Object.keys(arr).forEach(key=>{
+        if(type[i]==arr[key]['name']){
+          arr[key].ischeck=true;
+          this.setData({
+            arr:arr
+          })
+        }
+        
+      })
+    }
+    console.log(level,"LEVEL")
+    //level
+    for(var i=0;i<arr2.length;i++){
+      if(level==arr2[i]['name']){
+        arr2[i]['ischeck']=true
+        this.setData({
+            arr2:arr2
+        })
+      }
+    
+    }
+
+
+
+    console.log(data.type,"this data")
     console.log(data, "data")
     Object.keys(form).forEach(key => {
       form[key] = data[key]
@@ -55,6 +88,7 @@ Page({
     this.setData({
       [e.currentTarget.dataset.msg]: e.detail.value
     })
+    console.log(this.data.form,"ffff")
   },
   next() {
     let new_form = this.data.old_form

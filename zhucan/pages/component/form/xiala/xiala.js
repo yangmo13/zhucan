@@ -21,6 +21,12 @@ Component({
     ishow:false,
     show_txt: ""
   },
+  attached(){
+    wx.nextTick(()=>{
+      console.log(this.properties.msg,"MSG")
+    })
+    
+  },
 
   /**
    * 组件的方法列表
@@ -52,9 +58,9 @@ Component({
 
     },
     isShow() {
-  
+      let show =!this.data.ishow
       this.setData({
-        ishow: true
+        ishow: show
       })
     }
   }

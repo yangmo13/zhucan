@@ -12,13 +12,15 @@
 		<!-- 学历 -->
 		<view class="xueli">
 			<view class="xueli_left">
-				<xiala text="学历" arr="{{arr}}" bind:xiala="valueChange"isRed="{{false}}"        data-msg="form.education_background"
+				<xiala text="学历" arr="{{arr}}" bind:xiala="valueChange"isRed="{{false}}" 
+				msg="{{form.education_background}}"    
+				   data-msg="form.education_background"
         ></xiala>
 			</view>
 			<view class="xueli_right">
 				<checkbox-group bindchange="change">
 					<label>
-						<checkbox value="统招">
+						<checkbox value="统招" checked="{{true}}">
 						</checkbox>
 						统招
 					</label>

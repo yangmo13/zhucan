@@ -53,7 +53,7 @@ Page({
       old_form:data,
       height:App.globalData.navHeight
     })
-    console.log(this.data.form)
+    console.log(this.data.form.purpose,"传递给组件的purpose")
   },
   valueChange(e){
     

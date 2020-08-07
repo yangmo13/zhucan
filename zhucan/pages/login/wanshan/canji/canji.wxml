@@ -16,9 +16,10 @@
         >
 					<label wx:for="{{arr}}">
 						<checkbox
-              value="{{item}}"
+              value="{{item.name}}"
+							checked="{{item.ischeck}}"
             ></checkbox>
-						{{item}}
+						{{item.name}}
 
 					</label>
 
@@ -37,9 +38,10 @@
             bindchange="change">
             <label wx:for="{{arr2}}">
               <radio
-                value="{{item}}"
+                value="{{item.name}}"
+								checked="{{item.ischeck}}"
               ></radio>
-              {{item}}
+              {{item.name}}
             </label>
           </radio-group>
 			</view>

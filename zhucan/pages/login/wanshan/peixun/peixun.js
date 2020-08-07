@@ -60,7 +60,7 @@ Page({
     let test = e.currentTarget.dataset.test
     let data = AppUtil.test(e.detail, test)
     console.log(data,"test_data")
-    if(data!==''){
+    if(data!=''){
       this.setData({
         [test]:data,
         [msg]:''
@@ -70,10 +70,12 @@ Page({
         this.setData({
           [start]: e.detail.start,
           [end]: e.detail.end,
+          [test]:data,
         })
       } else {
         this.setData({
           [msg]: e.detail,    
+          [test]:data,
         })
       }
     }

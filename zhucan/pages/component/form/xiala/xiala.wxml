@@ -5,7 +5,7 @@
   <view class="xiala_ipt" >
 
   <view class="xiala_txt" bindtap="isShow">
-   {{show_txt}}
+   {{show_txt==''?msg:show_txt}}
    <view class="xiala_img">
    <image src="/image/down.png"></image>
    </view>

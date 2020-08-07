@@ -5,11 +5,13 @@
 	<view class="purpose_box">
 		<!-- 求职意向 -->
 		<xiala text="求职意向" isRed="{{false}}" arr="{{arr}}" bind:xiala="valueChange"
+		msg="{{form.purpose}}"
     data-msg="form.purpose"
     ></xiala>
 		<!-- 期望薪资 -->
 		<xiala text="期望薪资" isRed="{{false}}" arr="{{arr2}}" bind:xiala="valueChange" 
 		msg="{{form.pay}}"
+
       data-msg="form.pay"
     ></xiala>
 
