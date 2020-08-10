@@ -1,5 +1,7 @@
 {
-  "pages":[
+  "pages":[ 
+    "pages/login/shibie/index",
+
     "pages/index/index",
    
     "pages/login/wanshan/index",
@@ -21,7 +23,7 @@
    
 
    
-    "pages/login/shibie/index",
+
     
   
     "pages/servers/index/zhiye/zhiye",

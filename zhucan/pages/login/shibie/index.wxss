@@ -170,7 +170,7 @@ page {
   }
   .form_not_must{
     width: 16rpx;
-
+    color: red;
   }
   .hukou radio-group radio{
     margin-left: 20rpx;
@@ -190,13 +190,14 @@ background: white;
     display: flex;
     flex-wrap: wrap;
     flex: 1;
-    margin-left: 40rpx;
+    margin-left: 30rpx;
     
   }
   .weui-cell_input checkbox-group view{
     margin-right: 55rpx;
     margin-top: 30rpx;
   }
+  
   .canjileixing{
     height:  auto !important;
 
@@ -205,6 +206,9 @@ background: white;
     width: 100%;
     height: 100%;
    
+  }
+  .leixing_first{
+    padding-top: 26rpx;
   }
   radio .wx-radio-input{
     width: 30rpx;
@@ -225,4 +229,17 @@ background: white;
     text-align: center;
     line-height: 54rpx;
     height: 80rpx;
+  }
+  .canjia_leixing{
+    justify-content: center;
+    padding: 15rpx 35rpx;
+    align-items: flex-start;
+  }
+  .leixing_box{
+    height: 400rpx;
+    border: 1px solid black;
+    padding: 20rpx;
+  }
+  .leixing_name{
+
   }

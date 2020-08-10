@@ -1,5 +1,5 @@
 <view class="form_box" style="padding-top:{{height}}px">
-<header text="识别身份" back="true" back_age="true"></header>
+	<header text="识别身份" back="true" back_age="true"></header>
 	<view class="header"> 基本信息 :</view>
 	<view class="header_btn">
 		<view class="header_btn_top">
@@ -17,10 +17,7 @@
 					<label>
 						<text class="form_must"> *</text>
 						<text class="form_txt">姓名 : </text>
-						<input class="weui-input"  
-						value="{{form2.name}}"
-						auto-focus
-						bindblur="change" data-msg="form.name" />
+						<input class="weui-input" value="{{form2.name}}" auto-focus bindblur="change" data-msg="form.name" />
 					</label>
 
 				</view>
@@ -29,7 +26,7 @@
 					<label>
 						<text class="form_must"> *</text>
 						<text class="form_txt">身份证号 : </text>
-						<input class="weui-input"  bindblur="change"  value="{{form2.idcard}}" data-msg="form.idcard" />
+						<input class="weui-input" bindblur="change" value="{{form2.idcard}}" data-msg="form.idcard" />
 					</label>
 
 				</view>
@@ -38,8 +35,7 @@
 					<label>
 						<text class="form_must"> *</text>
 						<text class="form_txt">籍贯 : </text>
-						<input class="weui-input"  bindblur="change" 
-						value="{{form.nativePlace}}" data-msg="form2.nativePlace" />
+						<input class="weui-input" bindblur="change" value="{{form.nativePlace}}" data-msg="form2.nativePlace" />
 					</label>
 				</view>
 				<!-- 下拉框 -->
@@ -53,13 +49,7 @@
 							<text>{{minzu_txt==''?form2.nation:minzu_txt}}</text>
 						</view>
 						<view class="select_box" wx:if="{{jiguan_show}}">
-							<view class="select_box_li" wx:for="{{jiguan}}" hover-class="select_box_li_hover"
-							 data-txt="{{item}}"
-							  data-msg="minzu"
-							data-name="form.nation"
-								 bindtap="checkedSelect"
-								 
-								 >
+							<view class="select_box_li" wx:for="{{jiguan}}" hover-class="select_box_li_hover" data-txt="{{item}}" data-msg="minzu" data-name="form.nation" bindtap="checkedSelect">
 								{{item}}</view>
 						</view>
 					</label>
@@ -74,9 +64,7 @@
 							<text>{{hunfou_txt==''?form2.marital:hunfou_txt}}</text>
 						</view>
 						<view class="select_box" wx:if="{{hunfou_show}}">
-							<view class="select_box_li" wx:for="{{hunfou}}" hover-class="select_box_li_hover" data-txt="{{item}}" data-msg="hunfou" 
-								data-name="form.marital"
-							bindtap="checkedSelect">
+							<view class="select_box_li" wx:for="{{hunfou}}" hover-class="select_box_li_hover" data-txt="{{item}}" data-msg="hunfou" data-name="form.marital" bindtap="checkedSelect">
 								{{item}}</view>
 						</view>
 					</label>
@@ -91,9 +79,7 @@
 							<text>{{xueli_txt==''?form2.education:xueli_txt}}</text>
 						</view>
 						<view class="select_box" wx:if="{{xueli_show}}">
-							<view class="select_box_li" wx:for="{{xueli}}" hover-class="select_box_li_hover" bindtap="checkedSelect" data-txt="{{item}}" 
-							data-name="form.education"
-							data-msg="xueli">
+							<view class="select_box_li" wx:for="{{xueli}}" hover-class="select_box_li_hover" bindtap="checkedSelect" data-txt="{{item}}" data-name="form.education" data-msg="xueli">
 								{{item}}</view>
 						</view>
 					</label>
@@ -105,9 +91,7 @@
 						<text class="form_txt">身份证户籍地 : </text>
 					</view>
 					<view class="jigunabox">
-						<input class="weui-input"  bindblur="change" 
-							value="{{form2.localtion}}"
-						data-msg="form.location" />
+						<input class="weui-input" bindblur="change" value="{{form2.localtion}}" data-msg="form.location" />
 
 					</view>
 				</view>
@@ -118,9 +102,7 @@
 						<text class="form_txt">现居住地址 : </text>
 					</view>
 					<view class="jigunabox">
-						<input class="weui-input"  bindblur="change" 
-								value="{{form2.address}}"
-						data-msg="form.address" />
+						<input class="weui-input" bindblur="change" value="{{form2.address}}" data-msg="form.address" />
 
 					</view>
 				</view>
@@ -129,9 +111,7 @@
 					<label>
 						<text class="form_must"> *</text>
 						<text class="form_txt">联系电话 : </text>
-						<input class="weui-input"  bindblur="change" 
-								value="{{form.phone}}"
-						data-msg="form.phone" />
+						<input class="weui-input" bindblur="change" value="{{form.phone}}" data-msg="form.phone" />
 					</label>
 				</view>
 				<!-- 户口类型 -->
@@ -154,9 +134,7 @@
 					<label>
 						<text class="form_must"> *</text>
 						<text class="form_txt">姓名 : </text>
-						<input class="weui-input"  bindblur="change" 
-								value="{{form.linkman.name}}"
-						data-msg="form.linkman.name" />
+						<input class="weui-input" bindblur="change" value="{{form.linkman.name}}" data-msg="form.linkman.name" />
 					</label>
 
 				</view>
@@ -170,9 +148,7 @@
 							<text>{{guanxi_txt}}</text>
 						</view>
 						<view class="select_box_small" wx:if="{{guanxi_show}}">
-							<view class="select_box_li" wx:for="{{guanxi}}" hover-class="select_box_li_hover" data-txt="{{item}}" data-msg="guanxi"
-								data-name="form.linkman.relation"
-							 bindtap="checkedSelect">
+							<view class="select_box_li" wx:for="{{guanxi}}" hover-class="select_box_li_hover" data-txt="{{item}}" data-msg="guanxi" data-name="form.linkman.relation" bindtap="checkedSelect">
 								{{item}}</view>
 						</view>
 					</label>
@@ -182,9 +158,7 @@
 					<label>
 						<text class="form_must"> *</text>
 						<text class="form_txt">联系电话 : </text>
-						<input class="weui-input"  bindblur="change" 
-								value="{{form.linkman.phone}}"
-						data-msg="form.linkman.phone" />
+						<input class="weui-input" bindblur="change" value="{{form.linkman.phone}}" data-msg="form.linkman.phone" />
 					</label>
 				</view>
 				<!-- 工作信息 -->
@@ -194,9 +168,7 @@
 					<label>
 						<text class="form_not_must">   </text>
 						<text class="form_txt">工作单位 : </text>
-						<input class="weui-input"  bindblur="change" 
-								value="{{form.work.company}}"
-						data-msg="form.work.company" />
+						<input class="weui-input" bindblur="change" value="{{form.work.company}}" data-msg="form.work.company" />
 					</label>
 
 				</view>
@@ -205,9 +177,7 @@
 					<label>
 						<text class="form_not_must"> </text>
 						<text class="form_txt">职业工种 : </text>
-						<input class="weui-input"  bindblur="change" 
-								value="{{form.work.profession}}"
-						data-msg="form.work.profession" />
+						<input class="weui-input" bindblur="change" value="{{form.work.profession}}" data-msg="form.work.profession" />
 					</label>
 
 				</view>
@@ -221,9 +191,7 @@
 							<text>{{danwei_txt}}</text>
 						</view>
 						<view class=" select_box_small" wx:if="{{danwei_show}}">
-							<view class="select_box_li" wx:for="{{danwei}}" hover-class="select_box_li_hover" data-txt="{{item}}" data-msg="danwei"
-								data-name="form.work.unit"
-							 bindtap="checkedSelect">
+							<view class="select_box_li" wx:for="{{danwei}}" hover-class="select_box_li_hover" data-txt="{{item}}" data-msg="danwei" data-name="form.work.unit" bindtap="checkedSelect">
 								{{item}}</view>
 						</view>
 					</label>
@@ -233,10 +201,7 @@
 					<label>
 						<text class="form_not_must"> </text>
 						<text class="form_txt">是否福利企业 : </text>
-						<radio-group  
-							bindchange="item_change"
-							data-name="form.work.weal"
-						>
+						<radio-group bindchange="item_change" data-name="form.work.weal">
 							<view wx:for="{{fuli}}">
 								<radio value="{{item.value}}"></radio>
 								<text>{{item.txt}}</text>
@@ -251,37 +216,34 @@
 					<label>
 						<text class="form_must"> *</text>
 						<text class="form_txt">残疾证号码 : </text>
-						<input class="weui-input"  bindblur="change" 
-								value="{{form.disabled.num}}"
-						data-msg="form.disabled.num" />
+						<input class="weui-input" bindblur="change" value="{{form.disabled.num}}" data-msg="form.disabled.num" />
 					</label>
 				</view>
 				<!-- 残疾类型 -->
-				<view class="canjileixing	weui-cell_input">
-					<label>
-						<text class="form_not_must"> </text>
-						<text class="form_txt">残疾类型 : </text>
-						<checkbox-group 
-						bindchange="leixingChange"
-						data-name="form.disabled.type"
-						>
-							<view wx:for="{{canjizheng}}">
+				<view class="canjileixing	weui-cell_input canjia_leixing">
+
+					<view class="leixing_first">
+					<text class="form_not_must"> </text>
+					<text class="form_txt">残疾类型 : </text>
+					</view>
+					<checkbox-group bindchange="leixingChange" data-name="form.disabled.type">
+						<view wx:for="{{canjizheng}}">
+							<label>
 								<checkbox value="{{item.value}}"></checkbox>
 								<text>{{item.txt}}</text>
-							</view>
-						</checkbox-group>
+							</label>
+						</view>
+					</checkbox-group>
 
-					</label>
 				</view>
+
+		
 				<!-- 残疾等级 -->
 				<view class="hukou	weui-cell_input">
 					<label>
-						<text class="form_not_must"> </text>
+						<text class="form_not_must">*</text>
 						<text class="form_txt">残疾等级 : </text>
-						<radio-group 
-						 bindchange="item_change"
-							data-name="form.disabled.level"
-						>
+						<radio-group bindchange="item_change" data-name="form.disabled.level">
 							<view wx:for="{{level}}">
 								<radio value="{{item.value}}"></radio>
 								<text>{{item.txt}}</text>
@@ -294,10 +256,7 @@
 					<label>
 						<text class="form_not_must"> </text>
 						<text class="form_txt">残疾证有效日期 : </text>
-						<input class="weui-input" 
-						bindblur="change"
-						data-msg="form.disabled.date"
-						 />
+						<input class="weui-input" bindblur="change" data-msg="form.disabled.date" />
 					</label>
 
 				</view>
