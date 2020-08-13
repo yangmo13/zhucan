@@ -1,0 +1,5 @@
+<view class="btn">
+	<button class="the_btn"  
+   bindtap="change"
+   hover-class="btn_hover">{{text}}</button>
+</view>

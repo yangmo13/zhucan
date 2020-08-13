@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>#include("/common/include.html", libs=["layui"])
+<style>
+	.layui-form-pane .layui-form-label {
+		width:150px;
+	}
+	.layui-form-pane .layui-input-block {
+		margin-left:150px;
+	}
+</style>
+</head>
+<body>
+	<form class="layui-form layui-form-pane">
+		<input type="hidden" name="data.id" value="#(data.id??)">
+		<div class="layui-form-item">
+			<label class="layui-form-label">名称</label>
+			<div class="layui-input-block">
+				<input type="text" name="data.name" autocomplete="off" placeholder="请输入名称" class="layui-input" value="#(data.name??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">标识</label>
+			<div class="layui-input-block">
+				<input type="text" name="data.code" autocomplete="off" placeholder="请输入标识" class="layui-input" value="#(data.code??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item" pane="">
+			<label class="layui-form-label">启用数据权限</label>
+			<div class="layui-input-block">
+				#widget("global.yesno",name="data.enableAuth",value=data.enableAuth??1,type="radio")
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block" style="text-align:center;margin-left:0;">
+				<button class="layui-btn" lay-submit lay-filter="saveBtn">保存</button>
+				<button class="layui-btn" onclick="closeMe()">取消</button>
+			</div>
+		</div>
+	</form>
+<script type="text/javascript">
+#include("data_edit.js")
+</script>
+</body>

@@ -1,0 +1,11 @@
+package #(config.modelPkg);
+
+import #(config.baseModelPkg).#(tableMeta.baseModelName);
+
+@SuppressWarnings("serial")
+public class #(tableMeta.modelName) extends #(tableMeta.baseModelName)<#(tableMeta.modelName)> {
+	#if (generateDaoInModel)
+	public static final #(tableMeta.modelName) dao = new #(tableMeta.modelName)().dao();
+	#else
+	#end
+}

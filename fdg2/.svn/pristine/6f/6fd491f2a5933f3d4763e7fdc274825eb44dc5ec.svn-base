@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "ipt":"/pages/component/form/input"
+  },
+  "navigationStyle":"custom"
+  
+}

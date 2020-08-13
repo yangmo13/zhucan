@@ -1,0 +1,36 @@
+<view class="fuwu_box" style="padding-top:{{height}}px">
+	<!-- 顶部导航 -->
+
+	<header text="用户服务协议" back="true" back_age="true" ></header>
+	<!-- 文字显示 -->
+	<view class="text_box">
+		<!-- 标题 -->
+		<view class="text_top">
+			用户服务协议
+		</view>
+		<!-- 提示 -->
+		<view class="text_tixing">
+			哈尔滨市香坊区残疾人综合就业互联网服务平台，以下简称本平台
+		</view>
+		<!-- 全文 -->
+		<view class="quanwen">
+			<view>一、本平台用户服务协议的确认</view>
+			<view class="txt_body">1、如我们对本协议进行修改，我们将更新此服务协议内容，您有权停止使用相关服务；</view>
+			<view class="txt_body">2、如您无民事行为能力或限制民事行为能力人，请告知您的监护人，并在您监护人的指导下阅读本协议和使用我们的服务。</view>
+		</view>
+		<view class="quanwen">
+			<view>二、本平台相关定义</view>
+			<view class="txt_body">微信授权：指本平台需要获取您的公开信息（昵称、头像、性别）。如您拒绝获取权限，则不能使用本平台的部分功能。
+			</view>
+		</view>
+		<view class="quanwen">
+			<view>三、使用本平台的注意事项</view>
+			<view class="txt_body">为有效保障您使用我们服务时的合法权益，我们提醒您注意以下事项：</view>
+			<view class="txt_body">您在完善个人信息的过程中请您提供合法、真实、有效、准确并完整的资料，为了更好的保障您的账户安全，如该资料发生变更，请及时更新个人信息。您应确保您的个人资料均为本人，切勿填写他人信息，否则，我们将保留对不实信息有追究法律责任的权利。。</view>
+		</view>
+	</view>
+
+  <view class="btn_box">
+    <button id="btn" bindtap="next">下一步</button>
+  </view>
+</view>

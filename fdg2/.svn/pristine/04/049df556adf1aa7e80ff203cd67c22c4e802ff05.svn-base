@@ -1,0 +1,59 @@
+package com.fdp.controller;
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+
+import com.jfinal.aop.Aop;
+import com.jfinal.core.Controller;
+import com.jfinal.core.paragetter.Para;
+import com.jfinal.plugin.activerecord.Page;
+import com.sloth.common.AjaxData;
+import com.sloth.common.TableData;
+import com.fdp.model.Archive;
+import com.fdp.service.ArchiveService;
+import com.sloth.sys.util.DataFilterKit;
+
+public class ArchiveController extends Controller {
+	private ArchiveService archiveService = Aop.get(ArchiveService.class);
+
+	@RequiresPermissions("archive:list")
+	public void index() {
+		render("archive_list.html");
+	}
+
+	@RequiresPermissions("archive:list")
+	public void find(@Para("page") int pageNo, @Para("limit") int pageCount, @Para("") Archive archive) {
+		Page<Archive> archives = archiveService.find(archive, pageNo, pageCount, DataFilterKit.get("archive"));
+		renderJson(new TableData(archives.getTotalRow(), archives.getList()));
+	}
+
+	@RequiresPermissions("archive:add")
+	public void goAdd() {
+		render("archive_edit.html");
+	}
+	
+	@RequiresPermissions("archive:edit")
+	public void goEdit(String id) {
+		if (id != null) {
+			this.setAttr("archive", archiveService.findById(id));
+		}
+		render("archive_edit.html");
+	}
+
+	@RequiresPermissions("archive:edit")
+	public void edit(Archive archive) {
+		archiveService.update(archive);
+		renderJson(new AjaxData());
+	}
+
+	@RequiresPermissions("archive:add")
+	public void add(Archive archive) {
+		archiveService.save(archive);
+		renderJson(new AjaxData());
+	}
+
+	@RequiresPermissions("archive:del")
+	public void del(String id) {
+		archiveService.del(id);
+		renderJson(new AjaxData());
+	}
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>#include("/common/include.html", libs=["layui","font-awesome"])
+</head>
+<body>
+<form class="layui-form" style="padding-top: 10px;" id="search-form">
+	<div class="layui-form-item">
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">名称</label>
+			<div class="layui-input-inline">
+				<input type="tel" name="name" autocomplete="off" class="layui-input search_input" placeholder="请输入名称">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">标识</label>
+			<div class="layui-input-inline">
+				<input type="text" name="code" autocomplete="off" class="layui-input search_input" placeholder="请输入标识">
+			</div>
+		</div>
+	</div>
+</form>
+<table class="layui-hide" id="dataTable" lay-filter="dataTable"></table>
+<script type="text/html" id="toolbarTpl">
+<div style="float:left;">
+#permission('data:add')
+#[[<button class="layui-btn" type="button" onclick="goAdd();">添加</button>]]#
+#end
+</div>
+<div style="float:right;">
+<button class="layui-btn" type="button" onclick="submitForm();">查询</button>
+<button class="layui-btn" type="reset" onclick="$('#search-form')[0].reset();">重置</button>
+</div>
+</script>
+<script id="optTpl" type="text/html">
+	#permission('data:edit')
+	<a lay-event="edit" title="编辑" style="cursor:pointer;"><i class="fa fa-edit"></i></a>
+	#end
+	#permission('data:del')
+	<a lay-event="del" title="删除" style="cursor:pointer;"><i class="fa fa-trash-o"></i></a>
+	#end
+	#permission('data:lock')
+	#[[{{#  if(d.enableAuth==0){ }}<a lay-event="unlock" title="启用" style="cursor:pointer;"><i class="fa fa-unlock"></i></a>{{#  } }}]]#
+	#[[{{#  if(d.enableAuth==1){ }}<a lay-event="lock" title="禁用" style="cursor:pointer;"><i class="fa fa-unlock-alt"></i></a>{{#  } }}]]#
+	#end
+</script>
+<script>
+#include("data_list.js")
+</script>
+</body>

@@ -1,0 +1,8 @@
+#define search(c)
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">#(c.title??)</label>
+			<div class="layui-input-inline">
+				<input type="#(c.type??'text')" name="#(c.name??)"  id="#(c.id??)" autocomplete="off" class="layui-input search_input" #if(c.extAttrs??)#(c.extAttrs)#end >
+			</div>
+		</div>
+#end

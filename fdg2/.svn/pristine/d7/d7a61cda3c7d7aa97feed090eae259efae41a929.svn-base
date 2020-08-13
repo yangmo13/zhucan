@@ -1,0 +1,116 @@
+/* pages/servers/index/zhiye/zhiye.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background: #f4f6f8;
+}
+.zhiye{
+  width: 100%;
+  
+  padding-top: 124rpx;
+}
+.top{
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+  
+ 
+  
+  flex-wrap: wrap;
+}
+.top_box{
+  width: 200rpx;
+  height: 200rpx;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.top_box_img{
+  width: 110rpx;
+  height:110rpx;
+
+}
+.top_box_img image{
+  width: 100%;
+  height: 100%;
+}
+.top_box_txt{
+  height: 40rpx;
+  font-size: 30rpx;
+
+  text-align: center;
+  margin-top: 15rpx;
+}
+.ziliao{
+  padding:  0 20rpx;
+  height: 106rpx;
+  background: #f4f6f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ziliao_icon{
+  width: 200rpx;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  
+}
+.ziliao_icon_img{
+  width: 40rpx;
+  height: 40rpx;
+
+}
+.ziliao_icon_img image{
+  width: 100%;
+  height: 100%;
+}
+.ziliao_icon_txt{
+  margin-left: 20rpx;
+}
+.jiazai_more{
+  color: #707070;
+}
+.video{
+  height: 500rpx;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.video_txt{
+  width: 650rpx;
+  font-weight: 600;
+}
+#myVideo{
+  width: 650rpx !important;
+  margin-top: 20rpx;
+}
+.playback_box{
+  position: relative;
+}
+.playback{
+  position: absolute;
+width: 100rpx;
+height: 50rpx;
+top: 59rpx;
+left: 17rpx;
+background: rgba(0, 0, 0, 0.5);
+border-radius: 50rpx;
+color: white;
+text-align: center;
+line-height: 50rpx;
+font-size: 26rpx;
+padding: 0 5rpx;
+}

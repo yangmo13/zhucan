@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "header":"/pages/component/header/header",
+    "ipt":"/pages/component/form/input",
+    "date":"/pages/component/form/date/date",
+    "rich_txt":"/pages/component/form/text/input"
+  }
+}

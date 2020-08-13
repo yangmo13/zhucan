@@ -1,0 +1,19 @@
+<!--pages/servers/information/policy/policy.wxml-->
+<view class="service_box" style="padding-top:{{height}}px">
+	<header text="政策法规" isNew="{{isNew}}" back_age="{{false}}" back="{{false}}"></header>
+
+	<!-- 列表 -->
+
+	<view wx:for="{{arr}}" data-msg="{{item}}" bindtap="noticeXiangqing">
+		<view style="height:20rpx"></view>
+		<view style="padding:26rpx;background: #fff">
+			 <text class="zxx_text_overflow_2 content_ms" >{{item.msg}}</text>
+			<view class="li_post">
+				<text class="li_post_name" >{{item.policy}}</text>
+				<view class="li_post_money">{{item.time}}</view>
+			</view>
+		</view>
+
+	</view>
+
+</view>

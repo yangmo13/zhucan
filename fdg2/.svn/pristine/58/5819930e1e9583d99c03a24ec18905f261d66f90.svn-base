@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html", libs=["layui"])
+</head>
+<body>
+<form class="layui-form layui-form-pane">
+	<input type="hidden" name="role.id" value="#(role.id??)">
+	<div class="layui-form-item">
+		<label class="layui-form-label">角色标识</label>
+		<div class="layui-input-block">
+			<input type="text" name="role.code" autocomplete="off"
+				placeholder="请输入角色标识" class="layui-input" value="#(role.code??)"
+				lay-verify="required">
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">角色名称</label>
+		<div class="layui-input-block">
+			<input type="text" name="role.name" autocomplete="off"
+				placeholder="请输入角色名称" class="layui-input" value="#(role.name??)"
+				lay-verify="required">
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<div class="layui-input-block" style="text-align:center;margin-left:0;">
+			<button class="layui-btn" lay-submit lay-filter="saveBtn">保存</button>
+			<button class="layui-btn" onclick="closeMe()">取消</button>
+		</div>
+	</div>
+</form>
+<script type="text/javascript">
+#include("role_edit.js")
+</script>
+</body>

@@ -1,0 +1,35 @@
+<view class="service_box" style="padding-top:{{height}}px">
+
+  <header text="互联网+实体服务平台" isNew="{{isNew}}" back_age="{{false}}" back="{{false}}"></header>
+	<!-- 轮播图部分 -->
+  <view class="banner_img">
+    <swiper indicator-dots="true" indicator-color="#ccc" indicator-active-color="#000"
+      autoplay
+      interval="3500"
+      circular
+    >
+      <swiper-item >
+        <image src="../../../image/banner22.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="../../../image/banner22.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="../../../image/banner22.jpg"></image>
+      </swiper-item>
+    </swiper>
+  
+  </view>
+  <!-- 导航模块部分 -->
+  <view class="daohang">
+    <view class="daohang_box"  wx:for="{{daohang}}"
+      data-url="{{item.url}}"
+      bindtap="next"
+    >
+      <view class="daohang_img">
+      <image src="{{item.src}}"></image>
+      </view>
+      <view class="daohang_msg">{{item.msg}}</view>
+    </view>
+  </view> 
+</view>

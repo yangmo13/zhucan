@@ -1,0 +1,6 @@
+<view class="loading" animation="{{ani}}">
+<view class="box" >
+  <image src="/image/servers/loading.png"></image>
+</view>
+
+</view>

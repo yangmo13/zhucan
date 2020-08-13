@@ -1,0 +1,104 @@
+<view class="zhidao" style="padding-top:{{height+50}}px">
+	<!-- 头部 -->
+	<header text="示范体验" isNew="{{isNew}}"></header>
+
+
+	<!-- 导航部分 -->
+	<view class="zhidao_box" style="top:{{height}}px">
+		<view class="zhidao_nav {{selectBox==1?'zhidao_nav_selected':''}}" bindtap="change2" data-num="1">康复资料</view>
+		<view class="zhidao_nav {{selectBox==2?'zhidao_nav_selected':''}}" bindtap="change2" data-num="2">康复器具</view>
+		<view class="zhidao_nav {{selectBox==3?'zhidao_nav_selected':''}}" bindtap="change2" data-num="3">预约体验</view>
+	</view>
+	<!-- 底部显示部分 -->
+	<view class="checked_box" wx:if="{{selectBox==1}}">
+		<!-- 搜索框部分 -->
+		<view class="kangfuziliao">
+			<view class="ipt_search" style="top:{{height+63}}px">
+				<view class="ipt_box">
+					<input placeholder="请输入要查询的关键字" placeholder-class="ipt_placeholde" value="{{value}}" bindblur="changeKyWord"></input>
+				</view>
+				<view class="ipt_btn_box">
+					<button id="ipt_btn" bindtap="search">搜索</button>
+				</view>
+			</view>
+			<view class="ziliao_box">
+				<ziliao></ziliao>
+			</view>
+
+
+		</view>
+
+	</view>
+	<view class="checked_box" wx:if="{{selectBox==2}}" style="padding-top:{{20}}rpx">
+      <qiju></qiju>
+	</view>
+	<view class="checked_box" wx:if="{{selectBox==3}}" style="padding-top:{{20}}rpx">
+		<view>
+			<!-- 输入框 -->
+			<!-- 身份证扫描 -->
+			<view class="header_btn">
+				<view class="header_btn_top">
+					<image src="../../../../../image/card.png"></image>
+				</view>
+				<view class="header_btn_right">
+					点击此处扫描身份证快速录入信息
+				</view>
+			</view>
+			<!-- 预约时间 -->
+			<date text="预约时间" isRed="true"></date>
+
+			<!-- 设备类别 -->
+			<xiala text="设备类别" isRed="true" arr="{{equipmentType}}"></xiala>
+			<!-- 设备名称 -->
+			<xiala text="设备名称" isRed="true" arr="{{equipmentName}}"></xiala>
+			<!-- 联系人 -->
+			<ipt text="联系人" isRed="true"></ipt>
+			<!-- 联系电话 -->
+			<ipt text="联系电话" isRed="true"></ipt>
+			<!-- 预约姓名 -->
+			<ipt text="预约姓名" isRed="true"></ipt>
+			<!-- 身份证号 -->
+			<ipt text="身份证号" isRed="true"></ipt>
+
+			<!-- 残疾类型 -->
+			<view class="canji_leixing">
+				<view class="left_name">
+					<text>*</text>
+					<text>残疾类型 :</text>
+				</view>
+				<view class="right_checkbox">
+					<checkbox-group class="check_box" bindchange="change" data-msg="form.type">
+						<label wx:for="{{arr}}">
+							<checkbox value="{{item.name}}" checked="{{item.ischeck}}"></checkbox>
+							{{item.name}}
+
+						</label>
+
+					</checkbox-group>
+				</view>
+			</view>
+			<!-- 残疾等级 -->
+			<view class="canji_leixing">
+				<view class="left_name">
+					<text>*</text>
+					<text>残疾类型 :</text>
+				</view>
+				<view class="right_checkbox">
+					<radio-group class="radio_txt" data-msg="form.level" bindchange="change">
+						<label wx:for="{{arr2}}">
+							<radio value="{{item.name}}" checked="{{item.ischeck}}"></radio>
+							{{item.name}}
+						</label>
+					</radio-group>
+				</view>
+			</view>
+
+		</view>
+
+		<view class="bottom">
+			<btn text="提交"></btn>
+		</view>
+
+
+	</view>
+</view>

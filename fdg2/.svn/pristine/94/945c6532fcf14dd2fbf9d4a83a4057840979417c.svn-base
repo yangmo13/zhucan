@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>#include("/common/include.html", libs=["layui","font-awesome"])
+</head>
+<body>
+	<form id="search-form" class="layui-form">
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+			<legend>项目配置</legend>
+		</fieldset>
+		#include("config_item.html", key="project.name", extAttrs="lay-verify='required' maxlength='15'")
+		#include("config_item.html", key="user.defaultPwd", extAttrs="lay-verify='required' maxlength='15'")
+		#permission('config:save')
+		<div class="layui-form-item" style="padding-top:30px;">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-submit lay-filter="saveBtn">保存</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			</div>
+		</div>
+		#end
+	</form>
+	<script type="text/javascript">
+	#include("config_list.js")
+	</script>
+</body>
+</html>

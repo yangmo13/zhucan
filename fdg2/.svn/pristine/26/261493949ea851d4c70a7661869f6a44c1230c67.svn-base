@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "header":"../../../../component/header/header",
+    "huodong":"../../../../component/zhidao/huodong/huodong",
+    "ziliao":"../../../../component/zhidao/ziliao/ziliao",
+    "dengji":"../../../../component/zhidao/dengji/dengji",
+    "ipt":"/pages/component/form/input",
+    "btn":"/pages/component/form/button/button",
+    "xiala":"/pages/component/form/xiala/xiala"
+  }
+}

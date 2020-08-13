@@ -1,0 +1,39 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+.mapMes{
+  width: 100%;
+  height: 100%;
+  background-color: var(--gray);
+}
+.map_list{
+    padding-top: 10rpx;
+  
+}
+.map_list_li{
+  padding: 30rpx;
+  background-color: white;
+ padding-bottom: 20rpx;
+ margin-top: 20rpx;
+}
+.list_name{
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.store_name{
+  font-size: 30rpx;
+  color: #111;
+}
+.store_phone{
+  font-size: 24rpx;
+  color: #333;
+}
+.list_position{
+
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 20rpx;
+}

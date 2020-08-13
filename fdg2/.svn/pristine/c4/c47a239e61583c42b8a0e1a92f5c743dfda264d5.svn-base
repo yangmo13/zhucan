@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html",libs=["layui","font-awesome",'editer','common'])
+</head>
+<body>
+<div class="layui-form" lay-filter="noticeForm">
+	<div style="display: flex;">
+		#@uploadImg()
+		<div style="width: calc(100vw - 150px)" >
+			<div class="layui-fluid">
+			#@input({name:'title',title:'标题',verify:'required'})
+			#@input({name:'pubTime',title:'发布时间',id:'pubTime',col:6,verify:'required',extAttrs:"readonly"})
+			#@input({name:'src',title:'来源',col:6,verify:'required'})
+			</div>
+	  	</div>
+	</div>
+	<div id="demo"></div>
+	<div style="margin-top:15px;text-align: center;"> 
+		<button type="button" class="layui-btn layui-btn-lg" lay-submit="save" lay-filter="save">仅保存</button>
+		<button type="button" class="layui-btn layui-btn-lg" lay-submit="subSave" lay-filter="subSave">保存并提交</button>
+		<button type="button" class="layui-btn layui-btn-lg" onclick="javascript:history.back(-1);">返回</button>
+	</div>
+</div>
+	
+
+<script>#include("noticeAdd.js")</script>
+</body>

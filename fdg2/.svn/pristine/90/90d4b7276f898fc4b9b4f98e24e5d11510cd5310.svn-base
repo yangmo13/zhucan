@@ -1,0 +1,77 @@
+/* pages/component/form/xiala/xiala.wxss */
+/* pages/component/form/input.wxss */
+.ipt{
+  
+  margin-top: 20rpx;
+  height: 80rpx;
+  
+}
+.ipt_box{
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:0 30rpx;
+  height: 100%;
+}
+.ipt_box text{
+  display: inline-block;
+  width: 24rpx;
+  color: #db001b;
+ 
+}
+.xiala_txt{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.ipt_box .xiala_ipt{
+  border-bottom: 4rpx solid #e7e7e7;
+  flex: 1;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  padding-left: 10rpx;
+  height: 60rpx;
+  position: relative;
+  line-height: 60rpx;
+  
+}
+.xiala_box{
+  border: 1px solid #555;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  position: absolute;
+ top: 66rpx;
+ left: -2rpx;
+  box-shadow: 0rpx 0rpx 60rpx #ccc;
+}
+.xiala_img{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 20rpx;
+}
+.xiala_img image{
+  width: 100%;
+  height: 100%;
+}
+.xiala_li{
+  line-height: 60rpx;
+  height: 60rpx;
+
+  color: #333;
+  padding-left: 20rpx;
+}
+.xiala_li_hover{
+  background-color: #1e90ff;
+  color: white;
+}
+.ipt_text{
+min-width:100rpx ;
+
+height: 60rpx;
+line-height: 60rpx;
+color: #333;
+}

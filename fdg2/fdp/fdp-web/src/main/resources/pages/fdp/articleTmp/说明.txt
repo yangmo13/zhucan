@@ -1,0 +1,2 @@
+contentCommon.js  为 内容管理业务模块所有公共js
+contentDetil.html 为 内容管理业务模块所有的公共详情页面

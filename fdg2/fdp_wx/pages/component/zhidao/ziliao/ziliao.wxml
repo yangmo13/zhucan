@@ -1,0 +1,26 @@
+<view class="zhidao">
+	<view class="zhidao_box" wx:for="{{arr}}">
+		<view class="dao_left">
+			<view class="dao_left_img">
+				<image src="../../../../image/banner1.jpg"></image>
+			</view>
+		</view>
+		<view class="dao_right">
+			<!-- 右边题目 -->
+			<view class="dao_right_top">
+				<view class="dao_roght_img">
+					<image src="{{item.small_img}}"></image>
+				</view>
+				<text>{{item.topic}}</text>
+				<text>{{item.date}}</text>
+			</view>
+			<view class="dao_right_center">
+      {{item.text}}
+			</view>
+			<view class="dao_right_bottom">
+				<view class="right_bottom_label" wx:for="{{item.label}}">{{item}}</view>
+			</view>
+		</view>
+	</view>
+
+</view>

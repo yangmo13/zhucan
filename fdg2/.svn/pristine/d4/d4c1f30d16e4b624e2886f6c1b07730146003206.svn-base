@@ -1,0 +1,5 @@
+<view id="btn">
+	<button id="the_btn"
+  
+   hover-class="btn_hover">{{text}}</button>
+</view>

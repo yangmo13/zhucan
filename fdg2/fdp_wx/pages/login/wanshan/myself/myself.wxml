@@ -1,0 +1,25 @@
+<view class="jingli" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="培训经历" isNew="{{isnew}}"></header>
+	<view class="form_box">
+    <view class="myself_box">
+      <!-- 请填写自我评价 -->
+      <view class="topic">请填写自我评价</view>
+      <!-- 文本框 -->
+      <view class="text">
+        <textarea maxlength="{{-1}}"
+        disable-default-padding
+        bindconfirm="change"
+        bindblur="change"
+         show-confirm-bar  auto-focus>
+        
+        </textarea>
+      </view>
+    </view>
+
+	</view>
+	<view class="bottom_btn">
+		<button bindtap="next" id="btn">完成</button>
+	</view>
+
+</view>

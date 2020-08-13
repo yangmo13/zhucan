@@ -1,0 +1,45 @@
+package com.fdp.service;
+
+
+import com.jfinal.kit.Kv;
+import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.plugin.activerecord.Record;
+import com.sloth.common.DataFilter;
+import com.fdp.model.ArticleTmp;
+import com.fdp.model.ContentTmp;
+
+public class ContentTmpService {
+	private ContentTmp contentTmpDao = ContentTmp.dao;
+
+	public void save(ContentTmp contentTmp) {
+		contentTmp.remove("ID");
+		contentTmp.save();
+	}
+
+	public void del(Object id) {
+		contentTmpDao.deleteById(id);
+	}
+
+	public void update(ContentTmp contentTmp) {
+		contentTmp.update();
+	}
+
+	public ContentTmp findById(Object id) {
+		return contentTmpDao.findById(id);
+	}
+	/**
+	 * 列表查询
+	 * @param articleTmp
+	 * @param fContentTmp
+	 * @param pageNo
+	 * @param pageSize
+	 * @param dataFilter
+	 * @return
+	 */
+	public Page<Record> find(ArticleTmp articleTmp,ContentTmp contentTmp, int pageNo, int pageSize) {
+		Kv kv = Kv.by("contentTmp", contentTmp).set("articleTmp",articleTmp);
+		Page<Record> contentTmps = Db.paginate(pageNo, pageSize, contentTmpDao.getSqlPara("contentTmp.find", kv));
+		return contentTmps;
+	}
+}

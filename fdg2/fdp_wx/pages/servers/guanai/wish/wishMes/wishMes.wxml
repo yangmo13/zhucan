@@ -1,0 +1,69 @@
+<view class="wishMes" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="微心愿详情"></header>
+	<view class="wish_detail_box" >
+		<view class="wish_detail" style="{{claim==3?'':'height:90%'}}">
+			<!-- 详情名字 -->
+			<view class="wish_name">
+				{{list.topic}}
+			</view>
+			<!-- 许愿人 -->
+			<view class="wish_who">
+				许愿人 ：{{list.name}}
+			</view>
+			<!-- 残疾类型 -->
+			<view class="wish_who">
+				残疾类型：
+				<view wx:for="{{list.demand}}" class="wish_demand"> <text wx:if="{{index!=0}}">/</text>{{item}}</view>
+			</view>
+			<!-- 残疾等级 -->
+			<view class="wish_who">
+				残疾等级 ：一级
+			</view>
+			<!-- 微心愿说明 -->
+			<view class="wish_who">
+				<text>  微心愿说明：</text>
+				<view class="wish_who">
+					{{list.mes}}
+				</view>
+			</view>
+			<!-- 联系人 -->
+			<view class="wish_who">
+				联系人：{{list.linkman}} {{list.phone}}
+			</view>
+			<!-- 发起时间 -->
+			<view class="start_time">
+				发起时间：{{list.start}}
+			</view>
+			<!-- 结束时间 -->
+			<view class="start_time">
+				结束时间 ：{{list.end}}
+			</view>
+			<!-- 是否认领 -->
+			<view class="isClaim">
+				<image src="/image/guanai/wish/u2855.png" wx:if="{{claim==1}}"></image>
+				<image src="/image/guanai/wish/u2864.png" wx:if="{{claim==2}}"></image>
+					<image src="/image/guanai/wish/u2876.png" wx:if="{{claim==3}}"></image>
+			</view>
+			<!-- 是否认领完成 -->
+			<view class="isfinesh" wx:if="{{claim==3}}">
+				<view class="isfinesh_statu">认领情况</view>
+				<view class="isfinesh_time">
+					本次心愿已于2020年06月10日由角清完成
+				</view>
+				<text class="wish_remind">微心愿已递交到残疾人手中，感谢您的爱心</text>
+				<view class="isfinesh_img">
+					<image src="http://222.32.73.38:8180/fdp/images/3_2_1_%E5%BE%AE%E5%BF%83%E6%84%BF%E8%AF%A6%E6%83%85/u2889.png"
+						mode="widthFix"
+					></image>
+				</view>
+			</view>
+		
+		</view>
+
+
+		<view class="wish_btn">
+			<btn text="{{claim==true?'我要认领':'取消认领'}}"></btn>
+		</view>
+	</view>
+</view>

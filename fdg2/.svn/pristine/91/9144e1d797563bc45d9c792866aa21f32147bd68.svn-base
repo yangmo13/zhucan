@@ -1,0 +1,10 @@
+#the_btn{
+  width: 600rpx;
+  height: 70rpx;
+  background-color: var(--blue);
+  color: white;
+  font-weight: 400;
+}
+#btn .btn_hover{
+  background-color: #5cbcb2;
+}

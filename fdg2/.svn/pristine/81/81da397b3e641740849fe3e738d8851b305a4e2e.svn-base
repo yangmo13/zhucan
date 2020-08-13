@@ -1,0 +1,276 @@
+<view class="form_box" style="padding-top:{{height}}px">
+	<header text="识别身份" back="true" back_age="true"></header>
+	<view class="header"> 基本信息 :</view>
+	<view class="header_btn">
+		<view class="header_btn_top">
+			<image src="../../../image/card.png"></image>
+		</view>
+		<view class="header_btn_right">
+			点击此处扫描身份证快速录入信息
+		</view>
+	</view>
+	<view class="the_form">
+		<form bindsubmit="change">
+			<view class="weui-cells weui-cells_after-title">
+				<!-- 姓名 -->
+				<view class="weui-cell weui-cell_input">
+					<label>
+						<text class="form_must"> *</text>
+						<text class="form_txt">姓名 : </text>
+						<input class="weui-input" value="{{form2.name}}" auto-focus bindblur="change" data-msg="form.name" />
+					</label>
+
+				</view>
+				<!-- 身份证号 -->
+				<view class="weui-cell weui-cell_input">
+					<label>
+						<text class="form_must"> *</text>
+						<text class="form_txt">身份证号 : </text>
+						<input class="weui-input" bindblur="change" value="{{form2.idcard}}" data-msg="form.idcard" />
+					</label>
+
+				</view>
+				<!-- 籍贯 -->
+				<view class="weui-cell weui-cell_input">
+					<label>
+						<text class="form_must"> *</text>
+						<text class="form_txt">籍贯 : </text>
+						<input class="weui-input" bindblur="change" value="{{form.nativePlace}}" data-msg="form2.nativePlace" />
+					</label>
+				</view>
+				<!-- 下拉框 -->
+				<!-- 民族 -->
+				<view class="weui-cell weui-cell_input">
+					<label>
+						<text class="form_must jiguan"> *</text>
+						<text class="form_txt jiguan">民族 : </text>
+						<view class="select" bindtap="jiguanShow">
+							<image src="../../../image/down.png"></image>
+							<text>{{minzu_txt==''?form2.nation:minzu_txt}}</text>
+						</view>
+						<view class="select_box" wx:if="{{jiguan_show}}">
+							<view class="select_box_li" wx:for="{{jiguan}}" hover-class="select_box_li_hover" data-txt="{{item}}" data-msg="minzu" data-name="form.nation" bindtap="checkedSelect">
+								{{item}}</view>
+						</view>
+					</label>
+				</view>
+				<!-- 婚否 -->
+				<view class="weui-cell weui-cell_input">
+					<label>
+						<text class="form_must jiguan"> *</text>
+						<text class="form_txt jiguan">婚否 : </text>
+						<view class="select" bindtap="hunfouShow">
+							<image src="../../../image/down.png"></image>
+							<text>{{hunfou_txt==''?form2.marital:hunfou_txt}}</text>
+						</view>
+						<view class="select_box" wx:if="{{hunfou_show}}">
+							<view class="select_box_li" wx:for="{{hunfou}}" hover-class="select_box_li_hover" data-txt="{{item}}" data-msg="hunfou" data-name="form.marital" bindtap="checkedSelect">
+								{{item}}</view>
+						</view>
+					</label>
+				</view>
+				<!-- 学历 -->
+				<view class="weui-cell weui-cell_input">
+					<label>
+						<text class="form_must jiguan"> *</text>
+						<text class="form_txt jiguan">学历 : </text>
+						<view class="select" bindtap="xueliShow">
+							<image src="../../../image/down.png"></image>
+							<text>{{xueli_txt==''?form2.education:xueli_txt}}</text>
+						</view>
+						<view class="select_box" wx:if="{{xueli_show}}">
+							<view class="select_box_li" wx:for="{{xueli}}" hover-class="select_box_li_hover" bindtap="checkedSelect" data-txt="{{item}}" data-name="form.education" data-msg="xueli">
+								{{item}}</view>
+						</view>
+					</label>
+				</view>
+				<!-- 身份证户籍地 -->
+				<view>
+					<view class="hujidi">
+						<text class="form_must"> *</text>
+						<text class="form_txt">身份证户籍地 : </text>
+					</view>
+					<view class="jigunabox">
+						<input class="weui-input" bindblur="change" value="{{form2.localtion}}" data-msg="form.location" />
+
+					</view>
+				</view>
+				<!-- 现居住地址 -->
+				<view>
+					<view class="hujidi">
+						<text class="form_must"> *</text>
+						<text class="form_txt">现居住地址 : </text>
+					</view>
+					<view class="jigunabox">
+						<input class="weui-input" bindblur="change" value="{{form2.address}}" data-msg="form.address" />
+
+					</view>
+				</view>
+				<!-- 联系电话 -->
+				<view class="weui-cell	weui-cell_input">
+					<label>
+						<text class="form_must"> *</text>
+						<text class="form_txt">联系电话 : </text>
+						<input class="weui-input" bindblur="change" value="{{form.phone}}" data-msg="form.phone" />
+					</label>
+				</view>
+				<!-- 户口类型 -->
+				<view class="hukou	weui-cell_input">
+					<label>
+						<text class="form_must"> *</text>
+						<text class="form_txt">户口类型 : </text>
+						<radio-group bindchange="item_change" data-name="form.registered">
+							<view wx:for="{{hukou}}">
+								<radio value="{{item.value}}"></radio>
+								<text>{{item.txt}}</text>
+							</view>
+						</radio-group>
+					</label>
+				</view>
+				<!-- 联系人信息 -->
+				<view class="header">联系人信息 :</view>
+				<!-- 联系人姓名 -->
+				<view class="weui-cell weui-cell_input">
+					<label>
+						<text class="form_must"> *</text>
+						<text class="form_txt">姓名 : </text>
+						<input class="weui-input" bindblur="change" value="{{form.linkman.name}}" data-msg="form.linkman.name" />
+					</label>
+
+				</view>
+				<!-- 与其关系 -->
+				<view class="weui-cell weui-cell_input">
+					<label>
+						<text class="form_must jiguan"> *</text>
+						<text class="form_txt jiguan">与其关系 : </text>
+						<view class="select" bindtap="guanxiShow">
+							<image src="../../../image/down.png"></image>
+							<text>{{guanxi_txt}}</text>
+						</view>
+						<view class="select_box_small" wx:if="{{guanxi_show}}">
+							<view class="select_box_li" wx:for="{{guanxi}}" hover-class="select_box_li_hover" data-txt="{{item}}" data-msg="guanxi" data-name="form.linkman.relation" bindtap="checkedSelect">
+								{{item}}</view>
+						</view>
+					</label>
+				</view>
+				<!-- 联系电话 -->
+				<view class="weui-cell	weui-cell_input">
+					<label>
+						<text class="form_must"> *</text>
+						<text class="form_txt">联系电话 : </text>
+						<input class="weui-input" bindblur="change" value="{{form.linkman.phone}}" data-msg="form.linkman.phone" />
+					</label>
+				</view>
+				<!-- 工作信息 -->
+				<view class="header">工作信息 :</view>
+				<!-- 工作单位 -->
+				<view class="weui-cell weui-cell_input">
+					<label>
+						<text class="form_not_must">   </text>
+						<text class="form_txt">工作单位 : </text>
+						<input class="weui-input" bindblur="change" value="{{form.work.company}}" data-msg="form.work.company" />
+					</label>
+
+				</view>
+				<!-- 职业工种 -->
+				<view class="weui-cell weui-cell_input">
+					<label>
+						<text class="form_not_must"> </text>
+						<text class="form_txt">职业工种 : </text>
+						<input class="weui-input" bindblur="change" value="{{form.work.profession}}" data-msg="form.work.profession" />
+					</label>
+
+				</view>
+				<!-- 单位性质 -->
+				<view class="weui-cell weui-cell_input">
+					<label>
+						<text class="form_not_must jiguan "> </text>
+						<text class="form_txt jiguan">单位性质 : </text>
+						<view class="select" bindtap="danweiShow">
+							<image src="../../../image/down.png"></image>
+							<text>{{danwei_txt}}</text>
+						</view>
+						<view class=" select_box_small" wx:if="{{danwei_show}}">
+							<view class="select_box_li" wx:for="{{danwei}}" hover-class="select_box_li_hover" data-txt="{{item}}" data-msg="danwei" data-name="form.work.unit" bindtap="checkedSelect">
+								{{item}}</view>
+						</view>
+					</label>
+				</view>
+				<!-- 是否福利企业 -->
+				<view class="hukou	weui-cell_input">
+					<label>
+						<text class="form_not_must"> </text>
+						<text class="form_txt">是否福利企业 : </text>
+						<radio-group bindchange="item_change" data-name="form.work.weal">
+							<view wx:for="{{fuli}}">
+								<radio value="{{item.value}}"></radio>
+								<text>{{item.txt}}</text>
+							</view>
+						</radio-group>
+					</label>
+				</view>
+				<!-- 残疾证信息 -->
+				<view class="header">残疾证信息 :</view>
+				<!-- 残疾证号码 -->
+				<view class="weui-cell	weui-cell_input">
+					<label>
+						<text class="form_must"> *</text>
+						<text class="form_txt">残疾证号码 : </text>
+						<input class="weui-input" bindblur="change" value="{{form.disabled.num}}" data-msg="form.disabled.num" />
+					</label>
+				</view>
+				<!-- 残疾类型 -->
+				<view class="canjileixing	weui-cell_input canjia_leixing">
+
+					<view class="leixing_first">
+						<text class="form_not_must"> </text>
+						<text class="form_txt">残疾类型 : </text>
+					</view>
+					<checkbox-group bindchange="leixingChange" data-name="form.disabled.type">
+						<view wx:for="{{canjizheng}}">
+							<label>
+								<checkbox value="{{item.value}}"></checkbox>
+								<text>{{item.txt}}</text>
+							</label>
+						</view>
+					</checkbox-group>
+
+				</view>
+
+
+				<!-- 残疾等级 -->
+				<view class="hukou	weui-cell_input " id="canjiadengji">
+
+					<text class="form_not_must">*</text>
+					<text class="form_txt">残疾等级 : </text>
+					<radio-group bindchange="item_change" data-name="form.disabled.level">
+						<view wx:for="{{level}}">
+							<label>
+								<radio value="{{item.value}}"></radio>
+								<text>{{item.txt}}</text>
+							</label>
+						</view>
+					</radio-group>
+
+				</view>
+				<!-- 残疾证有效日期 -->
+				<view class="weui-cell weui-cell_input">
+					<label>
+						<text class="form_not_must"> </text>
+						<text class="form_txt">残疾证有效日期 : </text>
+						<input class="weui-input" bindblur="change" data-msg="form.disabled.date" />
+					</label>
+
+				</view>
+				<!-- 下一步 -->
+				<view class="next">
+					<button class="next_btn" bindtap="next">下一步</button>
+				</view>
+
+
+
+			</view>
+		</form>
+
+	</view>
+</view>

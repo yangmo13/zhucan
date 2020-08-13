@@ -1,0 +1,25 @@
+<view class="jingli" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="培训经历" isNew="{{isnew}}"></header>
+	<view class="form_box">
+		<!-- form部分 -->
+		<!-- 培训机构  -->
+		<ipt text="培训机构" bind:blur="iptChnage" msg="{{form.organization}}" data-msg="form.organization"></ipt>
+
+		<!-- 培训时间 -->
+		<date text="培训时间" bind:blur="iptChnage" data-msg="form.date" start_time="{{form.peixun_start}}" end_time="{{form.prixun_end}}"></date>
+		<!-- 所学专业  -->
+		<ipt text="所学专业" bind:blur="iptChnage" msg="{{form.major}}" data-msg="form.major"></ipt>		<!-- 证明人  -->
+		<ipt text="证明人" bind:blur="iptChnage" msg="{{form.certifier}}" data-msg="form.certifier"></ipt>		<!-- 证明人手机  -->
+		<ipt text="证明人手机"
+		iswrong="{{test_phone}}"
+		data-test="test_phone"
+		type="number"
+		 bind:blur="iptChnage" msg="{{form.certifier_phone}}" data-msg="form.certifier_phone"></ipt>
+
+	</view>
+	<view class="bottom_btn">
+		<button bindtap="next" id="btn">完成</button>
+	</view>
+
+</view>

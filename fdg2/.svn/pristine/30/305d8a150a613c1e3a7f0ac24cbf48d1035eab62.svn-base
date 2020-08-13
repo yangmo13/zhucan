@@ -1,0 +1,19 @@
+<!--pages/servers/information/partybuild/partybuild.wxml-->
+<view class="service_box" style="padding-top:{{height}}px">
+	<header text="党建工作" isNew="{{isNew}}" back_age="{{false}}" back="{{false}}"></header>
+
+	<!-- 列表 -->
+
+	<view wx:for="{{arr}}" data-msg="{{item}}" bindtap="noticeXiangqing">
+		<view style="height:20rpx"></view>
+		<view class="layout_horizontal_center" style="padding:26rpx;background: #fff">
+			<view style="flex:1">
+				<text class="zxx_text_overflow_2 content_ms" >{{item.msg}}</text>
+				<view class="time_style">{{item.time}}</view>
+			</view>
+			<image class="image" wx:if="{{item.url!=''}}" src="{{item.url}}"></image>
+		</view>
+	
+	</view>
+
+</view>

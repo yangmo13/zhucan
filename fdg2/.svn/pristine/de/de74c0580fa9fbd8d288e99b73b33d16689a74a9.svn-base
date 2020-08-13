@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html", libs=["layui","font-awesome"])
+</head>
+<body>
+<table class="layui-hidden" id="treeTable" lay-filter="treeTable"></table>
+<script id="iconTpl" type="text/html">
+	<i class="{{d.icon}}"></i>
+</script>
+<script id="optTpl" type="text/html">
+	#permission('dept:edit')
+	<a href="javascript:goEdit('{{d.id}}');" title="编辑" style="cursor:pointer;"><i class="fa fa-edit"></i></a>
+	#end
+	#permission('dept:del')
+	<a href="javascript:doDel('{{d.id}}');" title="删除" style="cursor:pointer;"><i class="fa fa-trash-o"></i></a>
+	#end
+	#permission('dept:move')
+	<a href="javascript:move('{{d.id}}',-1);" title="上移" style="cursor:pointer;"><i class="fa fa-arrow-up"></i></a>
+	<a href="javascript:move('{{d.id}}',1);" title="下移" style="cursor:pointer;"><i class="fa fa-arrow-down"></i></a>
+	#end
+	#permission('dept:add')
+	<a href="javascript:goAdd('{{d.id}}');" title="添加下级" style="cursor:pointer;"><i class="fa fa-plus"></i></a>
+	#end
+</script>
+<script type="text/html" id="toolbarTpl">
+#permission('dept:add')
+#if(dataAuth==3)
+#[[<button class="layui-btn" type="button" onclick="goAdd(0);">添加组织</button>]]#
+#end
+#end
+</script>
+<script>
+#include("dept_list.js")
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>#(name=tableMeta.modelName,lname=firstCharToLowerCase(tableMeta.modelName),null)
+<html>
+<head>#[[#include]]#("/common/include.html", libs=["layui"])
+</head>
+<body>
+	<form class="layui-form layui-form-pane">
+		#for(cm : tableMeta.columnMetas)
+		#if(equals(cm.isPrimaryKey,"true"))
+		<input type="hidden" id="id" name="#(lname).#(cm.attrName)" value="#[[#]]#(#(lname).#(cm.attrName)??)">
+		#else
+		<div class="layui-form-item">
+			<label class="layui-form-label">#(cm.remarks??cm.attrName)</label>
+			<div class="layui-input-block">
+				<input type="text" name="#(lname).#(cm.attrName)" autocomplete="off" placeholder="请输入#(cm.remarks??cm.attrName)" class="layui-input" value="#[[#]]#(#(lname).#(cm.attrName)??)" lay-verify="required">
+			</div>
+		</div>
+		#end
+		#end
+		<div class="layui-form-item">
+			<div class="layui-input-block" style="text-align:center;margin-left:0;">
+				<button class="layui-btn" lay-submit lay-filter="saveBtn">保存</button>
+				<button class="layui-btn" type="button" onclick="closeMe()">取消</button>
+			</div>
+		</div>
+	</form>
+<script type="text/javascript">
+#[[#include]]#("#(lname)_edit.js")
+</script>
+</body>

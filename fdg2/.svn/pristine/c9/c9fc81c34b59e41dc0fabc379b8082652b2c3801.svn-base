@@ -1,0 +1,63 @@
+  <view class="qiye" style="padding-top:{{height}}px">
+  	<!-- 头部导航栏 -->
+  	<header text="企业招聘"></header>
+  	<!-- 搜索框部分 -->
+  	<view class="ipt_search" style="top:{{height}}px">
+  		<view class="ipt_box">
+  			<input placeholder="请输入要查询的关键字" placeholder-class="ipt_placeholde" 
+				value="{{value}}"
+				bindblur="changeKyWord"></input>
+  		</view>
+  		<view class="ipt_btn_box">
+  			<button id="ipt_btn" bindtap="search">搜索</button>
+  		</view>
+  	</view>
+  	<!-- 数据列表部分 -->
+  	<view style="padding-top:{{120}}rpx" wx:if="{{show}}">
+  		<view class="qiye_li" wx:for="{{arr}}" data-msg="{{item}}" bindtap="nextXiangqing">
+  			<!-- 岗位 -->
+  			<view class="qiye_li_post">
+  				<view class="qiye_li_post_name">{{item.post}}</view>
+  				<text class="qiye_li_post_money">{{item.salary}}</text>
+  			</view>
+  			<!-- 条件 -->
+  			<view class="qiye_li_condition">
+  				<view class="qiye_li_condition_li">
+  					<text wx:for="{{item.condition}}">{{item}}</text>
+
+  				</view>
+  				<view class="qiye_li_condition_date">
+  					{{item.date}}
+  				</view>
+  			</view>
+  			<!-- 福利 -->
+  			<view class="qiye_li_welfare">
+
+  				<view class="qiye_li_welfare_li" wx:for="{{item.welfare}}">
+  					{{item}}
+  				</view>
+
+  			</view>
+  			<!-- 企业名称 -->
+  			<view class="qiye_li_name">
+  				<text>{{item.name}}</text>
+  			</view>
+  			<!-- 推荐图标 -->
+  			<view class="recommend" wx:if="{{item.recommend}}">
+  				<image src="/image/servers/sanjiao.png"></image>
+  				<text>
+        荐
+        </text>
+  			</view>
+
+  		</view>
+  	</view>
+  	<view class="loading_box"
+		wx:if="{{!show}}"
+		>
+  		<loading></loading>
+  	</view>
+
+
+
+  </view>

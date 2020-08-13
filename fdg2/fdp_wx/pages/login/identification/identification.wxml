@@ -1,0 +1,77 @@
+<view class="box" style="padding-top:{{height}}px">
+	<header text="识别身份" color="#2f6eef" back="{{isback}}" bind:backNow="getAdd"></header>
+	<view wx:if="{{ishow}}">
+		<view class="upload_idcard_head" wx:if="{{img1==''}}">
+
+			<view class="head_box1">
+				<image src="../../../image/u51.png"></image>
+
+			</view>
+			<view class="id_txt">拍摄/上传身份证(人像面)</view>
+			<view class="idcard_btn" bindtap="go_camera" data-camera="1">+</view>
+		</view>
+		<view class="upload_idcard_head" wx:else="{{img1!=''}}" data-camera="1" bindtap="go_camera">
+			<view class="img1_img">
+				<image mode="aspectFill" src="{{img1}}"></image>
+			</view>
+			<view class="img1_txt">重新上传/拍摄</view>
+		</view>
+		<view class="upload_idcard_back" wx:if="{{img2==''}}">
+			<view class="head_box1">
+				<image src="../../../image/u65.png"></image>
+			</view>
+			<view class="id_txt">拍摄/上传身份证(国徽面)</view>
+			<view class="idcard_btn" bindtap="go_camera" data-camera="2">+</view>
+		</view>
+		<view class="upload_idcard_back" wx:else="{{img2==''}}" data-camera="2" bindtap="go_camera">
+			<view class="img1_img">
+				<image src="{{img2}}" mode="scaleToFill"></image>
+			</view>
+			<view class="img1_txt">重新上传/拍摄</view>
+		</view>
+		<view class="camera_face" wx:if="{{img3==''}}">
+			<view class="head_box">
+				<image src="../../../image/u32.png" class="cont"></image>
+
+			</view>
+			<view class="id_txt">拍摄正面人脸照</view>
+			<view class="idcard_btn" bindtap="go_camera" data-camera="3">+</view>
+		</view>
+		<view class="camera_face" wx:else="{{img3==''}}" data-camera="3" bindtap="go_camera">
+			<view class="img1_img">
+				<image src="{{img3}}"></image>
+			</view>
+			<view class="img1_txt">重新上传/拍摄</view>
+		</view>
+
+	</view>
+	<view class="box_camera" wx:else="{{ishow}}">
+		<view class="camera_box" wx:if="{{xiangce_img==''}}">
+			<camera device-position="{{isTran}}" flash="off" binderror="error" style="width: 100%; height: 100%;">
+			</camera>
+		</view>
+		<view class="camera_box" wx:else="{{xiangce_img==''}}">
+			<image src="{{xiangce_img}}"></image>
+		</view>
+
+	</view>
+
+	<view class="work_login" wx:if="{{ishow}}" id="work_login">
+		<button id="begin_shibie" hover-class="begin_shibie_hover" bindtap="next" data-url="../shibie/index">我是残疾人,开始识别</button>
+	
+		<button id="woker" bindtap="next" data-url="../bangding/bangding" hover-class="begin_shibie_hover">我是工作人员，开始绑定账号</button>
+
+	</view>
+	<view class="shibie_btn" wx:if="{{!ishow}}">
+		<!-- <button wx:if="{{ishow}}" disabled="{{isbtn}}" bindtap="shibie">开始识别</button> -->
+
+
+		<button id="xiangce" bindtap="takexiangce" wx:if="{{!ishow}}">相册</button>
+		<button id="paizhao" bindtap="takePhoto" wx:if="{{!ishow}}">拍照</button>
+		<button id="paizhao" bindtap="fanzhun" wx:if="{{!ishow}}">翻转</button>
+
+	</view>
+	<view class="isback" wx:if="{{!ishow}}" bindtap="goback">
+		<image src="../../image/back.png"></image>
+	</view>
+</view>

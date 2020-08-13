@@ -1,0 +1,72 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+
+}
+
+page {
+  --blue: #25b2b7
+}
+
+/*横向布局  */
+
+.layout_horizontal {
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+
+/*横向布局  */
+
+.layout_horizontal_center {
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  align-items: center;
+
+}
+
+/*纵向布局  */
+
+.layout_vertical {
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: column;
+}
+
+/*纵向布局  */
+
+.layout_vertical_center {
+  width: 100%;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+}
+
+/*水平垂直居中*/
+.layout_horizontal_verticat_center {
+  align-items: center;
+  display: -webkit-flex;
+  justify-content: center;
+  display: -webkit-flex;
+}
+
+.textcolor {
+  color: #797979;
+}
+
+.zxx_text_overflow_2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  
+}

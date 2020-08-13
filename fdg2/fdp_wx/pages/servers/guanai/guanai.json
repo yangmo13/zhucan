@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "header":"/pages/component/header_new/header"
+  }
+}

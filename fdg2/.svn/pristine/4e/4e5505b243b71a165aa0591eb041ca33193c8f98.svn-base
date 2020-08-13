@@ -1,0 +1,99 @@
+package com.fdp.controller;
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+
+import com.jfinal.plugin.activerecord.Record;
+
+public class ArticleTmpHrefController extends ArticleTmpController{
+
+	/**
+	 * 通知公告
+	 */
+	@RequiresPermissions("articleTmp:list")
+	public void notice() {
+		render("notice/notice.html");
+	}
+	/**
+	 * 添加-编辑 通知公告
+	 */
+	@RequiresPermissions("articleTmp:add")
+	public void goNoticeAdd(Integer id) {
+		if(id!=null) {
+			Record findById = super.articleTmpService.findById(id);
+			this.setAttr("id", id);
+			this.setAttr("articleTmp", findById);
+		}
+		render("notice/noticeAdd.html");
+	}
+	/**
+	 * 组织机构
+	 */
+	@RequiresPermissions("articleTmp:list")
+	public void organize() {
+		render("organize/organize.html");
+	}
+	/**
+	 * 添加组织机构
+	 */
+	@RequiresPermissions("articleTmp:add")
+	public void goOrganizeAdd() {
+		render("notice/noticeAdd.html");
+	}
+	/**
+	 * 政策法规
+	 */
+	@RequiresPermissions("articleTmp:list")
+	public void policy() {
+		render("policy/policy.html");
+	}
+	/**
+	 * 添加政策法规
+	 */
+	@RequiresPermissions("articleTmp:add")
+	public void goPolicyAdd() {
+		render("notice/noticeAdd.html");
+	}
+	/**
+	 * 业务指南
+	 */
+	@RequiresPermissions("articleTmp:list")
+	public void service() {
+		render("service/service.html");
+	}
+	/**
+	 * 添加业务指南
+	 */
+	@RequiresPermissions("articleTmp:add")
+	public void goServiceAdd() {
+		render("notice/noticeAdd.html");
+	}
+	
+	/**
+	 * 工作动态
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void work() {
+		render("work/work.html");
+	}
+	/**
+	 * 添加工作动态
+	 */
+	@RequiresPermissions("contentTmp:add")
+	public void goWorkAdd() {
+		render("notice/noticeAdd.html");
+	}
+	/**
+	 * 党建工作
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void building() {
+		render("building/building.html");
+	}
+	/**
+	 * 添加党建工作
+	 */
+	@RequiresPermissions("contentTmp:add")
+	public void goBuildingAdd() {
+		render("notice/noticeAdd.html");
+	}
+}

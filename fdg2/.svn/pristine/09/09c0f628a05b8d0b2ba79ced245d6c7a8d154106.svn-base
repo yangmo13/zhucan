@@ -1,0 +1,126 @@
+package com.fdp.controller;
+
+import java.io.File;
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+
+import com.fdp.model.ArticleTmp;
+import com.fdp.model.ContentTmp;
+import com.fdp.service.ContentTmpService;
+import com.jfinal.aop.Aop;
+import com.jfinal.core.Controller;
+import com.jfinal.core.paragetter.Para;
+import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.upload.UploadFile;
+import com.sloth.common.AjaxData;
+import com.sloth.common.TableData;
+import com.sloth.sys.util.DataFilterKit;
+
+public class ContentTmpController extends Controller {
+	private ContentTmpService contentTmpService = Aop.get(ContentTmpService.class);
+
+	/**
+	 * 通知公告
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void notice() {
+		render("notice/notice.html");
+	}
+	
+	/**
+	 * 组织机构
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void organize() {
+		render("organize/organize.html");
+	}
+	
+	/**
+	 * 政策法规
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void policy() {
+		render("policy/policy.html");
+	}
+	
+	/**
+	 * 业务指南
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void service() {
+		render("service/service.html");
+	}
+	
+	
+	/**
+	 * 工作动态
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void work() {
+		render("work/work.html");
+	}
+	
+	/**
+	 * 党建工作
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void building() {
+		render("building/building.html");
+	}
+
+	/**
+	 * 数据列表接口
+	 * @param pageNo
+	 * @param pageCount
+	 * @param contentTmp
+	 * @param articleTmp
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void find(@Para("page") int pageNo, @Para("limit") int pageCount, @Para("") ContentTmp contentTmp,@Para("")ArticleTmp articleTmp ) {
+		Page<Record> contentTmps = contentTmpService.find(articleTmp,contentTmp, pageNo, pageCount);
+		renderJson(new TableData(contentTmps.getTotalRow(), contentTmps.getList()));
+	}
+	/**
+	 * 上传图片
+	 */
+	public void upload() {
+		//1接收文件
+		UploadFile file = getFile();
+		//2上传并且获取文件地址 以下为伪代码 以实际需求为准
+		String uploadPath = file.getUploadPath()+File.separator+file.getFileName();
+		//3返回前台地址 一定要是string类型
+		renderText(uploadPath);
+	}
+
+	@RequiresPermissions("contentTmp:add")
+	public void goAdd() {
+		render("notice/noticeAdd.html");
+	}
+	
+	@RequiresPermissions("contentTmp:edit")
+	public void goEdit(String id) {
+		if (id != null) {
+			this.setAttr("contentTmp", contentTmpService.findById(id));
+		}
+		render("contentTmp_edit.html");
+	}
+
+	@RequiresPermissions("contentTmp:edit")
+	public void edit(ContentTmp contentTmp) {
+		contentTmpService.update(contentTmp);
+		renderJson(new AjaxData());
+	}
+
+	@RequiresPermissions("contentTmp:add")
+	public void add(ContentTmp contentTmp) {
+		contentTmpService.save(contentTmp);
+		renderJson(new AjaxData());
+	}
+
+	@RequiresPermissions("contentTmp:del")
+	public void del(String id) {
+		contentTmpService.del(id);
+		renderJson(new AjaxData());
+	}
+}

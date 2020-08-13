@@ -1,0 +1,41 @@
+package com.fdp.service;
+
+
+import com.jfinal.kit.Kv;
+import com.jfinal.plugin.activerecord.Page;
+import com.sloth.common.DataFilter;
+import com.fdp.model.ArticleTmp;
+
+public class ArticleTmpService {
+	private ArticleTmp fArticleTmpDao = ArticleTmp.dao;
+
+	public void save(ArticleTmp fArticleTmp) {
+		fArticleTmp.remove("ID");
+		fArticleTmp.save();
+	}
+
+	public void del(Object id) {
+		fArticleTmpDao.deleteById(id);
+	}
+
+	public void update(ArticleTmp fArticleTmp) {
+		fArticleTmp.update();
+	}
+
+	public ArticleTmp findById(Object id) {
+		return fArticleTmpDao.findById(id);
+	}
+
+	public Page<ArticleTmp> find(ArticleTmp fArticleTmp, int pageNo, int pageSize) {
+		Kv kv = Kv.by("fArticleTmp", fArticleTmp);
+		Page<ArticleTmp> fArticleTmps = fArticleTmpDao.paginate(pageNo, pageSize, fArticleTmpDao.getSqlPara("fArticleTmp.find", kv));
+		return fArticleTmps;
+	}
+
+	public Page<ArticleTmp> find(ArticleTmp fArticleTmp, int pageNo, int pageSize, DataFilter dataFilter) {
+		Kv kv = Kv.by("fArticleTmp", fArticleTmp);
+		dataFilter.preFilter(kv);
+		Page<ArticleTmp> fArticleTmps = fArticleTmpDao.paginate(pageNo, pageSize, fArticleTmpDao.getSqlPara("fArticleTmp.find", kv));
+		return fArticleTmps;
+	}
+}

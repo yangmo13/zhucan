@@ -1,0 +1,21 @@
+#namespace("contentTmp")
+
+#sql("find")
+SELECT * FROM F_CONTENT_TMP A LEFT JOIN F_ARTICLE_TMP B ON A.ID=B.ID 
+WHERE A.DELETED=0 AND A.VISIBLE=1 AND A.TYPE='C201' 
+#if(contentTmp.title??)
+	AND A.TITLE like '%#(contentTmp.title)%'
+#end
+#if(contentTmp.status??)
+	AND A.STATUS = #para(A.STATUS)
+#end
+#if(articleTmp.src??)
+	AND B.SRC = #para(articleTmp.src)
+#end
+#if(articleTmp.pubTime)
+	and DATE_FORMAT(B.PUB_TIME,'%Y-%m-%d')  >= '#(articleTmp.pubTime.split("~")[0].trim())' and DATE_FORMAT(B.PUB_TIME,'%Y-%m-%d') <= '#(articleTmp.pubTime.split("~")[1].trim())'
+#end
+ORDER BY A.STATUS ASC, A.REGIST_TIME DESC;
+#end
+
+#end

@@ -1,0 +1,82 @@
+/**
+ * 富文本 
+ * @param dom 容器元素 * 必填项
+ * @param initval 初始化内容
+ * @param url 上传地址 
+ * @param uploadCellBackFn 上传回调
+ * @param id 富文本id 默认为"editer"
+ * @param cols 富文本列 默认为 30
+ * @param rows 富文本行 默认为 10
+ * url 与 uploadCellBackFn必须填写一项,如果均为undefined 则直接return false;
+ * 如果设置url那么会调用默认上传图片回调函数,会忽略传入的上传回调,如果只设置上传回调,会优先使用上传回调
+ * @returns 郭翔宇
+ */
+function Editer(dom,initval,url,uploadCellBackFn,id,cols,rows){
+	//定义局部变量对象
+	var edit;
+	//默认约定
+	if(dom==undefined)return false;
+	if(uploadCellBackFn==undefined&&url==undefined)return false;
+	if(url!=undefined)uploadCellBackFn=defaultUploadCellBackFn
+	if(id==undefined)id="editer"
+	if(cols==undefined)cols = 30
+	if(rows==undefined)rows = 10
+	//初始化内容
+	create(id,dom,cols,rows)
+	layui.use(['tinymce'], function () {
+		var tinymce = layui.tinymce
+		edit = tinymce.render({
+	        elem: "#"+id
+	        , height:550
+	        , width:'100%'
+	        , images_upload_handler:uploadCellBackFn
+	    });
+	});
+	//默认上传回调函数
+	function defaultUploadCellBackFn(blobInfo, succFun, failFun) {
+        var xhr, formData;
+        var file = blobInfo.blob();
+        xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        xhr.open('POST', url);
+        xhr.onload = function() {
+            if (xhr.status != 200) {
+                failFun('HTTP Error: ' + xhr.status);
+                return;
+            }
+            var uploadpath = xhr.responseText
+            if (!uploadpath || typeof uploadpath != 'string') {
+                failFun('Invalid JSON: ' + xhr.responseText);
+                return;
+            }
+            succFun(uploadpath);
+        };
+        formData = new FormData();
+        formData.append('file', file, file.name );
+        xhr.send(formData);
+    }
+	//创建元素
+	function create(id,dom,cols,rows){
+		dom.append(`<textarea  id="${id}" cols="${cols}" rows="${rows}">${initval}</textarea>`);
+	}
+	return {
+		set:function(html){//设置内容
+			edit.setContent(html)
+		},
+		get:function(){//获取内容
+			return edit.getContent()
+		},
+		insert:function(html){//插入内容到编辑器
+			edit.insertContent(html)
+		},
+		clear:function(){//清空内容
+			edit.setContent('')  
+		},
+		getText:function(){//获取文本
+			return edit.getContent({format:'text'})
+		},
+		getExample:function(){//获取editer实例
+			return edit;
+		}
+	}
+}

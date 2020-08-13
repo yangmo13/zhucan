@@ -1,0 +1,106 @@
+/* pages/login/login.wxss */
+.login_index{
+  width: 100%;
+  height: 100%;
+}
+.login_top{
+  width: 100%;
+  height: 500rpx;
+
+  position: relative;
+  
+}
+.login_top image{
+  width: 100%;
+  height: 100%;
+}
+.header{
+width: 150rpx;
+height: 150rpx;
+border-radius: 75rpx;
+position: absolute;
+left: 50%;
+margin-left: -75rpx;
+bottom: -75rpx;
+background: white;
+
+}
+.header text{
+  position: absolute;
+  width: 80rpx;
+  color: #635e5e;
+  top: 50%;
+  left: 50%;
+  height: 40rpx;
+  margin-left: -40rpx;
+  margin-top: -20rpx;
+}
+.check_box{
+  width: 100%;
+  height: 400rpx;
+  margin-top: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+checkbox .wx-checkbox-input{
+  width: 40rpx;
+  height: 40rpx;
+}
+.check_txt{
+  font-size: 26rpx;
+  color:#e2ab18;
+  width: 700rpx;
+  display: inline-block;
+
+ 
+}
+.check_txt text{
+  border-bottom: 1rpx solid #e2ab18;
+}
+
+.login_btn{
+  width: 95% !important;
+  height: 95rpx;
+  background-color: #33ab9f;
+  font-size: 38rpx;
+  color: white;
+  line-height: 56rpx;
+  text-align: center;
+  display: block;
+  margin-top: 40rpx;
+
+}
+.login_tui{
+  width: 95% !important;
+  height: 95rpx;
+  /* background-color: #33ab9f; */
+  margin-top: 30rpx;
+  color: #333;
+  line-height: 56rpx;
+  text-align: center;
+  font-size: 38rpx;
+}
+.check_txt_box{
+  display: flex;
+justify-content: center;
+
+}
+checkbox .wx-checkbox-input{
+  width: 30rpx;
+  height: 30rpx;
+}
+/*checkbox选中后样式  */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #555;
+ 
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}

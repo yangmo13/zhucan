@@ -1,0 +1,175 @@
+page{
+  width: 100%;
+  height: 100%;
+  background: #f4f6f8;
+
+
+}
+.service_box{
+  width: 100%;
+  padding-top: 100rpx;
+  
+}
+.service_navibar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 6%;
+  padding-top: 44rpx;
+  background: var(--blue);
+  z-index: 999;
+}
+.left_icon {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  left: 28rpx;
+  top: 60rpx;
+}
+
+.left_icon image {
+  width: 100%;
+  height: 100%;
+}
+.lingdang_tixing{
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: 18rpx;
+  background: red;
+  position: absolute;
+  right: -6rpx;
+  top: 30rpx;
+  
+}
+.navi_txt {
+  margin: 0 auto;
+ 
+  height: 90rpx;
+  text-align: ce;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+  line-height: 74rpx;
+}
+swiper{
+  height: 300rpx;
+}
+.banner_img{
+  width: 100%;
+
+}
+.slide-image{
+  width: 100%;/*避免右侧留白*/
+}
+ 
+/*标题背景*/
+.swipertitle{
+  position: absolute;
+  bottom:0;
+  padding: 10rpx;
+  background-color: rgba(34, 34, 32, 0.308);
+  width: 100%;
+}
+ 
+/*文字样式*/
+.swipertitle text{
+  color: white;
+  font-size: 28rpx;
+}
+ 
+/*指示点位置*/
+.wx-swiper-dots{
+  position:relative;
+  left: unset!important;
+  right: 0;
+}
+swiper-item image{
+  width: 100%;
+  height: 100%;
+  display: block;
+ margin: 0 auto;
+}
+.daohang{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #fff;
+}
+.daohang_box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20rpx;
+}
+.daohang_img{
+  width: 100rpx;
+  height: 100rpx;
+  
+}
+.daohang_img image{
+  width: 100%;
+  height: 100%;
+}
+.daohang_msg{
+  width: 100%;
+  height: 50rpx;
+  font-size: 22rpx;
+  text-align: center;
+  margin-top: 10rpx;
+}
+.box {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+flex-direction: row;
+  padding: 10rpx 20rpx;
+  }
+ 
+    .ziliao{
+      padding: 28rpx;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ziliao_icon{
+      width: 200rpx;
+    
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      
+    }
+    .ziliao_icon_img{
+      width: 28rpx;
+      height: 28rpx;
+    
+    }
+    .ziliao_icon_img image{
+      width: 100%;
+      height: 100%;
+    }
+    .ziliao_icon_txt{
+      margin-left: 20rpx;
+     
+    }
+    .jiazai_more{
+      color: #333333;
+    }
+    .content_ms{
+      font-size:32rpx;color: #333333;
+      height:100rpx;
+      line-height: 50rpx;
+    }
+    .time_style{
+      padding-top:10rpx;font-size:26rpx;color:#555555
+    }
+    .image {
+      width: 216rpx;
+      height: 136rpx;
+      margin-left: 20rpx;
+      border-radius: 20rpx;
+    }

@@ -1,0 +1,169 @@
+<view class="wanshan_box" style="padding-top:{{height}}px">
+	<!-- 头部 -->
+	<header text="完善简历" back="true" back_age="true"></header>
+
+	<!-- 人物简介 -->
+	<view class="wanshan_top">
+
+		<view class="jianjie_top">
+			<text class="jianjie_name">{{form.name}}</text>
+			<text></text>
+			<view class="yixiang_write" bindtap="goNext" data-url="basic">
+				<image src="../../../image/write.png"></image>
+			</view>
+
+		</view>
+		<view class="jianjie_bottom">
+			<view class="jianjie_box" style="color:{{next_name}}">
+				{{form.age==''?"未填写":form.age+'岁'}}
+			</view>
+			<view class="jianjie_box" style="color:{{next_idcard}}">
+				{{form.idcard==""?"未填写":form.idcard}}
+			</view>
+			<view class="jianjie_box" style="color:{{next_city}}">
+				{{form.city==''?"未填写":form.city}}
+			</view>
+			<view class="jianjie_box" style="color:{{next_phone}}">
+				{{phone2==''?"未填写":phone2}}
+			</view>
+		</view>
+	</view>
+	<!-- 残疾情况 -->
+	<view class="job">
+		<view class="yixiang">残疾情况
+			<view class="yixiang_write" bindtap="goNext" data-url="canji">
+				<image src="../../../image/write.png"></image>
+			</view>
+		</view>
+		<view class="canji_qingkuang_box">
+			<view class="canji_qingkuang">
+			<text style="color:{{next_level}}">{{form.level==''?"未填写残疾等级":form.level}}</text>
+			<text wx:if="{{form.type.length==0}}" style="color:{{next_type}}">未填写残疾类型</text>
+			<text wx:if="{{form.type.length!=0}}" wx:for="{{form.type}}">{{item}}</text>
+			</view>
+		</view>
+
+
+	</view>
+	<!-- 求职意向 -->
+	<view class="job">
+		<view class="yixiang">求职意向
+			<view class="yixiang_write" bindtap="goNext" data-url="purpose">
+				<image src="../../../image/write.png"></image>
+			</view>
+		</view>
+		<view class="job_top">
+			<view class="job_left">
+				<image src="../../../image/zhuangtai.png">
+				</image>
+			</view>
+			<view class="job_right">{{form.purpose==''?'离职状态':form.purpose}}
+			</view>
+		</view>
+		<view class="job_top">
+			<view class="job_left">
+				<image src="../../../image/money.png">
+				</image>
+			</view>
+			<view class="job_right">{{form.pay==''?'面议':form.pay}}
+			</view>
+		</view>
+		<view class="job_top">
+			<view class="job_left">
+				<image src="../../../image/wenjian.png">
+				</image>
+			</view>
+			<view class="job_right  station">{{form.workplace==''?'未填写':form.workplace}}
+			</view>
+
+			<view class="job_right workplace job_right_first">{{form.station==''?'未填写':form.station}}
+			</view>
+		</view>
+
+	</view>
+	<!-- 经历 -->
+	<view class="jingli">
+		<!-- 工作经历 -->
+		<view class="jingli_box">
+			<view class="jingli_box_top">
+				工作经历
+				<view class="jingli_add_box" bindtap="goNext" data-url="jingli">
+					<view class="jingli_add" >
+						<image src="../../../image/add.png"></image>
+					</view>
+					<text>添加</text>
+				</view>
+
+			</view>
+			<view class="jingli_box_bottom">
+				<text wx:if="{{form.company==''&&form.job_station==''&&form.responsibility==''}}">暂未填写</text>
+				<text wx:if="{{form.company!=''}}">{{form.company}}</text>
+				<text wx:if="{{form.job_station!=''}}">{{form.job_station}}</text>
+				<text wx:if="{{form.responsibility!=''}}">{{form.responsibility}}</text>
+			</view>
+		</view>
+		<!-- 教育经历 -->
+		<view class="jingli_box">
+			<view class="jingli_box_top">
+				教育经历
+				<view class="jingli_add_box"  bindtap="goNext" data-url="education">
+					<view class="jingli_add">
+						<image src="../../../image/add.png"></image>
+					</view>
+					<text>添加</text>
+				</view>
+
+			</view>
+			<view class="jingli_box_bottom">
+				<text wx:if="{{form.school==''&&form.education_background==''&&form.recruitment==''}}">暂未填写</text>
+				<text wx:if="{{form.school!=''}}">{{form.school}}</text>
+				<text wx:if="{{form.education_background!=''}}">{{form.education_background}}</text>
+				<text wx:if="{{form.recruitment!=''}}">{{form.recruitment}}</text>
+			</view>
+		</view>
+		<!-- 培训经历 -->
+		<view class="jingli_box">
+			<view class="jingli_box_top">
+				培训经历
+				<view class="jingli_add_box" 
+				bindtap="goNext" data-url="peixun"
+				>
+					<view class="jingli_add">
+						<image src="../../../image/add.png"></image>
+					</view>
+					<text>添加</text>
+				</view>
+
+			</view>
+			<view class="jingli_box_bottom">
+				<text wx:if="{{form.organization==''&&form.major==''}}">暂未填写</text>
+				<text wx:if="{{form.organization!=''}}">{{form.organization}}</text>
+				<text wx:if="{{form.major!=''}}">{{form.major}}</text>
+			
+			</view>
+		</view>
+		<!-- 自我评价 -->
+		<view class="jingli_box">
+			<view class="jingli_box_top">
+				自我评价
+				<view class="yixiang_write"
+				bindtap="goNext" data-url="myself"
+				>
+					<image src="../../../image/write.png"></image>
+				</view>
+
+			</view>
+			<view class="jingli_box_bottom">
+				<text wx:if="{{form.myself==''}}">暂未填写</text>
+				<text wx:if="{{form.myself!=''}}">{{form.myself}}</text>
+				
+			</view>
+		</view>
+	</view>
+	<view class="next_box">
+		<button class="next" bindtap="next"> 完成填写</button>
+		<text bindtap="jump">跳过</text>
+	</view>
+
+
+</view>

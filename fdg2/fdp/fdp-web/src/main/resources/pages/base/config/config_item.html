@@ -1,0 +1,9 @@
+#set(config = configService.findByCode(key)) 
+#if(config!=null)
+<div class="layui-form-item">
+	<label class="layui-form-label" style="width: 120px;">#(config.name)</label>
+	<div class="layui-input-block" style="margin-left: 150px;">
+		<input type="text" name="#(config.id)" autocomplete="off" value="#(config.value)" class="layui-input" #if(extAttrs??)#(extAttrs)#end>
+	</div>
+</div>
+#end

@@ -1,0 +1,20 @@
+var editer = new Editer($("#demo"), "#(base)/contentTmp/upload")
+/**
+ * 上传文件回调函数demo
+ * 
+ * @param blobInfo
+ *            获取文件
+ * @param succFun
+ *            成功回调
+ * @param failFun
+ *            失败回调
+ * @returns
+ */
+function upload(blobInfo, succFun, failFun) {
+	var file = blobInfo.blob();
+	var formData = new FormData();
+	formData.append('file', file, file.name);
+	succFun("/demo/image/1.jpg")
+	failFun('error: ' + 50000);
+	return true;
+}

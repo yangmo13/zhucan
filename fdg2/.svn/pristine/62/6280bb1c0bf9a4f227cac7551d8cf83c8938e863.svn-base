@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html",libs=["layui","font-awesome",'common'])
+</head>
+<body>
+<form class="layui-form" style="padding-top: 10px;" id="search-form">
+<div class="layui-form-item">
+	#@search({title:'标题',name:'title',id:'title'})
+	#@search({title:'发布时间',name:'pubTime',id:'pubTime',extAttrs:'readonly'})
+	#@search({title:'来源',name:'src',id:'src'})
+	<div class="layui-inline">
+		<label class="layui-form-label search_label">状态</label>
+		<div class="layui-input-inline">
+		#widget("fdp.auditStatus",name="status",type="select",class="search_select",please=true)
+		</div>
+	</div>
+</div>
+</form>
+	#@table()
+<script id="optTpl" type="text/html">
+	#[[{{#  if(d.STATUS == 1 || d.STATUS == 2){ }}
+	<a lay-event="edit" title="编辑" style="cursor:pointer;">编辑</a>
+	{{#  } else { }}
+	<a lay-event="detil" title="详情" style="cursor:pointer;">详情</a>
+	{{#  } }} 
+	]]#
+	<a lay-event="del" title="删除" style="cursor:pointer;">删除</a>
+</script>
+<script type="text/html" id="toolbarTpl">
+<div style="float:left;">
+<button class="layui-btn" type="button" onclick="goAdd();">添加</button>
+</div>
+<div style="float:right;">
+<button class="layui-btn" type="button" onclick="submitForm();">查询</button>
+<button class="layui-btn" type="reset" onclick="$('#search-form')[0].reset();">重置</button>
+</div>
+</script>
+<script>#include("notice.js")</script>
+<script>#include("../contentComm.js")</script>
+</body>

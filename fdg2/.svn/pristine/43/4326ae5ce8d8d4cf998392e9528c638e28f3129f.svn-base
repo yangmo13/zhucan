@@ -1,0 +1,48 @@
+var laydate = layui.laydate;
+var form = layui.form;
+var editer = new Editer($("#ed"),`#(articleTmp.TXT??'')`,"#(base)/articleTmp/upload")
+
+laydate.render({ 
+  elem: '#pubTime'
+});
+//仅保存
+form.on('submit(save)', function(data){
+	  data.field['contentTmp.TXT'] = editer.get();
+	  data.field['contentTmp.STATUS'] = 1
+	  console.log(data.field)
+	  var formData = objToForm(data.field)
+	  sub(formData)
+	  return false;
+});
+//保存并提交
+form.on('submit(subSave)', function(data){
+	  data.field['contentTmp.TXT'] = editer.get();
+	  data.field['contentTmp.STATUS'] = 3
+	  var formData = objToForm(data.field)
+	  sub(formData)
+	  return false;
+});
+//提交后台
+function sub(formdata){
+	var id = $("#id").val()
+	if($("#file")[0].files[0]!=undefined){
+		formdata.append("file", $("#file")[0].files[0])
+	}
+	//编辑操作
+	if(id!=''){
+	   resAJAX.uploadFile('#(base)/articleTmp/edit',formdata,cellback)
+	   return false;
+	} 
+	//添加操作
+	resAJAX.uploadFile('#(base)/articleTmp/add',formdata,cellback)
+}
+//提交回调
+function cellback(res){
+	if(res.code==20000){
+		layer.msg("操作成功!",{time:1000},function(){
+			back();
+		})
+	}else{
+		layer.msg("操作失败!")
+	}
+}

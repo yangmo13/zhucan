@@ -1,0 +1,133 @@
+<view class="zhidao" style="padding-top:{{height+50}}px">
+	<!-- 头部 -->
+	<header text="康复指导" isNew="{{isNew}}"></header>
+
+
+	<!-- 导航部分 -->
+	<view class="zhidao_box" style="top:{{height}}px">
+		<view class="zhidao_nav {{selectBox==1?'zhidao_nav_selected':''}}" bindtap="changeNav" data-num="1">指导活动</view>
+		<view class="zhidao_nav {{selectBox==2?'zhidao_nav_selected':''}}" bindtap="changeNav" data-num="2">指导资料</view>
+		<view class="zhidao_nav {{selectBox==3?'zhidao_nav_selected':''}}" bindtap="changeNav" data-num="3">需求登记</view>
+		
+	</view>
+	<!-- 底部显示部分 -->
+	<view class="checked_box" wx:if="{{selectBox==1}}">
+			<!-- 搜索框部分 -->
+		<view class="kangfuziliao">
+			<view class="ipt_search" style="top:{{height+59}}px">
+				<view class="ipt_box">
+					<input placeholder="请输入要查询的关键字" placeholder-class="ipt_placeholde" value="{{value}}" bindblur="changeKyWord"></input>
+				</view>
+				<view class="ipt_btn_box">
+					<button id="ipt_btn" bindtap="search">搜索</button>
+				</view>
+			</view>
+			<view class="ziliao_box">
+			<huodong></huodong>
+			</view>
+
+
+		</view>
+		
+	</view>
+	<view class="checked_box" wx:if="{{selectBox==2}}">
+		<view class="kangfuziliao">
+			<view class="ipt_search" style="top:{{height+59}}px">
+				<view class="ipt_box">
+					<input placeholder="请输入要查询的关键字" placeholder-class="ipt_placeholde" value="{{value}}" bindblur="changeKyWord"></input>
+				</view>
+				<view class="ipt_btn_box">
+					<button id="ipt_btn" bindtap="search">搜索</button>
+				</view>
+			</view>
+			<view class="ziliao_box">
+							<ziliao></ziliao>
+			</view>
+
+
+		</view>
+	</view>
+	<view class="checked_box" wx:if="{{selectBox==3}}">
+		<view class="box3">
+			<!-- 输入框 -->
+			<!-- 姓名 -->
+			<view class="name">
+				<view>*</view>
+				<view>姓名:</view>
+				<view>{{form.name}}</view>
+			</view>
+			<!-- 身份证号码 -->
+			<view class="name">
+				<view>*</view>
+				<view>身份证号:</view>
+				<view>{{idcard_}}</view>
+			</view>
+			<!-- 残疾类型 -->
+			<view class="name" id="disabledType">
+				<view>*</view>
+				<view style="margin-right:15rpx">残疾类型:</view>
+
+				<view wx:for="{{form.disabled.type}}">
+					<text wx:if="{{index!=0}}">\</text>{{item}}
+				</view>
+			</view>
+			<!-- 残疾等级 -->
+			<view class="name">
+				<view>*</view>
+				<view>残疾等级:</view>
+				<view>{{form.disabled.level}}</view>
+			</view>
+			<!-- 需求类别 -->
+			<view class="demand">
+				<view class="name">
+					<view>*</view>
+					<view style="color:{{demand_}}">需求类别:</view>
+				</view>
+				<view class="demand_box">
+					<checkbox-group
+					 class="demand_box_checkbox"
+					 bindchange="change"
+					 data-msg="need.demand"
+					 >
+						<label wx:for="{{demand}}" class="demand_label">
+							<checkbox value="{{item}}"></checkbox>
+							<view class="demand_label_txt">{{item}}</view>
+						</label>
+					</checkbox-group>
+
+				</view>
+
+			</view>
+			<!-- 联系人 -->
+			<view class="linkman">
+				<ipt text="联系人" 
+					data-msg="need.linkman"
+					data-test="test_name"
+					msg="{{need.linkman}}"
+					iswrong="{{test_name}}"
+				isRed="true" bind:blur="change"></ipt>
+			</view>
+			<!-- 联系电话 -->
+			<view class="phone">
+				<ipt text="联系电话"
+				data-msg="need.phone"
+				data-test="test_phone"
+				iswrong="{{test_phone}}"
+				msg="{{need.phone}}"
+				 isRed="true"
+				 bind:blur="change"
+				  type="number"></ipt>
+			</view>
+			<!-- 提示文字 -->
+			<view class="hint">
+			若您登记的需求与年初的《全国残疾人基本服务状态和需求信息调查》不一致，我们将不会受理!
+			</view>
+			<!-- 按钮 -->
+			<view class="btn">
+					<btn text="提交" bindtap="next"></btn>
+			
+			</view>
+	
+		</view>
+	</view>
+</view>

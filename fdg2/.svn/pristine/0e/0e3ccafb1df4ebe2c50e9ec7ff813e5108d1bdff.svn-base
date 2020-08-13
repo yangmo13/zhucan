@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html", libs=["layui","font-awesome"])
+</head>
+<body>
+<table class="layui-hide" id="roleTable" lay-filter="roleTable"></table>
+<script id="optTpl" type="text/html">
+	#permission('role:edit')
+	#[[{{#  if(d.editable==1){ }}<a lay-event="edit" title="编辑" style="cursor:pointer;"><i class="fa fa-edit"></i></a>{{#  } }}]]#
+	#end
+	#permission('role:func_auth')
+	<a lay-event="func_auth" title="设置功能权限" style="cursor:pointer;"><i class="fa fa-cog"></i></a>
+	#end
+	#permission('role:data_auth')
+	<a lay-event="data_auth" title="设置数据权限" style="cursor:pointer;"><i class="fa fa-filter"></i></a>
+	#end
+	#permission('role:del')
+	#[[{{#  if(d.deletable==1){ }}<a lay-event="del" title="删除" style="cursor:pointer;"><i class="fa fa-trash-o"></i></a>{{#  } }}]]#
+	#end
+</script>
+<script type="text/html" id="toolbarTpl">
+#permission('role:add')
+#[[<button class="layui-btn" type="button" onclick="goAdd();">添加</button>]]#
+#end
+</script>
+<script>
+#include("role_list.js")
+</script>
+</body>
+</html>

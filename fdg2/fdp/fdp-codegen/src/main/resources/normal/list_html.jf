@@ -1,0 +1,43 @@
+<!doctype html>#(name=tableMeta.modelName,lname=firstCharToLowerCase(tableMeta.modelName),null)
+<html>
+<head>#[[#include]]#("/common/include.html", libs=["layui","font-awesome"])
+</head>
+<body>
+<form class="layui-form" style="padding-top: 10px;" id="search-form">
+	<div class="layui-form-item">
+	#for(cm : tableMeta.columnMetas)
+	#if(equals(cm.isPrimaryKey,"false"))
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">#(cm.remarks??cm.attrName)</label>
+			<div class="layui-input-inline">
+				<input type="text" name="#(cm.attrName)" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+	#end
+	#end
+	</div>
+</form>
+<table class="layui-hide" id="#(lname)Table" lay-filter="#(lname)Table"></table>
+<script type="text/html" id="toolbarTpl">
+<div style="float:left;">
+#[[#permission]]#('#(lname):add')
+<button class="layui-btn" type="button" onclick="goAdd();">添加</button>
+#[[#end]]#
+</div>
+<div style="float:right;">
+<button class="layui-btn" type="button" onclick="submitForm();">查询</button>
+<button class="layui-btn" type="reset" onclick="$('#search-form')[0].reset();">重置</button>
+</div>
+</script>
+<script id="optTpl" type="text/html">
+	#[[#permission]]#('#(lname):edit')
+	<a lay-event="edit" title="编辑" style="cursor:pointer;"><i class="fa fa-edit"></i></a>
+	#[[#end]]#
+	#[[#permission]]#('#(lname):del')
+	<a lay-event="del" title="删除" style="cursor:pointer;"><i class="fa fa-trash-o"></i></a>
+	#[[#end]]#
+</script>
+<script>
+#[[#include]]#("#(lname)_list.js")
+</script>
+</body>

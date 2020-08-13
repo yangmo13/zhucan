@@ -1,0 +1,61 @@
+.search_label {
+	height: 30px !important;
+	line-height: 30px !important;
+	padding: 0px 15px !important;
+	/*width: auto;*/
+	width: 100px;
+}
+
+.search_input {
+	display: inline !important;
+	width: 200px!important;
+	height: 30px!important;
+	line-height: 30px!important;
+}
+
+.search_daterange {
+	display: inline !important;
+	width: 200px!important;
+	height: 30px!important;
+	line-height: 30px!important;
+}
+
+.search_treeselect + .layui-treeSelect .layui-input {
+	width: 200px!important;
+	height: 30px!important;
+	line-height: 30px!important;
+}
+
+.search_select + div .layui-input {
+	width: 200px!important;
+	height: 30px;
+	line-height: 30px;
+}
+
+.search_select .layui-select-title input {
+	width: 200px!important;
+	height: 30px;
+	line-height: 30px;
+}
+
+.layui-btn {
+	height: 30px;
+	line-height: 30px;
+}
+
+.layui-input, .layui-select, .layui-textarea {
+	line-height: 38px;
+}
+
+.search_treeselect + .layui-treeSelect .layui-edge {
+	right: 0;
+}
+.search_select + .layui-form-select .layui-edge {
+	right: 0;
+}
+.layui-form-item {
+	margin-bottom:5px!important;
+}
+.layui-table-tool-temp {
+	padding-right:0px;
+}

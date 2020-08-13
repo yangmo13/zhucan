@@ -1,0 +1,59 @@
+package #(config.ctlPkg);#(name=tableMeta.modelName,lname=firstCharToLowerCase(tableMeta.modelName),null)
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+
+import com.jfinal.aop.Aop;
+import com.jfinal.core.Controller;
+import com.jfinal.core.paragetter.Para;
+import com.jfinal.plugin.activerecord.Page;
+import com.sloth.common.AjaxData;
+import com.sloth.common.TableData;
+import #(config.modelPkg).#(name);
+import #(config.servicePkg).#(name)Service;
+import com.sloth.sys.util.DataFilterKit;
+
+public class #(name)Controller extends Controller {
+	private #(name)Service #(lname)Service = Aop.get(#(name)Service.class);
+
+	@RequiresPermissions("#(lname):list")
+	public void index() {
+		render("#(lname)_list.html");
+	}
+
+	@RequiresPermissions("#(lname):list")
+	public void find(@Para("page") int pageNo, @Para("limit") int pageCount, @Para("") #(name) #(lname)) {
+		Page<#(name)> #(lname)s = #(lname)Service.find(#(lname), pageNo, pageCount, DataFilterKit.get("#(lname)"));
+		renderJson(new TableData(#(lname)s.getTotalRow(), #(lname)s.getList()));
+	}
+
+	@RequiresPermissions("#(lname):add")
+	public void goAdd() {
+		render("#(lname)_edit.html");
+	}
+	
+	@RequiresPermissions("#(lname):edit")
+	public void goEdit(String id) {
+		if (id != null) {
+			this.setAttr("#(lname)", #(lname)Service.findById(id));
+		}
+		render("#(lname)_edit.html");
+	}
+
+	@RequiresPermissions("#(lname):edit")
+	public void edit(#(name) #(lname)) {
+		#(lname)Service.update(#(lname));
+		renderJson(new AjaxData());
+	}
+
+	@RequiresPermissions("#(lname):add")
+	public void add(#(name) #(lname)) {
+		#(lname)Service.save(#(lname));
+		renderJson(new AjaxData());
+	}
+
+	@RequiresPermissions("#(lname):del")
+	public void del(String id) {
+		#(lname)Service.del(id);
+		renderJson(new AjaxData());
+	}
+}

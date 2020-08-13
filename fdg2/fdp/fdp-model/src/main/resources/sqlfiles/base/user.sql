@@ -1,0 +1,54 @@
+#namespace("user")
+
+#sql("findByToken")
+SELECT M.* FROM T_USER M WHERE M.TOKEN=#para(token) AND STATUS=1 AND DELETED=0
+#end
+
+#sql("findByLogin")
+SELECT M.* FROM T_USER M WHERE M.USERNAME=#para(username) AND PASSWORD=#para(password) AND STATUS=1 AND DELETED=0
+#end
+
+#sql("find")
+  SELECT m.* FROM T_USER m where 1=1
+  #if(user.realname??) 
+    and realname like concat('%', #para(user.realname) , '%')
+  #end
+  #if(user.username??) 
+    and username like concat('%', #para(user.username) , '%')
+  #end
+  #if(user.deptId?? && user.deptId!="0") 
+    and dept_id like concat(#para(user.deptId) , '%')
+  #end
+  #if(user.sex??) 
+    and sex=#para(user.sex)
+  #end
+  #if(user.editable??) 
+    and editable=#para(user.editable)
+  #end
+  #if(user.deletable??) 
+    and deletable=#para(user.deletable)
+  #end
+  #if(user.status??) 
+    and status=#para(user.status)
+  #end
+  #include("data_auth.sql")
+  ORDER BY m.OP_TIME DESC
+#end
+#sql("deleteRoleUserByUserId")
+  DELETE FROM T_ROLE_USER WHERE USER_ID=#para(userId)
+#end
+#sql("findByUsernameAndPassword")
+  select * from T_USER where username=#para(username) and password=#para(password)
+#end
+#sql("findAvailableByUsername")
+  select * from T_USER where username=#para(username) and deleted=0
+#end
+#sql("findMaxDataAuth")
+SELECT b.DATA_AUTH FROM
+  (SELECT * FROM T_DATA WHERE CODE=#para(code)) a
+  LEFT JOIN (SELECT rd.DATA_ID,MAX(rd.DATA_AUTH) DATA_AUTH FROM T_ROLE_USER ru 
+  LEFT JOIN T_ROLE_DATA rd ON ru.ROLE_ID=rd.ROLE_ID
+    WHERE ru.USER_ID=#para(userId) GROUP BY rd.DATA_ID) b ON a.ID=b.DATA_ID
+#end
+
+#end

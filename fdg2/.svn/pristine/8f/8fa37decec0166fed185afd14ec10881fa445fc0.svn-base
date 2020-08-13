@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>#include("/common/include.html", libs=["layui","font-awesome"])
+</head>
+<body>
+<form class="layui-form" style="padding-top: 10px;" id="search-form">
+	<div class="layui-form-item">
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">姓名</label>
+			<div class="layui-input-inline">
+				<input type="tel" name="realname" autocomplete="off" class="layui-input search_input" placeholder="请输入姓名">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">用户名</label>
+			<div class="layui-input-inline">
+				<input type="text" name="username" autocomplete="off" class="layui-input search_input" placeholder="请输入用户名">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">单位</label>
+			<div class="layui-input-inline">
+				<input type="text" id="deptId" name="deptId" autocomplete="off" class="layui-input search_treeselect">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">性别</label>
+			<div class="layui-input-inline">
+				#widget("user.gender",name="sex",class="search_select",please=true)
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">可编辑</label>
+			<div class="layui-input-inline">
+				#widget("global.yesno",name="editable",class="search_select",please=true)
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">可删除</label>
+			<div class="layui-input-inline">
+				#widget("global.yesno",name="deletable",class="search_select",please=true)
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">状态</label>
+			<div class="layui-input-inline">
+				#widget("user.status",name="status",class="search_select",please=true)
+			</div>
+		</div>
+	</div>
+</form>
+<table class="layui-hide" id="userTable" lay-filter="userTable"></table>
+<script type="text/html" id="toolbarTpl">
+<div style="float:left;">
+#permission('user:add')
+#[[<button class="layui-btn" type="button" onclick="goAdd();">添加</button>]]#
+#end
+</div>
+<div style="float:right;">
+<button class="layui-btn" type="button" onclick="submitForm();">查询</button>
+<button class="layui-btn" type="reset" onclick="$('#search-form')[0].reset();">重置</button>
+</div>
+</script>
+<script id="optTpl" type="text/html">
+	#permission('user:edit')
+	#[[{{#  if(d.editable==1){ }}<a lay-event="edit" title="编辑" style="cursor:pointer;"><i class="fa fa-edit"></i></a>{{#  } }}]]#
+	#end
+	#permission('user:del')
+	#[[{{#  if(d.deletable==1){ }}<a lay-event="del" title="删除" style="cursor:pointer;"><i class="fa fa-trash-o"></i></a>{{#  } }}]]#
+	#end
+	#permission('user:lock')
+	#[[{{#  if(d.status==0){ }}<a lay-event="unlock" title="启用" style="cursor:pointer;"><i class="fa fa-unlock"></i></a>{{#  } }}]]#
+	#[[{{#  if(d.status==1){ }}<a lay-event="lock" title="禁用" style="cursor:pointer;"><i class="fa fa-unlock-alt"></i></a>{{#  } }}]]#
+	#end
+	#permission('user:resetpwd')
+	<a lay-event="resetpwd" title="重置密码" style="cursor:pointer;"><i class="fa fa-refresh"></i></a>
+	#end
+</script>
+<script>
+#include("user_list.js")
+</script>
+</body>

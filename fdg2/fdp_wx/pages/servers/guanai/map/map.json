@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "header":"/pages/component/header/header",
+    "btn":"/pages/component/form/button/button",
+    "loading":"/pages/component/loading/loading"
+  }
+}

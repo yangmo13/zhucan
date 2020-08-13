@@ -1,0 +1,22 @@
+var laydate = layui.laydate;
+var form = layui.form;
+var editer = new Editer($("#demo"), "#(base)/contentTmp/upload")
+laydate.render({ 
+  elem: '#pubTime'
+});
+
+//仅保存
+form.on('submit(save)', function(data){
+	  var content = editer.get();
+	  var obj = data.field;
+	  var file = $("#file")[0].files[0];
+	  obj.file = file;
+	  obj.content = content;
+	  console.log(obj);
+	  return false;
+});
+//保存并提交
+form.on('submit(subSave)', function(data){
+	  var obj = data.field
+	  return false;
+});

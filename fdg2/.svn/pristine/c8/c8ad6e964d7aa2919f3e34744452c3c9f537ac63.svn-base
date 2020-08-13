@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html", libs=["layui"])
+</head>
+<body>
+	<form class="layui-form layui-form-pane">
+		<input type="hidden" name="menu.id" value="#(menu.id)">
+		<div class="layui-form-item">
+			<label class="layui-form-label">菜单名称</label>
+			<div class="layui-input-block">
+				<input type="text" name="menu.title" autocomplete="off" placeholder="请输入菜单名称" class="layui-input" value="#(menu.title)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">菜单图标</label>
+			<div class="layui-input-block">
+				<input type="text" name="menu.icon" autocomplete="off" placeholder="请输入fontawesome图标样式" class="layui-input" value="#(menu.icon)">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">菜单路径</label>
+			<div class="layui-input-block">
+				<input type="text" name="menu.path" autocomplete="off" placeholder="请输入菜单路劲，注意不能以/开头" class="layui-input" value="#(menu.path)">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">父菜单</label>
+			<div class="layui-input-block">
+				<input type="text" id="pid" lay-filter="pid" name="menu.pid" autocomplete="off" placeholder="请选择父菜单" class="layui-input" value="#(menu.pid)" lay-verify="required">
+			</div>
+		</div>
+		<div>
+			<div class="layui-btn-group" style="width: 100%;">
+				<div style="float: right;">
+					<button id="addFunction" class="layui-btn" type="button">添加</button>
+				</div>
+			</div>
+			<table class="layui-hide" id="functionTable" lay-filter="fun"></table>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block" style="text-align:center;margin-left:0;">
+				<button class="layui-btn" lay-submit lay-filter="saveBtn">保存</button>
+				<button class="layui-btn" onclick="closeMe()">取消</button>
+			</div>
+		</div>
+	</form>
+	<script type="text/html" id="indexTpl">
+    {{d.LAY_TABLE_INDEX+1}}
+	</script>
+	<script type="text/html" id="optTpl">
+	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" title="删除">删除</a>
+	</script>
+	<script type="text/javascript">
+	#include("menu_edit.js")
+	</script>
+</body>
+</html>

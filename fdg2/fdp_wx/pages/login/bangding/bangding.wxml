@@ -1,0 +1,35 @@
+<view class="login_index">
+
+	<view class="login_top">
+		<image src="./img/banner1.png"></image>
+		<view class="header">
+			<image src="{{img}}"></image>
+			<text>头像</text>
+		</view>
+	</view>
+	<view class="check_box">
+  <!-- 用户名 -->
+		<view class="work_login"> 
+        <ipt text="用户名" isRed="true" 
+					bind:blur="change"
+					data-msg="form.username"
+				></ipt>
+	
+    <!-- 密码 -->
+
+        <ipt text="密码" isRed="true"
+				bind:blur="change"
+					data-msg="form.password"
+				></ipt>
+
+       <view class="work_btn" id="work_btn">
+        <button id="now"
+				bindtap="next"
+				>立即绑定</button>
+        <button id="back" 
+				bindtap="back"
+				hover-class="back_hover">返回</button>
+       </view>
+		</view>
+	</view>
+</view>

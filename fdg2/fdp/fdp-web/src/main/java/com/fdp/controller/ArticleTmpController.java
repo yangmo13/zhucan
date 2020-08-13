@@ -1,0 +1,75 @@
+package com.fdp.controller;
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+
+import com.fdp.common.CommonService;
+import com.fdp.model.ArticleTmp;
+import com.fdp.model.ContentTmp;
+import com.fdp.service.ArticleTmpService;
+import com.jfinal.aop.Aop;
+import com.jfinal.core.Controller;
+import com.jfinal.core.paragetter.Para;
+import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.upload.UploadFile;
+import com.sloth.common.AjaxData;
+import com.sloth.common.TableData;
+
+public class ArticleTmpController extends Controller {
+	public ArticleTmpService articleTmpService = Aop.get(ArticleTmpService.class);
+
+	/**
+	 * 内容列表
+	 * @param pageNo
+	 * @param pageCount
+	 * @param contentTmp
+	 * @param articleTmp
+	 */
+	@RequiresPermissions("articleTmp:list")
+	public void find(@Para("page") int pageNo, @Para("limit") int pageCount,String type, @Para("") ContentTmp contentTmp,@Para("")ArticleTmp articleTmp ) {
+		Page<Record> contentTmps = articleTmpService.find(articleTmp,contentTmp, pageNo, pageCount,type);
+		renderJson(new TableData(contentTmps.getTotalRow(), contentTmps.getList()));
+	}
+	/**
+	 * 内容修改
+	 * @param contentTmp
+	 */
+	@RequiresPermissions("articleTmp:update")
+	public void update() {
+		UploadFile file = getFile();
+		ArticleTmp articleTmp = getModel(ArticleTmp.class,"articleTmp");
+		ContentTmp contentTmp = getModel(ContentTmp.class,"contentTmp");
+		articleTmpService.update(file,contentTmp,articleTmp);
+		renderJson(new AjaxData());
+	}
+	/**
+	 * 内容添加
+	 * @param contentTmp
+	 */
+	@RequiresPermissions("articleTmp:add")
+	public void add() {
+		UploadFile file = getFile();
+		ArticleTmp articleTmp = getModel(ArticleTmp.class,"articleTmp");
+		ContentTmp contentTmp = getModel(ContentTmp.class,"contentTmp");
+		articleTmpService.save(file,contentTmp,articleTmp);
+		renderJson(new AjaxData());
+	}
+	/**
+	 * 内容删除
+	 * @param id
+	 */
+	@RequiresPermissions("articleTmp:del")
+	public void del(Integer id) {
+		articleTmpService.del(id);
+		renderJson(new AjaxData());
+	}
+	/**
+	 * 上传图片
+	 */
+	public void upload() {
+		UploadFile file = getFile();
+		String filePath = CommonService.uploadFile(file);
+		renderText(filePath);
+	}
+
+}

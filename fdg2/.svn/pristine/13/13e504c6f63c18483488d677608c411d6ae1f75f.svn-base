@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>#(projectName)</title>
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="shortcut icon" href="#(base)/static/imgs/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="#(base)/static/WeAdmin/static/css/font.css">
+<link rel="stylesheet" href="#(base)/static/WeAdmin/static/css/weadmin.css">
+<link rel="stylesheet" href="#(base)/static/font-awesome-4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="#(base)/static/WeAdmin/lib/layui/layui.js" charset="utf-8"></script>
+<style type="text/css">
+	.container {
+		background-color: #(configService.findValueByCode("top.color"));
+	}
+	.container .top {
+		color: #(configService.findValueByCode("top.fontcolor"))!important;
+	}
+	.layui-tab-title>li:first-child>i {
+		display: none!important;
+	}
+	.container .logo a {
+		padding-left:10px;
+		width: auto;
+	}
+	.container .left_open {
+		padding-left:10px;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="logo">
+			<a href="#(base)/">
+			#if(projectLogo??)
+			<img src="#(base)/#(projectLogo)" style="width:45px;">
+			#end
+			<span class="top">#(projectName)</span>
+			</a>
+		</div>
+		<div class="left_open" style="">
+			<i title="展开/收起左侧栏" class="layui-icon layui-icon-shrink-right top"></i>
+		</div>
+		<ul class="layui-nav left fast-add" lay-filter="" style="display:none;">
+			<li class="layui-nav-item"><a href="javascript:;" class="top">+新增</a>
+				<dl class="layui-nav-child">
+					<dd>
+						<a onclick="WeAdminShow('资讯','https://www.baidu.com/')"><i class="layui-icon layui-icon-list"></i>资讯</a>
+					</dd>
+					<dd>
+						<a onclick="WeAdminShow('图片','http://www.baidu.com')"><i class="layui-icon layui-icon-picture-fine"></i>图片</a>
+					</dd>
+					<dd>
+						<a onclick="WeAdminShow('用户','https://www.jiuwei.com/')"><i class="layui-icon layui-icon-user"></i>用户</a>
+					</dd>
+				</dl></li>
+		</ul>
+		<ul class="layui-nav right" lay-filter="">
+			<li class="layui-nav-item to-index" style="display:none;"><a href="https://www.jiuwei.com/" target="_blank" class="top">前台首页</a></li>
+			<li class="layui-nav-item"><a href="javascript:;" class="top">#(currentUser.realname??)</a>
+				<dl class="layui-nav-child">
+					<dd>
+						<a onclick="WeAdminShow('修改密码','#(base)/setting',400,215)">修改密码</a>
+					</dd>
+					<dd>
+						<a href="#(base)/logout">退出</a>
+					</dd>
+				</dl></li>
+		</ul>
+	</div>
+	<div class="left-nav">
+		<div id="side-nav"></div>
+	</div>
+	 <div class="page-content" >
+		<div class="layui-tab tab" lay-filter="wenav_tab" id="WeTabTip" lay-allowclose="true">
+			<!----><ul class="layui-tab-title" id="tabName" style="display:none;">
+				<li >我的桌面</li>
+			</ul>
+			<div class="layui-tab-content"    style="top: 0px;" >
+				<div class="layui-tab-item layui-show">
+					<iframe src='#(base)/#(homeUrl)' frameborder="0" scrolling="yes" class="weIframe"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="page-content-bg"></div> 
+	<div class="footer">
+		<div class="copyright">Copyright ©2019 Sloth v1.0 All Rights Reserved</div>
+	</div>
+	<script type="text/javascript">
+		layui.config({
+			base : '#(base)/static/WeAdmin/static/js/',
+			version : '101100'
+		}).extend({
+			admin : 'admin',
+			menu : 'menu'
+		});
+		layui.use([ 'jquery', 'admin', 'menu' ], function() {
+			var $ = layui.jquery, admin = layui.admin, menu = layui.menu;
+			$(function() {
+				menu.getMenu('#(base)/menu/findMy');
+			});
+		});
+	</script>
+</body>
+<ul class="rightMenu" id="rightMenu">
+	<li data-type="fresh">刷新</li>
+	<li data-type="current">关闭当前</li>
+	<li data-type="other">关闭其它</li>
+	<li data-type="all">关闭所有</li>
+</ul>
+</html>

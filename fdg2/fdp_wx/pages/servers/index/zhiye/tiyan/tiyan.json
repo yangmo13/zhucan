@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "header":"../../../../component/header/header",
+    "huodong":"../../../../component/zhidao/huodong/huodong",
+    "ziliao":"../../../../component/zhidao/ziliao/ziliao",
+    "dengji":"../../../../component/zhidao/dengji/dengji",
+    "date":"/pages/component/form/date_one/date",
+    "xiala":"/pages/component/form/xiala/xiala",
+    "ipt":"/pages/component/form/input",
+    "qiju":"/pages/component/zhidao/qiju/qiju",
+    "btn":"/pages/component/form/button/button"
+  }
+}

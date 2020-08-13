@@ -1,0 +1,14 @@
+package #(mappingKitPackageName);
+
+import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
+
+public class #(mappingKitClassName) {
+	public static void mapping(ActiveRecordPlugin arp) {
+	#for (tableMeta : tableMetas)
+		#if (tableMeta.primaryKey.contains(","))
+		// Composite Primary Key order: #(tableMeta.primaryKey)
+		#end
+		arp.addMapping("#(tableMeta.name)", "#(tableMeta.primaryKey)", #(tableMeta.modelName).class);
+	#end
+	}
+}

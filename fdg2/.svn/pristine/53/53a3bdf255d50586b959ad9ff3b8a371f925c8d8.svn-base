@@ -1,0 +1,22 @@
+var laydate = layui.laydate;
+var form = layui.form;
+var editer = new Editer($("#demo"), "#(base)/contentTmp/upload")
+laydate.render({ 
+  elem: '#pubTime'
+});
+//保存
+function save(){
+	if(!verify()){
+		layer.msg("必填项未填写!")
+		return false
+	}
+	var xx=form.val("noticeForm")
+  	console.log(xx)
+}
+//保存并提交
+function subSave(){
+	if(!verify()){
+		layer.msg("必填项未填写!")
+		return false
+	}
+}

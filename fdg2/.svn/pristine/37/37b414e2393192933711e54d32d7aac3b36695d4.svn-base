@@ -1,0 +1,75 @@
+<view class="service_box" style="padding-top:{{height}}px">
+
+	<header text="消息公开" isNew="{{isNew}}" back_age="{{false}}" back="{{false}}"></header>
+	<!-- 轮播图部分 -->
+	<view class="banner_img">
+		<swiper indicator-dots="true" indicator-color="#ccc" indicator-active-color="#000" autoplay interval="3500" circular>
+			<swiper-item wx:for="{{lunbo}}">
+				<image src="{{item.url}}"></image>
+				<view class='swipertitle'><text>{{item.msg}}</text></view>
+			</swiper-item>
+		</swiper>
+
+	</view>
+	<!-- 导航模块部分 -->
+	<view class="daohang">
+		<view class="daohang_box" wx:for="{{daohang}}" data-msg="{{url}}" bindtap="next">
+			<view class="daohang_img">
+				<image src="{{item.url}}"></image>
+			</view>
+			<view class="daohang_msg">{{item.msg}}</view>
+		</view>
+	</view>
+	<!-- 咨询 -->
+	<view class="layout_horizontal_center" style="margin:20rpx 0px 20rpx 0px ">
+
+		<view class="layout_horizontal_center" style="width:50%;background: #fff;justify-content: center;">
+			<view class="layout_vertical" style=";padding: 20rpx;text-align: right;">
+				<view style="font-size:32rpx">党群心连心</view>
+				<view style="font-size:26rpx;color:#B9B9CD">共筑和谐中国</view>
+			</view>
+			<image style="width:63px;height:57px" src="../../../image/u2080.png"></image>
+		</view>
+
+		<view style="width:2px;background: rgba(34, 34, 32, 0.308);height:80rpx"></view>
+
+		<view class="layout_horizontal_center" style="width:50%;background: #fff;justify-content: center;">
+			<view class="layout_vertical" style="padding: 20rpx;text-align: right;">
+				<view style="font-size:32rpx">法律咨询</view>
+				<view style="font-size:26rpx;color:#B9B9CD">共建法制社会</view>
+			</view>
+			<image style="width:63px;height:57px" src="../../../image/u2084.png"></image>
+		</view>
+	</view>
+	<!-- 最新公告 -->
+	<view class="ziliao">
+		<!-- 左面图标部分 -->
+		<view class="ziliao_icon">
+			<view class="ziliao_icon_img">
+				<image src="../../../image/u299.png"></image>
+			</view>
+			<view class="ziliao_icon_txt">更新公告</view>
+		</view>
+		<!-- 右边加载更多部分 -->
+		<view class="ziliao_icon">
+			<view class="ziliao_icon_txt jiazai_more">加载更多</view>
+			<view class="ziliao_icon_img">
+				<image src="../../../image/right.png"></image>
+			</view>
+
+		</view>
+	</view>
+	<!-- 公告列表 -->
+
+	<view wx:for="{{arr}}" data-msg="{{item}}" bindtap="noticeXiangqing">
+		<view class="ziliao" style="padding:20rpx;background: #fff;">
+			<view  style="  width:80%; ">
+				<text class="zxx_text_overflow_2" style="font-size:32rpx">{{item.msg}}</text>
+				<view style="padding-top:10rpx;font-size:26rpx;color:#B9B9CD">{{item.time}}</view>
+			</view>
+     	<image class="ziliao_icon" style="width:138rpx;height:98rpx" src="{{item.url}}"></image>
+		</view>
+		<view style="height:20rpx"></view>
+	</view>
+
+</view>

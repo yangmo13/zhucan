@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>#include("/common/include.html", libs=["layui"])
+</head>
+<body>
+	<form class="layui-form layui-form-pane">
+		<input type="hidden" id="id" name="contentTmp.id" value="#(contentTmp.id??)">
+		<div class="layui-form-item">
+			<label class="layui-form-label">类别，见数据字典fdp.contentType</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.type" autocomplete="off" placeholder="请输入类别，见数据字典fdp.contentType" class="layui-input" value="#(contentTmp.type??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">标题</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.title" autocomplete="off" placeholder="请输入标题" class="layui-input" value="#(contentTmp.title??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">内容，支持HTML</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.txt" autocomplete="off" placeholder="请输入内容，支持HTML" class="layui-input" value="#(contentTmp.txt??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">登记机构ID</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.registerOrgId" autocomplete="off" placeholder="请输入登记机构ID" class="layui-input" value="#(contentTmp.registerOrgId??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">登记机构名称，冗余存储，可用于追溯</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.registerOrgName" autocomplete="off" placeholder="请输入登记机构名称，冗余存储，可用于追溯" class="layui-input" value="#(contentTmp.registerOrgName??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">登记人ID</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.registerId" autocomplete="off" placeholder="请输入登记人ID" class="layui-input" value="#(contentTmp.registerId??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">登记人姓名，冗余存储，可用于追溯</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.registerName" autocomplete="off" placeholder="请输入登记人姓名，冗余存储，可用于追溯" class="layui-input" value="#(contentTmp.registerName??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">登记时间</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.registTime" autocomplete="off" placeholder="请输入登记时间" class="layui-input" value="#(contentTmp.registTime??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">提交审核机构ID</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.submitorOrgId" autocomplete="off" placeholder="请输入提交审核机构ID" class="layui-input" value="#(contentTmp.submitorOrgId??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">提交审核机构名称，冗余存储，可用于追溯</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.submitorOrgName" autocomplete="off" placeholder="请输入提交审核机构名称，冗余存储，可用于追溯" class="layui-input" value="#(contentTmp.submitorOrgName??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">提交审核人ID</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.submitorId" autocomplete="off" placeholder="请输入提交审核人ID" class="layui-input" value="#(contentTmp.submitorId??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">提交审核人姓名，冗余存储，可用于追溯</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.submitorName" autocomplete="off" placeholder="请输入提交审核人姓名，冗余存储，可用于追溯" class="layui-input" value="#(contentTmp.submitorName??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">提交审核时间</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.submitTime" autocomplete="off" placeholder="请输入提交审核时间" class="layui-input" value="#(contentTmp.submitTime??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">审核机构ID</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.auditorOrgId" autocomplete="off" placeholder="请输入审核机构ID" class="layui-input" value="#(contentTmp.auditorOrgId??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">审核机构名称，冗余存储，可用于追溯</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.auditorOrgName" autocomplete="off" placeholder="请输入审核机构名称，冗余存储，可用于追溯" class="layui-input" value="#(contentTmp.auditorOrgName??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">审核人ID</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.auditorId" autocomplete="off" placeholder="请输入审核人ID" class="layui-input" value="#(contentTmp.auditorId??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">审核人姓名</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.auditorName" autocomplete="off" placeholder="请输入审核人姓名" class="layui-input" value="#(contentTmp.auditorName??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">审核时间</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.auditTime" autocomplete="off" placeholder="请输入审核时间" class="layui-input" value="#(contentTmp.auditTime??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">审核状态，见数据字典fdp.auditStatus</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.status" autocomplete="off" placeholder="请输入审核状态，见数据字典fdp.auditStatus" class="layui-input" value="#(contentTmp.status??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">审核批注</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.auditRemark" autocomplete="off" placeholder="请输入审核批注" class="layui-input" value="#(contentTmp.auditRemark??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">删除标志，0：未删除，1：已删除</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.deleted" autocomplete="off" placeholder="请输入删除标志，0：未删除，1：已删除" class="layui-input" value="#(contentTmp.deleted??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">是否可见，0：不可见，1：可见</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.visible" autocomplete="off" placeholder="请输入是否可见，0：不可见，1：可见" class="layui-input" value="#(contentTmp.visible??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block" style="text-align:center;margin-left:0;">
+				<button class="layui-btn" lay-submit lay-filter="saveBtn">保存</button>
+				<button class="layui-btn" type="button" onclick="closeMe()">取消</button>
+			</div>
+		</div>
+	</form>
+<script type="text/javascript">
+#include("contentTmp_edit.js")
+</script>
+</body>

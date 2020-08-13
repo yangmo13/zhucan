@@ -1,0 +1,41 @@
+<!-- 康复机构详情页 -->
+<!-- 头部 -->
+<header text="康复服务机构详情" isNew="{{isNew}}"></header>
+<view class="xiangqing" style="padding-top:{{height}}px">
+
+<!-- 题目 -->
+<view class="header_topic">
+{{arr.topic}}
+</view>
+
+<!--标签-->
+<view class="label">
+  <view class="label_box" wx:for="{{arr.label}}">{{item}}</view>
+</view>
+<!-- 地址以及联系方式 -->
+<view class="local">
+  <view class="local_top">
+    <view class="dizhi">地址: {{arr.local}}</view>
+    <view class="click_dingwei">
+      <view class="click_dingwei_img">
+        <image src="../../../../../../image/dingwei.png"></image>
+      </view>
+      <view>点击查看位置</view>
+    </view>
+  </view>
+  <!-- 联系人详情 -->
+  <view class="local_bottom">
+    <view class="local_name">
+      <view class="local_name_box">联系人：{{arr.relation.name}}</view>
+      <text wx:for="{{arr.relation.phone}}">{{item}}</text>
+    </view>
+  </view>
+  
+</view>
+<!-- 底部详情介绍 -->
+  <view class="bottom_box">
+  <rich-text nodes="{{arr.text}}">
+  
+  </rich-text>
+  </view>
+</view>

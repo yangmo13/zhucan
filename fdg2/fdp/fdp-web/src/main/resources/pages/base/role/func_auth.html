@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>#include("/common/include.html", libs=["layui","ztree"])
+</head>
+<body>
+	<div class="layui-btn-group" style="width: 100%; padding-top: 10px;">
+		<div style="float: right; padding-right: 20px;">
+			<button class="layui-btn" id="savePermissionBtn" onclick="onSaveFuncAuthClick();">保存</button>
+		</div>
+	</div>
+	<div id="permission_tree" style="overflow-y: scroll">
+		<ul id="treeDemo" class="ztree"></ul>
+	</div>
+	<script type="text/javascript">
+#include("func_auth.js")
+</script>
+</body>
+</html>

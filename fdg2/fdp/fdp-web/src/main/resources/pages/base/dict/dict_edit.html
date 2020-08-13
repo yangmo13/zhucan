@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>#include("/common/include.html", libs=["layui"])
+</head>
+<body>
+	<form class="layui-form layui-form-pane">
+		<input type="hidden" name="dict.id" value="#(dict.id??)">
+		<div class="layui-form-item">
+			<label class="layui-form-label">名称</label>
+			<div class="layui-input-block">
+				<input type="text" name="dict.title" autocomplete="off" placeholder="请输入名称" class="layui-input" value="#(dict.title??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">代码</label>
+			<div class="layui-input-block">
+				<input type="text" name="dict.code" autocomplete="off" placeholder="请输入代码" class="layui-input" value="#(dict.code??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">所属字典组</label>
+			<div class="layui-input-block">
+				<label class="layui-input">#(parent.title??"无")</label>
+				<input type="hidden" name="dict.pid" value="#(parent.id??)" />
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block" style="text-align:center;margin-left:0;">
+				<button class="layui-btn" lay-submit lay-filter="saveBtn">保存</button>
+				<button class="layui-btn" onclick="closeMe()">取消</button>
+			</div>
+		</div>
+	</form>
+<script type="text/javascript">
+#include("dict_edit.js")
+</script>
+</body>

@@ -1,0 +1,53 @@
+/* pages/component/form/input.wxss */
+.ipt{
+  
+  margin-top: 20rpx;
+  height: 80rpx;
+}
+.ipt_box{
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:0 30rpx;
+  height: 100%;
+}
+.ipt_box text{
+  display: inline-block;
+  width: 24rpx;
+  color: #db001b;
+ 
+}
+ .ipt_input,.ipt_input_wrong{
+  border-bottom: 4rpx solid #e7e7e7;
+  flex: 1;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  padding-left: 10rpx;
+}
+.ipt_input_wrong{
+  border-bottom: 4rpx solid #fb3b53;
+
+}
+.ipt_text,.ipt_text_wrong{
+min-width:100rpx ;
+height: 60rpx;
+line-height: 60rpx;
+color: #333;
+position: relative;
+}
+.ipt_text_wrong{
+  color: #db001b;
+}
+.promty{
+  color: #db001b;
+  position: absolute;
+  bottom: -29rpx;
+  left: 47rpx;
+  font-size: 25rpx;
+  
+}
+.box_input{
+  flex: 1;
+  position: relative;
+}

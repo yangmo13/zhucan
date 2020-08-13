@@ -1,0 +1,77 @@
+package com.fdp.controller;
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+
+import com.fdp.common.CommonService;
+import com.fdp.model.ArticleTmp;
+import com.fdp.model.ContentTmp;
+import com.fdp.service.ContentTmpService;
+import com.jfinal.aop.Aop;
+import com.jfinal.core.Controller;
+import com.jfinal.core.paragetter.Para;
+import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.upload.UploadFile;
+import com.sloth.common.AjaxData;
+import com.sloth.common.TableData;
+
+public class ContentTmpController extends Controller {
+	private ContentTmpService contentTmpService = Aop.get(ContentTmpService.class);
+
+	/**
+	 * 内容列表
+	 * @param pageNo
+	 * @param pageCount
+	 * @param contentTmp
+	 * @param articleTmp
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void find(@Para("page") int pageNo, @Para("limit") int pageCount, @Para("") ContentTmp contentTmp,@Para("")ArticleTmp articleTmp ) {
+		Page<Record> contentTmps = contentTmpService.find(articleTmp,contentTmp, pageNo, pageCount);
+		renderJson(new TableData(contentTmps.getTotalRow(), contentTmps.getList()));
+	}
+	/**
+	 * 内容修改
+	 * @param contentTmp
+	 */
+	@RequiresPermissions("contentTmp:edit")
+	public void edit(ContentTmp contentTmp) {
+		contentTmpService.update(contentTmp);
+		renderJson(new AjaxData());
+	}
+	/**
+	 * 内容添加
+	 * @param contentTmp
+	 */
+	@RequiresPermissions("contentTmp:add")
+	public void add(ContentTmp contentTmp,ArticleTmp articleTmp) {
+		contentTmpService.save(contentTmp,articleTmp);
+		renderJson(new AjaxData());
+	}
+	/**
+	 * 内容删除
+	 * @param id
+	 */
+	@RequiresPermissions("contentTmp:del")
+	public void del(String id) {
+		contentTmpService.del(id);
+		renderJson(new AjaxData());
+	}
+	/**
+	 * 上传图片
+	 */
+	public void upload() {
+		UploadFile file = getFile();
+		String filePath = CommonService.uploadFile(file);
+		renderText(filePath);
+	}
+	
+	@RequiresPermissions("contentTmp:edit")
+	public void goEdit(String id) {
+		if (id != null) {
+			this.setAttr("contentTmp", contentTmpService.findById(id));
+		}
+		render("contentTmp_edit.html");
+	}
+
+}

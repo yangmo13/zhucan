@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>#include("/common/include.html", libs=["layui"])
+<style type="text/css">
+.layui-treeSelect.layui-form-select .layui-anim {
+	max-height: 200px!important;
+}
+.layui-form-pane .layui-form-label {
+	width: 130px;
+}
+.layui-form-pane .layui-input-block {
+	margin-left: 130px;
+}
+</style>
+</head>
+<body style="overflow: hidden;">
+	<form class="layui-form layui-form-pane">
+		<input type="hidden" name="user.id" value="#(user.id??)">
+		<div class="layui-form-item">
+			<label class="layui-form-label">姓名</label>
+			<div class="layui-input-block">
+				<input type="text" name="user.realname" autocomplete="off" placeholder="请输入姓名" class="layui-input" value="#(user.realname??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">用户名</label>
+			<div class="layui-input-block">
+				#if (user.id??!=null) <label class="layui-input">#(user.username??)</label> #else <input type="text" name="user.username" autocomplete="off" placeholder="请输入用户名，用于系统登陆" class="layui-input" value="#(user.username??)" lay-verify="required"> #end
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">所属单位</label>
+			<div class="layui-input-block">
+				<input type="text" id="user_deptId" lay-filter="user_deptId" name="user.deptId" autocomplete="off" placeholder="请选择所属单位" class="layui-input" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">手机号</label>
+			<div class="layui-input-block">
+				<input type="text" name="user.phone" autocomplete="off" placeholder="请输入手机号" class="layui-input" value="#(user.phone??)" lay-verify="phone">
+			</div>
+		</div>
+		<div class="layui-form-item" style="display:none;">
+			<label class="layui-form-label">所属单位</label>
+			<div class="layui-input-block">
+				<input type="text" id="deptId" lay-filter="deptId" name="user.deptId" autocomplete="off" placeholder="请选择所属单位" class="layui-input" value="#(user.deptId??0)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item" pane="">
+			<label class="layui-form-label">性别</label>
+			<div class="layui-input-block">
+				#widget("user.gender",name="user.sex",value=user.sex??'1',type="radio")
+			</div>
+		</div>
+		<div class="layui-form-item" pane="">
+			<label class="layui-form-label">角色</label>
+			<div class="layui-input-block">
+				#for (role:all_roles) #set(hasRole = 0) #for (r:user_roles??[]) #if (role.id == r.id) #set(hasRole = 1) #end #end <input type="checkbox" name="roleids" lay-skin="primary" title="#(role.name)" value="#(role.id)" #(hasRole==1? "checked":"") /> #end
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">允许访问时间</label>
+			<div class="layui-input-block">
+				<div class="layui-fluid" style="padding:0;width:100%;display: inline-block;">
+					<div class="layui-row">
+						<div class="layui-col-xs6">
+							<input type="text" name="user.startTime" autocomplete="off"
+								placeholder="开始时间" value="#(user.startTime??)" class="layui-input laydate">
+						</div>
+						<div class="layui-col-xs6">
+							<input type="text" name="user.endTime" autocomplete="off"
+								placeholder="截止时间" value="#(user.endTime??)" class="layui-input laydate">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block" style="text-align:center;margin-left:0;">
+				<button class="layui-btn" lay-submit lay-filter="saveBtn">保存</button>
+				<button class="layui-btn" onclick="closeMe()">取消</button>
+			</div>
+		</div>
+	</form>
+<script type="text/javascript">
+#include("user_edit.js")
+</script>
+</body>

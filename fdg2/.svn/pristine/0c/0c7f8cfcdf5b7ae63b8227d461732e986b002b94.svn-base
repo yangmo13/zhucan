@@ -1,0 +1,66 @@
+<!-- 内容管理公共模板 查询条件 remove 移除元素数组 0为保留全部-->
+#define search(remove)
+<form class="layui-form" style="padding-top: 10px;" id="search-form">
+	<div class="layui-form-item">
+		#if(remove.contains('1'))	
+		<div class="layui-inline" style="display:none;">
+		#else
+		<div class="layui-inline">
+		#end
+			<label class="layui-form-label search_label">标题</label>
+			<div class="layui-input-inline">
+				<input type="text" name="title"  id="title" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		#if(remove.contains('2'))	
+		<div class="layui-inline" style="display:none;">
+		#else
+		<div class="layui-inline">
+		#end
+			<label class="layui-form-label search_label">发布时间</label>
+			<div class="layui-input-inline">
+				<input type="text" name="pubTime" id="pubTime" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		#if(remove.contains('3'))	
+		<div class="layui-inline" style="display:none;">
+		#else
+		<div class="layui-inline">
+		#end
+			<label class="layui-form-label search_label">来源</label>
+			<div class="layui-input-inline">
+				<input type="text" name="src" id="src" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		#if(remove.contains('4'))	
+		<div class="layui-inline" style="display:none;">
+		#else
+		<div class="layui-inline">
+		#end
+			<label class="layui-form-label search_label">状态</label>
+			<div class="layui-input-inline">
+				<input type="text" name="status" id="status" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+	</div>
+</form>
+<!-- 查询条件按钮 如果引用必须重写 goAdd()函数-->
+<script type="text/html" id="toolbarTpl">
+<div style="float:left;">
+<button class="layui-btn" type="button" onclick="goAdd();">添加</button>
+</div>
+<div style="float:right;">
+<button class="layui-btn" type="button" onclick="submitForm();">查询</button>
+<button class="layui-btn" type="reset" onclick="$('#search-form')[0].reset();">重置</button>
+</div>
+</script>
+<script type="text/javascript">
+var form = layui.form;
+form.render('select');
+function submitForm() {
+	table.reload('contentTmpTable', {
+		where : $('#search-form').serializeJson()
+	})
+}
+</script>
+#end

@@ -1,0 +1,21 @@
+<view class="map" style="paddng-top:{{height}}px">
+
+	<!-- 头部导航部分 -->
+
+	<header text="爱心地图"></header>
+
+	<!-- 地图 -->
+	<map class="mapText" latitude="{{map.latitude}}" longitude="{{map.longitude}}" markers="{{map.markers}}">
+		<!-- 中间导航部分 -->
+
+		<cover-view class="map_list_box" wx:if="{{isTrue}}">
+			<cover-view class="map_list" wx:for="{{list}}" data-msg="{{item.keyword}}" bindtap="next">
+				{{item.txt}}
+			</cover-view>
+		</cover-view>
+		<!-- 底部按钮 -->
+		<cover-view class="map_btn">
+			<button class="the_btn" bindtap="change" hover-class="btn_hover">查看附近的残疾人服务点</button>
+		</cover-view>
+	</map>
+</view>

@@ -1,0 +1,117 @@
+<view class="zhidao" style="padding-top:{{height+50}}px">
+	<!-- 头部 -->
+	<header text="就业培训" isNew="{{isNew}}"></header>
+
+
+	<!-- 导航部分 -->
+	<view class="zhidao_box" style="top:{{height}}px">
+		<view class="zhidao_nav {{selectBox==1?'zhidao_nav_selected':''}}" bindtap="changeNav" data-num="1">培训项目</view>
+		<view class="zhidao_nav {{selectBox==2?'zhidao_nav_selected':''}}" bindtap="changeNav" data-num="2">培训资料</view>
+		<view class="zhidao_nav {{selectBox==3?'zhidao_nav_selected':''}}" bindtap="changeNav" data-num="3">需求登记</view>
+	</view>
+	<!-- 底部显示部分 -->
+	<view class="checked_box" wx:if="{{selectBox==1}}">
+		<huodong></huodong>
+	</view>
+	<view class="checked_box" wx:if="{{selectBox==2}}">
+		<ziliao></ziliao>
+	</view>
+	<view class="checked_box" wx:if="{{selectBox==3}}">
+		<view>
+			<!-- 输入框 -->
+			<!-- 身份证扫描 -->
+			<view class="header_btn">
+				<view class="header_btn_top">
+					<image src="/image/card.png"></image>
+				</view>
+				<view class="header_btn_right">
+					点击此处扫描身份证快速录入信息
+				</view>
+			</view>
+			<!-- 姓名 -->
+			<view>
+				<ipt text="姓名" isRed="true" iswrong="{{test_name}}" data-msg="form.name" msg="{{form.name}}" data-test="test_name" bind:blur="change"></ipt>
+			</view>
+			<!-- 身份证号 -->
+			<view>
+				<ipt text="身份证号" isRed="true" iswrong="{{test_idcard}}" data-msg="form.idcard" msg="{{form.idcard}}" data-test="test_idcard" bind:blur="change"></ipt>
+			</view>
+
+
+			<!-- 残疾类型 -->
+			<view class="canjileixing	weui-cell_input canjia_leixing">
+
+				<view class="leixing_first">
+					<text class="form_not_must">* </text>
+					<text class="form_txt">残疾类型 : </text>
+				</view>
+				<checkbox-group bindchange="leixingChange" data-name="form.disabled.type">
+					<view wx:for="{{canjizheng}}">
+						<label>
+							<checkbox value="{{item.value}}"></checkbox>
+							<text>{{item.txt}}</text>
+						</label>
+					</view>
+				</checkbox-group>
+
+			</view>
+
+
+			<!-- 残疾等级 -->
+			<view class="hukou	weui-cell_input " id="canjiadengji">
+
+				<text class="form_not_must">*</text>
+				<text class="form_txt">残疾等级 : </text>
+				<radio-group bindchange="item_change" data-name="form.disabled.level">
+					<view wx:for="{{level}}">
+						<label>
+							<radio value="{{item.value}}"></radio>
+							<text>{{item.txt}}</text>
+						</label>
+					</view>
+				</radio-group>
+
+			</view>
+			<!-- 学历 -->
+			<xiala arr="{{xueli}}" text="学历" isRed="TRUE"></xiala>
+			<!-- 需求类型 -->
+			<view>
+				<ipt text="需求类型" isRed="true"
+					isRed="true"
+				iswrong="{{test_txt}}"
+				data-msg="form.demand"
+				msg="{{form.demand}}"
+				data-test="test_txt"
+				bind:blur="change"
+				></ipt>
+			</view>
+			
+			<!-- 联系人 -->
+			<view>
+				<ipt text="联系人" isRed="true"
+					isRed="true"
+				iswrong="{{test_linkman}}"
+				data-msg="form.linkman"
+				msg="{{form.linkman}}"
+				data-test="test_linkman"
+				bind:blur="change"
+				></ipt>
+			</view>
+			<!-- 联系电话 -->
+			<view>
+				<ipt text="联系电话" isRed="true"
+					isRed="true"
+				iswrong="{{test_phone}}"
+				data-msg="form.name"
+				msg="{{form.name}}"
+				data-test="test_phone"
+				bind:blur="change"
+				></ipt>
+			</view>
+			<!-- 提交 -->
+			<view class="tijiao">
+				<btn text="提交"></btn>
+			</view>
+		</view>
+	</view>
+</view>

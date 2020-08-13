@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>#include("/common/include.html", libs=["layui"])
+</head>
+<body>
+	<div class="layui-btn-group" style="width: 100%; padding-top: 10px;">
+		<div style="float: right; padding-right: 20px;">
+			<button class="layui-btn" id="savePermissionBtn" onclick="onSaveDataAuthBtnClick();">保存</button>
+		</div>
+	</div>
+	<input type="hidden" id="roleoId" value="#(roleId)" />
+	<form class="layui-form">
+		<table id="dataAuthTable" class="layui-table">
+			<thead
+				<tr align="center">
+					<td>序号</td>
+					<td>名称</td>
+					<td>标识</td>
+					<td width="200">数据权限</td>
+				</tr>
+			</thead>
+			<tbody>
+				#for(data : datas)
+				<tr align="center">
+					<td>#(for.index+1)<input type="hidden" value="#(data.id)" /></td>
+					<td>#(data.name)</td>
+					<td>#(data.code)</td>
+					<td>#widget("data.auth",name='dataAuth'+for.index,value=data.dataAuth)</td>
+				</tr>
+				#end
+			</tbody>
+		</table>
+	</form>
+	<script type="text/javascript">
+	#include("data_auth.js")
+	</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+jdbc.url=jdbc:mysql://172.17.192.207:3306/fdp_db?characterEncoding=utf8&serverTimezone=Asia/Shanghai
+jdbc.user=root
+jdbc.pwd=Gpsxh@001
+devMode=true

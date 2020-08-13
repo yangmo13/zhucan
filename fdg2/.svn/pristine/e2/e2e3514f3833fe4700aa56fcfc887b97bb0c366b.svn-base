@@ -1,0 +1,57 @@
+<view class="fuwu_box" style="padding:{{height}}px 0s">
+	<!-- 顶部导航 -->
+	<!-- <view class="navi_box">
+		<view class="left_icon">
+			<image src="../../../image/back.png">
+			</image>
+		</view>
+		<view class="navi_txt">
+隐私政策</view>
+	</view> -->
+	<header text="隐私政策" back_age="true"></header>
+	<!-- 文字显示 -->
+	<view class="text_box">
+		<!-- 标题 -->
+		<view class="text_top">
+			
+隐私政策
+		</view>
+		<!-- 提示 -->
+		<view class="text_tixing">
+			哈尔滨市香坊区残疾人综合就业互联网服务平台，以下简称本平台
+		</view>
+		<!-- 全文 -->
+		<view class="quanwen">
+			
+			<view class="txt_body">确认您的信任对我们非常重要，我们深知个人信息对您的重要性，我们将按法律法规要求，采取相应安全保护措施，尽力保护您的个人信息安全可控。我们将通过本政策向您说明本平台如何收集、存储、保护您的个人信息。</view>
+			
+		</view>
+	
+		
+			<view class="txt_body">1、为了便于您了解您在使用我们的服务时，为何需要收集的个人信息，我们将结合具体服务逐一向您说明；
+			</view>
+      	<view class="txt_body">2、为了向您提供服务所需，我们按照合法、正当、必要的原则收集您的信息；
+			</view>
+      	<view class="txt_body">3、我们将按照相关法规与监管要求确认协议内容及具体使用场景，并经过您的同意后存储信息。
+			</view>
+      	<view class="txt_body">本隐私政策将帮助您了解以下内容：
+			</view>
+      	<view class="txt_body">1、我们将收集和使用您的哪些信息
+			</view>
+      <view class="txt_body">使用本平台，将会收集包括但不限于您的微信公开资料、身份证信息（身份证人像面照片、身份证国徽面照片）、本人人脸照片、手机号码、残疾信息、联系人信息、教育信息、培训信息、康复信息、就业信息。
+			</view>
+	
+		
+			<view class="txt_body">2、我们如何收集和使用您的个人信息
+
+       根据《哈尔滨市残疾人保障办法》规定，使用本平台必须提供真实身份信息，否则，我们将保留对不实信息有追究法律责任的权利。</view>
+			<view class="txt_body"> 3、我们如何保护您的个人信息
+
+       我们承诺您的个人信息我们不会向外泄露，只用于本人身份验证及作为第三代残疾证办理依据，不用于其他用途。</view>
+	
+	</view>
+
+  <view class="btn_box2">
+    <button id="btn" bindtap="next">下一步</button>
+  </view>
+</view>

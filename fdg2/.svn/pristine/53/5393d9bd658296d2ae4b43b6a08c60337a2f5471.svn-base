@@ -1,0 +1,53 @@
+package #(config.servicePkg);
+
+#if(equals(config.idStrategy,"uuid"))
+import java.util.UUID;
+#end
+
+import com.jfinal.kit.Kv;
+import com.jfinal.plugin.activerecord.Page;
+import com.sloth.common.DataFilter;
+import #(config.modelPkg).#(tableMeta.modelName);#(name=tableMeta.modelName,lname=firstCharToLowerCase(tableMeta.modelName),null)
+
+public class #(name)Service {
+	private #(name) #(lname)Dao = #(name).dao;
+
+	public void save(#(name) #(lname)) {
+		#if(equals(config.idStrategy,"uuid"))
+		#for(cm : tableMeta.columnMetas)
+		#if(equals(cm.isPrimaryKey,"true"))
+		#(lname).set#(firstCharToUpperCase(cm.attrName))(UUID.randomUUID().toString());
+		#end
+		#end
+		#end
+		#if(equals(config.idStrategy,"native"))
+		#(lname).remove("ID");
+		#end
+		#(lname).save();
+	}
+
+	public void del(Object id) {
+		#(lname)Dao.deleteById(id);
+	}
+
+	public void update(#(name) #(lname)) {
+		#(lname).update();
+	}
+
+	public #(name) findById(Object id) {
+		return #(lname)Dao.findById(id);
+	}
+
+	public Page<#(name)> find(#(name) #(lname), int pageNo, int pageSize) {
+		Kv kv = Kv.by("#(lname)", #(lname));
+		Page<#(name)> #(lname)s = #(lname)Dao.paginate(pageNo, pageSize, #(lname)Dao.getSqlPara("#(lname).find", kv));
+		return #(lname)s;
+	}
+
+	public Page<#(name)> find(#(name) #(lname), int pageNo, int pageSize, DataFilter dataFilter) {
+		Kv kv = Kv.by("#(lname)", #(lname));
+		dataFilter.preFilter(kv);
+		Page<#(name)> #(lname)s = #(lname)Dao.paginate(pageNo, pageSize, #(lname)Dao.getSqlPara("#(lname).find", kv));
+		return #(lname)s;
+	}
+}

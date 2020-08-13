@@ -1,0 +1,148 @@
+/* pages/servers/index/zhiye/jigou/jigou.wxss */
+page {
+  width: 100%;
+  height: 100%;
+
+}
+
+.jigou {
+  width: 100%;
+  padding-top: 130rpx;
+}
+
+.search_ipt {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search_input {
+  border-bottom: 2rpx solid #ccc;
+  width: 600rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  text-indent: 10rpx;
+}
+
+#search_btn {
+  padding: 0;
+  margin-left: 10rpx;
+  width: 100rpx;
+  height: 50rpx;
+  color: white;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius: 5rpx;
+  background: var(--blue);
+
+}
+
+.hospital_box {
+  width: 700rpx;
+
+  margin: 0 auto;
+  border-bottom: 2px solid #f8f8f8;
+}
+
+.hos_box_head {
+  width: 100%;
+  height: 140rpx;
+
+  display: flex;
+  align-items: center;
+}
+
+.hos_left {
+  width: 100rpx;
+  height: 100rpx;
+
+}
+
+.hos_left image {
+  width: 100%;
+  height: 100%;
+}
+
+.hos_center {
+  width: 500rpx;
+  height: 130rpx;
+
+  margin-left: 27rpx;
+
+}
+
+.hos_right {
+  width: 100rpx;
+  height: 100rpx;
+
+  margin-left: 20rpx;
+}
+
+.hos_right image {
+  width: 100%;
+  height: 100%;
+}
+
+.hos_center_name {
+
+  height: 50%;
+  line-height: 60rpx;
+  font-size: 34rpx;
+}
+
+.hos_center_face {
+
+  height: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.hos_center_face_box {
+  width: 100rpx;
+  height: 40rpx;
+  border-radius: 50rpx;
+  background: #80ffff;
+  color: #333;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.hos_box_body {
+  height: 230rpx;
+
+}
+
+.hos_body_txt {
+  height: 105rpx;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 53rpx;
+  color: #adacac;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+
+}
+
+.hos_body_pos {
+  width: 100%;
+  height: 40rpx;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 28rpx;
+  color: #adacac;
+  line-height: 40rpx;
+}
+
+.hos_body_pos:first-child{
+ padding-top: 10rpx;
+}

@@ -1,0 +1,25 @@
+<view class="ipt">
+<view class="ipt_box" >
+  <text>{{isRed==true?'*':''}}</text>
+  <view class="ipt_text">{{text}}</view>
+  <view class="xiala_ipt" >
+
+  <view class="xiala_txt" bindtap="isShow">
+   {{show_txt==''?msg:show_txt}}
+   <view class="xiala_img">
+   <image src="/image/down.png"></image>
+   </view>
+   </view>
+    <view class="xiala_box" wx:if="{{ishow}}">
+    <view class="xiala_li">请选择</view>
+      <view class="xiala_li" 
+      hover-class="xiala_li_hover" 
+      wx:for="{{arr}}"
+      data-msg="{{item}}"
+      catchtap="change"
+      >{{item}}</view>
+    </view>
+  </view>
+</view>
+
+</view>

@@ -1,0 +1,17 @@
+#(name=tableMeta.modelName,lname=firstCharToLowerCase(tableMeta.modelName),null)#[[#namespace]]#("#(lname)")
+
+#[[#sql]]#("find")
+  SELECT M.* FROM #(tableMeta.name) M WHERE 1=1
+  #for(c : tableMeta.columnMetas)
+  #[[#if]]#(#(lname).#(c.attrName)??)
+    and M.#(c.name)=#[[#para]]#(#(lname).#(c.attrName))
+  #[[#end]]#
+  #end
+  #if(supportDataAuth)
+  #[[#if]]#(dataAuth??)
+  #[[#include("data_auth.sql")]]#
+  #[[#end]]#
+  #end
+#[[#end]]#
+
+#[[#end]]#

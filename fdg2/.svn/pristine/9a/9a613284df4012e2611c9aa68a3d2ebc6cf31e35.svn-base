@@ -1,0 +1,7 @@
+[main]
+dbRealm = com.sloth.sys.shiro.DbRealm
+securityManager.realm = $dbRealm
+[urls]
+/goLogin = anon
+/doLogin = anon
+/logout = logout

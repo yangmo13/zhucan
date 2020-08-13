@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "header":"/pages/component/header/header",
+    "qiju":"/pages/component/zhidao/qiju/qiju"
+
+  }
+}

@@ -1,0 +1,93 @@
+package com.fdp.controller;
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+
+public class ContentTmpHrefController extends ContentTmpController{
+
+	/**
+	 * 通知公告
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void notice() {
+		render("notice/notice.html");
+	}
+	/**
+	 * 添加通知公告
+	 */
+	@RequiresPermissions("contentTmp:add")
+	public void goNoticeAdd() {
+		render("notice/noticeAdd.html");
+	}
+	
+	/**
+	 * 组织机构
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void organize() {
+		render("organize/organize.html");
+	}
+	/**
+	 * 添加组织机构
+	 */
+	@RequiresPermissions("contentTmp:add")
+	public void goOrganizeAdd() {
+		render("notice/noticeAdd.html");
+	}
+	/**
+	 * 政策法规
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void policy() {
+		render("policy/policy.html");
+	}
+	/**
+	 * 添加政策法规
+	 */
+	@RequiresPermissions("contentTmp:add")
+	public void goPolicyAdd() {
+		render("notice/noticeAdd.html");
+	}
+	/**
+	 * 业务指南
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void service() {
+		render("service/service.html");
+	}
+	/**
+	 * 添加业务指南
+	 */
+	@RequiresPermissions("contentTmp:add")
+	public void goServiceAdd() {
+		render("notice/noticeAdd.html");
+	}
+	
+	/**
+	 * 工作动态
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void work() {
+		render("work/work.html");
+	}
+	/**
+	 * 添加工作动态
+	 */
+	@RequiresPermissions("contentTmp:add")
+	public void goWorkAdd() {
+		render("notice/noticeAdd.html");
+	}
+	/**
+	 * 党建工作
+	 */
+	@RequiresPermissions("contentTmp:list")
+	public void building() {
+		render("building/building.html");
+	}
+	/**
+	 * 添加党建工作
+	 */
+	@RequiresPermissions("contentTmp:add")
+	public void goBuildingAdd() {
+		render("notice/noticeAdd.html");
+	}
+}

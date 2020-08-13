@@ -1,0 +1,72 @@
+var table = layui.table;
+var type = 'C201'
+var laydate = layui.laydate;
+laydate.render({ 
+	  elem: '#pubTime'
+	  ,range: "~"
+});
+
+table.render({
+	elem : '#articleTmpTable',
+	height : 'full-150',
+	url : '#(base)/articleTmp/find',
+	method: 'post',
+	where:{type:type},
+	toolbar : '#toolbarTpl',
+	defaultToolbar : [],
+	cols : [ [
+		{type: 'numbers',title : '序号',width : 60,align : 'center'}, 
+		{field: 'ID',title: '主键',align: 'center', hide:true},
+		{field: 'TITLE',title: '标题',width : 400,align: 'center', hide:false},
+		{field: 'PUB_TIME',title: '发布时间',width : 200,align: 'center', hide:false},
+		{field: 'SRC',title: '来源',align: 'center',width : 200, hide:false},
+		{field: 'STATUS',title: '状态',align: 'center',width : 100, hide:false,templet:#widget("fdp.auditStatus",name="STATUS",type="render")},
+		{field: 'REGISTER_ORG_NAME',title: '登记机构',width : 200,align: 'center', hide:false},
+		{field: 'REGISTER_NAME',title: '登记人',width : 200,align: 'center', hide:false},
+		{field: 'REGIST_TIME',title: '登记时间',width : 200,align: 'center', hide:false},
+		{field: 'opt',title: '操作',align: 'center',width : 200,templet: '#optTpl'} 
+	] ],
+	even : true,
+	page : true
+});
+
+table.on('tool(articleTmpTable)', function(obj) {
+	var data = obj.data; // 获得当前行数据
+	var layEvent = obj.event;
+	if (layEvent === 'del') { // 删除
+		del(data.ID);
+	}else if (layEvent === 'edit') {
+		goEdit(data.ID)
+	}else if(layEvent === 'detil'){
+		goDetil(data.ID)
+	}
+});
+//添加
+function goAdd(){
+	href('#(base)/articleTmpHref/goNoticeEdit')
+}
+//编辑
+function goEdit(id){
+	href('#(base)/articleTmpHref/goNoticeEdit?id='+id+"&type="+type)
+}
+//详情
+function goDetil(id){
+	href('#(base)/articleTmpHref/goContentDetil?id='+id+"&type="+type)
+}
+//删除
+function del(id){
+	top.layer.confirm('确定删除您所选择的数据吗?', function(index) {
+		delcommon(id)//公共删除
+		top.layer.close(index);
+	});
+}
+//查询操作
+var form = layui.form;
+form.render('select');
+function submitForm() {
+	table.reload('articleTmpTable', {
+		where : $('#search-form').serializeJson()
+	})
+}
+
+

@@ -1,0 +1,23 @@
+<view class="zhinan" style="padding-top:{{height}}px">
+
+	<!-- 头部导航 -->
+	<header text="业务指南"></header>
+	<!-- 主题列表部分 -->
+	<view class="zhinan_box">
+		<view class="zhinan_li" wx:for="{{list}}">
+			<view class="zhinan_name">
+				<view class="zhinan_icon">
+          <image src="/image/zhinan/icon{{index%5+1}}.png"></image>
+        </view>
+				<view class="zhinan_txt">{{item.txt}}</view>
+			</view>
+			<view class="next">
+          <image src="/image/right.png"></image>
+      </view>
+		</view>
+	</view>
+  <view class="nomore">
+    没有更多了
+  </view>
+
+</view>

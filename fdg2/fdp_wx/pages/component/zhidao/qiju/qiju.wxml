@@ -1,0 +1,37 @@
+<view class="qiju_box">
+	<view class="kangfuziliao">
+		<!-- 上边搜索栏 -->
+		<view class="ipt_search">
+			<view class="ipt_box">
+				<input placeholder="请输入要查询的关键字" placeholder-class="ipt_placeholde" value="{{value}}" bindblur="changeKyWord"></input>
+			</view>
+			<view class="ipt_btn_box">
+				<button id="ipt_btn" bindtap="search">搜索</button>
+			</view>
+		</view>
+		<!-- 底下显示区 -->
+		<view class="qiju">
+			<!-- 上方导航部分 -->
+			<view class="qiju_top">
+				<view class="qiju_leibie" 
+        wx:for="{{arr1}}"
+        hover-class="qiju_leibie_hover"
+        >{{item}}</view>
+			</view>
+			<!-- 下面详情部分 -->
+			<view class="qiju_bottom">
+				<view class="qiju_xiangqing" wx:for="{{arr2}}">
+					<view class="xiangqing_img">
+						<image src="{{item.src}}"></image>
+					</view>
+					<view class="xiangqing_txt">
+						{{item.msg}}
+					</view>
+				</view>
+			</view>
+		</view>
+
+
+	</view>
+
+</view>

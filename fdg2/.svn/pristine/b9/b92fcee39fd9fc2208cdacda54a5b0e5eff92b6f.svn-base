@@ -1,0 +1,6 @@
+<select #if(id??)id="#(id)"#end #if(name??)name="#(name)"#end #if(class??)class="#(class??)"#end lay-search #if(extAttrs??)#(extAttrs)#end>
+	#if(please)<option value="">请选择</option>#end
+    #for(data : datas)
+   	<option value="#(data.get('CODE'))" #if(data.get('CODE').equals(value??'')) selected#end>#(data.get('TITLE'))</option>
+	#end
+</select>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html",libs=["layui","font-awesome",'common'])
+</head>
+<body>
+	#@search(['0'])<!-- 搜索模板-->
+	#@table()<!-- table模板 -->
+<script id="optTpl" type="text/html">
+	#[[{{#  if(d.STATUS == 1 || d.STATUS == 2){ }}
+	<a lay-event="edit" title="编辑" style="cursor:pointer;">编辑</a>
+	{{#  } else { }}
+	<a lay-event="detil" title="详情" style="cursor:pointer;">详情</a>
+	{{#  } }} 
+	]]#
+	<a lay-event="del" title="删除" style="cursor:pointer;">删除</a>
+</script>
+
+<script>#include("notice.js")</script>
+</body>

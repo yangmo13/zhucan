@@ -1,0 +1,121 @@
+.ipt_search{
+  padding: 30rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+  z-index: 999;
+  padding-bottom: 15rpx;
+  top: 120rpx;
+}
+.ipt_box{
+  height: 80rpx;
+  
+}
+.ipt_box input{
+  border-bottom: 1px solid #ccc;
+  width: 532rpx;
+  font-size: 28rpx;
+  text-indent: 10rpx;
+  height: 60rpx;
+  padding-left: 10rpx;
+  padding-top: 10rpx;
+  color: #222;
+}
+.ipt_placeholde{
+  color: #555;
+  font-size: 28rpx;
+  text-indent: 10rpx;
+}
+.ipt_btn_box{
+  width: 150rpx;
+  height: 80rpx;
+  margin-left: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ipt_btn{
+  width: 122rpx;
+height: 52rpx;
+background-color: var(--blue);
+color: white;
+text-align: center;
+line-height: 52rpx;
+font-size: 28rpx;
+font-weight: 100;
+margin: 0;
+padding: 0;
+border-radius: 5rpx;
+
+}
+.qiju{
+  width: 100%;
+
+}
+.qiju_top{
+padding:  0 20rpx;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  flex-wrap: wrap;
+  padding-bottom: 20rpx;
+}
+.qiju_leibie{
+  background-color: #f2f2f2;
+  padding: 20rpx 35rpx;
+  text-align: center;
+  height: 20rpx;
+  line-height: 21rpx;
+  font-size: 28rpx;
+  color: #222;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+}.qiju_bottom{
+  padding: 20rpx;
+  padding-top: 0;
+  background-color: #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.qiju_xiangqing{
+  width: 346rpx;
+  height: 350rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20rpx;
+}
+.xiangqing_img{
+  width: 250rpx;
+  height: 250rpx;
+
+  
+}
+.xiangqing_img image{
+  width: 100%;
+  height: 100%;
+}
+.xiangqing_txt{
+  
+  height: 60rpx;
+
+  margin-top: 10rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.qiju_leibie_hover{
+  background-color: var(--blue);
+  color: white;
+}

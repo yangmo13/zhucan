@@ -1,0 +1,65 @@
+var table = layui.table;
+
+
+table.render({
+	elem : '#articleTmpTable',
+	height : 'full-150',
+	url : '#(base)/articleTmp/find',
+	method: 'post',
+	toolbar : '#toolbarTpl',
+	defaultToolbar : [],
+	cols : [ [
+		{type: 'numbers',title : '序号',width : 60,align : 'center'}, 
+		{field: 'ID',title: '主键',align: 'center', hide:true},
+		{field: 'TITLE',title: '标题',align: 'center', hide:false},
+		{field: 'PUB_TIME',title: '发布时间',align: 'center', hide:false},
+		{field: 'SRC',title: '来源',align: 'center', hide:false},
+		{field: 'STATUS',title: '状态',align: 'center', hide:false,templet:#widget("fdp.auditStatus",name="STATUS",type="render")},
+		{field: 'REGISTER_ORG_NAME',title: '登记机构',align: 'center', hide:false},
+		{field: 'REGISTER_NAME',title: '登记人',align: 'center', hide:false},
+		{field: 'REGIST_TIME',title: '登记时间',align: 'center', hide:false},
+		{field: 'opt',title: '操作',align: 'center',templet: '#optTpl'} 
+	] ],
+	even : true,
+	page : true
+});
+
+table.on('tool(articleTmpTable)', function(obj) {
+	var data = obj.data; // 获得当前行数据
+	var layEvent = obj.event;
+	if (layEvent === 'del') { // 删除
+		del(id);
+	} else if (layEvent === 'edit') {
+		goEdit(data.ID)
+	}
+});
+//添加
+function goAdd(){
+	href('#(base)/articleTmpHref/goNoticeAdd')
+}
+//编辑
+function goEdit(id){
+	href('#(base)/articleTmpHref/goNoticeAdd?id='+id)
+}
+//详情
+function goDetil(id){
+	href('#(base)/articleTmpHref/goNoticeAdd?id='+id)
+}
+//删除
+function del(id){
+	top.layer.confirm('确定删除您所选择的数据吗?', function(index) {
+		$.post('#(base)/articleTmp/del', {
+			id : id
+		}, function(d) {
+			if (d.code == 20000) {
+				submitForm();
+			} else {
+				top.layer.msg('删除失败！');
+			}
+		}, 'json');
+		top.layer.close(index);
+	});
+}
+
+
+

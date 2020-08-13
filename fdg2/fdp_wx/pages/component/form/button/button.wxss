@@ -1,0 +1,11 @@
+.the_btn{
+  width: 600rpx !important;
+  height: 70rpx !important;
+  background-color: var(--blue) !important;
+  color: white !important;
+  font-weight: 400 !important;
+  line-height: 40rpx !important;
+}
+.btn .btn_hover{
+  background-color: #5cbcb2 !important;
+}

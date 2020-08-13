@@ -1,0 +1,18 @@
+<view class="zhiye_header" style="height:{{navHeight}}px">
+<!-- 左边图标板块 -->
+	<view class="header_left">
+		<view class="icon_left" bindtap="back">
+			<image src="../../../image/back.png"></image>
+		</view>
+		<view class="icon_right">
+			<view class="icon_right_icon">
+				<image src="../../../image/lingdang.png"></image>
+				<view class="icon_right_tishi" wx:if="{{isNew}}"></view>
+			</view>
+		</view>
+	</view>
+  <!-- 中间文字板块 -->
+  <view class="header_txt">
+    {{text==''?'未填写':text}}
+  </view>
+</view>

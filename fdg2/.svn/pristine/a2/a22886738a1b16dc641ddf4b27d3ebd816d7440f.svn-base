@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "header":"/pages/component/header_new/header"
+
+  },
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white"
+
+}

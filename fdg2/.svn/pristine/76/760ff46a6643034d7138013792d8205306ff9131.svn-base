@@ -1,0 +1,41 @@
+#define uploadImg(url)
+<div class="layui-upload-drag" data-imgid="uploadImg" onclick="openFile()"
+	style="width: 150px; height: 130px; padding: 0px;">
+	#if(url!='')
+	<img src="#(url)" style="width: 150px; height: 130px;">
+	#else
+	<div style="margin-top: 25px">
+		<i class="layui-icon"></i>
+		<p>缩略图</p>
+	</div>
+	#end
+	
+</div>
+<input type="file" id="file" onchange="fileChange()"  style="display:none;">
+<script type="text/javascript">
+function openFile(){
+	$("#file").val("")
+	$("#file").click();
+}
+function fileChange(){
+	var file = $("#file")[0].files[0]
+	if(file.type!='image/jpeg'){
+		layer.msg("上传图片格式只支持jpg格式")
+		return false;
+	}
+	var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function() {
+         imgSrc = this.result;
+         var imgs = document.createElement("img");
+         $(imgs).attr("src", imgSrc);
+         $(imgs).attr("style", "width: 150px; height: 130px;");
+         $("[data-imgid='uploadImg']").empty()
+         $("[data-imgid='uploadImg']").append(imgs);
+    };
+}
+
+
+</script>
+
+#end

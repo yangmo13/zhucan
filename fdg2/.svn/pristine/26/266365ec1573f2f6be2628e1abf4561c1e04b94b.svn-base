@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html",libs=["layui","font-awesome",'editer'])
+</head>
+<body>
+
+
+<div style="display: flex;">
+	<div class="layui-upload-drag" id="test10">
+	  <i class="layui-icon"></i>
+	  <p>点击上传，或将文件拖拽到此处</p>
+	  <div class="layui-hide" id="uploadDemoView">
+	    <hr>
+	    <img src="" alt="上传成功后渲染" style="max-width: 196px">
+	  </div>
+	</div> 
+	
+	<div class="layui-container" style="width: 100%;">
+	<div class="layui-row">
+	    <div class="layui-col-md12">
+	      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+	    </div>
+  	</div>
+  	<div class="layui-row">
+	    <div class="layui-col-md6">
+	      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+	    </div>
+	    <div class="layui-col-md6">
+	      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+	    </div>
+  	</div>
+  	</div>
+</div>
+	
+	<div id="demo"></div>
+
+	<div style="margin-top:15px;text-align: center;">
+	<button type="button" class="layui-btn layui-btn-lg" >仅保存</button>
+	<button type="button" class="layui-btn layui-btn-lg">保存并提交</button>
+	<button type="button" class="layui-btn layui-btn-lg">返回</button>
+	</div>
+
+<script>#include("noticeAdd.js")</script>
+</body>

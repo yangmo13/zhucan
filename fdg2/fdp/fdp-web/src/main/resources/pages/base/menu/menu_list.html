@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html", libs=["layui","font-awesome"])
+</head>
+<body>
+<table class="layui-hidden" id="treeTable" lay-filter="treeTable"></table>
+<script id="iconTpl" type="text/html">
+	<i class="{{d.icon}}"></i>
+</script>
+<script id="optTpl" type="text/html">
+	#permission('menu:edit')
+	<a href="javascript:goEdit('{{d.id}}');" title="编辑" style="cursor:pointer;"><i class="fa fa-edit"></i></a>
+	#end
+	#permission('menu:view')
+	<a href="javascript:goView('{{d.id}}');" title="查看" style="cursor:pointer;"><i class="fa fa-search"></i></a>
+	#end
+	#permission('menu:del')
+	<a href="javascript:doDel('{{d.id}}');" title="删除" style="cursor:pointer;"><i class="fa fa-trash-o"></i></a>
+	#end
+	#permission('menu:move')
+	<a href="javascript:move('{{d.id}}',-1);" title="上移" style="cursor:pointer;"><i class="fa fa-arrow-up"></i></a>
+	<a href="javascript:move('{{d.id}}',1);" title="下移" style="cursor:pointer;"><i class="fa fa-arrow-down"></i></a>
+	#end
+</script>
+<script type="text/html" id="toolbarTpl">
+#permission('menu:add')
+#[[<button class="layui-btn" type="button" onclick="goAdd();">添加</button>]]#
+#end
+</script>
+<script>
+#include("menu_list.js")
+</script>
+</body>
+</html>

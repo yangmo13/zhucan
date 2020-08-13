@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>#include("/common/include.html", libs=["layui"])
+	<style type="text/css">
+		.layui-form-label.layui-required:before{
+	        content:"*";
+	        color:red;
+	    }
+    </style>
+</head>
+<body>
+	<form class="layui-form layui-form-pane">
+		<input type="hidden" id="id" name="archive.id" value="#(archive.id??)">
+		<div class="layui-fluid">
+			<div class="layui-col-md12">
+				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+					<legend>基本信息</legend>
+				</fieldset>
+			</div>
+			
+		    <div class="layui-col-md6">
+		      	<div class="layui-form-item">
+					<label class="layui-form-label layui-required">姓名</label>
+					<div class="layui-input-block">
+						<input type="text" name="archive.realname" autocomplete="off" placeholder="请输入姓名" class="layui-input" value="#(archive.realname??)" lay-verify="required">
+					</div>
+				</div>
+		    </div>
+		    <div class="layui-col-md6">
+		      	<div class="layui-form-item">
+					<label class="layui-form-label layui-required">身份证号</label>
+					<div class="layui-input-block">
+						<input type="text" name="archive.idCard" autocomplete="off" placeholder="请输入身份证号" class="layui-input" value="#(archive.idCard??)" lay-verify="required">
+					</div>
+				</div>
+		    </div>
+			
+		    <div class="layui-col-md6">
+		      	<div class="layui-form-item">
+					<label class="layui-form-label layui-required">联系电话</label>
+					<div class="layui-input-block">
+						<input type="text" name="archive.tel" autocomplete="off" placeholder="请输入联系电话" class="layui-input" value="#(archive.tel??)" lay-verify="required">
+					</div>
+				</div>
+		    </div>
+		    <div class="layui-col-md6">
+		      	<div class="layui-form-item">
+					<label class="layui-form-label layui-required">户口类别</label>
+					<div class="layui-input-block">
+						#widget("fdp.acType",name="archive.acType",value=archive.acType??1,type="radio")
+					</div>
+				</div>
+		    </div>
+			
+		    <div class="layui-col-md6">
+		      	<div class="layui-form-item">
+					<label class="layui-form-label layui-required">籍贯</label>
+					<div class="layui-input-block">
+						<input type="text" name="archive.birthPlace" autocomplete="off" placeholder="请输入籍贯" class="layui-input" value="#(archive.birthPlace??)" lay-verify="required">
+					</div>
+				</div>
+		    </div>
+		    <div class="layui-col-md6">
+		      	<div class="layui-form-item">
+					<label class="layui-form-label layui-required">民族</label>
+					<div class="layui-input-block">
+						#widget("fdp.national",name="archive.national",value=archive.national??'01',type="select", please=true)
+					</div>
+				</div>
+		    </div>
+			
+		    <div class="layui-col-md6">
+		      	<div class="layui-form-item">
+					<label class="layui-form-label layui-required">婚否</label>
+					<div class="layui-input-block">
+						#widget("fdp.maritalStatus",name="archive.maritalStatus",value=archive.maritalStatus??2,type="select", please=true)
+					</div>
+				</div>
+		    </div>
+		    <div class="layui-col-md6">
+		      	<div class="layui-form-item">
+					<label class="layui-form-label layui-required">学历</label>
+					<div class="layui-input-block">
+						#widget("fdp.edu",name="archive.edu",value=archive.edu??'03',type="select", please=true)
+					</div>
+				</div>
+		    </div>
+			<div class="layui-col-md12">
+				<div class="layui-form-item">
+					<label class="layui-form-label layui-required">身份证户籍地</label>
+					<div class="layui-input-block">
+						<input type="text" name="archive.idAddr" autocomplete="off" placeholder="请输入身份证户籍地" class="layui-input" value="#(archive.idAddr??)" lay-verify="required">
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md12">
+				<div class="layui-form-item">
+					<label class="layui-form-label layui-required">现居住地</label>
+					<div class="layui-input-block">
+						<input type="text" name="archive.addr" autocomplete="off" placeholder="请输入现居住地" class="layui-input" value="#(archive.addr??)" lay-verify="required">
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md12">
+				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+				  	<legend>联系人信息</legend>
+				</fieldset>
+			</div>
+			<div class="layui-col-md6">
+			    <div class="layui-form-item">
+					<label class="layui-form-label layui-required">姓名</label>
+					<div class="layui-input-block">
+						<input type="text" name="archive.linkman" autocomplete="off" placeholder="请输入联系人姓名" class="layui-input" value="#(archive.linkman??)" lay-verify="required">
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md6">
+			   	<div class="layui-form-item">
+					<label class="layui-form-label layui-required">与其关系</label>
+					<div class="layui-input-block">
+						#widget("fdp.relation",name="archive.relation",type="select", please=true)
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md6">
+				<div class="layui-form-item">
+					<label class="layui-form-label layui-required layui-required">联系电话</label>
+					<div class="layui-input-block">
+						<input type="text" name="archive.linkmainTel" autocomplete="off" placeholder="请输入联系人电话" class="layui-input" value="#(archive.linkmainTel??)" lay-verify="required">
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md12">
+				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+				  	<legend>工作信息</legend>
+				</fieldset>
+			</div>
+			
+			<div class="layui-col-md6">
+			    <div class="layui-form-item">
+					<label class="layui-form-label">工作单位</label>
+					<div class="layui-input-block">
+						<input type="text" name="archive.company" autocomplete="off" placeholder="请输入工作单位" class="layui-input" value="#(archive.company??)" lay-verify="required">
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md6">
+			   	<div class="layui-form-item">
+					<label class="layui-form-label">职业工种</label>
+					<div class="layui-input-block">
+						<input type="text" name="archive.workType" autocomplete="off" placeholder="请输入职业工种" class="layui-input" value="#(archive.workType??)" lay-verify="required">
+					</div>
+				</div>
+			</div>
+			
+			<div class="layui-col-md6">
+			    <div class="layui-form-item">
+					<label class="layui-form-label">单位性质</label>
+					<div class="layui-input-block">
+						<input type="text" name="archive.nature" autocomplete="off" placeholder="请输入单位性质，见数据字典fdp.orgNature" class="layui-input" value="#(archive.nature??)" lay-verify="required">
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md6">
+			   	<div class="layui-form-item">
+					<label class="layui-form-label">是否福利企业</label>
+					<div class="layui-input-block">
+						#widget("global.yesno",name="archive.welfareOrg",value=archive.welfareOrg??'1',type="radio")
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md12">
+				<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+				  	<legend>残疾证信息</legend>
+				</fieldset>
+			</div>
+			<div class="layui-col-md6">
+				<div class="layui-form-item">
+					<label class="layui-form-label layui-required">残疾证号</label>
+					<div class="layui-input-block">
+						<input type="text" name="archive.certNo" autocomplete="off" placeholder="请输入残疾证号" class="layui-input" value="#(archive.certNo??)" lay-verify="required">
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md6">
+				<div class="layui-form-item">
+					<label class="layui-form-label layui-required">残疾等级</label>
+					<div class="layui-input-block">
+						#widget("fdp.disabilityLevel",name="archive.disabilityLevel",value=archive.disabilityLevel??'1',type="radio")
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md6">
+				<div class="layui-form-item">
+					<label class="layui-form-label layui-required">残疾证有效期</label>
+					<div class="layui-input-block">
+						<input type="text" name="archive.certPeriod" autocomplete="off" placeholder="请输入残疾证有效期" class="layui-input" value="#(archive.certPeriod??)" lay-verify="required">
+					</div>
+				</div>
+			</div>
+			<div class="layui-col-md12">
+				<div class="layui-form-item">
+					<label class="layui-form-label layui-required">残疾类型</label>
+					<div class="layui-input-block">
+						#for (disabilityType:all_disabilityType) #set(isChecked = 0) #for (checked_dt:checked_disabilityType??[]) #if (disabilityType.code == checked_dt.DisabilityType) #set(isChecked = 1) #end #end <input type="checkbox" name="disabilityTypeCodes" lay-skin="primary" title="#(disabilityType.title)" value="#(disabilityType.code)" #(isChecked==1? "checked":"") /> #end
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block" style="text-align:center;margin-left:0;">
+				<button class="layui-btn" lay-submit lay-filter="saveBtn">保存</button>
+				<button class="layui-btn" type="button" onclick="closeMe()">取消</button>
+			</div>
+		</div>
+	</form>
+<script type="text/javascript">
+#include("archive_edit.js")
+</script>
+</body>

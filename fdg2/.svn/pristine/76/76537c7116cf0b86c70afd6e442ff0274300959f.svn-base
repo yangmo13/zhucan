@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>#include("/common/include.html", libs=["layui","font-awesome"])
+</head>
+<body>
+<form class="layui-form" style="padding-top: 10px;" id="search-form">
+	<div class="layui-form-item">
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">类别，见数据字典fdp.contentType</label>
+			<div class="layui-input-inline">
+				<input type="text" name="type" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">标题</label>
+			<div class="layui-input-inline">
+				<input type="text" name="title" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">内容，支持HTML</label>
+			<div class="layui-input-inline">
+				<input type="text" name="txt" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">登记机构ID</label>
+			<div class="layui-input-inline">
+				<input type="text" name="registerOrgId" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">登记机构名称，冗余存储，可用于追溯</label>
+			<div class="layui-input-inline">
+				<input type="text" name="registerOrgName" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">登记人ID</label>
+			<div class="layui-input-inline">
+				<input type="text" name="registerId" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">登记人姓名，冗余存储，可用于追溯</label>
+			<div class="layui-input-inline">
+				<input type="text" name="registerName" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">登记时间</label>
+			<div class="layui-input-inline">
+				<input type="text" name="registTime" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">提交审核机构ID</label>
+			<div class="layui-input-inline">
+				<input type="text" name="submitorOrgId" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">提交审核机构名称，冗余存储，可用于追溯</label>
+			<div class="layui-input-inline">
+				<input type="text" name="submitorOrgName" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">提交审核人ID</label>
+			<div class="layui-input-inline">
+				<input type="text" name="submitorId" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">提交审核人姓名，冗余存储，可用于追溯</label>
+			<div class="layui-input-inline">
+				<input type="text" name="submitorName" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">提交审核时间</label>
+			<div class="layui-input-inline">
+				<input type="text" name="submitTime" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">审核机构ID</label>
+			<div class="layui-input-inline">
+				<input type="text" name="auditorOrgId" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">审核机构名称，冗余存储，可用于追溯</label>
+			<div class="layui-input-inline">
+				<input type="text" name="auditorOrgName" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">审核人ID</label>
+			<div class="layui-input-inline">
+				<input type="text" name="auditorId" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">审核人姓名</label>
+			<div class="layui-input-inline">
+				<input type="text" name="auditorName" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">审核时间</label>
+			<div class="layui-input-inline">
+				<input type="text" name="auditTime" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">审核状态，见数据字典fdp.auditStatus</label>
+			<div class="layui-input-inline">
+				<input type="text" name="status" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">审核批注</label>
+			<div class="layui-input-inline">
+				<input type="text" name="auditRemark" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">删除标志，0：未删除，1：已删除</label>
+			<div class="layui-input-inline">
+				<input type="text" name="deleted" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">是否可见，0：不可见，1：可见</label>
+			<div class="layui-input-inline">
+				<input type="text" name="visible" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+	</div>
+</form>
+<table class="layui-hide" id="contentTmpTable" lay-filter="contentTmpTable"></table>
+<script type="text/html" id="toolbarTpl">
+<div style="float:left;">
+#permission('contentTmp:add')
+<button class="layui-btn" type="button" onclick="goAdd();">添加</button>
+#end
+</div>
+<div style="float:right;">
+<button class="layui-btn" type="button" onclick="submitForm();">查询</button>
+<button class="layui-btn" type="reset" onclick="$('#search-form')[0].reset();">重置</button>
+</div>
+</script>
+<script id="optTpl" type="text/html">
+	#permission('contentTmp:edit')
+	<a lay-event="edit" title="编辑" style="cursor:pointer;"><i class="fa fa-edit"></i></a>
+	#end
+	#permission('contentTmp:del')
+	<a lay-event="del" title="删除" style="cursor:pointer;"><i class="fa fa-trash-o"></i></a>
+	#end
+</script>
+<script>
+#include("contentTmp_list.js")
+</script>
+</body>

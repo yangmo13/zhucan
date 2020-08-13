@@ -1,0 +1,21 @@
+package #(config.modulePkg);#(name=tableMeta.modelName,lname=firstCharToLowerCase(tableMeta.modelName),null)
+
+import com.jfinal.config.Routes;
+import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
+import com.sloth.common.Module;
+import #(config.modelPkg).#(name);
+
+import #(config.ctlPkg).#(name)Controller;
+
+public class #(name)Module implements Module {
+	@Override
+	public void configRoutes(Routes me) {
+		me.add("/#(lname)", #(name)Controller.class, "/pages/#(config.moduleName)/#(lname)");
+	}
+
+	@Override
+	public void configMappings(ActiveRecordPlugin arp) {
+		arp.addSqlTemplate("#(config.moduleName)/#(lname).sql");
+		arp.addMapping("#(tableMeta.name)", "#(tableMeta.primaryKey)", #(name).class);
+	}
+}

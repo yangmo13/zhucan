@@ -1,0 +1,4 @@
+<view class="qiju" style="padding-top:{{height}}px">
+  <header text="辅具展示"></header>
+  <qiju></qiju>
+</view>

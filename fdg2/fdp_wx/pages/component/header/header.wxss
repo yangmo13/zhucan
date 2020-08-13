@@ -1,0 +1,58 @@
+/* pages/component/header/header.wxss *//* compation/header/index.wxss */
+.zhiye_header{
+  width: 100%;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  padding-top: 10rpx;
+
+  background: var(--blue);
+}
+.header_left{
+  position: absolute;
+  width: 132rpx;
+  height: 52rpx;
+  border: 1px solid white;
+  border-radius: 70rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  left: 26rpx;
+  bottom:20rpx;
+
+}
+.icon_left,.icon_right_icon{
+  width: 40rpx;
+  height: 40rpx;
+ 
+}
+.icon_left image{
+  width: 100%;
+  height: 100%;
+
+}
+.icon_right_icon image{
+  width: 100%;
+  height: 100%;
+}
+.icon_right_icon{
+  position: relative;
+}
+.icon_right_tishi{
+    position: absolute;
+    width: 15rpx;
+    height: 15rpx;
+    background: red;
+    right: 0;
+    bottom: 0;
+    border-radius: 15rpx;
+}
+.header_txt{
+ text-align: center;
+  color: white;
+  font-size: 36rpx;
+  position: absolute;
+  bottom: 26rpx;
+  left: 50%;
+  transform: translate( -50%,0);
+}

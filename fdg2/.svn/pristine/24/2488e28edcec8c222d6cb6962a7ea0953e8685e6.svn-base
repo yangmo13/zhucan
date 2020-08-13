@@ -1,0 +1,452 @@
+page{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+.zhidao{
+  width: 100%;
+  padding-top: 286rpx;
+}
+.zhidao_box{
+  background-color: white;
+  border-bottom: 3rpx solid #c1c1c1;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 179rpx;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+}
+.zhidao_nav{
+  flex:1;
+  text-align: center;
+  font-size: 34rpx;
+  height: 95%;
+  color: #333;
+  border-bottom: 6rpx solid #fff;
+  line-height: 109rpx
+}
+.radio_box{
+  margin-right: 15rpx;
+  margin-left: 5rpx;
+}
+.zhidao_nav_selected{
+  color: #dc142d;
+  border-bottom: 6rpx solid #dc142d;
+}
+.checked_box{
+  width: 100%;
+  background-color: white;
+
+}
+/* pages/login/shibie/index.wxss */
+
+.form_box {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-indent: 60rpx;
+  background: #f2f2f2;
+}
+
+.header_btn {
+  display: flex;
+  padding: 30rpx 0;
+  align-items: center;
+  color: #aaa;
+  background-color: #f3f3f3;
+}
+
+.header_btn_right {
+  margin-left: 30rpx;
+}
+
+.header_btn_top {
+  width: 146rpx;
+  height: 91rpx;
+  margin-left: 40rpx;
+
+
+}
+
+.header_btn_top image {
+  width: 100%;
+  height: 100%;
+}
+
+.weui-cell_input {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 50rpx;
+  padding: 20rpx 0;
+  position: relative;
+}
+
+.weui-cell_input label {
+  width: 690rpx;
+  display: flex;
+  padding: 5rpx 20rpx 0 10rpx;
+  margin: 0 auto;
+
+}
+
+.form_must {
+  color: red;
+}
+
+.form_txt {
+  margin-left: 10rpx;
+  color: #333;
+}
+
+.weui-cell_input input {
+  display: inline-block;
+  flex: 1;
+  border-bottom: 1px solid #aaa;
+  vertical-align: middle;
+  font-size: 32rpx;
+  color: black;
+  margin-left: 20rpx;
+  text-indent: 10rpx;
+
+
+}
+
+/* 下拉框 */
+.select {
+  flex: 1;
+  height: 60rpx;
+  border: 1px solid #ccc;
+  border-radius: 5rpx;
+  display: inline-block;
+  margin-left: 23rpx;
+  position: relative;
+
+}
+
+.select image {
+  width: 34rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+}
+.jiguan{
+  line-height: 60rpx;
+}
+.select_box{
+  width: 74%;
+  z-index: 999;
+  position: absolute;
+  top: 82rpx;
+  border: 1px solid #333;
+  left: 154rpx;
+  box-shadow: 0px 0px 5rpx #333;
+  background: white;
+  
+}
+.select_box_li{
+  height: 50rpx;
+  width: 100%;
+  text-indent: 20rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color: #333;
+ 
+}
+.select_box_li_hover{
+  background: #1e90ff;
+  color: white;
+}
+.select text{
+  line-height: 64rpx;
+ 
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  
+}
+.hujidi{
+  margin-top: 30rpx;
+}
+.hujidi .form_must{
+  margin-left: 23rpx;
+}
+.jigunabox{
+  padding: 0rpx 30rpx;
+  margin-top: 9rpx;
+}
+.jigunabox .weui-input{
+  flex: 1;
+  border-bottom:1px  solid #aaa  ;
+  font-size: 30rpx;
+  padding-left: 20rpx;}
+  .nongye{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nongye label{
+    display: inline-block ;
+
+  }
+  .nongye_box{
+  border: 1px solid black;
+  flex: 1;
+  height: 90rpx;
+  display: block;
+  }
+  .hukou radio-group{
+    display: flex;
+  }
+  .form_not_must{
+    width: 16rpx;
+
+  }
+  .hukou radio-group .the_radio{
+    margin-left: 5rpx;
+  }
+  .select_box_small{
+    width: 65%;
+z-index: 999;
+position: absolute;
+top: 82rpx;
+border: 1px solid #767676;
+left: 221rpx;
+box-shadow: 0px 0px 5rpx #333;
+background: white;
+
+  }
+  .weui-cell_input checkbox-group{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    margin-left: 40rpx;
+    
+  }
+  .weui-cell_input checkbox-group view{
+    margin-right: 55rpx;
+    margin-top: 30rpx;
+  }
+  .canjileixing{
+    height:  auto !important;
+
+  }
+  .canjileixing label{
+  
+    height: 100%;
+   
+  }
+  .the_radio .wx-radio-input{
+    width: 30rpx;
+    height: 30rpx;
+   
+  }
+  .next{
+    height: 130rpx;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .canjileixing2{
+    padding-top: 27rpx;
+  }
+  .canjileixing{
+    padding-top: 27rpx;
+  }
+  .next_btn{
+    background: #33ab9f;
+    color: white;
+    font-size: 36rpx;
+    text-align: center;
+    line-height: 54rpx;
+    height: 80rpx;
+  }
+  .xuqiushuoming{
+    
+    height: 300rpx;
+    border: 2px solid #ccc;
+    margin: 0 auto;
+    width: 650rpx;
+    
+  }
+  /* pages/login/wanshan/canji/canji.wxss */
+
+.form{
+  padding: 30rpx;
+  height: 400rpx;
+}
+/* 残疾类型样式 */
+.canji_leixing{
+  width: 100%;
+  margin-top: 30rpx;
+  color: #333;
+  display: flex;
+  justify-content: center;
+
+}
+.left_name{
+  
+  padding-left: 30rpx;
+  padding-right: 40rpx;
+}
+.canji_dengji{
+  height: 300rpx;
+
+display: flex;
+justify-content: center;
+
+}
+radio .wx-radio-input{
+  width: 30rpx;
+  height: 30rpx;
+  background-color: white !important;
+}
+radio .wx-radio-input.wx-radio-input-checked{
+  color: #555;
+  background: red;
+  border: 2rpx solid #ccc !important;
+}
+.bottom{
+  
+  bottom: 100rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.radio_txt{
+  font-size: 26rpx;
+
+}
+#btn {
+ width: 650rpx;
+height: 80rpx;
+
+color: white;
+font-size: 34rxp;
+line-height: 48rpx;
+text-align: center;
+font-weight: 500;
+margin-top: 40rpx;
+}
+
+.radio_txt label{
+  margin-right: 10rpx;
+}
+radio .wx-radio-input.wx-radio-input-checked::before{
+  content: ''; 
+  border-radius: 50%;
+  width: 20rpx; 
+  height: 20rpx;
+  line-height: 36rpx;
+  text-align: center;
+  font-size:36rpx; 
+  color:#fff;
+  background: #555;
+ 
+}
+.left_name text:first-child{
+  color: red;
+  margin-right: 10rpx;
+}
+.right_checkbox{
+  flex: 1;
+  
+  height: 100%;
+}
+.check_box label{
+  width: 170rpx;
+  
+  font-size: 26rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+checkbox .wx-checkbox-input{
+  width: 30rpx;
+  height: 30rpx;
+
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  color: #555;
+}
+.check_box{
+  width: 400rpx;
+  display: flex;
+  justify-content: start;
+
+  flex-wrap: wrap;
+}
+.ipt_search{
+  padding: 30rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: white;
+  z-index: 999;
+  padding-bottom: 15rpx;
+  top: 120rpx;
+}
+.ipt_box{
+  height: 80rpx;
+  
+}
+.ipt_box input{
+  border-bottom: 1px solid #ccc;
+  width: 532rpx;
+  font-size: 28rpx;
+  text-indent: 10rpx;
+  height: 60rpx;
+  padding-left: 10rpx;
+  padding-top: 10rpx;
+  color: #222;
+}
+.ipt_placeholde{
+  color: #555;
+  font-size: 28rpx;
+  text-indent: 10rpx;
+}
+.ipt_btn_box{
+  width: 150rpx;
+  height: 80rpx;
+  margin-left: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ipt_btn{
+  width: 122rpx;
+height: 52rpx;
+background-color: var(--blue);
+color: white;
+text-align: center;
+line-height: 52rpx;
+font-size: 28rpx;
+font-weight: 100;
+margin: 0;
+padding: 0;
+border-radius: 5rpx;
+
+}
+.kangfuziliao{
+  position: relative;
+
+}
+.ziliao_box{
+  position: absolute;
+  top:80px;
+  
+}

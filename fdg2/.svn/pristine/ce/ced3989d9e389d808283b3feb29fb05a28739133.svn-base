@@ -1,0 +1,42 @@
+<view class="guanai" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="关爱生活"></header>
+	<!-- 导航栏部分 -->
+	<view class="love_nav">
+		<view class="love_nav_li" wx:for="{{arr}}">
+			<view class="nav_img">
+				<image src="{{item.src}}"></image>
+			</view>
+			<view class="nav_txt">{{item.txt}}</view>
+		</view>
+	</view>
+	<!-- 文体活动标题-->
+	<view class="genres">
+		<view class="genres_left">
+			<view class="genres_img">
+        <image src="/image/guanai/huodong.png"></image>
+      </view>
+			<view class="genres_txt">文体活动</view>
+		</view>
+		<view class="genres_right">
+			<view class="genres_more_txt">查看更多</view>
+			<view class="genres_more_icon">
+        <image src="/image/right.png"></image>
+      </view>
+		</view>
+	</view>
+  <!-- 文体活动列表 -->
+  <view class="list">
+  <view class="list_li" wx:for="{{list}}">
+      <view class="list_li_topic">{{item.topic}}</view>
+      <view class="list_li_date">
+        <view class="apply">{{item.apply}}</view>
+        <view class="time">
+          <text>报名时间: </text>
+          <text> {{item.date}}</text>
+        </view>
+      </view>
+  </view>
+  </view>
+
+</view>

@@ -1,0 +1,56 @@
+<view class="jigou" style="padding-top:{{height}}px">
+	<!-- 头部 -->
+	<header text="康复服务机构" isNew="{{isNew}}"></header>
+	<!-- 搜索栏 -->
+	<view class="search_ipt">
+		<view>
+			<input class="search_input" placeholder="请输入查询的关键字"></input>
+		</view>
+		<view>
+			<button id="search_btn">搜索</button>
+		</view>
+
+	</view>
+	<!-- 医院简介 -->
+	<view class="hospital">
+		<view class="hospital_box" wx:for="{{arr}}">
+			<view class="hos_box_head"
+				data-url="{{item.url}}"
+				bindtap="next"
+			>
+				<view class="hos_left">
+					<image src="{{item.src}}"></image>
+				</view>
+				<view class="hos_center">
+					<!-- 医院名字 -->
+					<view class="hos_center_name">
+						{{item.name}}
+					</view>
+					<!-- 医院面向对象 -->
+					<view class="hos_center_face">
+						<view class="hos_center_face_box" wx:for="{{item.face}}">
+							{{item}}
+						</view>
+					</view>
+				</view>
+				<view class="hos_right">
+					<image src="../../../../../image/right.png"></image>
+				</view>
+			</view>
+      <view class="hos_box_body">
+      <!-- 简介主体部分 -->
+      <view class="hos_body_txt">
+       {{item.txt}}
+      </view>
+      <!-- 简介地址 -->
+      <view class="hos_body_pos">
+        地址：{{item.pos}}
+      </view>
+      <!-- 联系方式 -->
+         <view class="hos_body_pos">
+         联系方式：{{item.relation}}
+         </view>
+      </view>
+		</view>
+	</view>
+</view>
