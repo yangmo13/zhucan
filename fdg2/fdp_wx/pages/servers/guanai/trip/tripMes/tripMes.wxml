@@ -1,0 +1,71 @@
+<view class="tripMes" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="爱心出行详情"></header>
+	<!-- 详情部分 -->
+	<view class="MesBox">
+		<view class="mes">
+			<!-- 开始地点 -->
+			<view class="mes_box">
+
+				<view class="position">
+					<text>从</text><text>{{details.from}}</text>
+				</view>
+				<view>
+					<button id="TripNow">立即导航</button>
+				</view>
+			</view>
+			<!-- 结束地点 -->
+			<view class="mes_box">
+				<view class="position">
+					<text>到</text><text>{{details.address}}</text>
+				</view>
+				<view>
+					<button id="TripNow">立即导航</button>
+				</view>
+			</view>
+			<!-- 用车时间 -->
+			<view class="mes_box userTime">
+        <view class="user_time">
+          <text>用车时间:</text>
+          <text>{{details.date}}</text>
+          <text>{{details.time}}</text>
+        </view>
+        <view class="user_mes">
+        <text>共{{details.num}}人,</text>
+        <text>{{details.level}}</text>
+        </view>
+      </view>
+      <!-- 联系电话 -->
+			<view class="mes_box link">
+      	<view class="link_phone">
+					<text>联系电话:</text><text>{{details.phone}}</text>
+				</view>
+        		<view>
+					<button id="TripNow"
+          bindtap="makePhoneCall"
+          >立即拨打</button>
+				</view>
+      </view>
+      <!-- 是否完成 -->
+       <view class="isFinish">
+       {{details.trip==true?'已完成':'待出行'}}
+      </view>
+
+		</view>
+
+    <!-- 你还可以部分 -->
+<view class="other_msg">
+  您还可以：
+</view>
+    <view class="other">
+    <other
+      arr="{{arr}}"
+    ></other>
+    </view>
+	</view>
+
+
+
+	<!-- 您还可以 -->
+
+</view>

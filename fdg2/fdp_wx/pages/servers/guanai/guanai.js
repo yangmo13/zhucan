@@ -20,7 +20,7 @@ Page({
       {
         src:"/image/guanai/u2721.png",
         txt:"爱心出行",
-        url:""
+        url:"./trip/trip"
       }, {
         src:"/image/guanai/u2730.png",
         txt:"无障碍气象",

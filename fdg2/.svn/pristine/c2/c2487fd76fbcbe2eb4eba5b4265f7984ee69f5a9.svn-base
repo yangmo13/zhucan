@@ -1,0 +1,86 @@
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+}
+.wish_detail{
+  padding: 30rpx;
+  border: 1px solid #ccc;
+  width: 650rpx;
+  padding-top: 0;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  background-color: white;
+  position: relative;
+
+}
+.wishMes{
+ height: 90%;
+ /* display: flex; */
+}
+.wish_name{
+  padding: 20rpx 0 ;
+  font-size: 42rpx;
+  font-weight: 500;
+
+}
+.wish_detail_box{
+  
+ height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.wish_who{
+  padding: 15rpx 0 ;
+  color: #333;
+}
+.start_time{
+  padding: 10rpx  0;
+  font-size: 26rpx ;
+  color: #555;
+}
+.wish_btn{
+  padding: 20rpx;
+
+}
+.isClaim{
+  width: 162rpx;
+  height: 123rpx;  
+  position: absolute;
+  right: 30rpx;
+  top: 15rpx;
+}
+.isClaim image{
+  width: 100%;
+  height: 100%;
+}
+.wish_demand{
+  display: inline-block;
+}
+.isfinesh{
+
+  border-top: 4rpx dashed #ccc;
+  margin-top: 30rpx;
+}
+.isfinesh_statu{
+  padding: 15rpx 0;
+  font-size: 30rpx ;
+  color: #555;
+}
+.isfinesh_time{
+  color: red;
+  padding: 15rpx 0 ;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+.wish_remind{
+  color: #333;
+  font-size: 28rpx;
+  padding: 20rpx 0 ;
+}
+.isfinesh_img{
+  width: 100%;
+  margin-top: 20rpx;
+}

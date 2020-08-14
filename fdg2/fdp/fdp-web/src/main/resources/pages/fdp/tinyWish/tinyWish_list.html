@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>#include("/common/include.html", libs=["layui","font-awesome"])
+</head>
+<body>
+<form class="layui-form" style="padding-top: 10px;" id="search-form">
+	<div class="layui-form-item">
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">姓名</label>
+			<div class="layui-input-inline">
+				<input type="text" name="realname" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">身份证号</label>
+			<div class="layui-input-inline">
+				<input type="text" name="idCard" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">联系人</label>
+			<div class="layui-input-inline">
+				<input type="text" name="linkman" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">联系电话，允许多个</label>
+			<div class="layui-input-inline">
+				<input type="text" name="tel" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">残疾类型，见数据字典fdp.disabilityType，多个之间以英文逗号分隔</label>
+			<div class="layui-input-inline">
+				<input type="text" name="disabilityType" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">残疾等级，见数据字典fdp.disabilityLevel</label>
+			<div class="layui-input-inline">
+				<input type="text" name="disabilityLevel" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">发起日期</label>
+			<div class="layui-input-inline">
+				<input type="text" name="startDate" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">结束日期</label>
+			<div class="layui-input-inline">
+				<input type="text" name="endDate" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">认领状态，见数据字典fdp.takeStatus</label>
+			<div class="layui-input-inline">
+				<input type="text" name="takeStatus" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">认领人ID</label>
+			<div class="layui-input-inline">
+				<input type="text" name="takerId" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">认领人姓名</label>
+			<div class="layui-input-inline">
+				<input type="text" name="takerName" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">认领时间</label>
+			<div class="layui-input-inline">
+				<input type="text" name="takeTime" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">完成日期</label>
+			<div class="layui-input-inline">
+				<input type="text" name="completeDate" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">现场照片，存储到腾讯云</label>
+			<div class="layui-input-inline">
+				<input type="text" name="photo" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+	</div>
+</form>
+<table class="layui-hide" id="tinyWishTable" lay-filter="tinyWishTable"></table>
+<script type="text/html" id="toolbarTpl">
+<div style="float:left;">
+#permission('tinyWish:add')
+<button class="layui-btn" type="button" onclick="goAdd();">添加</button>
+#end
+</div>
+<div style="float:right;">
+<button class="layui-btn" type="button" onclick="submitForm();">查询</button>
+<button class="layui-btn" type="reset" onclick="$('#search-form')[0].reset();">重置</button>
+</div>
+</script>
+<script id="optTpl" type="text/html">
+	#permission('tinyWish:edit')
+	<a lay-event="edit" title="编辑" style="cursor:pointer;"><i class="fa fa-edit"></i></a>
+	#end
+	#permission('tinyWish:del')
+	<a lay-event="del" title="删除" style="cursor:pointer;"><i class="fa fa-trash-o"></i></a>
+	#end
+</script>
+<script>
+#include("tinyWish_list.js")
+</script>
+</body>

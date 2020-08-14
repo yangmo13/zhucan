@@ -1,0 +1,11 @@
+<view class="trip_map" style="padding-top:{{height}}px">
+  <header text="位置信息"></header>
+<!-- 地图位置 -->
+<view class="map_box">
+  <map class="map"
+   latitude="{{map.latitude}}" longitude="{{map.longitude}}" markers="{{map.markers}}"
+  ></map>
+
+  <view class=""></view>
+</view>
+</view>

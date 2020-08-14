@@ -1,0 +1,61 @@
+function goAdd() {
+	openWindow('添加', '#(base)/tinyWish/goAdd', '800px', '600px', submitForm);
+}
+var table = layui.table;
+// 展示已知数据
+table.render({
+	elem : '#tinyWishTable',
+	height : 'full-150',
+	url : '#(base)/tinyWish/find',
+	method: 'post',
+	toolbar : '#toolbarTpl',
+	defaultToolbar : [],
+	cols : [ [
+		{type: 'numbers',title : '序号',width : 60,align : 'center'}, 
+		{field: 'id',title: '主键',width: 120,align: 'center', hide:true},
+		{field: 'realname',title: '姓名',width: 120,align: 'center', hide:false},
+		{field: 'idCard',title: '身份证号',width: 120,align: 'center', hide:false},
+		{field: 'linkman',title: '联系人',width: 120,align: 'center', hide:false},
+		{field: 'tel',title: '联系电话，允许多个',width: 120,align: 'center', hide:false},
+		{field: 'disabilityType',title: '残疾类型，见数据字典fdp.disabilityType，多个之间以英文逗号分隔',width: 120,align: 'center', hide:false},
+		{field: 'disabilityLevel',title: '残疾等级，见数据字典fdp.disabilityLevel',width: 120,align: 'center', hide:false},
+		{field: 'startDate',title: '发起日期',width: 120,align: 'center', hide:false},
+		{field: 'endDate',title: '结束日期',width: 120,align: 'center', hide:false},
+		{field: 'takeStatus',title: '认领状态，见数据字典fdp.takeStatus',width: 120,align: 'center', hide:false},
+		{field: 'takerId',title: '认领人ID',width: 120,align: 'center', hide:false},
+		{field: 'takerName',title: '认领人姓名',width: 120,align: 'center', hide:false},
+		{field: 'takeTime',title: '认领时间',width: 120,align: 'center', hide:false},
+		{field: 'completeDate',title: '完成日期',width: 120,align: 'center', hide:false},
+		{field: 'photo',title: '现场照片，存储到腾讯云',width: 120,align: 'center', hide:false},
+		{field: 'opt',title: '操作',align: 'center',width: 120,templet: '#optTpl'} 
+	] ],
+	even : true,
+	page : true
+});
+table.on('tool(tinyWishTable)', function(obj) {
+	var data = obj.data; // 获得当前行数据
+	var layEvent = obj.event;
+	if (layEvent === 'del') { // 删除
+		top.layer.confirm('确定删除您所选择的数据吗?', function(index) {
+			$.post('#(base)/tinyWish/del', {
+				id : data.id
+			}, function(d) {
+				if (d.code == 20000) {
+					submitForm();
+				} else {
+					top.layer.msg('删除失败！');
+				}
+			}, 'json');
+			top.layer.close(index);
+		});
+	} else if (layEvent === 'edit') {
+		openWindow('修改', '#(base)/tinyWish/goEdit?id=' + data.id, '800px','600px', submitForm);
+	}
+});
+var form = layui.form;
+form.render('select');
+function submitForm() {
+	table.reload('tinyWishTable', {
+		where : $('#search-form').serializeJson()
+	})
+}

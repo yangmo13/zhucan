@@ -1,0 +1,22 @@
+/**
+ * player 初始化返回实例
+ * @param url
+ * @param pic
+ * @returns
+ */
+function Player(url,auto,id){
+	//默认约定
+	if(url==undefined)return false;
+	if(id==undefined)id="dplayer";
+	if(auto==undefined)auto=false;
+	const dp = new DPlayer({
+    container: document.getElementById(id),
+    screenshot: false,
+    hotkey:true,
+    preload:'auto',
+    lang:'zh-cn',
+    autoplay:true,
+    video: {url: url}
+	});
+	return dp;
+}

@@ -15,5 +15,6 @@
   </rich-text>
   </view>
   </view>
+  	<wux-fab-button direction="vertical"  spaceBetween="10" sAngle="{{ sAngle }}" buttons="{{ buttons }}" bind:change="onChange" bind:click="onClick" ></wux-fab-button>
 </view>
 

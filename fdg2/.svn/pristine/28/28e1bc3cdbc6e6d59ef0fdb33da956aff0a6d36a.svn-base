@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>#include("/common/include.html", libs=["layui"])
+</head>
+<body>
+	<form class="layui-form layui-form-pane">
+		<input type="hidden" id="id" name="tinyWish.id" value="#(tinyWish.id??)">
+		<div class="layui-form-item">
+			<label class="layui-form-label">姓名</label>
+			<div class="layui-input-block">
+				<input type="text" name="tinyWish.realname" autocomplete="off" placeholder="请输入姓名" class="layui-input" value="#(tinyWish.realname??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">身份证号</label>
+			<div class="layui-input-block">
+				<input type="text" name="tinyWish.idCard" autocomplete="off" placeholder="请输入身份证号" class="layui-input" value="#(tinyWish.idCard??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">联系人</label>
+			<div class="layui-input-block">
+				<input type="text" name="tinyWish.linkman" autocomplete="off" placeholder="请输入联系人" class="layui-input" value="#(tinyWish.linkman??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">联系电话，允许多个</label>
+			<div class="layui-input-block">
+				<input type="text" name="tinyWish.tel" autocomplete="off" placeholder="请输入联系电话，允许多个" class="layui-input" value="#(tinyWish.tel??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">残疾类型，见数据字典fdp.disabilityType，多个之间以英文逗号分隔</label>
+			<div class="layui-input-block">
+				<input type="text" name="tinyWish.disabilityType" autocomplete="off" placeholder="请输入残疾类型，见数据字典fdp.disabilityType，多个之间以英文逗号分隔" class="layui-input" value="#(tinyWish.disabilityType??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">残疾等级，见数据字典fdp.disabilityLevel</label>
+			<div class="layui-input-block">
+				<input type="text" name="tinyWish.disabilityLevel" autocomplete="off" placeholder="请输入残疾等级，见数据字典fdp.disabilityLevel" class="layui-input" value="#(tinyWish.disabilityLevel??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">发起日期</label>
+			<div class="layui-input-block">
+				<input type="text" name="tinyWish.startDate" autocomplete="off" placeholder="请输入发起日期" class="layui-input" value="#(tinyWish.startDate??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">结束日期</label>
+			<div class="layui-input-block">
+				<input type="text" name="tinyWish.endDate" autocomplete="off" placeholder="请输入结束日期" class="layui-input" value="#(tinyWish.endDate??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">认领状态，见数据字典fdp.takeStatus</label>
+			<div class="layui-input-block">
+				<input type="text" name="tinyWish.takeStatus" autocomplete="off" placeholder="请输入认领状态，见数据字典fdp.takeStatus" class="layui-input" value="#(tinyWish.takeStatus??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">认领人ID</label>
+			<div class="layui-input-block">
+				<input type="text" name="tinyWish.takerId" autocomplete="off" placeholder="请输入认领人ID" class="layui-input" value="#(tinyWish.takerId??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">认领人姓名</label>
+			<div class="layui-input-block">
+				<input type="text" name="tinyWish.takerName" autocomplete="off" placeholder="请输入认领人姓名" class="layui-input" value="#(tinyWish.takerName??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">认领时间</label>
+			<div class="layui-input-block">
+				<input type="text" name="tinyWish.takeTime" autocomplete="off" placeholder="请输入认领时间" class="layui-input" value="#(tinyWish.takeTime??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">完成日期</label>
+			<div class="layui-input-block">
+				<input type="text" name="tinyWish.completeDate" autocomplete="off" placeholder="请输入完成日期" class="layui-input" value="#(tinyWish.completeDate??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">现场照片，存储到腾讯云</label>
+			<div class="layui-input-block">
+				<input type="text" name="tinyWish.photo" autocomplete="off" placeholder="请输入现场照片，存储到腾讯云" class="layui-input" value="#(tinyWish.photo??)" lay-verify="required">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block" style="text-align:center;margin-left:0;">
+				<button class="layui-btn" lay-submit lay-filter="saveBtn">保存</button>
+				<button class="layui-btn" type="button" onclick="closeMe()">取消</button>
+			</div>
+		</div>
+	</form>
+<script type="text/javascript">
+#include("tinyWish_edit.js")
+</script>
+</body>

@@ -9,6 +9,20 @@ Page({
   data: {
     isNew:true,
     height:"",
+     // 音乐
+     myaudio:null,
+     buttons: [{
+         label: '收藏',
+         sel:false,
+         icon: "md-heart-empty"
+       },
+       {
+         label: '声音',
+         sel:false,
+         icon:"md-volume-off"
+       },
+      
+     ],
     arr:{
       title:"哈尔滨市香坊区残联组织机构",
     laiyuan:"省残联",
@@ -21,11 +35,46 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 音乐
+    this.data.myaudio = wx.createInnerAudioContext({});
+    this.data.myaudio.src = "http://webfs.yun.kugou.com/202008131501/9646c6d2348acd9ac513a6133b5fd9f3/G230/M07/0C/1B/Jg4DAF8xCIOAOE0fADJNXLY-z1o546.mp3"
     this.setData({
-      height:App.globalData.navHeight
+      height: App.globalData.navHeight,
+      // 音乐
+      myaudio:this.data.myaudio
+    })
+
+  },
+  // 音乐、收藏
+  onClick(e) {
+    console.log('onClick', e.detail)
+    console.log('onClick点击第几个', e.detail.index)
+    this.data.buttons[e.detail.index].sel= !this.data.buttons[e.detail.index].sel;
+    if (e.detail.index === 0) {
+      this.data.buttons[e.detail.index].icon=!this.data.buttons[e.detail.index].sel?"md-heart-empty":"md-heart"
+      if(this.data.buttons[e.detail.index].sel){
+        wx.showToast({
+          title: "已收藏",
+        })
+      }else{
+        wx.showToast({
+          title: "未收藏",
+        })
+      }
+    }
+    else  if (e.detail.index === 1) {
+      this.data.buttons[e.detail.index].icon=!this.data.buttons[e.detail.index].sel?"md-volume-off":"md-volume-high"
+      if(this.data.buttons[1].sel){
+       this.data. myaudio.play();
+      }else{
+       this.data. myaudio.pause();
+      }
+
+    }
+    this.setData({
+      buttons:this.data.buttons
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -51,7 +100,8 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    // 音乐
+    this.data.myaudio.destroy();
   },
 
   /**

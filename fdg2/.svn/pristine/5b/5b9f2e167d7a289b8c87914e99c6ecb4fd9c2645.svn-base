@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html",libs=["layui","font-awesome",'editer','common'])
+</head>
+<body>
+<div class="layui-form">
+	<input type="hidden" name="contentTmp.TYPE" value="C202">
+	<input type="hidden" name="contentTmp.ID" id="id" value="#(id)">
+	<div style="display: flex;">
+		#@uploadImg(articleTmp.IMG??'')
+		<div style="width: calc(100vw - 150px)" >
+			<div class="layui-fluid">
+			#@input({name:'contentTmp.TITLE',id:'TITLE',title:'标题',verify:'required',value:articleTmp.TITLE??'',extAttrs:'maxlength="30"'})
+			#@input({name:'articleTmp.PUB_TIME',id:'PUB_TIME',title:'发布时间',value:articleTmp.PUB_TIME??'',id:'pubTime',col:6,verify:'required',extAttrs:"readonly"})
+			#@input({name:'articleTmp.SRC',id:'SRC',title:'来源',col:6,value:articleTmp.SRC??'',verify:'required',extAttrs:'maxlength="30"'})
+			</div>
+	  	</div>
+	</div>
+	<div id="ed"></div>
+	<div style="margin-top:15px;text-align: center;"> 
+		<button class="layui-btn" type="button" lay-submit="save" lay-filter="save">仅保存</button>
+		<button class="layui-btn" type="button" lay-submit="subSave" lay-filter="subSave">保存并提交</button>
+		<button class="layui-btn" type="button" onclick="back()">返回</button>
+	</div>
+</div>
+	
+
+<script>#include("workEdit.js")</script>
+<script>#include("../contentComm.js")</script>
+</body>

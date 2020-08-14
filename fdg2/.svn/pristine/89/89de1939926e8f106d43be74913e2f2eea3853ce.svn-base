@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html",libs=["layui","font-awesome",'common',"player"])
+</head>
+<body>
+<style>
+.status {
+	position: absolute;
+    right: 10px;
+    top:10px;
+}
+.all{
+ padding:20px;
+}
+.title{
+text-align: center;
+}
+.footer{
+margin-top:15px;text-align: center;
+}
+</style>
+<div class="all" >
+	<div class="title">
+		<h2>#(articleTmp.TITLE??)</h2>
+		#if(articleTmp.VIDEO==null)
+		<h4>来源:#(articleTmp.SRC??) #(articleTmp.PUB_TIME??) </h4>
+		#end
+		<div class="status">
+			#if(articleTmp.STATUS == '3')
+			<img src="#(base)/img/shenhe.png">
+			#else
+			<img src="#(base)/img/fabu.png">
+			#end
+		</div>
+	</div>
+	<div>
+		#if(articleTmp.VIDEO!=null)
+		<div id="dplayer"></div>
+		#end
+		#(articleTmp.TXT??)	
+	</div>
+	<div class="footer">
+		#if(articleTmp.STATUS == 4) 
+		<button  class="layui-btn" type="button" onclick="edit('#(id)')">编辑</button>
+		#end
+		<button  class="layui-btn" type="button" onclick="back()">返回</button>
+	</div>
+</div>
+
+
+
+<script>
+function edit(id){
+	href('#(base)/articleTmpHref/goNoticeEdit?id='+id)
+}
+#if(articleTmp.VIDEO!=null)
+Player('#(articleTmp.VIDEO)')
+#end()
+</script>
+<script>#include("dplayer.js")</script>
+</body>

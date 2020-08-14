@@ -1,0 +1,96 @@
+
+{
+  "pages": [
+    "pages/servers/index/index",
+    "pages/servers/guanai/trip/trip",  
+    "pages/servers/guanai/wish/wishLogin/wishLogin",
+    "pages/servers/guanai/wish/wish",
+    "pages/servers/guanai/wish/wishMes/wishMes",
+    "pages/servers/guanai/map/map",
+    "pages/servers/index/zhinan/zhinan",
+    "pages/servers/guanai/guanai",
+   "pages/servers/guanai/map/mapMes/mapMes",
+    "pages/servers/index/zhiye/zhidao/zhidao",
+    "pages/servers/index/peixun/peixun",
+    "pages/servers/index/zhiye/zhiye",
+    "pages/login/wanshan/index",
+    "pages/servers/index/zhiye/qiju",
+    "pages/servers/index/zhiye/tiyan/tiyan",
+    "pages/tababr/test1/test1",
+    "pages/tababr/test2/test2",
+    "pages/login/identification/identification",
+    "pages/index/index",
+    "pages/servers/qiye/post/post",
+    "pages/servers/qiye/qiye",
+    "pages/servers/qiye/company/company",
+    "pages/login/bangding/bangding",
+    "pages/login/wanshan/basic/basic",
+    "pages/login/shibie/index",
+    "pages/login/wanshan/jingli/jingli",
+    "pages/login/wanshan/education/education",
+    "pages/login/wanshan/peixun/peixun",
+    "pages/login/wanshan/myself/myself",
+    "pages/login/wanshan/canji/canji",
+    "pages/login/wanshan/purpose/purpose",
+    "pages/servers/index/zhiye/jigou/jigou",
+    "pages/servers/index/zhiye/jigou/xiangqing/xiangqing",
+    "pages/login/yinsi/index",
+    "pages/login/fuwu/index",
+    "pages/logs/logs",
+    "pages/servers/information/information",
+    "pages/servers/information/notice/notice",
+    "pages/servers/information/notice/details/details",
+    "pages/servers/information/workingcondition/workingcondition",
+    "pages/servers/information/workingcondition/details/details",
+    "pages/servers/information/policy/policy",
+    "pages/servers/information/policy/details/details",
+    "pages/servers/information/partybuild/partybuild",
+    "pages/servers/information/organization/organization"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示" }
+  },
+  
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText" : "WeChat",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#000",
+    "borderStyle": "black",
+    "list": [{
+        "selectedIconPath": "./image/shou1.png",
+        "iconPath": "./image/shou.png",
+        "pagePath": "pages/servers/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "./image/u2087.png",
+        "iconPath": "./image/u225.png",
+        "pagePath": "pages/servers/information/information",
+        "text": "消息公开"
+      },
+      {
+        "selectedIconPath": "/image/guanai/love.png",
+        "iconPath": "/image/guanai/love1.png",
+        "pagePath": "pages/servers/guanai/guanai",
+        "text": "关爱生活"
+      },
+      {
+        "selectedIconPath": "./image/add.png",
+        "iconPath": "./image/back.png",
+        "pagePath": "pages/tababr/test2/test2",
+        "text": "首页"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+
+}

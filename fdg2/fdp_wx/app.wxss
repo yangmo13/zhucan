@@ -72,3 +72,10 @@ page {
   -webkit-line-clamp: 2;
   
 }
+.zxx_text_overflow_1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  
+}

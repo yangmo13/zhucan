@@ -1,0 +1,20 @@
+<view class="other">
+	<view class="other_list">
+		<view class="other_li" wx:for="{{arr}}" 
+    bindtap="next"
+    data-url="{{item.url}}"
+    >
+			<view class="other_left">
+				<view class="other_img">
+					<image src="/image/zhinan/icon{{index%5+1}}.png"></image>
+				</view>
+				<view class="other_msg">{{item.txt}}</view>
+			</view>
+			<view class="other_right">
+				<image src="/image/right.png"></image>
+			</view>
+
+		</view>
+	</view>
+
+</view>

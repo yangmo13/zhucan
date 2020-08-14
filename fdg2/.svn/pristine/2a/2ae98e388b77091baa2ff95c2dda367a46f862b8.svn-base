@@ -1,0 +1,28 @@
+<view class="wish_box" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="微心愿"></header>
+	<!-- 导航部分 -->
+	<view class="wish_nav">
+		<view class="{{num==1?'wish_nav_li_hover':'wish_nav_li'}}" data-num="1" bindtap="changeList">未认领</view>
+		<view class="{{num==2?'wish_nav_li_hover':'wish_nav_li'}}" data-num="2" bindtap="changeList">认领中</view>
+		<view class="{{num==3?'wish_nav_li_hover':'wish_nav_li'}}" data-num="3" bindtap="changeList">已认领</view>
+	</view>
+	<!-- 列表部分 -->
+	<view class="wish_list">
+		<view class="wish_li" wx:for="{{list}}" bindtap="next">
+			<view class="wish_name">
+				<view class="wish_txt">{{item.txt}}</view>
+				<view class="wish_who">许愿人：{{item.name}}</view>
+			</view>
+			<view class="wish_time">
+				<view class="wish_start">发起时间 ：{{item.start}}</view>
+				<view class="wish_end"> 结束时间 ：{{item.end}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="login">
+		<btn text="登录我的微心愿"
+			bindtap="wishLogin"
+		></btn>
+	</view>
+</view>

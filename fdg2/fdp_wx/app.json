@@ -1,8 +1,10 @@
 
 {
   "pages": [
-    "pages/servers/guanai/trip/trip",
     "pages/servers/index/index",
+    "pages/servers/guanai/trip/tripMes/mapDetails/mapDetails",
+    "pages/servers/guanai/trip/tripMes/tripMes",
+    "pages/servers/guanai/trip/trip",  
     "pages/servers/guanai/wish/wishLogin/wishLogin",
     "pages/servers/guanai/wish/wish",
     "pages/servers/guanai/wish/wishMes/wishMes",
@@ -47,10 +49,15 @@
     "pages/servers/information/partybuild/partybuild",
     "pages/servers/information/organization/organization"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示" }
+  },
+  
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText" : "WeChat",
     "enablePullDownRefresh": true,
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
