@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "header":"/pages/component/header/header",
+    "load":"/pages/component/loading/loading"
+  },
+  "enablePullDownRefresh":true,
+  "onReachBottomDistance":300
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "ipt":"/pages/component/form/input",   
+     "txt":"/pages/component/form/text/input",    
+     "btn":"/pages/component/form/button/button",
+     "header":"../../../../../component/header/header"
+  }
+}

@@ -1,0 +1,132 @@
+/* pages/servers/information/partygroup/details/details.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  background: #f4f6f8;
+
+
+}
+
+.title_time {
+  background: #fff;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 40rpx;
+  margin-bottom: 2rpx;
+}
+
+.title {
+  font-size: 40rpx;
+  color: #333333;
+  font-weight: bold;
+  padding-right: 20rpx;
+  padding-top: 40rpx;
+  color: #333333;
+}
+
+.time {
+  right: 0;
+  text-align: right;
+  padding-right: 20rpx;
+}
+
+.zw_content {
+  background: #fff;
+  padding: 30rpx 20rpx 20rpx 20rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin-bottom: 20rpx;
+  color: #333333;
+}
+
+.background {
+  background: #fff;
+  padding: 20rpx;
+}
+
+.zd_content {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #333333;
+}
+
+.per {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.circleImg {
+  border-radius: 30px;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+}
+
+.name {
+  font-size: 32rpx;
+  color: #333333;
+}
+
+.ra_btn {
+  width: 130rpx;
+  height: 45rpx;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 50rpx;
+
+}
+
+.wen {
+  font-size: 30rpx;
+  color: #70B603;
+}
+
+.da {
+  font-size: 30rpx;
+  color: #00FFFF;
+}
+
+.dh_conten {
+  padding-left: 20rpx;
+  flex: 1;
+
+}
+
+.dh_msg {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding-top: 8rpx;
+}
+
+.btn_fab {
+  position: fixed;
+  width: 100%;
+  bottom: 5rpx;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.the_btn {
+  background-color: var(--blue) !important;
+  color: white !important;
+  font-size: 14px;
+  
+}
+.btn{
+  width: 120rpx;margin-right: 5px;height: 30px;line-height: 13px;
+}
+.btn_hover {
+  background-color: #5cbcb2 !important;
+
+}
+
+.input_border_botton {
+  border-bottom: 1px solid #aaa;
+  flex: 1;
+  margin: 5px;
+padding-bottom: 5px;
+}

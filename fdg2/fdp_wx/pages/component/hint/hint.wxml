@@ -1,0 +1,7 @@
+<view class="hint_box">
+
+  <view class="hint_icon">
+    <image src="http://222.32.73.38:8180/fdp/images/1_1_5_4_%E8%BF%9C%E7%A8%8B%E8%AF%8A%E7%96%97-%E9%A2%84%E7%BA%A6%E6%88%90%E5%8A%9F/u1261.svg"></image>
+  </view>
+  <view class="hint_txt">{{text}}</view>
+</view>

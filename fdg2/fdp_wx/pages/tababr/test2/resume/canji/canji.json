@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "header":"/pages/component/header/header",
+    "ipt":"/pages/component/form/input"
+  }
+}

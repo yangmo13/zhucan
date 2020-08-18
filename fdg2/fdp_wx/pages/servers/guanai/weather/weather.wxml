@@ -1,0 +1,63 @@
+<view class="weather">
+	<!-- 头部导航 -->
+	<header text="黑龙江哈尔滨"></header>
+	<!-- 背景图部分 -->
+	<view class="back_img">
+		<image src="/image/weather/2.png"></image>
+	</view>
+	<!-- 背景图小房子 -->
+	<view class="back_img2">
+		<image src="/image/weather/1.png" mode="aspectFit"></image>
+	</view>
+	<!-- 背景图湖边 -->
+	<view class="back_img3">
+		<image src="/image/weather/3.png" mode="aspectFit"></image>
+	</view>
+	<!-- 顶部天气信息 -->
+	<view class="weather_mes">
+		<!-- 温度 -->
+		<view class="temperature">
+
+			<view>15</view>
+			<view>°C</view>
+		</view>
+		<!-- 天气 -->
+		<view class="weather_name">
+			<text>雨</text>
+		</view>
+		<!-- 湿度 -->
+		<view class="humidity">
+			<text>湿度 79%</text>
+		</view>
+		<!-- 提示 -->
+		<view class="hint">
+			下雨了，出门记得带伞~
+		</view>
+		<!-- 语音 -->
+		<view class="voice_reminder" bindtap="play">
+    <image src="/image/weather/u3184.png"></image>
+    </view>
+
+	</view>
+	<!-- 这两天天气信息 -->
+	<view class="twoday">
+		<view class="twoday_box">
+			<!-- 今天天气 -->
+			<view class="wether_today">
+				<view class="today"> 今天</view>
+				<view class="today_mes">
+					<view class="today_temperature">18/11°</view>
+					<view class="today_weather">雷阵雨转小雨</view>
+				</view>
+			</view>
+			<!-- 明天天气 -->
+			<view class="wether_today">
+				<view class="today"> 明天</view>
+				<view class="today_mes">
+					<view class="today_temperature">18/11°</view>
+					<view class="today_weather">雷阵雨转小雨</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,63 @@
+<!--pages/servers/information/partygroup/details/details.wxml-->
+<view>
+	<!-- 头部 -->
+	<header text="党群心连心详情" isNew="{{isNew}}"></header>
+	<scroll-view>
+
+		<view class="title_time" style="padding-top:{{height}}px;">
+			<!-- 标题 -->
+			<view class="title"><text>{{arr.title}}</text></view>
+			<!-- 来源 -->
+			<view class="time">2020-05-22</view>
+		</view>
+		<!-- 追问着问题描述 -->
+		<view class="zw_content"><text >{{arr.zwwtms}}</text></view>
+		<!-- 追答着描述 -->
+		<view class="background">
+
+			<view class="layout_horizontal_center">
+				<image class="circleImg" src="{{arr.heard_img}}"></image>
+				<view>
+					<view class="name" style=""> 送大鹏 </view>
+					<view> 2020-5-22 12：23：50 </view>
+				</view>
+			</view>
+
+			<!-- 追答者问题描述 -->
+			<view class="zd_content"><text >{{arr.zwwtms}}</text></view>
+
+			<!-- 对话 -->
+			<view class="background ">
+				<view wx:for="{{arr.dh}}" data-msg="{{item}}">
+
+					<view wx:if="{{item.wd=='追问'}}" class=" layout_horizontal" style="padding-top:16rpx">
+						<view class="ra_btn wen"> {{item.wd}}</view>
+						<view class="dh_conten">
+							<view> {{item.time}} </view>
+							<view class="dh_msg"> {{item.msg}} </view>
+						</view>
+					</view>
+
+					<view wx:else if="{{item.wd=='追答'}}" class=" layout_horizontal" style="padding-top:16rpx">
+						<view class="ra_btn da"> {{item.wd}}</view>
+						<view class="dh_conten">
+							<view> {{item.time}} </view>
+							<view class="dh_msg"> {{item.msg}} </view>
+						</view>
+					</view>
+
+				</view>
+			</view>
+
+		</view>
+	</scroll-view>
+	<!-- 留言板 -->
+	<view>
+		<view class="layout_horizontal btn_fab" style=" background: #fff">
+			<input class=" input_border_botton"></input>
+			<cover-view>
+				<button class="the_btn" bindtap="change" style="width: 120rpx;margin-right: 5px;height: 30px;line-height: 13px;" hover-class="btn_hover">追问</button>
+			</cover-view>
+		</view>
+	</view>
+</view>

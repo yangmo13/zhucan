@@ -1,22 +1,30 @@
-
 {
   "pages": [
     "pages/servers/index/index",
+    "pages/tababr/test2/resume/resume",
+    "pages/tababr/test2/resume/purpose/purpose",
+    "pages/tababr/test2/resume/basic/basic",
+    "pages/servers/guanai/star/starMes/starMes",
+    "pages/servers/guanai/trip/nodriver/nodriver",
+    "pages/servers/guanai/literature/literaMes/literaMes",
+    "pages/servers/guanai/literature/literature",
+    "pages/servers/guanai/star/star",
+    "pages/servers/guanai/weather/weather",
     "pages/servers/guanai/trip/tripMes/mapDetails/mapDetails",
     "pages/servers/guanai/trip/tripMes/tripMes",
-    "pages/servers/guanai/trip/trip",  
+    "pages/servers/guanai/trip/trip",
     "pages/servers/guanai/wish/wishLogin/wishLogin",
     "pages/servers/guanai/wish/wish",
     "pages/servers/guanai/wish/wishMes/wishMes",
     "pages/servers/guanai/map/map",
     "pages/servers/index/zhinan/zhinan",
     "pages/servers/guanai/guanai",
-   "pages/servers/guanai/map/mapMes/mapMes",
+    "pages/servers/guanai/map/mapMes/mapMes",
     "pages/servers/index/zhiye/zhidao/zhidao",
     "pages/servers/index/peixun/peixun",
     "pages/servers/index/zhiye/zhiye",
     "pages/login/wanshan/index",
-    "pages/servers/index/zhiye/qiju",
+    "pages/servers/index/qiju/qiju",
     "pages/servers/index/zhiye/tiyan/tiyan",
     "pages/tababr/test1/test1",
     "pages/tababr/test2/test2",
@@ -47,17 +55,23 @@
     "pages/servers/information/policy/policy",
     "pages/servers/information/policy/details/details",
     "pages/servers/information/partybuild/partybuild",
-    "pages/servers/information/organization/organization"
+    "pages/servers/information/organization/organization",
+    "pages/servers/information/partygroup/partygroup",
+    "pages/servers/information/partygroup/details/details",
+    "pages/servers/information/partygroup/feedback/feedback"
+
   ],
   "permission": {
     "scope.userLocation": {
-      "desc": "你的位置信息将用于小程序位置接口的效果展示" }
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   },
-  
+
+
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText" : "WeChat",
+    "navigationBarTitleText": "WeChat",
     "enablePullDownRefresh": true,
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
@@ -94,5 +108,4 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
-
 }

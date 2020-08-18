@@ -24,15 +24,15 @@ Page({
       }, {
         src:"/image/guanai/u2730.png",
         txt:"无障碍气象",
-        url:""
+        url:"./weather/weather"
       }, {
         src:"/image/guanai/u2732.png",
         txt:"文体活动",
-        url:""
+        url:"./literature/literature"
       }, {
         src:"/image/guanai/u2735.png",
         txt:"自强之星",
-        url:""
+        url:"./star/star"
       },
     ],
     list:[

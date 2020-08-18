@@ -1,0 +1,76 @@
+package com.fdp.service;
+
+
+import com.jfinal.aop.Aop;
+import com.jfinal.kit.Kv;
+import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.Page;
+import com.jfinal.plugin.activerecord.Record;
+import com.sloth.common.DataFilter;
+import com.sloth.model.Dict;
+import com.sloth.service.DictService;
+import com.fdp.model.ContentTmp;
+import com.fdp.model.TinyWishTmp;
+
+public class TinyWishTmpService {
+	private TinyWishTmp tinyWishTmpDao = TinyWishTmp.dao;
+	private DictService dictService=new DictService();
+
+	public void save(TinyWishTmp tinyWishTmp) {
+		tinyWishTmp.remove("ID");
+		tinyWishTmp.save();
+	}
+
+	public void del(Object id) {
+		tinyWishTmpDao.deleteById(id);
+	}
+
+	public void update(TinyWishTmp tinyWishTmp) {
+		tinyWishTmp.update();
+	}
+
+	public TinyWishTmp findById(Object id) {
+		return tinyWishTmpDao.findById(id);
+	}
+
+	public Page<TinyWishTmp> find(TinyWishTmp tinyWishTmp, int pageNo, int pageSize) {
+		Kv kv = Kv.by("tinyWishTmp", tinyWishTmp);
+		Page<TinyWishTmp> tinyWishTmps = tinyWishTmpDao.paginate(pageNo, pageSize, tinyWishTmpDao.getSqlPara("tinyWishTmp.find", kv));
+		return tinyWishTmps;
+	}
+
+	public Page<TinyWishTmp> find(TinyWishTmp tinyWishTmp,ContentTmp contentTmp, int pageNo, int pageSize, DataFilter dataFilter) {
+		Kv kv = Kv.by("contentTmp", contentTmp).set("tinyWishTmp", tinyWishTmp);
+		dataFilter.preFilter(kv);
+		Page<TinyWishTmp> tinyWishTmps = tinyWishTmpDao.paginate(pageNo, pageSize, tinyWishTmpDao.getSqlPara("tinyWishTmp.find", kv));
+		return tinyWishTmps;
+	}
+	
+	/**
+	 * 详情
+	 * @param id
+	 * @return
+	 */
+	public Record findById(Integer id) {
+		Kv kv = Kv.by("ID", id);
+		Record findFirst = Db.template("tinyWishTmp.find", kv).findFirst();
+		
+		//残疾类型
+		String DISABILITY_TYPEStr="";		
+		//String gender = dictService.findByValue("fdp.disabilityType","1").getTitle();
+		
+		String[] DISABILITY_TYPESplit=findFirst.get("DISABILITY_TYPE").toString().split(",");
+		for (int i = 0; i < DISABILITY_TYPESplit.length; i++) {
+			DISABILITY_TYPEStr+=dictService.findByValue("fdp.disabilityType",DISABILITY_TYPESplit[i]).getTitle()+",";
+		}
+		
+		DISABILITY_TYPEStr=DISABILITY_TYPEStr.substring(0,DISABILITY_TYPEStr.length() - 1);		
+		findFirst.set("DISABILITY_TYPE", DISABILITY_TYPEStr);
+		
+		//残疾等级
+		String disabilityLevel=dictService.findByValue("fdp.disabilityLevel",findFirst.get("DISABILITY_LEVEL").toString()).getTitle();
+		findFirst.set("DISABILITY_LEVEL", disabilityLevel);
+		
+		return findFirst;
+	}
+}

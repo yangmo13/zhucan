@@ -1,0 +1,25 @@
+<!--pages/servers/information/partygroup/partygroup.wxml-->
+<view class="service_box" style="padding-top:{{height}}px">
+	<header text="党群心连心" isNew="{{isNew}}" back_age="{{false}}" back="{{false}}"></header>
+
+	<!-- 列表 -->
+
+	<view wx:for="{{arr}}" data-msg="{{item}}" bindtap="Xiangqing">
+		<view style="height:20rpx"></view>
+		<view style="padding:26rpx;background: #fff">
+			<view class="li_post">
+				<text class="li_post_name zxx_text_overflow_1" >{{item.msg}}</text>
+				<view class="li_post_money">{{item.name}}</view>
+			</view>
+      	<view class="li_post" style=" padding-top: 20rpx;">
+				<text class='li_post_type bottom_label{{item.type=="未解决"?"red":""||item.type=="解决中"?"greend":""}}'>{{item.type}}</text>
+				<view class="li_post_time">{{item.time}}</view>
+			</view>
+		</view>
+
+	</view>
+	<!-- 底部按钮 -->
+		<cover-view class="btn_fab">
+			<button class="the_btn" bindtap="fankui" hover-class="btn_hover">我有问题要反馈</button>
+		</cover-view>
+</view>

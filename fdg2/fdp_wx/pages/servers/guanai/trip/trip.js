@@ -29,9 +29,18 @@ Page({
         num:2,
         level:"二级残疾"
       },
-    ]
+    ],
+    //判断是否为司机
+    isdriver:false
   },
   jiedan(){
+    let isdriver = this.data.isdriver
+    
+    if(isdriver==true){
+      wx.navigateTo({
+        url: './tripMes/tripMes',
+      })
+    }else{
     wx.showModal({
       title:"信息提示",
       cancelColor: 'cancelColor',
@@ -40,9 +49,15 @@ Page({
       confirmColor:"#2e8ded",
       success:(res)=>{
         console.log(res,"OKKOO")
-        
+        if(res.confirm){
+          wx.redirectTo({
+            url: './nodriver/nodriver',
+          })
+        }
       }
     })
+  }
+
   },
   /**
    * 生命周期函数--监听页面加载

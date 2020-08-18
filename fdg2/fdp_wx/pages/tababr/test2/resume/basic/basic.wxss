@@ -1,0 +1,32 @@
+/* pages/login/wanshan/basic/basic.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.basic{
+ position: relative;
+ height: 95%;
+}
+.basic_box{
+  padding-top: 20rpx;
+}
+.sunmit{
+  position: absolute;
+  bottom: 100rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#sub_btn{
+  width: 650rpx;
+  height: 80rpx;
+  background-color: var(--blue);
+  color: white;
+  font-size: 34rxp;
+  line-height: 48rpx;
+  text-align: center;
+  font-weight: 500;
+  
+}

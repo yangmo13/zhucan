@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html",libs=["layui","font-awesome",'common'])
+</head>
+<body>
+<style>
+.status {
+	position: absolute;
+    right: 10px;
+    top:10px;
+}
+.all{
+ padding:20px;
+}
+.title{
+text-align: center;
+}
+.footer{
+margin-top:15px;text-align: center;
+}
+</style>
+<div class="all" >
+		<div class="status">
+			#if(contentTmp.STATUS == '3')
+			<img src="#(base)/img/shenhe.png">
+			#else
+			<img src="#(base)/img/fabu.png">
+			#end
+		</div>
+	</div>
+	
+	<div class="title">
+		<div class="status">
+			#if(contentTmp.STATUS == '3')
+			<img src="#(base)/img/shenhe.png">
+			#else
+			<img src="#(base)/img/fabu.png">
+			#end
+		</div>
+	</div>
+	<form class="layui-form layui-form-pane">
+		<input type="hidden" id="refDeptId" name="orgTop.refDeptId" value="#(orgTmp.refDeptId??)">
+		<input type="hidden" id="id" name="contentTmp.id" value="#(contentTmp.id??)">
+		<input type="hidden" id="roles" name="orgTop.roles" value="#(orgTmp.roles??)">
+		<input type="hidden" id="logo" name="orgTop.logo">
+		<input type="hidden" id="x" name="orgTop.x" value="#(orgTmp.x??)">
+		<input type="hidden" id="y" name="orgTop.y" value="#(orgTmp.y??)">
+		<input type="hidden" id="hidAddr"  name="orgTop.addr"  value="#(orgTmp.addr??)">
+		<div class="layui-col-md12">
+			<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+					<legend>基本信息</legend>
+			</fieldset>
+		</div>
+		<div class="layui-upload layui-col-md1 " style="float:left">
+		  企业LOGO
+		  <div class="layui-upload-list">
+		    <img src="#(orgTmp.logo??)" class="layui-upload-img" id="demo1">
+		    <p id="demoText"></p>
+		  </div>
+		</div>   
+		<div class="layui-col-md5">
+		<div class="layui-form-item">
+			<label class="layui-form-label">名称</label>
+			<div class="layui-input-block">
+				<input type="text" name="contentTmp.title" autocomplete="off" placeholder="请输入名称" class="layui-input" value="#(contentTmp.title??)">
+			</div>
+		</div>
+		</div>
+	    <div class="layui-col-md6">		
+		<div class="layui-form-item">
+			<label class="layui-form-label">所属行业</label>
+				<div class="layui-input-block">
+					#widget("fdp.industry",type="select",please=true,id="industry",name="orgTop.industry",value=orgTmp.industry??,id="industry")
+				</div>
+		</div>
+		</div>
+			    <div class="layui-col-md5">
+		<div class="layui-form-item">
+			<label class="layui-form-label">规模</label>
+			<div class="layui-input-block">
+				#widget("fdp.orgSize",type="select",please=true,id="orgSize",name="orgTop.size",value=orgTmp.size??)
+			</div>
+		</div>
+		</div>
+			    <div class="layui-col-md6">
+		<div class="layui-form-item">
+			<label class="layui-form-label layui-required">性质</label>
+			<div class="layui-input-block">
+				#widget("fdp.orgNature",type="select",please=true,id="orgNature",name="orgTop.nature",value=orgTmp.nature??)
+			</div>
+		</div>
+		</div>
+			    <div class="layui-col-md5">
+		<div class="layui-form-item">
+			<label class="layui-form-label">联系人</label>
+			<div class="layui-input-block">
+				<input type="text" name="orgTop.linkman" autocomplete="off" placeholder="请输入联系人姓名" class="layui-input" value="#(orgTmp.linkman??)">
+			</div>
+		</div>
+		</div>
+		<div class="layui-col-md6">
+		<div class="layui-form-item">
+			<label class="layui-form-label">联系电话</label>
+			<div class="layui-input-block">
+				<input type="text" name="orgTop.tel" autocomplete="off" placeholder="请输入联系电话" class="layui-input" value="#(orgTmp.tel??)">
+			</div>
+		</div>
+		</div>
+			   
+		<div class="layui-form-item layui-col-md-offset1">
+		<div  class="">* 以下信息企业不能自主修改，只能由管理员修改</div>
+			<label class="layui-form-label ">分配账号</label>
+			<div class="layui-input-block">
+				<input type="text" name="orgTop.username" autocomplete="off" placeholder="请输入分配账号" class="layui-input" value="#(orgTmp.username??)" >
+			</div>
+		</div>
+		<div class="layui-form-item layui-col-md-offset1">
+			<label class="layui-form-label">类别</label>
+			<div class="layui-input-block" id="category" >
+			
+			</div>
+		</div>
+		
+		<div class="layui-col-md12">
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+				<legend>地址</legend>
+		</fieldset>
+		</div>
+		<div><span id="addr"></span></div>
+		
+		<div class="layui-col-md3"   style="float:left">
+		<div class="layui-form-item">
+			<label class="layui-form-label">坐标</label>
+			<div class="layui-input-block" >
+				<input type="text" autocomplete="off" placeholder="在地图上选择" class="layui-input"   id="coord">
+			</div>
+		</div>
+		</div>
+		<div class="layui-col-md12">
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+				<legend>简介</legend>
+		</fieldset>
+		<div>#(contentTmp.TXT??)</div>
+		</div>
+	</form>
+	<div class="footer">
+		#if(contentTmp.STATUS == '4') 
+		<button  class="layui-btn  layui-btn-lg" type="button" onclick="edit('#(id)')">编辑</button>
+		#end
+		<button  class="layui-btn  layui-btn-lg" type="button" onclick="back()">返回</button>
+	</div>
+</div>
+
+
+
+<script>
+var form = layui.form;
+form.render();
+function edit(id){
+	href('#(base)/contentTmp/goEdit?id='+id)
+}
+//初始化坐标
+layui.use('layer',function(){
+var layer = layui.layer;
+    layer.ready(function(){
+    	var hidaddr=$("#hidAddr").val()
+    	if(hidaddr!=""&&hidaddr!=undefined&&hidaddr!=null){
+    	 	$("#addr").html(hidaddr);
+    		var x = $("#x").val();
+    		$("#coord").val(x+","+$("#y").val());
+    	}
+    	findCategory();
+    });  
+});
+//坐标录入
+function showAddr(addrseall){
+   	console.log(addrseall);
+   	$("#addr").html(addrseall.address);
+   	$("#hidAddr").val(addrseall.address);
+	$("#mapselect").val(addrseall.location.lat+","+addrseall.location.lng);
+	$("#x").val(addrseall.location.lat);
+	$("#y").val(addrseall.location.lng);
+}
+$('input').attr("disabled","disabled")
+$('select').attr("disabled","disabled")
+$('textarea').attr("disabled","disabled")
+</script>
+</body>

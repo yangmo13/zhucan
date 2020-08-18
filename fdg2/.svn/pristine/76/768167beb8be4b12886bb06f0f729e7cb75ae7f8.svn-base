@@ -1,0 +1,47 @@
+<!--pages/servers/information/partygroup/feedback/feedback.wxml-->
+<view>
+	<!-- 头部 -->
+	<header text="我得问题要反馈" isNew="{{isNew}}"></header>
+  <view style="padding-top:{{height}}px;">
+		<view class="checked_box" >
+		<view>
+			<!-- 输入框 -->
+			<!-- 身份证扫描 -->
+			<view class="header_btn">
+				<view class="header_btn_top">
+					<image src="/image/card.png"></image>
+				</view>
+				<view class="header_btn_right">
+					点击此处扫描身份证快速录入信息
+				</view>
+			</view>
+			<!-- 姓名 -->
+			<view>
+				<ipt text="姓名" isRed="true" iswrong="{{test_name}}" data-msg="form.name" msg="{{form.name}}" data-test="test_name" bind:blur="change"></ipt>
+			</view>
+			<!-- 身份证号 -->
+			<view>
+				<ipt text="身份证号" isRed="true" iswrong="{{test_idcard}}" data-msg="form.idcard" msg="{{form.idcard}}" data-test="test_idcard" bind:blur="change"></ipt>
+			</view>
+	<!-- 手机号 -->
+			<view>
+				<ipt text="手机号" isRed="true" isRed="true" iswrong="{{test_phone}}" data-msg="form.name" msg="{{form.name}}" data-test="test_phone" bind:blur="change"></ipt>
+			</view>
+      	<!-- 标题 -->
+			<view>
+				<ipt text="标题" isRed="true" isRed="true" iswrong="{{test_linkman}}" data-msg="form.linkman" msg="{{form.linkman}}" data-test="test_linkman" bind:blur="change"></ipt>
+			</view>
+			<!-- 需求类型 -->
+				<view class="needDemand">
+					<txt text="需求类型" isRed="{{true}}"></txt>
+				</view>
+		
+		
+			<!-- 提交 -->
+			<view class="tijiao">
+				<btn text="提交"></btn>
+			</view>
+		</view>
+	</view>
+  </view>
+</view>

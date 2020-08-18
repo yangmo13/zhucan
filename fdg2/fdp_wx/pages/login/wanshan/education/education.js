@@ -80,38 +80,70 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let data =JSON.parse( options.form)
+
+    let num = options.num;
+
+    this.setData({
+      num: num
+    })
+    let data = JSON.parse(options.form)
     let form = this.data.form
-  
-      Object.keys(form).forEach(key=>{
-        form[key]=data[key]
+    if (num != -1) {  
+      console.log(data.education[num])
+      Object.keys(form).forEach(key => {
+        form[key] = data.education[num][key]
       })
-    this.setData({
-      height: App.globalData.navHeight,
-      form:form,
-      old_form:data
-    })
-    
+      this.setData({
+        form: form,
+        height: App.globalData.navHeight,
+        old_form: data
+      })
+      console.log(this.data.form)
+
+    }else{
+      this.setData({
+        height: App.globalData.navHeight,
+        old_form: data
+      })
+    }
+
   },
-  next(){
+  next() {
+    let num = this.data.num
     let new_form = this.data.old_form
-    let data =this.data.form
-    Object.keys(new_form).forEach(key=>{
-      if(data[key]){
-        new_form[key]=data[key]
-      }
+    let data = this.data.form
+  let length = new_form.education.length
+    console.log(new_form.education.length,"lhk")
+    if(num!=-1){
+      console.log(data, '第一个form')
+      console.log(new_form, 'new_form')
       
-    })
-
-    this.setData({
-      old_form:new_form
-    })
-
-    let form = JSON.stringify(this.data.old_form)
-    console.log(form)
-    wx.redirectTo({
-      url: `../index?form=${form}`,
-    })
+      new_form.education[num]=data
+      this.setData({
+        old_form:new_form
+      })
+      console.log(this.data.old_form)
+      this.setData({
+        old_form: new_form
+      })
+  
+      let form = JSON.stringify(this.data.old_form)
+      console.log(form, '4555454s')
+      wx.redirectTo({
+        url: `../index?form=${form}`,
+      })
+    }else{
+      
+      new_form.education.push(data)
+      this.setData({
+        old_form:new_form
+      })
+      let form = JSON.stringify(this.data.old_form)
+      wx.redirectTo({
+        url: `../index?form=${form}`,
+      })
+    }
+  
   },
 
   /**

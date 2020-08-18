@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>#include("/common/include.html", libs=["layui","font-awesome"])
+</head>
+<body>
+<form class="layui-form" style="padding-top: 10px;" id="search-form">
+	<div class="layui-form-item">
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">姓名</label>
+			<div class="layui-input-inline">
+				<input type="text" name="realname" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">认领状态</label>
+			<div class="layui-input-inline">
+				#widget("fdp.takeStatus",name="takeStatus",value=takeStatus??0,type="select", please=true,class="search_select")
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">认领人</label>
+			<div class="layui-input-inline">
+				<input type="text" name="takerName" autocomplete="off" class="layui-input search_input">
+			</div>
+		</div>
+	</div>
+</form>
+<table class="layui-hide" id="tinyWishTmpTable" lay-filter="tinyWishTmpTable"></table>
+<script type="text/html" id="toolbarTpl">
+<div style="float:left;">
+#permission('tinyWishTmp:add')
+<button class="layui-btn" type="button" onclick="goAdd();">添加</button>
+#end
+</div>
+<div style="float:right;">
+<button class="layui-btn" type="button" onclick="submitForm();">查询</button>
+<button class="layui-btn" type="reset" onclick="$('#search-form')[0].reset();">重置</button>
+</div>
+</script>
+<script id="optTpl" type="text/html">
+	#permission('tinyWishTmp:detail')
+	<a lay-event="detail" title="详情" style="cursor:pointer;"><i class="fa fa-edit"></i></a>
+	#end
+	#permission('tinyWishTmp:close')
+	<a lay-event="close" title="关闭" style="cursor:pointer;"><i class="fa fa-edit"></i></a>
+	#end
+	#permission('tinyWishTmp:del')
+	<a lay-event="del" title="删除" style="cursor:pointer;"><i class="fa fa-trash-o"></i></a>
+	#end
+</script>
+<script>
+#include("tinyWishTmp_list.js")
+</script>
+</body>

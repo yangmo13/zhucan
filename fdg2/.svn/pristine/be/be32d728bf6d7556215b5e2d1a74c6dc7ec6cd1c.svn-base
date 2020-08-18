@@ -1,0 +1,99 @@
+page {
+  width: 100%;
+  height: 100%;
+  background: #f4f6f8;
+
+
+}
+
+.service_box {
+  width: 100%;
+  padding-top: 100rpx;
+
+}
+
+.li_post {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+ 
+}
+
+.li_post .li_post_name {
+  font-size: 32rpx;
+  color: #333333;
+  flex: 1;
+}
+
+.li_post .li_post_money {
+  font-size: 28rpx;
+  color: #555;
+}
+.li_post .li_post_type {
+
+
+}
+.li_post .li_post_time {
+  font-size: 24rpx;
+  color: #555;
+}
+.bottom_label{
+  width: 110rpx;
+  height: 50rpx;
+  border-radius: 10rpx;
+  padding: 0px 20rpx 0px 20rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  margin-right: 10rpx;
+  background-color: #c3c3c3;
+  color: white;
+}
+.bottom_labelred{
+  width: 110rpx;
+  height: 50rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  margin-right: 10rpx;
+  background-color: red;
+  color: white;
+  padding: 0px 20rpx 0px 20rpx;
+  text-align: center;
+}
+.bottom_labelgreend{
+  width: 110rpx;
+  height: 50rpx;
+  border-radius: 10rpx;
+  padding: 0px 20rpx 0px 20rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  margin-right: 10rpx;
+  background-color: #25b2b7;
+  color: white;
+}
+.btn_fab{
+  position: fixed;
+  width: 100%;
+  bottom: 60rpx;
+  z-index: 9999;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  }
+  
+  .the_btn{
+    width: 600rpx !important;
+    height: 70rpx !important;
+    background-color: var(--blue) !important;
+    color: white !important;
+    font-weight: 400 !important;
+    line-height: 40rpx !important;
+  }
+  .btn_hover{
+    background-color: #5cbcb2 !important;
+  }

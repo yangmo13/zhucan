@@ -6,46 +6,58 @@ Page({
    * 页面的初始数据
    */
   data: {
-    old_form:"",
-    form:{
+    old_form: "",
+    form: {
       //单位名称
-      'company':'',
-       //工作岗位
-       'job_station': "",
-       //入职时间
- 
-       //在职时间开始
-       'job_start': "",
-       //在职时间结束
-       'job_end': "",
- 
-       //工作职责
-       'responsibility': "",
+      'company': '',
+      //工作岗位
+      'job_station': "",
+      //入职时间
+
+      //在职时间开始
+      'job_start': "",
+      //在职时间结束
+      'job_end': "",
+
+      //工作职责
+      'responsibility': "",
     },
+    'express': [{
+      'company': "xxx清洁服务公司",
+      //工作岗位
+      'job_station': "保洁",
+      //在职时间开始
+      'job_start': "2010-08",
+      //在职时间结束
+      'job_end': "2020-01",
+      //职责
+      'responsibility': "负责xx小区及xx街道道路及环境卫生",
+    }],
+    num: -1,
     height: 0,
-    isnew:true
+    isnew: true
   },
 
-  iptChnage(e){
+  iptChnage(e) {
     console.log(15155)
     let msg = e.currentTarget.dataset.msg
-    let start ='form.job_start'
-    let end ='form.job_end'
+    let start = 'form.job_start'
+    let end = 'form.job_end'
 
-    if(e.detail.start){
+    if (e.detail.start) {
       this.setData({
-        [start]:e.detail.start,
-        [end]:e.detail.end,
+        [start]: e.detail.start,
+        [end]: e.detail.end,
       })
-    }else{
-      this.setData({  
-        [msg]:e.detail
+    } else {
+      this.setData({
+        [msg]: e.detail
       })
     }
-   
+
 
     console.log(this.data.form)
-    
+
   },
 
 
@@ -53,39 +65,70 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let data =JSON.parse( options.form)
+
+    let num = options.num;
+
+    this.setData({
+      num: num
+    })
+    let data = JSON.parse(options.form)
     let form = this.data.form
-  
-      Object.keys(form).forEach(key=>{
-        form[key]=data[key]
+    if (num != -1) {  
+      console.log(data.express[num])
+      Object.keys(form).forEach(key => {
+        form[key] = data.express[num][key]
       })
-    this.setData({
-      height: App.globalData.navHeight,
-      form:form,
-      old_form:data
-    })
-    
+      this.setData({
+        form: form,
+        height: App.globalData.navHeight,
+        old_form: data
+      })
+      console.log(this.data.form)
+
+    }else{
+      this.setData({
+        height: App.globalData.navHeight,
+        old_form: data
+      })
+    }
+
   },
-  next(){
+  next() {
+    let num = this.data.num
     let new_form = this.data.old_form
-    let data =this.data.form
-    console.log(data,'第一个form')
-    Object.keys(new_form).forEach(key=>{
-      if(data[key]){
-        new_form[key]=data[key]
-      }
+    let data = this.data.form
+  let length = new_form.express.length
+    console.log(new_form.express.length,"lhk")
+    if(num!=-1){
+      console.log(data, '第一个form')
+      console.log(new_form, 'new_form')
       
-    })
-
-    this.setData({
-      old_form:new_form
-    })
-
-    let form = JSON.stringify(this.data.old_form)
-    console.log(form,'4555454s')
-    wx.redirectTo({
-      url: `../index?form=${form}`,
-    })
+      new_form.express[num]=data
+      this.setData({
+        old_form:new_form
+      })
+      console.log(this.data.old_form)
+      this.setData({
+        old_form: new_form
+      })
+  
+      let form = JSON.stringify(this.data.old_form)
+      console.log(form, '4555454s')
+      wx.redirectTo({
+        url: `../index?form=${form}`,
+      })
+    }else{
+      
+      new_form.express.push(data)
+      this.setData({
+        old_form:new_form
+      })
+      let form = JSON.stringify(this.data.old_form)
+      wx.redirectTo({
+        url: `../index?form=${form}`,
+      })
+    }
+  
   },
 
   /**

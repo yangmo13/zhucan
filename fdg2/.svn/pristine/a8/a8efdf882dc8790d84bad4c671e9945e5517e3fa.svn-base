@@ -1,0 +1,18 @@
+
+<view>
+<!-- 头部 -->
+<header text="政策法规详情" isNew="{{isNew}}"></header>
+<view class="xiangqing" style="padding-top:{{height}}px">
+<!-- 标题 -->
+<view class="header_topic content"><text>{{arr.title}}</text></view>
+<!-- 来源 -->
+<view class="laiyuan">来源：{{arr.laiyuan}} {{arr.time}}</view>
+<!-- 底部详情介绍 -->
+  <view class="bottom_box">
+  <rich-text nodes="{{arr.text}}">
+  
+  </rich-text>
+  </view>
+  </view>
+  	<wux-fab-button direction="vertical"  spaceBetween="10" sAngle="{{ sAngle }}" buttons="{{ buttons }}" bind:change="onChange" bind:click="onClick" ></wux-fab-button>
+</view>

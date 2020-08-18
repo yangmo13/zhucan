@@ -1,0 +1,14 @@
+<view class="star" style="padding-top:{{height}}px">
+  <header text="自强之星"></header>
+  <view class="star_box">
+    <view class="star_li" wx:for="{{arr}}">
+        <view class="star_top">
+        <image src="/image/other/u3396.svg"></image>
+        </view>
+        <view class="star_mes">姓名</view>
+    </view> 
+    <view class="isload" wx:if="{{isloading}}">
+      <load></load>
+    </view>
+  </view>
+</view>

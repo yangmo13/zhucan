@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>#include("/common/include.html", libs=["layui"])
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+<title>传递事件参数</title>
+
+<style type="text/css">
+
+*{
+
+    margin:0px;
+
+    padding:0px;
+
+}
+
+body, button, input, select, textarea {
+
+    font: 12px/16px Verdana, Helvetica, Arial, sans-serif;
+
+}
+
+p{
+
+    width:603px;
+
+    padding-top:3px;
+
+    overflow:hidden;
+
+}
+
+#container{
+
+min-width:600px;
+
+min-height:600px;
+
+}
+
+</style>
+
+<script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=VVOBZ-JXDCK-DBSJ7-AXHWL-SX4ZZ-76F5L"></script>
+
+<script>
+
+
+</script>
+
+</head>
+
+<body onload="init()">
+
+<div id="container" style="width: 500px;height: 500px;margin: 0 auto;"></div>
+
+<script type="text/javascript">
+#include("contentTmp_map.js")
+</script>
+</body>
+
+</html>
+

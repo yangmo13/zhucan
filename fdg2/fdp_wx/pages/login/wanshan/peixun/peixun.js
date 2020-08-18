@@ -90,38 +90,70 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    let num = options.num;
+
+    this.setData({
+      num: num
+    })
     let data = JSON.parse(options.form)
     let form = this.data.form
+    if (num != -1) {  
+      console.log(data.train[num])
+      Object.keys(form).forEach(key => {
+        form[key] = data.train[num][key]
+      })
+      this.setData({
+        form: form,
+        height: App.globalData.navHeight,
+        old_form: data
+      })
+      console.log(this.data.form)
 
-    Object.keys(form).forEach(key => {
-      form[key] = data[key]
-    })
-    this.setData({
-      height: App.globalData.navHeight,
-      form: form,
-      old_form: data
-    })
+    }else{
+      this.setData({
+        height: App.globalData.navHeight,
+        old_form: data
+      })
+    }
 
   },
   next() {
+    let num = this.data.num
     let new_form = this.data.old_form
     let data = this.data.form
-    Object.keys(new_form).forEach(key => {
-      if (data[key]) {
-        new_form[key] = data[key]
-      }
-
-    })
-
-    this.setData({
-      old_form: new_form
-    })
-
-    let form = JSON.stringify(this.data.old_form)
-    console.log(form)
-    wx.redirectTo({
-      url: `../index?form=${form}`,
-    })
+  let length = new_form.train.length
+    console.log(new_form.train.length,"lhk")
+    if(num!=-1){
+      console.log(data, '第一个form')
+      console.log(new_form, 'new_form')
+      
+      new_form.train[num]=data
+      this.setData({
+        old_form:new_form
+      })
+      console.log(this.data.old_form)
+      this.setData({
+        old_form: new_form
+      })
+  
+      let form = JSON.stringify(this.data.old_form)
+      console.log(form, '4555454s')
+      wx.redirectTo({
+        url: `../index?form=${form}`,
+      })
+    }else{
+      
+      new_form.train.push(data)
+      this.setData({
+        old_form:new_form
+      })
+      let form = JSON.stringify(this.data.old_form)
+      wx.redirectTo({
+        url: `../index?form=${form}`,
+      })
+    }
+  
   },
 
   /**

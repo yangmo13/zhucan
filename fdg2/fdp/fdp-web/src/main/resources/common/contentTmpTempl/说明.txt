@@ -1,0 +1,19 @@
+内容管理相关公用模板
+目录说明
+	view_edit -- 编辑类
+			 input.html -- 输入框模板
+			 		 	用法:#@input(map)
+						参数:col:栅格列,
+						    type:input类型,
+						    name:inputname,
+						    id:inputid,
+						    value:初始化值,
+						    verify:校验规则,
+						    title:标题
+						    extAttrs:其他属性 
+			 uploadImg.html -- 缩略图模板
+			 		  	 用法:#@uploadImg(url)
+			 		   	 参数:url:为图片回显地址,如没有则赋值空串' '
+	view_list -- 列表类
+			 search.html -- 搜索框
+			 table.html -- 表格

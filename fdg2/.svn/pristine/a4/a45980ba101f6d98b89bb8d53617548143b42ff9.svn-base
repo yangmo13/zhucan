@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html",libs=["layui","font-awesome",'common'])
+</head>
+<body>
+<style>
+.status {
+	position: absolute;
+    right: 10px;
+    top:10px;
+}
+.all{
+ padding:20px;
+}
+.title{
+text-align: center;
+}
+.footer{
+margin-top:15px;text-align: center;
+}
+</style>
+<div class="all" >
+	<div class="title">
+		<h2>#(tinyWishTmp.TITLE??)</h2>
+		<div class="status">
+			<!-- 图片位置 -->
+		</div>
+	</div>
+	<div>
+		<table>
+			<tr>
+				<td>许愿人：#(tinyWishTmp.REALNAME)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>身份证号：#(tinyWishTmp.ID_CARD)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>残疾类型：#(tinyWishTmp.DISABILITY_TYPE)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr>
+				<td>残疾等级：#(tinyWishTmp.DISABILITY_LEVEL)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>联系人：#(tinyWishTmp.LINKMAN)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>联系电话：#(tinyWishTmp.TEL)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+			<tr>
+				<td>发起时间：#(tinyWishTmp.START_DATE)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td>结束时间：#(tinyWishTmp.END_DATE)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+	<div class="footer">
+		
+	</div>
+</div>
+
+
+
+<script>
+function edit(id){
+	href('#(base)/articleTmpHref/goNoticeEdit?id='+id)
+}
+</script>
+</body>

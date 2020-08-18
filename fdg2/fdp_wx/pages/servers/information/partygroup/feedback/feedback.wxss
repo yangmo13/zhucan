@@ -1,0 +1,67 @@
+/* pages/servers/information/partygroup/feedback/feedback.wxss */
+page {
+  width: 100%;
+  height: 100%;
+
+}
+
+.checked_box {
+  width: 100%;
+  background-color: white;
+
+}
+
+.header_btn {
+  display: flex;
+  padding: 30rpx 0;
+  align-items: center;
+  color: #aaa;
+  background-color: #f3f3f3;
+}
+
+.header_btn_right {
+  margin-left: 30rpx;
+}
+
+#btn {
+  margin: 70rpx 0;
+
+}
+
+.header_btn_top {
+  width: 146rpx;
+  height: 91rpx;
+  margin-left: 40rpx;
+
+
+}
+
+.header_btn_top image {
+  width: 100%;
+  height: 100%;
+}
+
+.weui-cell_input {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 50rpx;
+  padding: 20rpx 0;
+  position: relative;
+}
+
+.weui-cell_input label {
+  width: 690rpx;
+  display: flex;
+  padding: 5rpx 20rpx 0 10rpx;
+  margin: 0 auto;
+
+}
+
+.needDemand {
+  height: 410rpx;
+}
+
+.tijiao {
+  margin: 30rpx 0;
+}

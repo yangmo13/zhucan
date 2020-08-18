@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wux-fab-button": "../../../../component/form/fab_button/index",
+    "header":"../../../../component/header/header"
+  }
+}
