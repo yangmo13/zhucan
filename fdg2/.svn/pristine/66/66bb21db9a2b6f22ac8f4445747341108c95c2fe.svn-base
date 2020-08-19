@@ -1,0 +1,21 @@
+<view class="wish" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="我的心愿"></header>
+	<view class="wish_list">
+		<view class="wish_li" wx:for="{{arr}}">
+			<view class="wish_name_box">
+				<view class="wish_name">{{item.name}}</view>
+				<view class="start_date">发起时间：{{item.start}}</view>
+			</view>
+			<view class="wish_state_box">
+				<view class="wish_state">{{item.state}}</view>
+				<view class="end_date">结束时间：{{item.end}}</view>
+			</view>
+		</view>
+		<!-- loading或者nomore -->
+		<view class="more" wx:if="{{isloading==2}}">没有更多了~</view>
+		<view class="more" wx:if="{{isloading==1}}">
+			<loading></loading>
+		</view>
+	</view>
+</view>

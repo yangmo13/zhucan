@@ -1,0 +1,10 @@
+<view class="noDriver" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="申请成功"></header>
+	<!-- 申请详情 -->
+	<view class="hint_mes">
+		<hint text="申请成功，请等待审核"></hint>
+    <view class="other">你还可以</view>
+    <other arr="{{arr}}"></other>
+	</view>
+</view>

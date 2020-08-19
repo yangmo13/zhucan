@@ -1,0 +1,26 @@
+<view class="help" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="我的求助"></header>
+	<!-- 列表部分 -->
+	<view class="help_list">
+		<view class="help_li" wx:for="{{arr}}">
+			<view class="question">
+				<view class="ques_topic">{{item.topic}}</view>
+				<view class="ques_txt">{{item.question}}</view>
+			</view>
+			<view class="result">
+				<view class="result_state" style="background:{{item.state=='未解决'?'#d9001b':item.state=='解决中'?'#00bfbf':'#aaa'}}">{{item.state}}</view>
+				<view class="result_date">{{item.date}}</view>
+			</view>
+		</view>
+		<!-- loading或者nomre -->
+		<view class="more"
+      wx:if="{{isloading==2}}"
+    >没有更多了~</view>
+		<view class="more"
+   wx:if="{{isloading==1}}"
+    >
+			<loading></loading>
+		</view>
+	</view>
+</view>

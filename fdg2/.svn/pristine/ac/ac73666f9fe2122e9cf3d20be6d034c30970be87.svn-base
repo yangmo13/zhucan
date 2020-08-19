@@ -1,0 +1,96 @@
+
+page{
+  width: 100%;
+  height: 100%;
+  background: var(--gray);
+}
+
+.trip_list{
+  padding: 20rpx;
+
+}
+.trip_box{
+  margin-top: 20rpx;
+  border-radius: 15rpx;
+  position: relative;
+}
+.trip_box{
+  padding: 30rpx;
+  background: white;
+}
+.trip_box:first-child{
+  margin-top: 10rpx;
+}
+.trip_address,.trip_time_box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  color: #333;
+
+}
+.trip_time_box{
+  margin-top: 20rpx;
+}
+.trip_pos_start,.trip_pos_end{
+  padding: 10rpx 0;
+  font-size: 34rpx;
+  color: #333;
+  font-weight: 550;
+}
+.trip_pos_start text:first-child{
+ margin-right: 18rpx;
+  font-weight: 500;
+  font-size: 28rpx;
+}
+.trip_pos_end text:first-child{
+  margin-right: 18rpx;
+  font-weight: 500;
+  font-size: 28rpx;
+}
+.trip_pos_end{
+  padding: 10rpx 0;
+}
+#trip_jiedan{
+  background: var(--blue);
+  width: 150rpx;
+  height: 80rpx;
+  color: white;
+  padding: 0;
+  font-size: 32rpx;
+  line-height: 80rpx;
+}
+.nomore{
+  padding: 30rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #999;
+}
+.loginTrip{
+  position: fixed;
+  width: 100%;
+  bottom: 30rpx;
+}
+#trip_btn .trip_btn_hover{
+  background: #5cbcb2;
+}
+.trip_icon{
+  position: absolute;
+  left: 45%;
+  top: 12%;
+  width: 130rpx;
+  height: 130rpx;
+  border: 8rpx solid #ccc;
+  border-radius: 130rpx;
+  transform: translate(-50%,-50%);
+  transform: rotate(-30deg);
+-ms-transform: rotate(-30deg); /* IE 9 */
+text-align: center;
+line-height: 130rpx;
+font-size: 40rpx;
+font-weight: 550;
+color: #ccc;
+}
+.trip_icon{
+
+}

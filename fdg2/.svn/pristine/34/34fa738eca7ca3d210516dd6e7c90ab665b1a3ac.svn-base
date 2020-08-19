@@ -1,0 +1,59 @@
+<view class="litera" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="文体活动"></header>
+	<!-- 导航栏部分 -->
+	<view class="litera_box">
+
+		<view class="{{num==1?'active_hover active':'active'}}" bindtap="changeList" data-num="1">文体活动</view>
+		<view class="{{num==2?'active_hover active':'active'}}" bindtap="changeList" data-num="2">精彩瞬间</view>
+	</view>
+	<!-- 列表部分 -->
+	<!-- 文体活动 -->
+	<view class="litera_list" wx:if="{{num==1}}">
+		<view class="litera_li" wx:for="{{arr}}"
+			bindtap="next"
+			data-msg="{{item.name}}"
+		>
+			<view class="sports_name">{{item.name}}</view>
+			<view class="sports_mes">{{item.mes}}</view>
+			<view class="sports_img">
+				<image src="{{item.src}}"></image>
+			</view>
+			<view class="sports_state">
+				<view class="sports_state_apply">{{item.state.apply}}</view>
+				<view class="sports_state_date">
+					<text>报名时间：</text>
+					<text>{{item.state.date}}</text>
+					<text>{{item.state.time}}</text>
+				</view>
+			</view>
+		</view>
+		<!-- 下拉加载更多 -->
+		<view class="loading_more" wx:if="{{isloading=='nomore'}}">
+			没有更多了
+		</view>
+		<view class="loading_more" wx:if="{{isloading=='loading'}}">
+			<loading></loading>
+		</view>
+	</view>
+	<!-- 精彩瞬间 -->
+	<view class="moment_list" wx:if="{{num==2}}">
+		<view class="moment_li" wx:for="{{arr2}}"
+				bindtap="next"
+			data-msg="{{item.name}}"
+		>
+			<view class="moment_img">
+				<image src="{{item.src}}"
+          mode="widthFix"
+        ></image>
+			</view>
+			<view class="moment_txt">
+				<view class="moment_ion">
+					<image src="{{item.icon}}"></image>
+				</view>
+				<view class="moment_msg">{{item.msg}}</view>
+			</view>
+		</view>
+	</view>
+
+</view>

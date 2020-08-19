@@ -1,0 +1,13 @@
+<view  class="pic" style="padding-top:{{height}}px">
+  <header text="指导详情——图文"></header>
+  <view class="pic_detail">
+      <view class="pic_name">美发美甲</view>
+      <view class="pic_label_box">
+        <view class="pic_label">标签1</view>
+           <view class="pic_label">标签1</view>
+      </view>
+      <view class="pic_txt">
+        <rich-text></rich-text>
+      </view>
+  </view>
+</view>

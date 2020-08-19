@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html",libs=["layui","font-awesome",'editer','common','tag'])
+</head>
+<body>
+<div class="layui-form">
+	<input type="hidden" name="contentTmp.TYPE" value="#(type??)">
+	<input type="hidden" name="contentTmp.ID" id="id" value="#(contentTmp.ID??)">
+	<input type="file" id="videoFile"  style="display:none;">
+	<div style="display: flex;">
+		<div style="margin-top: 20px;padding-left: 40px;">
+		#@uploadImg(articleTmp.IMG??'')
+		</div>
+		<div style="width: calc(100vw - 150px)" >
+			<div class="layui-fluid">
+				<div class="layui-col-xs12 layui-col-space3" style="margin-top: 15px;">
+					<label class="layui-form-label"><span style="color: red;">*</span>标题</label>
+					<div class="layui-input-block">
+				      <input style="width:100%;" name="contentTmp.TITLE"  type="text" lay-verify="required"  value="#(contentTmp.TITLE??)" autocomplete="off" placeholder="请输入标题" class="layui-input">
+			        </div>
+	    		</div>
+	    		
+	    		<div class="layui-col-xs6 layui-col-space3" style="margin-top: 15px;">
+					<label class="layui-form-label"><span style="color: red;">*</span>发布时间</label>
+					<div class="layui-input-block">
+				      <input style="width:100%;" name="documentTmp.PUB_DATE" id="pubDate"  type="text" readonly lay-verify="required"  value="#(documentTmp.PUB_DATE??)" autocomplete="off" class="layui-input">
+			        </div>
+	    		</div>
+	    		
+	    		<div class="layui-col-xs6 layui-col-space3" style="margin-top: 15px;">
+	    		  <div class="layui-form-item">
+					<label class="layui-form-label"><span style="color: red;">*</span>类别</label>
+					<div class="layui-input-block">
+					      <input type="radio" name="documentTmp.TYPE" value="1" title="视频"  checked="" lay-filter="type">
+					      <input type="radio" name="documentTmp.TYPE" value="2" title="图文" lay-filter="type">
+			        </div>
+			        </div>
+	    		</div>
+	    		
+	    		<div id="selectFile" >
+		    		<div class="layui-col-xs6 layui-col-space3" style="margin-top: 15px;">
+						<label class="layui-form-label"><span style="color: red;">*</span>视频文件</label>
+						<div class="layui-input-block">
+					      <input style="width:100%;" name="documentTmp.VIDEO_NAME" id="videoName"  type="text" readonly lay-verify="required"  value="#(documentTmp.VIDEO_NAME??)" autocomplete="off" placeholder="请选择文件" class="layui-input">
+				        </div>
+		    		</div>
+		    		<div class="layui-col-xs1 layui-col-space3" style="margin-top: 20px;text-align: right;">
+						<button class="layui-btn" type="button" onclick="selectFile()" >选择文件</button>
+					</div>
+				</div>
+				
+				<div class="layui-col-xs12 layui-col-space3" style="margin-top: 15px;">
+					<label class="layui-form-label"><span style="color: red;">*</span>标签</label>
+					<div class="layui-input-block">
+				      <div class="layui-btn-container tag" lay-filter="tag" lay-newTag="true" lay-allowclose="true"></div>
+			        </div>
+	    		</div>
+			</div>
+	  	</div>
+	</div>
+	<div id="ed"></div>
+	<div style="margin-top:15px;text-align: center;"> 
+		<button class="layui-btn" type="button" lay-submit="save" lay-filter="save">仅保存</button>
+		<button class="layui-btn" type="button" lay-submit="subSave" lay-filter="subSave">保存并提交</button>
+		<button class="layui-btn" type="button" onclick="back()">返回</button>
+	</div>
+</div>
+
+<script>#include("contentEdit.js")</script>
+</body>

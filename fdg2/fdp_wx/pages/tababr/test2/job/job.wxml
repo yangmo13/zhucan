@@ -1,0 +1,18 @@
+<view class="job" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="我的求职"></header>
+	<!-- 列表部分 -->
+	<view class="job_list">
+		<view class="job_li" wx:for="{{arr}}">
+			<view class="job_name">{{item.name}}</view>
+			<view class="job_company">{{item.company}}</view>
+			<view class="job_state">
+        <view class="company_state">投递反馈：{{item.state}}</view>
+        <view class="company_date">投递时间 ：{{item.date}}</view>
+      </view>
+		</view>
+    <view class="load" wx:show="{{isloading}}">
+    <loading></loading>
+    </view>
+	</view>
+</view>

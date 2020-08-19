@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+#include("/common/include.html",libs=["layui","font-awesome",'common'])
+</head>
+<body>
+<form class="layui-form" style="padding-top: 10px;" id="search-form">
+<div class="layui-form-item">
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">标题</label>
+			<div class="layui-input-inline">
+				<input type="text" name="contentTmp.title"  id="title" autocomplete="off" class="layui-input search_input"  >
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">类别</label>
+			<div class="layui-input-inline">
+			#widget("fdp.documentType",name="documentTmp.type",type="select",class="search_select",please=true)
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label search_label">状态</label>
+			<div class="layui-input-inline">
+			#widget("fdp.auditStatus",name="contentTmp.status",type="select",class="search_select",please=true)
+			</div>
+		</div>
+</div>
+</form>
+	<table class="layui-hide" id="documentTmpTable" lay-filter="documentTmpTable"></table>
+<script id="optTpl" type="text/html">
+	#[[{{#  if(d.STATUS == 1 || d.STATUS == 2){ }}
+	<a lay-event="edit" title="编辑" style="cursor:pointer;">编辑</a>
+	{{#  } else { }}
+	<a lay-event="detil" title="详情" style="cursor:pointer;">详情</a>
+	{{#  } }} 
+	]]#
+	<a lay-event="del" title="删除" style="cursor:pointer;">删除</a>
+</script>
+<script type="text/html" id="toolbarTpl">
+<div style="float:left;">
+<button class="layui-btn" type="button" onclick="goAdd();">添加</button>
+</div>
+<div style="float:right;">
+<button class="layui-btn" type="button" onclick="submitForm();">查询</button>
+<button class="layui-btn" type="reset" onclick="$('#search-form')[0].reset();">重置</button>
+</div>
+</script>
+<script>#include("recoveryMeans_list.js")</script>
+</body>

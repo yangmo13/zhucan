@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "header":"/pages/component/header/header",
+    "hint":"/pages/component/hint/hint",
+    "other":"/pages/component/other/other"
+  }
+}

@@ -1,0 +1,37 @@
+page{
+  width: 100%;
+  height: 100%;
+  background-color: var(--gray);
+}
+.wish_list{
+  
+}
+.wish_li{
+  padding:  30rpx;
+  background-color: white;
+  margin-top: 20rpx;
+}
+.wish_list .wish_li:first-child{
+  margin-top: 30rpx;
+}
+.wish_name_box,.wish_state_box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  color: #555;
+}
+.wish_state_box{
+  margin-top: 35rpx;
+}
+.wish_name{
+  font-size: 34rpx;
+  color: #222;
+}
+.more{
+  padding: 40rpx;
+  font-size: 28rpx;
+  color: #8777;
+  text-align: center;
+  position: relative;
+}

@@ -1,0 +1,19 @@
+<view class="audio" style="padding-top:{{height}}px">
+	<header text="指导活动详情——视频"></header>
+	<view class="audio_box">
+		<video class="vedio_window" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"></video>
+	</view>
+  <view class="audio_reduce">
+      <view class="reduce_name_box">
+        <view class="reduce_name">美容美发</view>
+        <view class="reduce_date">2020-05-31</view>
+      </view>
+      <view class="reduce_label_box">
+        <view class="reduce_label">标签1</view>
+        <view class="reduce_label">标签1</view>
+      </view>
+      <view class="reduce_txt">
+      直播简介： 商大撒所大
+      </view>
+  </view>
+</view>

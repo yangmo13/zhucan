@@ -1,0 +1,21 @@
+<view class="other" style="padding-top:{{height}}px">
+	<header text="指导详情——其他"></header>
+	<view class="other_box">
+		<view class="othter_name">
+			美发美甲
+		</view>
+		<view class="other_state">
+			<view class="other_begin">报名未开始</view>
+			<view class="other_date">
+				<text>报名时间: </text>
+				<text>2020-05-30</text>
+        <text> 13:00~15:00</text>
+			</view>
+			
+		</view>
+    <view class="other_txt">
+				<rich-text>
+				</rich-text>
+			</view>
+	</view>
+</view>

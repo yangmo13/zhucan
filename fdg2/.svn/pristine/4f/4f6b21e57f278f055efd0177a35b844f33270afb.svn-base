@@ -1,0 +1,8 @@
+<view class="starMes" style="padding-top:{{height}}px">
+  <!-- 头部导航 -->
+  <header text="自强之星详情"></header>
+  <!-- 自强之星主体部分 -->
+  <view class="star_box">
+  <rich-text node="{{list}}"></rich-text>
+  </view>
+</view>

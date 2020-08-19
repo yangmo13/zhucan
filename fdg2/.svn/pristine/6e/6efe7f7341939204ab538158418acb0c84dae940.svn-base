@@ -1,0 +1,26 @@
+<view class="litera_mes" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="文体活动详情"></header>
+	<view class="lit_box">
+		<view class="lit_topic">{{list.topic}}</view>
+		<view class="lit_state">
+			<view class="lit_apply">{{list.state.apply}}</view>
+			<view class="lit_date">
+				<text>报名时间：</text>
+				<text>{{list.state.date}}</text>
+				<text>{{list.state.time}}</text>
+			</view>
+		</view>
+		<view class="lit_img">
+      <image src="{{list.src}}"
+        mode="aspectFit"
+      ></image>
+    </view>
+		<view class="lit_txt">
+			<rich-text nodes="{{list.txt}}"></rich-text>
+		</view>
+    <view>
+      <btn text="报名未开始"></btn>
+    </view>
+	</view>
+</view>

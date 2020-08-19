@@ -1,0 +1,38 @@
+<view class="live" style="padding-top:{{height}}px">
+	<header text="指导活动详情——直播"></header>
+	<!-- 直播部分 -->
+	<view class="live_box">
+		<!-- 直播框 -->
+		<live-player class="live_window">
+			<!-- 无直播样式 -->
+      <cover-view class="back_img">
+        <image src="/image/zhidao/u609.png"></image>
+        <cover-view class="back_txt">
+          直播未开始
+        </cover-view>
+      </cover-view>
+			<!-- 直播状态提示 -->
+			<cover-view class="live_state">
+				<cover-view class="live_state_img">
+					<image src="/image/zhidao/u616.svg"></image>
+				</cover-view>
+				<cover-view>
+					直播未开始，请大家耐心等待
+				</cover-view>
+			</cover-view>
+		</live-player>
+	</view>
+
+  <view class="live_reduce">
+    <view class="reduce_name">
+     <text>美发美甲（致残，聋哑）</text>
+     <text>直播未开始</text>
+    </view>
+    <view class="reduce_time">
+      直播时间:2020-05-30 13:00~15:00
+    </view>
+    <view class="reduce_txt">
+      直播简介：洒水多多撒所多撒多
+    </view>
+  </view>
+</view>

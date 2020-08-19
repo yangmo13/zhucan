@@ -1,0 +1,40 @@
+<view class="trip" style="padding-top:{{height}}px">
+	<!-- 头部导航 -->
+	<header text="我的出行"></header>
+
+	<!-- 列表页 -->
+	<view class="trip_list">
+		<view class="trip_box" wx:for="{{arr}}">
+			<view class="trip_address">
+				<view class="trip_pos">
+					<view class="trip_pos_start">
+						<text>从</text><text>{{item.starting}}</text>
+					</view>
+					<view class="trip_pos_end">
+						<text>到</text><text>{{item.address}}</text>
+					</view>
+				</view>
+				<view class="trip_btn" id="trip_btn">
+					<button id="trip_jiedan" bindtap="jiedan" hover-class="trip_btn_hover">接单</button>
+
+				</view>
+			</view>
+			<view class="trip_time_box">
+				<view class="trip_time">
+					用车时间 ：{{item.date}} {{item.time}}
+				</view>
+				<view class="trip_mes">
+					共 {{item.num}}人，{{item.level}}
+				</view>
+			</view>
+      <view class="trip_icon">待出行</view>
+		</view>
+		<view class="nomore">没有更多了~</view>
+
+	</view>
+	<view class="loginTrip">
+
+		<btn text="登记我的出行需求"></btn>
+	</view>
+
+</view>
